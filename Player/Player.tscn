@@ -1,14 +1,61 @@
 [gd_scene format=3 uid="uid://cvol3al3kilk5"]
 
 [ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_3qydi"]
+[ext_resource type="Script" uid="uid://sar5lqma63fj" path="res://Player/Player.cs" id="1_q3lat"]
+[ext_resource type="Script" uid="uid://d3645llygfx2u" path="res://StateTree/StateTree.cs" id="3_tok1r"]
+[ext_resource type="Script" uid="uid://bhmif0v65ol5c" path="res://Player/PlayerStates/Player_UniversalState.cs" id="4_mpu1e"]
+[ext_resource type="Script" uid="uid://ppkm12hcvxrh" path="res://Player/PlayerStates/Player_CanMoveState.cs" id="5_0m8va"]
+[ext_resource type="Script" uid="uid://ctci6m5c6d8w4" path="res://Player/PlayerStates/Player_GroundedState.cs" id="6_dg86v"]
+[ext_resource type="Script" uid="uid://y05pc6ddwdx3" path="res://Player/PlayerStates/Player_IdleState.cs" id="7_xyjv2"]
+[ext_resource type="Script" uid="uid://ycad8pieqi03" path="res://Player/PlayerStates/Player_MoveState.cs" id="8_pu86l"]
+[ext_resource type="Script" uid="uid://bwawfqi4v7j6s" path="res://Player/PlayerStates/Player_GravityAffectedState.cs" id="9_s0fjd"]
+[ext_resource type="Script" uid="uid://b7hfjxsmhcf5i" path="res://Player/PlayerStates/Player_JumpState.cs" id="10_u3f5n"]
+[ext_resource type="Script" uid="uid://b1k4t11eytpt7" path="res://Player/PlayerStates/Player_MidAirState.cs" id="11_v0k0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qydi"]
 size = Vector2(128, 128)
 
 [node name="Player" type="CharacterBody2D" unique_id=1425184265]
+script = ExtResource("1_q3lat")
+MoveSpeed = 400.0
+JumpVelocity = 600.0
+GravityScale = 1.2
+TiltAngleDegrees = 5.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2004915049]
+[node name="Visual" type="Node2D" parent="." unique_id=834943169]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=2004915049]
 texture = ExtResource("1_3qydi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1469170882]
 shape = SubResource("RectangleShape2D_3qydi")
+
+[node name="StateTree" type="Node" parent="." unique_id=82502769]
+script = ExtResource("3_tok1r")
+InitialStateName = "Idle"
+metadata/_custom_type_script = "uid://d3645llygfx2u"
+
+[node name="Universal" type="Node" parent="StateTree" unique_id=583241749]
+script = ExtResource("4_mpu1e")
+
+[node name="CanMove" type="Node" parent="StateTree/Universal" unique_id=1481491883]
+script = ExtResource("5_0m8va")
+
+[node name="Grounded" type="Node" parent="StateTree/Universal/CanMove" unique_id=605631191]
+script = ExtResource("6_dg86v")
+
+[node name="Idle" type="Node" parent="StateTree/Universal/CanMove/Grounded" unique_id=648978208]
+script = ExtResource("7_xyjv2")
+
+[node name="Move" type="Node" parent="StateTree/Universal/CanMove/Grounded" unique_id=1758246250]
+script = ExtResource("8_pu86l")
+
+[node name="GravityAffected" type="Node" parent="StateTree/Universal/CanMove" unique_id=1334037267]
+script = ExtResource("9_s0fjd")
+
+[node name="Jump" type="Node" parent="StateTree/Universal/CanMove/GravityAffected" unique_id=1319032079]
+script = ExtResource("10_u3f5n")
+
+[node name="MidAir" type="Node" parent="StateTree/Universal/CanMove/GravityAffected" unique_id=1642410799]
+script = ExtResource("11_v0k0e")
+metadata/_custom_type_script = "uid://cb1q765ib0gfc"
