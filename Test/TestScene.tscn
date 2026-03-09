@@ -143,16 +143,12 @@ _data = {
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_wyv1x")]
 position = Vector2(167, 43)
-<<<<<<< HEAD
 LandingSquashScale = Vector2(3, 0.4)
-=======
->>>>>>> 4011f1c937e7ae2084e54ae077042c5b288e6ce1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=94176362]
 position = Vector2(146, 89)
 zoom = Vector2(0.875, 0.875)
 
-<<<<<<< HEAD
 [node name="Node2D" type="Node2D" parent="." unique_id=1957117346]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=1003258321]
@@ -220,8 +216,7 @@ texture = ExtResource("1_804c2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D6" unique_id=1364265673]
 shape = SubResource("RectangleShape2D_wyv1x")
-=======
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=629918330]
 libraries/ = SubResource("AnimationLibrary_8ovih")
 autoplay = &"ControlTest"
->>>>>>> 4011f1c937e7ae2084e54ae077042c5b288e6ce1
