@@ -143,7 +143,7 @@ _data = {
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_wyv1x")]
 position = Vector2(167, 43)
-LandingSquashScale = Vector2(3, 0.4)
+LandingSquashScale = Vector2(1.51, 0.695)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=94176362]
 position = Vector2(146, 89)
