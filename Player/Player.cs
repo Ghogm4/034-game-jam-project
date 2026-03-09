@@ -3,38 +3,21 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	[Export] public float MoveSpeed = 300.0f;
+	[Export] public float GroundAcceleration = 1600.0f;
+	[Export] public float GroundDeceleration = 1800.0f;
+	[Export] public float AirAcceleration = 900.0f;
+	[Export] public float AirDeceleration = 700.0f;
+	[Export] public float JumpVelocity = 430.0f;
+	[Export] public float GravityScale = 1.0f;
+	[Export] public float MaxFallSpeed = 900.0f;
+	[Export] public float IdleSpeedThreshold = 0f;
+	[Export] public float TiltAngleDegrees = 7.0f;
+	[Export] public float TiltSmoothing = 10.0f;
+	[Export] public float VisualScaleSmoothing = 14.0f;
 
-	public override void _PhysicsProcess(double delta)
-	{
-		Vector2 velocity = Velocity;
-
-		// Add the gravity.
-		if (!IsOnFloor())
-		{
-			velocity += GetGravity() * (float)delta;
-		}
-
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
-		{
-			velocity.X = direction.X * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
-
-		Velocity = velocity;
-		MoveAndSlide();
-	}
+	public Node2D Visual => field ??= GetNode<Node2D>("Visual");
+	public Vector2 TargetVisualScale { get; set; } = Vector2.One;
+	public float MoveInput { get; set; } = 0.0f;
+	public int FacingDirection { get; set; } = 1;
 }
