@@ -9,6 +9,8 @@ public partial class Player : CharacterBody2D
 	[Export] public float AirAcceleration = 900.0f;
 	[Export] public float AirDeceleration = 700.0f;
 	[Export] public float JumpVelocity = 430.0f;
+	[Export] public float CoyoteTime = 0.1f;
+	[Export] public float JumpBufferTime = 0.1f;
 	[Export] public float GravityScale = 1.0f;
 	[Export] public float MaxFallSpeed = 900.0f;
 	[Export] public float IdleSpeedThreshold = 0f;
@@ -28,4 +30,6 @@ public partial class Player : CharacterBody2D
 	public float MoveInput { get; set; } = 0.0f;
 	public int FacingDirection { get; set; } = 1;
 	public float VisualTime { get; set; } = 0.0f;
+	public float CoyoteTimer { get; set; } = 0.0f;
+	public float JumpBufferTimer { get; set; } = 0.0f;
 }
