@@ -27,7 +27,8 @@ public partial class Player_UniversalState : Player_PlayerState
     }
     protected override void PhysicsUpdate(double delta)
     {
-        float frameDelta = (float)delta;
+        bool wasOnFloor = Player.IsOnFloor();
+        float preMoveVerticalSpeed = Player.Velocity.Y;
 
         Player.MoveInput = Input.GetAxis("Left", "Right");
         if (!Mathf.IsZeroApprox(Player.MoveInput))
@@ -37,6 +38,9 @@ public partial class Player_UniversalState : Player_PlayerState
 
         TickJumpTimers(delta);
         Player.MoveAndSlide();
+
+        bool landedThisFrame = !wasOnFloor && Player.IsOnFloor();
+        Player.LandingImpactSpeed = landedThisFrame ? Mathf.Max(preMoveVerticalSpeed, 0.0f) : 0.0f;
     }
     private void HandleTilt(double delta)
     {

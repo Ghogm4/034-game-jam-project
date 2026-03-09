@@ -24,6 +24,8 @@ public partial class Player : CharacterBody2D
 	[Export] public Vector2 MidAirRiseScale = new(0.92f, 1.08f);
 	[Export] public Vector2 MidAirFallScale = new(1.08f, 0.92f);
 	[Export] public float MidAirVisualVelocityRange = 700.0f;
+	[Export] public Vector2 LandingSquashScale = new(1.12f, 0.88f);
+	[Export] public float LandingSquashVelocityRange = 900.0f;
 
 	public Node2D Visual => field ??= GetNode<Node2D>("Visual");
 	public Vector2 TargetVisualScale { get; set; } = Vector2.One;
@@ -32,4 +34,5 @@ public partial class Player : CharacterBody2D
 	public float VisualTime { get; set; } = 0.0f;
 	public float CoyoteTimer { get; set; } = 0.0f;
 	public float JumpBufferTimer { get; set; } = 0.0f;
+	public float LandingImpactSpeed { get; set; } = 0.0f;
 }
