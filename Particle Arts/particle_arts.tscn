@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cvmp4yf7l3068"]
+
+[ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_0ebyg"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_8npha"]
+
+[sub_resource type="Gradient" id="Gradient_05am0"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cytki"]
+gradient = SubResource("Gradient_05am0")
+width = 2
+height = 15
+
+[sub_resource type="Gradient" id="Gradient_cytki"]
+offsets = PackedFloat32Array(0, 0.2987013)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0ebyg"]
+gradient = SubResource("Gradient_cytki")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0ebyg"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+direction = Vector3(0.2, 1, 0)
+spread = 3.0
+initial_velocity_min = 900.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_0ebyg")
+collision_mode = 2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_05am0"]
+polygon = PackedVector2Array(9, 1044, 1915, 1044, 1917, 1325, -5, 1330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c03n8"]
+size = Vector2(1910, 282)
+
+[node name="ParticleArts" type="Node2D" unique_id=1601027294]
+
+[node name="Rain" type="GPUParticles2D" parent="." unique_id=136171565]
+modulate = Color(1, 1, 1, 0.53333336)
+position = Vector2(884, 8)
+amount = 2000
+texture = SubResource("GradientTexture2D_cytki")
+lifetime = 10.0
+collision_base_size = 17.05
+process_material = SubResource("ParticleProcessMaterial_0ebyg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1620121529]
+occluder = SubResource("OccluderPolygon2D_05am0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=936166344]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1030545237]
+position = Vector2(961, 1184)
+shape = SubResource("RectangleShape2D_c03n8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1330857250]
+position = Vector2(928, 1188)
+scale = Vector2(15.5, 2.1718755)
+texture = ExtResource("1_0ebyg")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_8npha")]
+position = Vector2(611, 936)
