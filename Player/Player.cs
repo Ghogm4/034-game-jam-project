@@ -4,6 +4,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	[Export] public float MoveSpeed = 300.0f;
+	[Export] public bool IsInCutScene = false;
+	[Export] public bool CutSceneJumped = false;
+	[Export] public float CutSceneMoveDir = 0.0f;
 	[Export] public float GroundAcceleration = 1600.0f;
 	[Export] public float GroundDeceleration = 1800.0f;
 	[Export] public float AirAcceleration = 900.0f;
@@ -17,6 +20,7 @@ public partial class Player : CharacterBody2D
 	[Export] public float TiltAngleDegrees = 7.0f;
 	[Export] public float TiltSmoothing = 10.0f;
 	[Export] public float VisualScaleSmoothing = 14.0f;
+	[Export] public float ImpactVisualScaleSmoothing = 18.0f;
 	[Export] public Vector2 IdleSquashScale = new(0.97f, 1.03f);
 	[Export] public float IdleSquashSpeed = 3.0f;
 	[Export] public float MoveSquashStrength = 0.1f;
@@ -24,11 +28,13 @@ public partial class Player : CharacterBody2D
 	[Export] public Vector2 MidAirRiseScale = new(0.92f, 1.08f);
 	[Export] public Vector2 MidAirFallScale = new(1.08f, 0.92f);
 	[Export] public float MidAirVisualVelocityRange = 700.0f;
+	[Export] public Vector2 JumpStretchScale = new(0.92f, 1.1f);
 	[Export] public Vector2 LandingSquashScale = new(1.12f, 0.88f);
 	[Export] public float LandingSquashVelocityRange = 900.0f;
 
 	public Node2D Visual => field ??= GetNode<Node2D>("Visual");
-	public Vector2 TargetVisualScale { get; set; } = Vector2.One;
+	public Vector2 BaseVisualScale { get; set; } = Vector2.One;
+	public Vector2 ImpactVisualScale { get; set; } = Vector2.One;
 	public float MoveInput { get; set; } = 0.0f;
 	public int FacingDirection { get; set; } = 1;
 	public float VisualTime { get; set; } = 0.0f;

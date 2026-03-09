@@ -7,7 +7,7 @@ public partial class Player_UniversalState : Player_PlayerState
     {
         float frameDelta = (float)delta;
 
-        if (Input.IsActionJustPressed("Jump"))
+        if (ReadJumpPressed())
         {
             Player.JumpBufferTimer = Player.JumpBufferTime;
         }
@@ -30,7 +30,7 @@ public partial class Player_UniversalState : Player_PlayerState
         bool wasOnFloor = Player.IsOnFloor();
         float preMoveVerticalSpeed = Player.Velocity.Y;
 
-        Player.MoveInput = Input.GetAxis("Left", "Right");
+        Player.MoveInput = ReadMoveInput();
         if (!Mathf.IsZeroApprox(Player.MoveInput))
         {
             Player.FacingDirection = Player.MoveInput > 0.0f ? 1 : -1;
@@ -52,8 +52,14 @@ public partial class Player_UniversalState : Player_PlayerState
     private void HandleSquash(double delta)
     {
         float scaleWeight = 1.0f - Mathf.Exp(-Player.VisualScaleSmoothing * (float)delta);
-        Player.Visual.Scale = Player.Visual.Scale.Lerp(Player.TargetVisualScale, scaleWeight);
-        Player.TargetVisualScale = Player.TargetVisualScale.Lerp(Vector2.One, scaleWeight);
+        float impactWeight = 1.0f - Mathf.Exp(-Player.ImpactVisualScaleSmoothing * (float)delta);
+        Vector2 targetVisualScale = new(
+            Player.BaseVisualScale.X * Player.ImpactVisualScale.X,
+            Player.BaseVisualScale.Y * Player.ImpactVisualScale.Y
+        );
+
+        Player.Visual.Scale = Player.Visual.Scale.Lerp(targetVisualScale, scaleWeight);
+        Player.ImpactVisualScale = Player.ImpactVisualScale.Lerp(Vector2.One, impactWeight);
     }
     protected override void FrameUpdate(double delta)
     {

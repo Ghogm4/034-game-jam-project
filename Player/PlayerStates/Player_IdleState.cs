@@ -5,7 +5,7 @@ public partial class Player_IdleState : Player_PlayerState
 {
 	protected override void FrameUpdate(double delta)
 	{
-		Player.TargetVisualScale = GetIdleVisualScale();
+		Player.BaseVisualScale = GetIdleVisualScale();
 	}
 
 	protected override void PhysicsUpdate(double delta)

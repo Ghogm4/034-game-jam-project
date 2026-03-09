@@ -16,7 +16,7 @@ public partial class Player_JumpState : Player_PlayerState
         velocity.Y = -Player.JumpVelocity;
         Player.Velocity = velocity;
         
-        Player.TargetVisualScale = new Vector2(0.92f, 1.1f);
+        Player.ImpactVisualScale = Player.JumpStretchScale;
         AskTransit("MidAir");
     }
 }

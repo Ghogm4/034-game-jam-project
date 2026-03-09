@@ -5,7 +5,7 @@ public partial class Player_MidAirState : Player_PlayerState
 {
 	protected override void FrameUpdate(double delta)
 	{
-		Player.TargetVisualScale = GetMidAirVisualScale();
+		Player.BaseVisualScale = GetMidAirVisualScale();
 	}
 
 	protected override void PhysicsUpdate(double delta)

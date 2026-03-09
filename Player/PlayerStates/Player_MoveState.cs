@@ -5,7 +5,7 @@ public partial class Player_MoveState : Player_PlayerState
 {
 	protected override void FrameUpdate(double delta)
 	{
-		Player.TargetVisualScale = GetMoveVisualScale();
+		Player.BaseVisualScale = GetMoveVisualScale();
 	}
 
 	protected override void PhysicsUpdate(double delta)
