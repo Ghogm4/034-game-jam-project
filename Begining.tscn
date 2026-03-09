@@ -1,0 +1,402 @@
+[gd_scene format=3 uid="uid://pm60e74xqdr4"]
+
+[ext_resource type="Texture2D" uid="uid://d35fa7eufhtdp" path="res://Colors/orangeSquare.png" id="1_x6rr8"]
+[ext_resource type="Texture2D" uid="uid://c32xilemkjg0q" path="res://Colors/brownSquare.png" id="2_nj5mk"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_g65if"]
+[ext_resource type="Texture2D" uid="uid://chi8c3c4o38c4" path="res://Colors/lighterBrown.png" id="3_i7517"]
+[ext_resource type="Texture2D" uid="uid://dqxwku7wb4xdl" path="res://Colors/lightBrown.png" id="3_jb7t5"]
+[ext_resource type="Texture2D" uid="uid://b1xiqd47p3iwv" path="res://Colors/whiteHalo.png" id="3_nj5mk"]
+[ext_resource type="Texture2D" uid="uid://ulmyqhwoej2o" path="res://Colors/yellowCircle.png" id="4_cyk1c"]
+[ext_resource type="Texture2D" uid="uid://cty46uigim14" path="res://Colors/grayBird.png" id="5_g65if"]
+[ext_resource type="Texture2D" uid="uid://dkxoqnovbhn36" path="res://Colors/darkBrown.png" id="7_cyk1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6rr8"]
+size = Vector2(694.11816, 666.73676)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj5mk"]
+size = Vector2(308.25024, 109.77692)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g65if"]
+size = Vector2(693.30396, 617.2853)
+
+[node name="Node2D" type="Node2D" unique_id=205387125]
+
+[node name="BackGrounds" type="Node2D" parent="." unique_id=38442962]
+
+[node name="OrangeSquare" type="Sprite2D" parent="BackGrounds" unique_id=1858546762]
+position = Vector2(3563, 345)
+scale = Vector2(17.607557, 16.356071)
+texture = ExtResource("1_x6rr8")
+
+[node name="Parallax2D2" type="Parallax2D" parent="BackGrounds" unique_id=1445367356]
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(1330, 249)
+
+[node name="YellowCircle" type="Sprite2D" parent="BackGrounds/Parallax2D2" unique_id=1773355105]
+position = Vector2(-1, -3)
+texture = ExtResource("4_cyk1c")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=401452340]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="LighterBrown" type="Sprite2D" parent="Parallax2D3" unique_id=384519135]
+position = Vector2(56.000015, 742)
+scale = Vector2(0.30143884, 1)
+texture = ExtResource("3_i7517")
+
+[node name="LighterBrown2" type="Sprite2D" parent="Parallax2D3" unique_id=79861088]
+position = Vector2(680, 731)
+scale = Vector2(0.30143884, 1)
+texture = ExtResource("3_i7517")
+
+[node name="LighterBrown3" type="Sprite2D" parent="Parallax2D3" unique_id=1348824645]
+position = Vector2(1798, 863)
+scale = Vector2(0.30143884, 1)
+texture = ExtResource("3_i7517")
+
+[node name="LighterBrown4" type="Sprite2D" parent="Parallax2D3" unique_id=2105800708]
+position = Vector2(1255, 857)
+scale = Vector2(0.30143884, 1)
+texture = ExtResource("3_i7517")
+
+[node name="LighterBrown5" type="Sprite2D" parent="Parallax2D3" unique_id=1085149476]
+position = Vector2(2128, 866)
+scale = Vector2(0.30143884, 1)
+texture = ExtResource("3_i7517")
+
+[node name="LighterBrown6" type="Sprite2D" parent="Parallax2D3" unique_id=1593394677]
+position = Vector2(2568, 812)
+scale = Vector2(0.30143884, 1)
+texture = ExtResource("3_i7517")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=446939705]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="LightBrown" type="Sprite2D" parent="Parallax2D2" unique_id=1914011190]
+position = Vector2(190, 1070.75)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown7" type="Sprite2D" parent="Parallax2D2" unique_id=2027377483]
+position = Vector2(-501, 1165)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown2" type="Sprite2D" parent="Parallax2D2" unique_id=276313978]
+position = Vector2(757, 982)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown3" type="Sprite2D" parent="Parallax2D2" unique_id=477857952]
+position = Vector2(757, 982)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown4" type="Sprite2D" parent="Parallax2D2" unique_id=2117908321]
+position = Vector2(1351, 1089)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown5" type="Sprite2D" parent="Parallax2D2" unique_id=170161684]
+position = Vector2(1936, 1138)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown6" type="Sprite2D" parent="Parallax2D2" unique_id=1600082315]
+position = Vector2(2454, 921)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown8" type="Sprite2D" parent="Parallax2D2" unique_id=1918727086]
+position = Vector2(2902, 992)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown9" type="Sprite2D" parent="Parallax2D2" unique_id=2065203083]
+position = Vector2(3512, 1053)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown10" type="Sprite2D" parent="Parallax2D2" unique_id=147284398]
+position = Vector2(4115, 1056)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="LightBrown11" type="Sprite2D" parent="Parallax2D2" unique_id=1624560916]
+position = Vector2(4738, 1053)
+scale = Vector2(1, 1.5329835)
+texture = ExtResource("3_jb7t5")
+
+[node name="Solids" type="Node2D" parent="." unique_id=1721724755]
+
+[node name="BrownSquare" type="Sprite2D" parent="Solids" unique_id=2042824774]
+position = Vector2(3728.25, 3609)
+scale = Vector2(17.57338, 8.544602)
+texture = ExtResource("2_nj5mk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Solids/BrownSquare" unique_id=127922985]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Solids/BrownSquare/StaticBody2D" unique_id=1323187020]
+position = Vector2(0.4410553, 3.6866455)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_x6rr8")
+
+[node name="BrownSquare2" type="Sprite2D" parent="Solids" unique_id=440545304]
+position = Vector2(4519.0625, 960.99994)
+scale = Vector2(7.591187, 0.88127804)
+texture = ExtResource("2_nj5mk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Solids/BrownSquare2" unique_id=1840413722]
+position = Vector2(-104.17511, 3004.7273)
+scale = Vector2(2.3149712, 9.695694)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Solids/BrownSquare2/StaticBody2D2" unique_id=1827239268]
+position = Vector2(49.12256, -285.56036)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_nj5mk")
+
+[node name="BrownSquare3" type="Sprite2D" parent="Solids" unique_id=1992261953]
+position = Vector2(4794, 849)
+scale = Vector2(7.591187, 0.88127804)
+texture = ExtResource("2_nj5mk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Solids/BrownSquare3" unique_id=1357294686]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Solids/BrownSquare3/StaticBody2D" unique_id=782623565]
+position = Vector2(-0.72454834, 11.347168)
+shape = SubResource("RectangleShape2D_g65if")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_g65if")]
+position = Vector2(533, 607)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=448211506]
+offset = Vector2(0, -178.64)
+zoom = Vector2(0.89, 0.89)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=114831571]
+scale = Vector2(0.17743948, 0.13566847)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-713, 115)
+repeat_size = Vector2(13000, 0)
+autoscroll = Vector2(-200, 0)
+
+[node name="GrayBird" type="Sprite2D" parent="Parallax2D" unique_id=1208803631]
+texture = ExtResource("5_g65if")
+
+[node name="GrayBird2" type="Sprite2D" parent="Parallax2D" unique_id=1035389427]
+position = Vector2(550.687, -176.01735)
+texture = ExtResource("5_g65if")
+
+[node name="GrayBird4" type="Sprite2D" parent="Parallax2D" unique_id=1515184153]
+position = Vector2(1153.7095, -375.0319)
+texture = ExtResource("5_g65if")
+
+[node name="GrayBird3" type="Sprite2D" parent="Parallax2D" unique_id=44589793]
+position = Vector2(652.1301, 310.46265)
+texture = ExtResource("5_g65if")
+
+[node name="front" type="Parallax2D" parent="." unique_id=94876010]
+scroll_scale = Vector2(1.2, 1.2)
+
+[node name="DarkBrown" type="Sprite2D" parent="front" unique_id=801865241]
+position = Vector2(1600, 1416.0001)
+scale = Vector2(0.36097085, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown3" type="Sprite2D" parent="front" unique_id=2080259553]
+position = Vector2(2167, 1744.0001)
+scale = Vector2(0.36097085, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown4" type="Sprite2D" parent="front" unique_id=1607309033]
+position = Vector2(2519.2813, 1398)
+scale = Vector2(0.18911864, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown5" type="Sprite2D" parent="front" unique_id=507214951]
+position = Vector2(3014.0002, 1092)
+scale = Vector2(0.50175375, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown6" type="Sprite2D" parent="front" unique_id=353424668]
+position = Vector2(3453.9998, 1447.0001)
+scale = Vector2(0.2911646, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown11" type="Sprite2D" parent="front" unique_id=798938143]
+position = Vector2(3930.9998, 1557)
+scale = Vector2(0.2911646, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown12" type="Sprite2D" parent="front" unique_id=146451344]
+position = Vector2(4300, 1687)
+scale = Vector2(0.20313607, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown13" type="Sprite2D" parent="front" unique_id=1766319928]
+position = Vector2(4761, 1565)
+scale = Vector2(0.20313607, 2.4518366)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown2" type="Sprite2D" parent="front" unique_id=381638625]
+position = Vector2(1200, 1780)
+scale = Vector2(0.26169053, 2.7707553)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown7" type="Sprite2D" parent="front" unique_id=1964087631]
+position = Vector2(681, 1744)
+scale = Vector2(0.3826437, 2.7707553)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown8" type="Sprite2D" parent="front" unique_id=1622823613]
+position = Vector2(180, 1845.9999)
+scale = Vector2(0.26182535, 2.7707553)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown9" type="Sprite2D" parent="front" unique_id=1688856787]
+position = Vector2(180, 1845.9999)
+scale = Vector2(0.26182535, 2.7707553)
+texture = ExtResource("7_cyk1c")
+
+[node name="DarkBrown10" type="Sprite2D" parent="front" unique_id=539639714]
+position = Vector2(-325, 1500)
+scale = Vector2(0.42443782, 2.7707553)
+texture = ExtResource("7_cyk1c")
+
+[node name="Halos" type="Node2D" parent="." unique_id=1179542947]
+position = Vector2(4, 229)
+
+[node name="Parallax2D" type="Parallax2D" parent="Halos" unique_id=1010502839]
+rotation = -0.036651913
+scale = Vector2(1.155, 1.1549999)
+skew = 0.33335793
+scroll_scale = Vector2(-1.2, -1.2)
+scroll_offset = Vector2(-10.000005, -145)
+
+[node name="WhiteHalo" type="Sprite2D" parent="Halos/Parallax2D" unique_id=1055940841]
+position = Vector2(977.99994, 378.00003)
+scale = Vector2(0.34999987, 0.3369565)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo2" type="Sprite2D" parent="Halos/Parallax2D" unique_id=1094035716]
+position = Vector2(977.99994, 378.00003)
+scale = Vector2(0.34999987, 0.3369565)
+texture = ExtResource("3_nj5mk")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Halos" unique_id=1831208242]
+rotation = -0.036651913
+scale = Vector2(1.155, 1.1549999)
+skew = 0.33335793
+scroll_scale = Vector2(-1.45, -1.45)
+scroll_offset = Vector2(-10.000005, -145)
+
+[node name="WhiteHalo" type="Sprite2D" parent="Halos/Parallax2D3" unique_id=1057094219]
+position = Vector2(845, 449)
+scale = Vector2(0.18219428, 0.18646926)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo2" type="Sprite2D" parent="Halos/Parallax2D3" unique_id=1769764418]
+position = Vector2(845, 449)
+scale = Vector2(0.18219428, 0.18646926)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo3" type="Sprite2D" parent="Halos/Parallax2D3" unique_id=524008651]
+position = Vector2(845, 449)
+scale = Vector2(0.18219428, 0.18646926)
+texture = ExtResource("3_nj5mk")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Halos" unique_id=620697252]
+rotation = -0.036651913
+scale = Vector2(1.155, 1.1549999)
+skew = 0.33335793
+scroll_scale = Vector2(-1.6, -1.6)
+scroll_offset = Vector2(-10.000005, -145)
+
+[node name="WhiteHalo2" type="Sprite2D" parent="Halos/Parallax2D4" unique_id=1511855574]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo3" type="Sprite2D" parent="Halos/Parallax2D4" unique_id=1668356833]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo4" type="Sprite2D" parent="Halos/Parallax2D4" unique_id=1349438634]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo5" type="Sprite2D" parent="Halos/Parallax2D4" unique_id=221756323]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
+
+[node name="Halos2" type="Node2D" parent="." unique_id=872006235]
+position = Vector2(-1914, 275)
+
+[node name="Parallax2D" type="Parallax2D" parent="Halos2" unique_id=730882354]
+rotation = -0.036651913
+scale = Vector2(1.155, 1.1549999)
+skew = 0.33335793
+scroll_scale = Vector2(-1.2, -1.2)
+scroll_offset = Vector2(-10.000005, -145)
+
+[node name="WhiteHalo" type="Sprite2D" parent="Halos2/Parallax2D" unique_id=1026595274]
+position = Vector2(977.99994, 378.00003)
+scale = Vector2(0.34999987, 0.3369565)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo2" type="Sprite2D" parent="Halos2/Parallax2D" unique_id=1590999015]
+position = Vector2(977.99994, 378.00003)
+scale = Vector2(0.34999987, 0.3369565)
+texture = ExtResource("3_nj5mk")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Halos2" unique_id=81368116]
+rotation = -0.036651913
+scale = Vector2(1.155, 1.1549999)
+skew = 0.33335793
+scroll_scale = Vector2(-1.45, -1.45)
+scroll_offset = Vector2(-317, -111)
+
+[node name="WhiteHalo" type="Sprite2D" parent="Halos2/Parallax2D3" unique_id=1398919288]
+position = Vector2(845, 449)
+scale = Vector2(0.18219428, 0.18646926)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo2" type="Sprite2D" parent="Halos2/Parallax2D3" unique_id=68768367]
+position = Vector2(845, 449)
+scale = Vector2(0.18219428, 0.18646926)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo3" type="Sprite2D" parent="Halos2/Parallax2D3" unique_id=1341372782]
+position = Vector2(845, 449)
+scale = Vector2(0.18219428, 0.18646926)
+texture = ExtResource("3_nj5mk")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Halos2" unique_id=678358991]
+rotation = -0.036651913
+scale = Vector2(1.155, 1.1549999)
+skew = 0.33335793
+scroll_scale = Vector2(-1.63, -1.63)
+scroll_offset = Vector2(-611, -62)
+
+[node name="WhiteHalo2" type="Sprite2D" parent="Halos2/Parallax2D4" unique_id=654182349]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo3" type="Sprite2D" parent="Halos2/Parallax2D4" unique_id=420040133]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo4" type="Sprite2D" parent="Halos2/Parallax2D4" unique_id=18730142]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
+
+[node name="WhiteHalo5" type="Sprite2D" parent="Halos2/Parallax2D4" unique_id=1961593564]
+position = Vector2(779.6719, 491.7969)
+scale = Vector2(0.104541525, 0.10134)
+texture = ExtResource("3_nj5mk")
