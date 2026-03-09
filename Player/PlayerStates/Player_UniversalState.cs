@@ -3,20 +3,40 @@ using System;
 
 public partial class Player_UniversalState : Player_PlayerState
 {
+    private void TickJumpTimers(double delta)
+    {
+        float frameDelta = (float)delta;
+
+        if (Input.IsActionJustPressed("Jump"))
+        {
+            Player.JumpBufferTimer = Player.JumpBufferTime;
+        }
+        else
+        {
+            Player.JumpBufferTimer = Mathf.Max(Player.JumpBufferTimer - frameDelta, 0.0f);
+        }
+
+        if (Player.IsOnFloor())
+        {
+            Player.CoyoteTimer = Player.CoyoteTime;
+        }
+        else
+        {
+            Player.CoyoteTimer = Mathf.Max(Player.CoyoteTimer - frameDelta, 0.0f);
+        }
+    }
     protected override void PhysicsUpdate(double delta)
     {
+        float frameDelta = (float)delta;
+
         Player.MoveInput = Input.GetAxis("Left", "Right");
         if (!Mathf.IsZeroApprox(Player.MoveInput))
         {
             Player.FacingDirection = Player.MoveInput > 0.0f ? 1 : -1;
         }
 
+        TickJumpTimers(delta);
         Player.MoveAndSlide();
-
-        if (Player.IsOnFloor() && Input.IsActionJustPressed("Jump"))
-        {
-            AskTransit("Jump");
-        }
     }
     private void HandleTilt(double delta)
     {

@@ -14,14 +14,14 @@ public partial class Player_GroundedState : Player_PlayerState
 
         Player.TargetVisualScale = new Vector2(1.08f, 0.92f);
 	}
-
 	protected override void PhysicsUpdate(double delta)
 	{
-        if (Input.IsActionJustPressed("Jump"))
-        {
-            AskTransit("Jump");
-            return;
-        }
+		if (CanJump())
+		{
+			DoJump();
+			return;
+		}
+
 		if (!Player.IsOnFloor())
 		{
 			AskTransit("MidAir");

@@ -23,6 +23,7 @@ GroundDeceleration = 3000.0
 AirAcceleration = 3000.0
 AirDeceleration = 3000.0
 JumpVelocity = 600.0
+CoyoteTime = 0.15
 GravityScale = 1.2
 TiltAngleDegrees = 1.0
 MoveSquashStrength = 0.02
