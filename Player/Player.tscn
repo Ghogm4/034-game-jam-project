@@ -24,7 +24,8 @@ AirAcceleration = 3000.0
 AirDeceleration = 3000.0
 JumpVelocity = 600.0
 GravityScale = 1.2
-TiltAngleDegrees = 2.0
+TiltAngleDegrees = 1.0
+MoveSquashStrength = 0.02
 
 [node name="Visual" type="Node2D" parent="." unique_id=834943169]
 

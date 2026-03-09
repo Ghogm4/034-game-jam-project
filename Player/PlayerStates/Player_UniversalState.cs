@@ -33,6 +33,7 @@ public partial class Player_UniversalState : Player_PlayerState
     }
     protected override void FrameUpdate(double delta)
     {
+        Player.VisualTime += (float)delta;
         HandleTilt(delta);
         HandleSquash(delta);
     }

@@ -15,9 +15,17 @@ public partial class Player : CharacterBody2D
 	[Export] public float TiltAngleDegrees = 7.0f;
 	[Export] public float TiltSmoothing = 10.0f;
 	[Export] public float VisualScaleSmoothing = 14.0f;
+	[Export] public Vector2 IdleSquashScale = new(0.97f, 1.03f);
+	[Export] public float IdleSquashSpeed = 3.0f;
+	[Export] public float MoveSquashStrength = 0.1f;
+	[Export] public float MoveSquashSpeed = 10.0f;
+	[Export] public Vector2 MidAirRiseScale = new(0.92f, 1.08f);
+	[Export] public Vector2 MidAirFallScale = new(1.08f, 0.92f);
+	[Export] public float MidAirVisualVelocityRange = 700.0f;
 
 	public Node2D Visual => field ??= GetNode<Node2D>("Visual");
 	public Vector2 TargetVisualScale { get; set; } = Vector2.One;
 	public float MoveInput { get; set; } = 0.0f;
 	public int FacingDirection { get; set; } = 1;
+	public float VisualTime { get; set; } = 0.0f;
 }
