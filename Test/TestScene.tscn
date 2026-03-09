@@ -32,6 +32,14 @@ shape = SubResource("RectangleShape2D_wyv1x")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_wyv1x")]
 position = Vector2(167, 43)
+TiltAngleDegrees = 3.575
+TiltSmoothing = 13.32
+VisualScaleSmoothing = 40.715
+IdleSquashScale = Vector2(1.12, 0.98)
+MoveSquashStrength = 0.11
+MidAirRiseScale = Vector2(1.1, 0.93)
+MidAirFallScale = Vector2(0.81, 1.2)
+MidAirVisualVelocityRange = 800.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=94176362]
 position = Vector2(146, 89)
