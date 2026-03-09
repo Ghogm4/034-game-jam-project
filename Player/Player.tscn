@@ -18,9 +18,13 @@ size = Vector2(128, 128)
 [node name="Player" type="CharacterBody2D" unique_id=1425184265]
 script = ExtResource("1_q3lat")
 MoveSpeed = 400.0
+GroundAcceleration = 3000.0
+GroundDeceleration = 3000.0
+AirAcceleration = 3000.0
+AirDeceleration = 3000.0
 JumpVelocity = 600.0
 GravityScale = 1.2
-TiltAngleDegrees = 5.0
+TiltAngleDegrees = 2.0
 
 [node name="Visual" type="Node2D" parent="." unique_id=834943169]
 
