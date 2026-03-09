@@ -6,6 +6,139 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyv1x"]
 size = Vector2(128, 128)
 
+[sub_resource type="Animation" id="Animation_wyv1x"]
+resource_name = "ControlTest"
+length = 4.0000033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:IsInCutScene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:CutSceneJumped")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 2.0333333, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:CutSceneMoveDir")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:JumpVelocity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6333333, 1.9666667, 3.1333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [200.0, 600.0, 400.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5235987755982988]
+}
+
+[sub_resource type="Animation" id="Animation_xbm2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:IsInCutScene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:CutSceneJumped")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:CutSceneMoveDir")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:JumpVelocity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [600.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ovih"]
+_data = {
+&"ControlTest": SubResource("Animation_wyv1x"),
+&"RESET": SubResource("Animation_xbm2f")
+}
+
 [node name="TestScene" type="Node2D" unique_id=828653296]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1003258321]
@@ -32,15 +165,11 @@ shape = SubResource("RectangleShape2D_wyv1x")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_wyv1x")]
 position = Vector2(167, 43)
-TiltAngleDegrees = 3.575
-TiltSmoothing = 13.32
-VisualScaleSmoothing = 40.715
-IdleSquashScale = Vector2(1.12, 0.98)
-MoveSquashStrength = 0.11
-MidAirRiseScale = Vector2(1.1, 0.93)
-MidAirFallScale = Vector2(0.81, 1.2)
-MidAirVisualVelocityRange = 800.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=94176362]
 position = Vector2(146, 89)
 zoom = Vector2(0.875, 0.875)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=629918330]
+libraries/ = SubResource("AnimationLibrary_8ovih")
+autoplay = &"ControlTest"
