@@ -25,7 +25,7 @@ public partial class Player_GroundedState : Player_PlayerState
 
 		float velocityRange = Mathf.Max(Player.LandingSquashVelocityRange, 0.001f);
 		float impact = Mathf.Clamp(landingSpeed / velocityRange, 0.0f, 1.0f);
-		Player.TargetVisualScale = Vector2.One.Lerp(Player.LandingSquashScale, impact);
+		Player.ImpactVisualScale = Vector2.One.Lerp(Player.LandingSquashScale, impact);
 	}
 
 	protected override void PhysicsUpdate(double delta)
