@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_804c2"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_wyv1x"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="3_xbm2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyv1x"]
 size = Vector2(128, 128)
@@ -146,11 +147,91 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("girl:IsInCutScene")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8ovih"]
+resource_name = "Test"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1000.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:IsInCutScene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("girl")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [100.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("girl:IsInCutScene")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:CutSceneJumped")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ovih"]
 _data = {
 &"ControlTest": SubResource("Animation_wyv1x"),
-&"RESET": SubResource("Animation_xbm2f")
+&"RESET": SubResource("Animation_xbm2f"),
+&"Test": SubResource("Animation_8ovih")
 }
 
 [node name="TestScene" type="Node2D" unique_id=828653296]
@@ -233,4 +314,8 @@ shape = SubResource("RectangleShape2D_wyv1x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=629918330]
 libraries/ = SubResource("AnimationLibrary_8ovih")
-autoplay = &"ControlTest"
+autoplay = &"Test"
+
+[node name="girl" parent="." unique_id=249783288 instance=ExtResource("3_xbm2f")]
+position = Vector2(281.99997, 58)
+scale = Vector2(0.835, 0.885)

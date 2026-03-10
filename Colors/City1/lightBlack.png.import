@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhsycvb3st23b"
-path="res://.godot/imported/graySquare.png-d738b94eba65dca854663dedc6d4819b.ctex"
+uid="uid://ccub8eji0ix35"
+path="res://.godot/imported/lightBlack.png-f99d402ee45a67122b22777b35beabfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/graySquare.png"
-dest_files=["res://.godot/imported/graySquare.png-d738b94eba65dca854663dedc6d4819b.ctex"]
+source_file="res://Colors/City1/lightBlack.png"
+dest_files=["res://.godot/imported/lightBlack.png-f99d402ee45a67122b22777b35beabfd.ctex"]
 
 [params]
 

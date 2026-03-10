@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="6_py6on"]
 [ext_resource type="Texture2D" uid="uid://cty46uigim14" path="res://Colors/begining/grayBird.png" id="7_1dttu"]
 [ext_resource type="Texture2D" uid="uid://bu02ddikvflr8" path="res://Colors/begining/sakura.png" id="8_wavbf"]
-[ext_resource type="Texture2D" uid="uid://cf2qq68xd8ug3" path="res://Colors/begining/girl.png" id="9_q0nj7"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="9_baes5"]
 [ext_resource type="Texture2D" uid="uid://dkxoqnovbhn36" path="res://Colors/begining/darkBrown.png" id="10_5re7f"]
 [ext_resource type="Texture2D" uid="uid://b1xiqd47p3iwv" path="res://Colors/begining/whiteHalo.png" id="11_oyrq5"]
 
@@ -214,10 +214,9 @@ position = Vector2(4898, 245)
 scale = Vector2(1.2912107, 1.287249)
 texture = ExtResource("8_wavbf")
 
-[node name="Girl" type="Sprite2D" parent="." unique_id=933115279]
-position = Vector2(4457, 506)
-scale = Vector2(0.22377087, 0.23127636)
-texture = ExtResource("9_q0nj7")
+[node name="girl" parent="." unique_id=2119021193 instance=ExtResource("9_baes5")]
+position = Vector2(4462.0005, 505.99997)
+scale = Vector2(0.9199609, 0.8800049)
 
 [node name="front" type="Parallax2D" parent="." unique_id=94876010]
 scroll_scale = Vector2(1.2, 1.2)
