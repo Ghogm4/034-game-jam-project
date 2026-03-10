@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c12r8oapm5pfi"]
+
+[ext_resource type="Script" uid="uid://sar5lqma63fj" path="res://Player/Player.cs" id="1_7muu6"]
+[ext_resource type="Texture2D" uid="uid://cf2qq68xd8ug3" path="res://Colors/begining/girl.png" id="2_7muu6"]
+[ext_resource type="Script" uid="uid://d3645llygfx2u" path="res://StateTree/StateTree.cs" id="3_mcsqr"]
+[ext_resource type="Script" uid="uid://bhmif0v65ol5c" path="res://Player/PlayerStates/Player_UniversalState.cs" id="4_ikxrw"]
+[ext_resource type="Script" uid="uid://ppkm12hcvxrh" path="res://Player/PlayerStates/Player_CanMoveState.cs" id="5_iat7i"]
+[ext_resource type="Script" uid="uid://ctci6m5c6d8w4" path="res://Player/PlayerStates/Player_GroundedState.cs" id="6_nq1qo"]
+[ext_resource type="Script" uid="uid://y05pc6ddwdx3" path="res://Player/PlayerStates/Player_IdleState.cs" id="7_eqfol"]
+[ext_resource type="Script" uid="uid://ycad8pieqi03" path="res://Player/PlayerStates/Player_MoveState.cs" id="8_g3nxp"]
+[ext_resource type="Script" uid="uid://bwawfqi4v7j6s" path="res://Player/PlayerStates/Player_GravityAffectedState.cs" id="9_dljes"]
+[ext_resource type="Script" uid="uid://b7hfjxsmhcf5i" path="res://Player/PlayerStates/Player_JumpState.cs" id="10_8qgii"]
+[ext_resource type="Script" uid="uid://b1k4t11eytpt7" path="res://Player/PlayerStates/Player_MidAirState.cs" id="11_hyvto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qydi"]
+size = Vector2(85, 164)
+
+[node name="Player" type="CharacterBody2D" unique_id=1425184265]
+script = ExtResource("1_7muu6")
+MoveSpeed = 400.0
+IsInCutScene = true
+GroundAcceleration = 3000.0
+GroundDeceleration = 3000.0
+AirAcceleration = 3000.0
+AirDeceleration = 3000.0
+JumpVelocity = 700.0
+CoyoteTime = 0.15
+GravityScale = 1.2
+TiltAngleDegrees = 3.575
+TiltSmoothing = 13.32
+VisualScaleSmoothing = 40.715
+IdleSquashScale = Vector2(1.12, 0.98)
+IdleSquashSpeed = 2.5
+MoveSquashStrength = 0.11
+MidAirRiseScale = Vector2(1.1, 0.93)
+MidAirFallScale = Vector2(0.81, 1.2)
+MidAirVisualVelocityRange = 800.0
+LandingSquashScale = Vector2(1.51, 0.695)
+
+[node name="Visual" type="Node2D" parent="." unique_id=834943169]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=2004915049]
+position = Vector2(-2.5437508, 0)
+scale = Vector2(0.25767985, 0.265)
+texture = ExtResource("2_7muu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1469170882]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_3qydi")
+
+[node name="StateTree" type="Node" parent="." unique_id=82502769]
+script = ExtResource("3_mcsqr")
+InitialStateName = "Idle"
+metadata/_custom_type_script = "uid://d3645llygfx2u"
+
+[node name="Universal" type="Node" parent="StateTree" unique_id=583241749]
+script = ExtResource("4_ikxrw")
+
+[node name="CanMove" type="Node" parent="StateTree/Universal" unique_id=1481491883]
+script = ExtResource("5_iat7i")
+
+[node name="Grounded" type="Node" parent="StateTree/Universal/CanMove" unique_id=605631191]
+script = ExtResource("6_nq1qo")
+
+[node name="Idle" type="Node" parent="StateTree/Universal/CanMove/Grounded" unique_id=648978208]
+script = ExtResource("7_eqfol")
+
+[node name="Move" type="Node" parent="StateTree/Universal/CanMove/Grounded" unique_id=1758246250]
+script = ExtResource("8_g3nxp")
+
+[node name="GravityAffected" type="Node" parent="StateTree/Universal/CanMove" unique_id=1334037267]
+script = ExtResource("9_dljes")
+
+[node name="Jump" type="Node" parent="StateTree/Universal/CanMove/GravityAffected" unique_id=1319032079]
+script = ExtResource("10_8qgii")
+
+[node name="MidAir" type="Node" parent="StateTree/Universal/CanMove/GravityAffected" unique_id=1642410799]
+script = ExtResource("11_hyvto")
+metadata/_custom_type_script = "uid://cb1q765ib0gfc"

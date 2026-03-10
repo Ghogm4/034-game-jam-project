@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bwxi7c6ke3bry"]
 
-[ext_resource type="Texture2D" uid="uid://imc6kvp3yiuu" path="res://Colors/background.png" id="1_sg6a4"]
-[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/blackSquare.png" id="1_yu84f"]
-[ext_resource type="Texture2D" uid="uid://ccub8eji0ix35" path="res://Colors/lightBlack.png" id="2_ilwrs"]
-[ext_resource type="Texture2D" uid="uid://de6xyc6lwo5ok" path="res://Colors/lighterBlack.png" id="2_roo8e"]
-[ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/graySquare.png" id="2_sg6a4"]
+[ext_resource type="Texture2D" uid="uid://imc6kvp3yiuu" path="res://Colors/City1/background.png" id="1_sg6a4"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="1_yu84f"]
+[ext_resource type="Texture2D" uid="uid://ccub8eji0ix35" path="res://Colors/City1/lightBlack.png" id="2_ilwrs"]
+[ext_resource type="Texture2D" uid="uid://de6xyc6lwo5ok" path="res://Colors/City1/lighterBlack.png" id="2_roo8e"]
+[ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="2_sg6a4"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_u6n7d"]
 [ext_resource type="Texture2D" uid="uid://cf2qq68xd8ug3" path="res://Colors/begining/girl.png" id="3_sg6a4"]
-[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/redDaYun.png" id="8_qsasv"]
+[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="8_qsasv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu84f"]
 size = Vector2(696.2065, 665.52545)
