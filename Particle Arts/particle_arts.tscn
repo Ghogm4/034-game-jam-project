@@ -45,3 +45,43 @@ process_material = SubResource("ParticleProcessMaterial_0ebyg")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1620121529]
 occluder = SubResource("OccluderPolygon2D_05am0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=936166344]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1030545237]
+position = Vector2(961, 1184)
+shape = SubResource("RectangleShape2D_c03n8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1330857250]
+position = Vector2(928, 1188)
+scale = Vector2(15.5, 2.1718755)
+texture = ExtResource("1_0ebyg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=730042191]
+position = Vector2(843, 200)
+scale = Vector2(1, 0.64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=803312589]
+position = Vector2(961, 1184)
+shape = SubResource("RectangleShape2D_c03n8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=395255158]
+position = Vector2(928, 1188)
+scale = Vector2(15.5, 2.1718755)
+texture = ExtResource("1_0ebyg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1976762215]
+position = Vector2(1086, 15)
+scale = Vector2(1, 0.64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1932946503]
+position = Vector2(961, 1184)
+shape = SubResource("RectangleShape2D_c03n8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=458588867]
+position = Vector2(928, 1188)
+scale = Vector2(15.5, 2.1718755)
+texture = ExtResource("1_0ebyg")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_8npha")]
+position = Vector2(611, 936)
