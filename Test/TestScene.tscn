@@ -23,7 +23,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Player:CutSceneJumped")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -35,7 +35,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Player:CutSceneMoveDir")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -47,7 +47,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Player:JumpVelocity")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -59,7 +59,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/path = NodePath("Player:rotation")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
@@ -68,6 +68,20 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.5235987755982988]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [403.0],
+"method": &"CutSceneMove"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_xbm2f"]
@@ -143,7 +157,7 @@ _data = {
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_wyv1x")]
 position = Vector2(167, 43)
-LandingSquashScale = Vector2(1.51, 0.695)
+JumpVelocity = 600.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=94176362]
 position = Vector2(146, 89)
