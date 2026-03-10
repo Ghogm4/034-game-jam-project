@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://th0exfuu28e2"]
+
+[ext_resource type="Texture2D" uid="uid://dgfvnf7yf0sre" path="res://Colors/Picnic/greenSquare.png" id="1_2jon3"]
+[ext_resource type="Texture2D" uid="uid://bfebgyg4bavq" path="res://Colors/Picnic/SKy.png" id="1_tq56h"]
+[ext_resource type="Texture2D" uid="uid://bxnrmtnk36d7i" path="res://Colors/Picnic/cloud.png" id="2_4tqex"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_ckvxg"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="3_tu52b"]
+[ext_resource type="Texture2D" uid="uid://bu02ddikvflr8" path="res://Colors/begining/sakura.png" id="3_xxh7o"]
+[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="5_xxh7o"]
+[ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="6_5vivt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tq56h"]
+size = Vector2(683.6935, 526.0165)
+
+[node name="Node2D" type="Node2D" unique_id=1580644992]
+
+[node name="SKy" type="Sprite2D" parent="." unique_id=935451193]
+position = Vector2(1164.25, 606.75)
+scale = Vector2(4.3532376, 2.5704648)
+texture = ExtResource("1_tq56h")
+
+[node name="cloud" type="Parallax2D" parent="." unique_id=1101103054]
+repeat_size = Vector2(1580.575, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Cloud3" type="Sprite2D" parent="cloud" unique_id=1292210251]
+position = Vector2(946.00006, 86.00001)
+scale = Vector2(0.7264865, 0.43016815)
+texture = ExtResource("2_4tqex")
+
+[node name="Cloud7" type="Sprite2D" parent="cloud" unique_id=711396139]
+position = Vector2(1678, 103.00001)
+scale = Vector2(0.7264865, 0.5941713)
+texture = ExtResource("2_4tqex")
+
+[node name="Cloud5" type="Sprite2D" parent="cloud" unique_id=1642918407]
+position = Vector2(1414, 248)
+scale = Vector2(0.6263943, 0.3737173)
+texture = ExtResource("2_4tqex")
+
+[node name="Cloud" type="Sprite2D" parent="cloud" unique_id=946192937]
+position = Vector2(798, 257)
+scale = Vector2(0.51364934, 0.40929097)
+texture = ExtResource("2_4tqex")
+
+[node name="Cloud2" type="Sprite2D" parent="cloud" unique_id=713109827]
+position = Vector2(566, 171.00002)
+scale = Vector2(0.34523198, 0.296675)
+texture = ExtResource("2_4tqex")
+
+[node name="Cloud4" type="Sprite2D" parent="cloud" unique_id=1543019274]
+position = Vector2(1217, 117)
+scale = Vector2(0.2805828, 0.3092534)
+texture = ExtResource("2_4tqex")
+
+[node name="Cloud6" type="Sprite2D" parent="cloud" unique_id=897719906]
+position = Vector2(339.99988, 202)
+scale = Vector2(0.2805828, 0.3092534)
+texture = ExtResource("2_4tqex")
+
+[node name="Sakura" type="Sprite2D" parent="." unique_id=501971102]
+modulate = Color(0.39368662, 0.5678415, 0, 1)
+position = Vector2(1328.0001, 571)
+scale = Vector2(1.2270153, 1.3821987)
+texture = ExtResource("3_xxh7o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=501916132]
+position = Vector2(1114.9998, 1238.0001)
+scale = Vector2(3.9359713, 1.4505247)
+
+[node name="GreenSquare" type="Sprite2D" parent="StaticBody2D" unique_id=1740154992]
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("1_2jon3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1783307398]
+position = Vector2(0.8892517, -27.921082)
+scale = Vector2(1.0000011, 1)
+shape = SubResource("RectangleShape2D_tq56h")
+
+[node name="picnic" type="Node2D" parent="." unique_id=237164017]
+position = Vector2(1043, 984)
+scale = Vector2(3.285, 0.881)
+skew = 0.52534413
+
+[node name="RedDaYun" type="Sprite2D" parent="picnic" unique_id=822788076]
+position = Vector2(-27.312134, -250.59888)
+scale = Vector2(0.050173614, 0.14237723)
+texture = ExtResource("5_xxh7o")
+
+[node name="RedDaYun2" type="Sprite2D" parent="picnic" unique_id=881174443]
+position = Vector2(6.986847, -157.52905)
+scale = Vector2(0.050173614, 0.14237723)
+texture = ExtResource("5_xxh7o")
+
+[node name="White" type="Sprite2D" parent="picnic" unique_id=253770833]
+position = Vector2(7.240906, -249.90948)
+scale = Vector2(0.049533855, 0.1400517)
+texture = ExtResource("6_5vivt")
+
+[node name="White2" type="Sprite2D" parent="picnic" unique_id=1509982862]
+position = Vector2(-27.470947, -156.83972)
+scale = Vector2(0.049990788, 0.1400517)
+texture = ExtResource("6_5vivt")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_ckvxg")]
+position = Vector2(1076, 701)
+
+[node name="Player2" parent="." unique_id=2058369625 instance=ExtResource("3_tu52b")]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(1204, 701)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=637937960]
+position = Vector2(1139, 551)
