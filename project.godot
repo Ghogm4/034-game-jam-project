@@ -14,6 +14,10 @@ config/name="034 Game Jam Project"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*uid://ds280dgmm0v0w"
+
 [display]
 
 window/size/viewport_width=1920
