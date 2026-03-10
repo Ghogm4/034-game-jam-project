@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chi8c3c4o38c4"
-path="res://.godot/imported/lighterBrown.png-da89e457b05b214cad408cbb9e2009d1.ctex"
+path="res://.godot/imported/lighterBrown.png-f2a38786831b0896977ca89770712da3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/lighterBrown.png"
-dest_files=["res://.godot/imported/lighterBrown.png-da89e457b05b214cad408cbb9e2009d1.ctex"]
+source_file="res://Colors/begining/lighterBrown.png"
+dest_files=["res://.godot/imported/lighterBrown.png-f2a38786831b0896977ca89770712da3.ctex"]
 
 [params]
 

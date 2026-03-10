@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf2qq68xd8ug3"
-path="res://.godot/imported/girl.png-fc9e33d54a402aca8a96f79ab451bfab.ctex"
+uid="uid://b0a1rta8u8yrn"
+path="res://.godot/imported/redDaYun.png-fe0f2b49b1ccf67511d5993a77a337b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/girl.png"
-dest_files=["res://.godot/imported/girl.png-fc9e33d54a402aca8a96f79ab451bfab.ctex"]
+source_file="res://Colors/redDaYun.png"
+dest_files=["res://.godot/imported/redDaYun.png-fe0f2b49b1ccf67511d5993a77a337b1.ctex"]
 
 [params]
 

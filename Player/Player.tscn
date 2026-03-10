@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvol3al3kilk5"]
 
 [ext_resource type="Script" uid="uid://sar5lqma63fj" path="res://Player/Player.cs" id="1_q3lat"]
-[ext_resource type="Texture2D" uid="uid://b4m51ndxwbkly" path="res://Colors/player.png" id="2_v0k0e"]
+[ext_resource type="Texture2D" uid="uid://b4m51ndxwbkly" path="res://Colors/begining/player.png" id="2_v0k0e"]
 [ext_resource type="Script" uid="uid://d3645llygfx2u" path="res://StateTree/StateTree.cs" id="3_tok1r"]
 [ext_resource type="Script" uid="uid://bhmif0v65ol5c" path="res://Player/PlayerStates/Player_UniversalState.cs" id="4_mpu1e"]
 [ext_resource type="Script" uid="uid://ppkm12hcvxrh" path="res://Player/PlayerStates/Player_CanMoveState.cs" id="5_0m8va"]

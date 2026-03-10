@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu02ddikvflr8"
-path="res://.godot/imported/sakura.png-abaccfa43912d73429570b423ee55ee2.ctex"
+uid="uid://dkxoqnovbhn36"
+path="res://.godot/imported/darkBrown.png-783c64aab40c1548b8f4bda4fd158450.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/sakura.png"
-dest_files=["res://.godot/imported/sakura.png-abaccfa43912d73429570b423ee55ee2.ctex"]
+source_file="res://Colors/begining/darkBrown.png"
+dest_files=["res://.godot/imported/darkBrown.png-783c64aab40c1548b8f4bda4fd158450.ctex"]
 
 [params]
 

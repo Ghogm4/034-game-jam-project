@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d35fa7eufhtdp"
-path="res://.godot/imported/orangeSquare.png-9ff3ce14cc34faacf77782e0e1242de1.ctex"
+uid="uid://c5sba6d5fts08"
+path="res://.godot/imported/blackSquare.png-6599a7efc591ca8a03260bdd4563f052.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/orangeSquare.png"
-dest_files=["res://.godot/imported/orangeSquare.png-9ff3ce14cc34faacf77782e0e1242de1.ctex"]
+source_file="res://Colors/blackSquare.png"
+dest_files=["res://.godot/imported/blackSquare.png-6599a7efc591ca8a03260bdd4563f052.ctex"]
 
 [params]
 

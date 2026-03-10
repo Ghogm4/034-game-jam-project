@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ulmyqhwoej2o"
-path="res://.godot/imported/yellowCircle.png-af5f131c8f0f2a5c67c2b7b6804adf1c.ctex"
+uid="uid://bu02ddikvflr8"
+path="res://.godot/imported/sakura.png-e96b9481b5e2922b30c26a789863056a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/yellowCircle.png"
-dest_files=["res://.godot/imported/yellowCircle.png-af5f131c8f0f2a5c67c2b7b6804adf1c.ctex"]
+source_file="res://Colors/begining/sakura.png"
+dest_files=["res://.godot/imported/sakura.png-e96b9481b5e2922b30c26a789863056a.ctex"]
 
 [params]
 
