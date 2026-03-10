@@ -41,4 +41,24 @@ public partial class Player : CharacterBody2D
 	public float CoyoteTimer { get; set; } = 0.0f;
 	public float JumpBufferTimer { get; set; } = 0.0f;
 	public float LandingImpactSpeed { get; set; } = 0.0f;
+	public float CutSceneTargetXPos { get; set; } = 0.0f;
+	public async void CutSceneMove(float xPos)
+	{
+		CutSceneTargetXPos = xPos;
+		Action detectArrival = async () =>
+		{
+			while (true)
+			{
+				bool arrived = Mathf.Abs(GlobalPosition.X - xPos) <= 1.0f;
+				if (arrived)
+				{
+					CutSceneMoveDir = 0f;
+					break;
+				}
+				await ToSignal(GetTree(), SceneTree.SignalName.PhysicsFrame);
+			}
+		};
+		detectArrival?.Invoke();
+		CutSceneMoveDir = Mathf.Sign(xPos - GlobalPosition.X);
+	}
 }
