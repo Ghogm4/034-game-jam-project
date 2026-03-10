@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf2qq68xd8ug3"
-path="res://.godot/imported/girl.png-fc9e33d54a402aca8a96f79ab451bfab.ctex"
+uid="uid://bu02ddikvflr8"
+path="res://.godot/imported/sakura.png-e96b9481b5e2922b30c26a789863056a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/girl.png"
-dest_files=["res://.godot/imported/girl.png-fc9e33d54a402aca8a96f79ab451bfab.ctex"]
+source_file="res://Colors/begining/sakura.png"
+dest_files=["res://.godot/imported/sakura.png-e96b9481b5e2922b30c26a789863056a.ctex"]
 
 [params]
 

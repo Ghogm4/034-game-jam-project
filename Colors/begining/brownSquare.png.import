@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1xiqd47p3iwv"
-path="res://.godot/imported/whiteHalo.png-2d77575e885974f4a04e511ae63e13e5.ctex"
+uid="uid://c32xilemkjg0q"
+path="res://.godot/imported/brownSquare.png-758852af617ed6fa9208b0093c4dba67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/whiteHalo.png"
-dest_files=["res://.godot/imported/whiteHalo.png-2d77575e885974f4a04e511ae63e13e5.ctex"]
+source_file="res://Colors/begining/brownSquare.png"
+dest_files=["res://.godot/imported/brownSquare.png-758852af617ed6fa9208b0093c4dba67.ctex"]
 
 [params]
 

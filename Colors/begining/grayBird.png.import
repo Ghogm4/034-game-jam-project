@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d35fa7eufhtdp"
-path="res://.godot/imported/orangeSquare.png-9ff3ce14cc34faacf77782e0e1242de1.ctex"
+uid="uid://cty46uigim14"
+path="res://.godot/imported/grayBird.png-1486d00af69610002e0cff1ec77fa3be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/orangeSquare.png"
-dest_files=["res://.godot/imported/orangeSquare.png-9ff3ce14cc34faacf77782e0e1242de1.ctex"]
+source_file="res://Colors/begining/grayBird.png"
+dest_files=["res://.godot/imported/grayBird.png-1486d00af69610002e0cff1ec77fa3be.ctex"]
 
 [params]
 

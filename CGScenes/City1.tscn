@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bwxi7c6ke3bry"]
+
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/blackSquare.png" id="1_yu84f"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_u6n7d"]
+[ext_resource type="Texture2D" uid="uid://cf2qq68xd8ug3" path="res://Colors/begining/girl.png" id="3_sg6a4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu84f"]
+size = Vector2(696.2065, 665.52545)
+
+[node name="Node2D" type="Node2D" unique_id=91660302]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=120316194]
+position = Vector2(4734, 3615)
+scale = Vector2(16.496544, 7.610528)
+
+[node name="BlackSquare" type="Sprite2D" parent="StaticBody2D" unique_id=1369356869]
+texture = ExtResource("1_yu84f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=736099438]
+position = Vector2(0.8789673, 4.6646423)
+shape = SubResource("RectangleShape2D_yu84f")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_u6n7d")]
+position = Vector2(949.84, 1013.03845)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=686648410]
+
+[node name="Girl" type="Sprite2D" parent="Player" unique_id=1085745554]
+position = Vector2(-75.84003, 24.961548)
+scale = Vector2(0.224, 0.231)
+texture = ExtResource("3_sg6a4")

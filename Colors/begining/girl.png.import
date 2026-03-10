@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ulmyqhwoej2o"
-path="res://.godot/imported/yellowCircle.png-af5f131c8f0f2a5c67c2b7b6804adf1c.ctex"
+uid="uid://cf2qq68xd8ug3"
+path="res://.godot/imported/girl.png-3afd683b5b241d2ab362c8aeb45f9101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/yellowCircle.png"
-dest_files=["res://.godot/imported/yellowCircle.png-af5f131c8f0f2a5c67c2b7b6804adf1c.ctex"]
+source_file="res://Colors/begining/girl.png"
+dest_files=["res://.godot/imported/girl.png-3afd683b5b241d2ab362c8aeb45f9101.ctex"]
 
 [params]
 

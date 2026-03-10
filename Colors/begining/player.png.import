@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkxoqnovbhn36"
-path="res://.godot/imported/darkBrown.png-f9995f518d16cb3cc1e7c331c4fe6304.ctex"
+uid="uid://b4m51ndxwbkly"
+path="res://.godot/imported/player.png-4e2f578981c61e54dd3d16dd51addace.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/darkBrown.png"
-dest_files=["res://.godot/imported/darkBrown.png-f9995f518d16cb3cc1e7c331c4fe6304.ctex"]
+source_file="res://Colors/begining/player.png"
+dest_files=["res://.godot/imported/player.png-4e2f578981c61e54dd3d16dd51addace.ctex"]
 
 [params]
 
