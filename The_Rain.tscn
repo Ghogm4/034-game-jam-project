@@ -17,26 +17,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Player2:motion_mode")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(-165.00003, 1068)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Player2:disable_mode")
+tracks/1/path = NodePath("../Player2:MoveSpeed")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [400.0]
 }
 
 [sub_resource type="Animation" id="Animation_qycw0"]
@@ -49,36 +49,39 @@ tracks/0/path = NodePath("../Player2")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(7),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(6.888, 24.633335),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": [3000.0],
+"args": [3047.0],
+"method": &"CutSceneMove"
+}, {
+"args": [2327.0],
 "method": &"CutSceneMove"
 }]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Player2:motion_mode")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 23.433332),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 0]
+"times": PackedFloat32Array(6.9, 14.8, 24.566668, 26.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-165.00003, 1068), Vector2(3000, 1068), Vector2(3000, 1068), Vector2(2244, 1068)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Player2:disable_mode")
+tracks/2/path = NodePath("../Player2:MoveSpeed")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(6.9666667, 31.933332),
+"times": PackedFloat32Array(0.099999905, 24.566668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 2]
+"values": [400.0, 200.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5e2hl"]
@@ -97,16 +100,7 @@ scroll_offset = Vector2(1485, 1070)
 scroll_scale = Vector2(1, 1)
 scroll_offset = Vector2(519, 547)
 
-[node name="ParticleArts" parent="." unique_id=1601027294 instance=ExtResource("3_t8jhw")]
-position = Vector2(-3, -2)
-scale = Vector2(1.6800001, 1.1600003)
-
 [node name="buildings" type="Node2D" parent="." unique_id=62575857]
-
-[node name="BlackSquare" type="Sprite2D" parent="buildings" unique_id=2063980931]
-position = Vector2(1432, 1008.125)
-scale = Vector2(0.7741007, 0.8279612)
-texture = ExtResource("3_lie0t")
 
 [node name="BlackSquare2" type="Sprite2D" parent="buildings" unique_id=282227018]
 position = Vector2(882, 931)
@@ -133,6 +127,15 @@ position = Vector2(2415, 912)
 scale = Vector2(0.32230216, 1.1162857)
 texture = ExtResource("3_lie0t")
 
+[node name="ParticleArts" parent="." unique_id=1601027294 instance=ExtResource("3_t8jhw")]
+position = Vector2(-3, -2)
+scale = Vector2(1.6800001, 1.1600003)
+
+[node name="BlackSquare" type="Sprite2D" parent="." unique_id=2063980931]
+position = Vector2(1432, 1008.125)
+scale = Vector2(0.7741007, 0.8279612)
+texture = ExtResource("3_lie0t")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=333644652]
 
 [node name="BlackSquare" type="Sprite2D" parent="StaticBody2D" unique_id=518158585]
@@ -157,11 +160,12 @@ IsInCutScene = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=325933215]
 position = Vector2(1422, 883)
 offset = Vector2(0, -48.34)
-zoom = Vector2(0.715, 0.715)
+zoom = Vector2(0.36, 0.36)
 
 [node name="Player2" parent="." unique_id=1394953950 instance=ExtResource("7_lie0t")]
 modulate = Color(1, 0, 1, 1)
 position = Vector2(-118, 1129)
+TiltAngleDegrees = 5.0
 
 [node name="PurpleUm" type="Sprite2D" parent="." unique_id=638373644]
 position = Vector2(-165.00003, 1068)
@@ -174,5 +178,5 @@ libraries/ = SubResource("AnimationLibrary_5e2hl")
 autoplay = &"new_animation"
 
 [node name="ruler" type="Node2D" parent="." unique_id=1931901062]
-position = Vector2(3016, 1114)
+position = Vector2(2907.0002, 1158)
 scale = Vector2(0.35323742, 0.38005996)

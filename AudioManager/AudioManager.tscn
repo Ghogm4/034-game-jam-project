@@ -5,18 +5,16 @@
 [ext_resource type="AudioStream" uid="uid://b8ncubtti6ht0" path="res://Assets/BGM/encounter2.mp3" id="3_4jfua"]
 [ext_resource type="AudioStream" uid="uid://cgbin8475ag2w" path="res://Assets/BGM/hospital_03.mp3" id="4_mvoev"]
 [ext_resource type="AudioStream" uid="uid://cmr5qy3eyqpv0" path="res://Assets/BGM/empty.wav" id="5_4jfua"]
-[ext_resource type="AudioStream" uid="uid://bxww1ymy16b4v" path="res://Assets/SFX/recollected.wav" id="6_jcm40"]
+[ext_resource type="AudioStream" uid="uid://cgacmnqnadgjo" path="res://Assets/BGM/peak_opening.mp3" id="6_jcm40"]
 
 [node name="AudioManager" type="Node" unique_id=1857709071 node_paths=PackedStringArray("BGMPlayerA", "BGMPlayerB")]
 script = ExtResource("1_cic6f")
 BGMStreams = Dictionary[String, AudioStream]({
+"begining": ExtResource("6_jcm40"),
 "empty": ExtResource("5_4jfua"),
 "encounter": ExtResource("3_4jfua"),
 "hospital3": ExtResource("4_mvoev"),
 "zero": ExtResource("2_mvoev")
-})
-SFXStreams = Dictionary[String, AudioStream]({
-"recollected": ExtResource("6_jcm40")
 })
 BGMPlayerA = NodePath("BGMPlayerA")
 BGMPlayerB = NodePath("BGMPlayerB")

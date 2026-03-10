@@ -16,6 +16,7 @@
 size = Vector2(59, 164)
 
 [node name="Player" type="CharacterBody2D" unique_id=1425184265]
+collision_layer = 4
 script = ExtResource("1_7muu6")
 MoveSpeed = 400.0
 IsInCutScene = true

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="9_baes5"]
 [ext_resource type="Texture2D" uid="uid://dkxoqnovbhn36" path="res://Colors/begining/darkBrown.png" id="10_5re7f"]
 [ext_resource type="Texture2D" uid="uid://b1xiqd47p3iwv" path="res://Colors/begining/whiteHalo.png" id="11_oyrq5"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="12_kl61t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6rr8"]
 size = Vector2(694.11816, 666.73676)
@@ -127,7 +128,7 @@ tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("Camera2D:position")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 5.5),
@@ -160,6 +161,20 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.3525565089028544]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BGMPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["begining", 5.0],
+"method": &"PlayBGM"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dhwe2"]
@@ -536,3 +551,7 @@ zoom = Vector2(0.89, 0.89)
 position = Vector2(3359.0002, 96.99999)
 scale = Vector2(3.2782366, 57.58992)
 shape = SubResource("RectangleShape2D_baes5")
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=1901720369]
+script = ExtResource("12_kl61t")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
