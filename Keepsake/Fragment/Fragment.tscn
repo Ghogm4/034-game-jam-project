@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b0b6awaje5d2a"]
+
+[ext_resource type="Script" uid="uid://dnpubuyccxc2b" path="res://Keepsake/Fragment/Fragment.cs" id="1_f6wxk"]
+[ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_ochec"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ochec"]
+
+[node name="Fragment" type="Area2D" unique_id=1649991499]
+script = ExtResource("1_f6wxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=251136955]
+texture = ExtResource("1_ochec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1099237673]
+shape = SubResource("CircleShape2D_ochec")

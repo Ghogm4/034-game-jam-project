@@ -15,6 +15,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qydi"]
 size = Vector2(85, 164)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0k0e"]
+radius = 154.46683
+
 [node name="Player" type="CharacterBody2D" unique_id=1425184265]
 collision_layer = 2
 script = ExtResource("1_q3lat")
@@ -45,6 +48,12 @@ texture = ExtResource("2_v0k0e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1469170882]
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_3qydi")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=1942310429]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=1700792330]
+shape = SubResource("CircleShape2D_v0k0e")
 
 [node name="StateTree" type="Node" parent="." unique_id=82502769]
 script = ExtResource("3_tok1r")
