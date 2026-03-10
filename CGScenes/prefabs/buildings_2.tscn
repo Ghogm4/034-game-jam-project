@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bb84dexv0oxby"]
+
+[ext_resource type="Texture2D" uid="uid://ccub8eji0ix35" path="res://Colors/City1/lightBlack.png" id="1_wepli"]
+
+[node name="Buildings2" type="Parallax2D" unique_id=1343911482]
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(516, 547)
+
+[node name="LightBlack" type="Sprite2D" parent="." unique_id=229959458]
+position = Vector2(-306, 344)
+scale = Vector2(0.47017658, 0.90710515)
+texture = ExtResource("1_wepli")
+
+[node name="LightBlack2" type="Sprite2D" parent="." unique_id=1350932304]
+position = Vector2(86, 173)
+scale = Vector2(-0.37815857, 1.404504)
+texture = ExtResource("1_wepli")
+
+[node name="LightBlack3" type="Sprite2D" parent="." unique_id=1543785122]
+position = Vector2(444, 227)
+scale = Vector2(-0.37815857, 1.404504)
+texture = ExtResource("1_wepli")
+
+[node name="LightBlack4" type="Sprite2D" parent="." unique_id=759976627]
+position = Vector2(932, 469)
+scale = Vector2(-0.39892122, -1.397151)
+texture = ExtResource("1_wepli")
+
+[node name="LightBlack5" type="Sprite2D" parent="." unique_id=1551504585]
+position = Vector2(1411, 220.00002)
+scale = Vector2(-0.39892122, -1.397151)
+texture = ExtResource("1_wepli")
+
+[node name="LightBlack6" type="Sprite2D" parent="." unique_id=940803295]
+position = Vector2(1914, 741)
+scale = Vector2(0.6410812, -1.397151)
+texture = ExtResource("1_wepli")
+
+[node name="LightBlack7" type="Sprite2D" parent="." unique_id=1005892882]
+position = Vector2(2521, 257.00006)
+scale = Vector2(0.5210812, -1.397151)
+texture = ExtResource("1_wepli")

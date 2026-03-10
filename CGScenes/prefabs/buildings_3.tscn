@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ywavyfmjf0oy"]
+
+[ext_resource type="Texture2D" uid="uid://de6xyc6lwo5ok" path="res://Colors/City1/lighterBlack.png" id="1_8nijh"]
+
+[node name="Buildings3" type="Parallax2D" unique_id=1469672688]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(1605, 1198)
+
+[node name="LighterBlack" type="Sprite2D" parent="." unique_id=1850653344]
+position = Vector2(-1256, -161)
+scale = Vector2(0.23999754, 1.7199988)
+texture = ExtResource("1_8nijh")
+
+[node name="LighterBlack2" type="Sprite2D" parent="." unique_id=384855185]
+position = Vector2(-741, -78)
+scale = Vector2(0.23999754, 1.7199988)
+texture = ExtResource("1_8nijh")
+
+[node name="LighterBlack3" type="Sprite2D" parent="." unique_id=1654211056]
+position = Vector2(-320, -223)
+scale = Vector2(0.43999755, 1.7199988)
+texture = ExtResource("1_8nijh")
+
+[node name="LighterBlack4" type="Sprite2D" parent="." unique_id=905468447]
+position = Vector2(189, -9)
+scale = Vector2(0.35999757, 1.7199988)
+texture = ExtResource("1_8nijh")
+
+[node name="LighterBlack5" type="Sprite2D" parent="." unique_id=1436913195]
+position = Vector2(685, -284)
+scale = Vector2(0.32000002, 1.7199988)
+texture = ExtResource("1_8nijh")
+
+[node name="LighterBlack6" type="Sprite2D" parent="." unique_id=2132073827]
+position = Vector2(1062, -130)
+scale = Vector2(0.27600446, -1.8099675)
+texture = ExtResource("1_8nijh")

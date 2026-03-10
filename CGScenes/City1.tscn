@@ -2,15 +2,80 @@
 
 [ext_resource type="Texture2D" uid="uid://imc6kvp3yiuu" path="res://Colors/City1/background.png" id="1_sg6a4"]
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="1_yu84f"]
-[ext_resource type="Texture2D" uid="uid://ccub8eji0ix35" path="res://Colors/City1/lightBlack.png" id="2_ilwrs"]
-[ext_resource type="Texture2D" uid="uid://de6xyc6lwo5ok" path="res://Colors/City1/lighterBlack.png" id="2_roo8e"]
+[ext_resource type="PackedScene" uid="uid://ywavyfmjf0oy" path="res://CGScenes/prefabs/buildings_3.tscn" id="2_qsasv"]
 [ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="2_sg6a4"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_u6n7d"]
-[ext_resource type="Texture2D" uid="uid://cf2qq68xd8ug3" path="res://Colors/begining/girl.png" id="3_sg6a4"]
+[ext_resource type="PackedScene" uid="uid://bb84dexv0oxby" path="res://CGScenes/prefabs/buildings_2.tscn" id="3_eyvf1"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="7_qsasv"]
 [ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="8_qsasv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu84f"]
 size = Vector2(696.2065, 665.52545)
+
+[sub_resource type="Animation" id="Animation_eyvf1"]
+resource_name = "CityCG"
+length = 15.366667
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [3200.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("girl")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [3120.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RedDaYun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.099999994, 14, 15.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5674, 1018.00006), Vector2(5674, 1018.00006), Vector2(3000, 1018)]
+}
+
+[sub_resource type="Animation" id="Animation_qsasv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedDaYun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5674, 1018.00006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7if27"]
+_data = {
+&"CityCG": SubResource("Animation_eyvf1"),
+&"RESET": SubResource("Animation_qsasv")
+}
 
 [node name="Node2D" type="Node2D" unique_id=91660302]
 
@@ -19,78 +84,9 @@ position = Vector2(4517.75, 2114.75)
 scale = Vector2(16.982014, 10.534483)
 texture = ExtResource("1_sg6a4")
 
-[node name="Buildings3" type="Parallax2D" parent="." unique_id=1235296118]
-scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(1605, 1198)
+[node name="Buildings3" parent="." unique_id=1469672688 instance=ExtResource("2_qsasv")]
 
-[node name="LighterBlack" type="Sprite2D" parent="Buildings3" unique_id=64289134]
-position = Vector2(-1256, -161)
-scale = Vector2(0.23999754, 1.7199988)
-texture = ExtResource("2_roo8e")
-
-[node name="LighterBlack2" type="Sprite2D" parent="Buildings3" unique_id=299127978]
-position = Vector2(-741, -78)
-scale = Vector2(0.23999754, 1.7199988)
-texture = ExtResource("2_roo8e")
-
-[node name="LighterBlack3" type="Sprite2D" parent="Buildings3" unique_id=201094533]
-position = Vector2(-320, -223)
-scale = Vector2(0.43999755, 1.7199988)
-texture = ExtResource("2_roo8e")
-
-[node name="LighterBlack4" type="Sprite2D" parent="Buildings3" unique_id=1396962431]
-position = Vector2(189, -9)
-scale = Vector2(0.35999757, 1.7199988)
-texture = ExtResource("2_roo8e")
-
-[node name="LighterBlack5" type="Sprite2D" parent="Buildings3" unique_id=131614011]
-position = Vector2(685, -284)
-scale = Vector2(0.32000002, 1.7199988)
-texture = ExtResource("2_roo8e")
-
-[node name="LighterBlack6" type="Sprite2D" parent="Buildings3" unique_id=1109506707]
-position = Vector2(1062, -130)
-scale = Vector2(0.27600446, -1.8099675)
-texture = ExtResource("2_roo8e")
-
-[node name="Buildings2" type="Parallax2D" parent="." unique_id=544015928]
-scroll_scale = Vector2(0.7, 0.7)
-scroll_offset = Vector2(516, 547)
-
-[node name="LightBlack" type="Sprite2D" parent="Buildings2" unique_id=1859262395]
-position = Vector2(-306, 344)
-scale = Vector2(0.47017658, 0.90710515)
-texture = ExtResource("2_ilwrs")
-
-[node name="LightBlack2" type="Sprite2D" parent="Buildings2" unique_id=727077098]
-position = Vector2(86, 173)
-scale = Vector2(-0.37815857, 1.404504)
-texture = ExtResource("2_ilwrs")
-
-[node name="LightBlack3" type="Sprite2D" parent="Buildings2" unique_id=1815986816]
-position = Vector2(444, 227)
-scale = Vector2(-0.37815857, 1.404504)
-texture = ExtResource("2_ilwrs")
-
-[node name="LightBlack4" type="Sprite2D" parent="Buildings2" unique_id=1294486484]
-position = Vector2(932, 469)
-scale = Vector2(-0.39892122, -1.397151)
-texture = ExtResource("2_ilwrs")
-
-[node name="LightBlack5" type="Sprite2D" parent="Buildings2" unique_id=1206342881]
-position = Vector2(1411, 220.00002)
-scale = Vector2(-0.39892122, -1.397151)
-texture = ExtResource("2_ilwrs")
-
-[node name="LightBlack6" type="Sprite2D" parent="Buildings2" unique_id=803936478]
-position = Vector2(1914, 741)
-scale = Vector2(0.6410812, -1.397151)
-texture = ExtResource("2_ilwrs")
-
-[node name="LightBlack7" type="Sprite2D" parent="Buildings2" unique_id=483642372]
-position = Vector2(2521, 257.00006)
-scale = Vector2(0.5210812, -1.397151)
-texture = ExtResource("2_ilwrs")
+[node name="Buildings2" parent="." unique_id=1343911482 instance=ExtResource("3_eyvf1")]
 
 [node name="Buildings" type="Node2D" parent="." unique_id=73499526]
 position = Vector2(2227, 289)
@@ -147,28 +143,42 @@ scale = Vector2(16.496544, 7.610528)
 [node name="BlackSquare" type="Sprite2D" parent="StaticBody2D" unique_id=1369356869]
 texture = ExtResource("1_yu84f")
 
+[node name="GraySquare" type="Sprite2D" parent="StaticBody2D" unique_id=1894533936]
+position = Vector2(3.212799, -326.52142)
+scale = Vector2(1.0101963, 0.022309875)
+texture = ExtResource("2_sg6a4")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=736099438]
-visible = false
 position = Vector2(0.8789673, 4.6646423)
 shape = SubResource("RectangleShape2D_yu84f")
 
-[node name="GraySquare" type="Sprite2D" parent="." unique_id=1894533936]
-position = Vector2(4787, 1129.9999)
-scale = Vector2(16.664747, 0.16978993)
-texture = ExtResource("2_sg6a4")
-
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_u6n7d")]
-position = Vector2(949.84, 1013.03845)
+position = Vector2(952, 1035)
+MoveSpeed = 150.0
+IsInCutScene = true
+TiltAngleDegrees = 1.43
+MoveSquashSpeed = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=686648410]
 offset = Vector2(0, -94.03)
 
-[node name="Girl" type="Sprite2D" parent="Player" unique_id=1085745554]
-position = Vector2(-75.84003, 24.961548)
-scale = Vector2(0.224, 0.231)
-texture = ExtResource("3_sg6a4")
+[node name="girl" parent="." unique_id=2126858134 instance=ExtResource("7_qsasv")]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(889, 1042.0001)
+scale = Vector2(1, 0.91999024)
+MoveSpeed = 150.0
+TiltAngleDegrees = 1.43
+MoveSquashSpeed = 4.0
 
 [node name="RedDaYun" type="Sprite2D" parent="." unique_id=1024341010]
-position = Vector2(3998, 1011)
+position = Vector2(5674, 1018.00006)
 scale = Vector2(0.85251814, 0.41979012)
+skew = 0.24958208
 texture = ExtResource("8_qsasv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1883954673]
+libraries/ = SubResource("AnimationLibrary_7if27")
+autoplay = &"CityCG"
+
+[node name="TargetRuler" type="Node2D" parent="." unique_id=353702855]
+position = Vector2(3107, 999)

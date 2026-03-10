@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://c3oq3dkftfnfr"]
+
+[ext_resource type="Texture2D" uid="uid://ccub8eji0ix35" path="res://Colors/City1/lightBlack.png" id="1_eaop8"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="1_g2835"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_eaop8"]
+[ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="3_7f7de"]
+[ext_resource type="Texture2D" uid="uid://de6xyc6lwo5ok" path="res://Colors/City1/lighterBlack.png" id="4_5d35i"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="6_fagjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gx2l"]
+size = Vector2(358.65643, 378.66785)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooabg"]
+size = Vector2(357.6986, 404.71594)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f7de"]
+size = Vector2(459.63763, 341.10297)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7sgi"]
+size = Vector2(534.6151, 681.2566)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fagjw"]
+size = Vector2(689.14575, 607.563)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d35i"]
+size = Vector2(400.67337, 664.73096)
+
+[sub_resource type="Animation" id="Animation_d7sgi"]
+resource_name = "hospital1"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrf5p"]
+_data = {
+&"hospital1": SubResource("Animation_d7sgi")
+}
+
+[sub_resource type="Animation" id="Animation_5d35i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:IsInCutScene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:MoveSpeed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [400.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:MoveSquashSpeed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5601324]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(968.99994, 998.00006)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:JumpVelocity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [700.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player:CutSceneJumped")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:TiltAngleDegrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.575]
+}
+
+[sub_resource type="Animation" id="Animation_7f7de"]
+resource_name = "hospital1"
+length = 35.166668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.9833333, 12.066667, 15, 22),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [1112.0],
+"method": &"CutSceneMove"
+}, {
+"args": [1186.0],
+"method": &"CutSceneMove"
+}, {
+"args": [1100.0],
+"method": &"CutSceneMove"
+}, {
+"args": [1300.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:IsInCutScene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 26.033333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:MoveSpeed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 11.966666, 14.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [100.0, 70.0, 130.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:MoveSquashSpeed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [7.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.9333334, 8.233334, 9.9, 10.333334, 10.733334, 11.166667, 16.999844, 17.433178, 17.833178, 18.26651, 19, 20.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.5601324, 1.5601324, 1.9216075064457572, 1.9216075, 2.0943951023931953, 1.7453292519943295, 1.9216075, 1.9216075, 2.0943951023931953, 1.7453292519943295, 1.9216075, 1.9216075, 1.5707963267948966]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5.9333334, 8.233334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(968.99994, 998.00006), Vector2(968.99994, 998.00006), Vector2(968.99994, 998.00006)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player:JumpVelocity")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:CutSceneJumped")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8.633333, 8.766666, 8.966666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player:TiltAngleDegrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8.966666, 14.233334, 20.966667, 25.933332),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [-1.0, 5.0, -2.0, 3.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5d35i"]
+_data = {
+&"RESET": SubResource("Animation_5d35i"),
+&"hospital1": SubResource("Animation_7f7de")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1189377743]
+
+[node name="LightBlack" type="Sprite2D" parent="." unique_id=654180987]
+position = Vector2(1110.0001, 839.0001)
+scale = Vector2(2.5275676, -1.1987002)
+texture = ExtResource("1_eaop8")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=599031656]
+position = Vector2(347, 851)
+rotation = 3.1415927
+scale = Vector2(1.0440077, -1.835855)
+
+[node name="BlackSquare" type="Sprite2D" parent="StaticBody2D4" unique_id=699283093]
+texture = ExtResource("1_g2835")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1576040561]
+visible = false
+position = Vector2(-167.62326, 13.296417)
+shape = SubResource("RectangleShape2D_1gx2l")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1993898338]
+position = Vector2(2082, 851.00006)
+rotation = 3.1415927
+scale = Vector2(1.0440077, -1.835855)
+
+[node name="BlackSquare2" type="Sprite2D" parent="StaticBody2D3" unique_id=1574874809]
+texture = ExtResource("1_g2835")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1108377305]
+visible = false
+position = Vector2(168.84937, 36.22284)
+shape = SubResource("RectangleShape2D_ooabg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=849330163]
+position = Vector2(1209, 438)
+rotation = 3.1415927
+scale = Vector2(2.815261, 0.39866754)
+
+[node name="BlackSquare3" type="Sprite2D" parent="StaticBody2D2" unique_id=921066872]
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("1_g2835")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1219683142]
+visible = false
+position = Vector2(-4.2624817, -160.55139)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_7f7de")
+
+[node name="Door" type="Area2D" parent="." unique_id=500046958]
+position = Vector2(1579, 973.00006)
+scale = Vector2(0.16460428, 0.34788668)
+
+[node name="Door" type="Sprite2D" parent="Door" unique_id=2146390523]
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("3_7f7de")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1048389490]
+position = Vector2(78.97754, 7.1862793)
+scale = Vector2(1, 0.9999999)
+shape = SubResource("RectangleShape2D_d7sgi")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=558918427]
+position = Vector2(965.99994, 1052)
+scale = Vector2(0.29892078, 0.113568336)
+
+[node name="LighterBlack" type="Sprite2D" parent="StaticBody2D5" unique_id=1494281859]
+texture = ExtResource("4_5d35i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=97063498]
+position = Vector2(3.3452148, -30.81836)
+shape = SubResource("RectangleShape2D_fagjw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=774383276]
+position = Vector2(1209, 1215)
+rotation = 3.1415927
+scale = Vector2(2.815261, 0.39866754)
+
+[node name="BlackSquare4" type="Sprite2D" parent="StaticBody2D" unique_id=1020346683]
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("1_g2835")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1588518071]
+visible = false
+position = Vector2(-8.880188, -1.2458496)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_5d35i")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_eaop8")]
+position = Vector2(1362, 990)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=143615753]
+position = Vector2(1207, 797)
+zoom = Vector2(1.415, 1.415)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=1977180864]
+libraries/ = SubResource("AnimationLibrary_qrf5p")
+
+[node name="Player2" parent="." unique_id=50908985 instance=ExtResource("6_fagjw")]
+position = Vector2(968.99994, 998.00006)
+rotation = 1.5601324
+IdleSquashSpeed = 1.0
+MidAirRiseScale = Vector2(1, 1)
+JumpStretchScale = Vector2(1, 1)
+LandingSquashScale = Vector2(1, 1)
+
+[node name="TargetRuler" type="Node2D" parent="." unique_id=2013301515]
+position = Vector2(1100, 1006)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=495345653]
+libraries/ = SubResource("AnimationLibrary_5d35i")
+autoplay = &"hospital1"

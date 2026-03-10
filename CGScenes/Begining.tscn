@@ -21,6 +21,155 @@ size = Vector2(308.25024, 109.77692)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g65if"]
 size = Vector2(693.30396, 617.2853)
 
+[sub_resource type="Animation" id="Animation_baes5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:IsInCutScene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Camera2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3360, 509)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("girl:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kl61t"]
+resource_name = "begining"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:IsInCutScene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Camera2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3360, 400), Vector2(4363, 400)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [4363.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("girl:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(13.4, 15.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.3525565089028544]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dhwe2"]
+_data = {
+&"RESET": SubResource("Animation_baes5"),
+&"begining": SubResource("Animation_kl61t")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_baes5"]
+
 [node name="Node2D" type="Node2D" unique_id=205387125]
 
 [node name="BackGrounds" type="Node2D" parent="." unique_id=38442962]
@@ -141,6 +290,33 @@ position = Vector2(4115, 1056)
 scale = Vector2(1, 1.5329835)
 texture = ExtResource("4_hpe6d")
 
+[node name="birds" type="Parallax2D" parent="." unique_id=114831571]
+scale = Vector2(0.17743948, 0.13566847)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-713, 45.999992)
+repeat_size = Vector2(13000, 0)
+autoscroll = Vector2(-200, 0)
+
+[node name="GrayBird" type="Sprite2D" parent="birds" unique_id=1208803631]
+texture = ExtResource("7_1dttu")
+
+[node name="GrayBird2" type="Sprite2D" parent="birds" unique_id=1035389427]
+position = Vector2(550.687, -176.01735)
+texture = ExtResource("7_1dttu")
+
+[node name="GrayBird4" type="Sprite2D" parent="birds" unique_id=1515184153]
+position = Vector2(1153.7095, -375.0319)
+texture = ExtResource("7_1dttu")
+
+[node name="GrayBird3" type="Sprite2D" parent="birds" unique_id=44589793]
+position = Vector2(652.1301, 310.46265)
+texture = ExtResource("7_1dttu")
+
+[node name="Sakura" type="Sprite2D" parent="." unique_id=1756548582]
+position = Vector2(4898, 245)
+scale = Vector2(1.2912107, 1.287249)
+texture = ExtResource("8_wavbf")
+
 [node name="Solids" type="Node2D" parent="." unique_id=1721724755]
 
 [node name="BrownSquare" type="Sprite2D" parent="Solids" unique_id=2042824774]
@@ -187,34 +363,8 @@ position = Vector2(533, 607)
 offset = Vector2(0, -178.64)
 zoom = Vector2(0.89, 0.89)
 
-[node name="birds" type="Parallax2D" parent="." unique_id=114831571]
-scale = Vector2(0.17743948, 0.13566847)
-scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(-713, 45.999992)
-repeat_size = Vector2(13000, 0)
-autoscroll = Vector2(-200, 0)
-
-[node name="GrayBird" type="Sprite2D" parent="birds" unique_id=1208803631]
-texture = ExtResource("7_1dttu")
-
-[node name="GrayBird2" type="Sprite2D" parent="birds" unique_id=1035389427]
-position = Vector2(550.687, -176.01735)
-texture = ExtResource("7_1dttu")
-
-[node name="GrayBird4" type="Sprite2D" parent="birds" unique_id=1515184153]
-position = Vector2(1153.7095, -375.0319)
-texture = ExtResource("7_1dttu")
-
-[node name="GrayBird3" type="Sprite2D" parent="birds" unique_id=44589793]
-position = Vector2(652.1301, 310.46265)
-texture = ExtResource("7_1dttu")
-
-[node name="Sakura" type="Sprite2D" parent="." unique_id=1756548582]
-position = Vector2(4898, 245)
-scale = Vector2(1.2912107, 1.287249)
-texture = ExtResource("8_wavbf")
-
 [node name="girl" parent="." unique_id=2119021193 instance=ExtResource("9_baes5")]
+modulate = Color(1, 0, 1, 1)
 position = Vector2(4462.0005, 505.99997)
 scale = Vector2(0.9199609, 0.8800049)
 
@@ -367,3 +517,22 @@ texture = ExtResource("11_oyrq5")
 position = Vector2(779.6719, 491.7969)
 scale = Vector2(0.104541525, 0.10134)
 texture = ExtResource("11_oyrq5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2140981414]
+libraries/ = SubResource("AnimationLibrary_dhwe2")
+autoplay = &"begining"
+
+[node name="TargetRuler" type="Node2D" parent="." unique_id=2034004648]
+position = Vector2(4363, 510)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=102219308]
+position = Vector2(3360, 509)
+enabled = false
+zoom = Vector2(0.89, 0.89)
+
+[node name="WhereAnimStart" type="Area2D" parent="." unique_id=1564918976]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WhereAnimStart" unique_id=1446036656]
+position = Vector2(3359.0002, 96.99999)
+scale = Vector2(3.2782366, 57.58992)
+shape = SubResource("RectangleShape2D_baes5")

@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bnf623lmvnj1y"]
+
+[ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="1_58x4k"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="2_bbb1b"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_vdi6h"]
+
+[sub_resource type="Animation" id="Animation_58x4k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1350.0001, 647)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../White:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bbb1b"]
+resource_name = "new_animation"
+length = 5.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1350.0001, 647), Vector2(1074.9, 545.415)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.835, 1.835)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../White:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.2666667, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vdi6h"]
+_data = {
+&"RESET": SubResource("Animation_58x4k"),
+&"new_animation": SubResource("Animation_bbb1b")
+}
+
+[node name="Node2D" type="Node2D" unique_id=956205385]
+
+[node name="White" type="Sprite2D" parent="." unique_id=1484345185]
+position = Vector2(1105, 625)
+scale = Vector2(7.2437553, 4.35652)
+texture = ExtResource("1_58x4k")
+
+[node name="Player2" parent="." unique_id=1425184265 instance=ExtResource("2_bbb1b")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(953, 521)
+rotation = -0.46288309
+GravityScale = 0.0
+IdleSquashScale = Vector2(1, 1)
+MidAirRiseScale = Vector2(1, 1)
+MidAirFallScale = Vector2(1, 1)
+JumpStretchScale = Vector2(1, 1)
+LandingSquashScale = Vector2(1, 1)
+
+[node name="Player" parent="." unique_id=890336441 instance=ExtResource("3_vdi6h")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1350.0001, 647)
+rotation = -0.60195327
+IsInCutScene = true
+GravityScale = 0.0
+IdleSquashScale = Vector2(1, 1)
+MidAirRiseScale = Vector2(1, 1)
+MidAirFallScale = Vector2(1, 1)
+JumpStretchScale = Vector2(1, 1)
+LandingSquashScale = Vector2(1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1559548131]
+libraries/ = SubResource("AnimationLibrary_vdi6h")
+autoplay = &"new_animation"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1207718946]
+position = Vector2(951, 547)
+
+[node name="Ruler" type="Node2D" parent="." unique_id=851499980]
+position = Vector2(1103, 553)

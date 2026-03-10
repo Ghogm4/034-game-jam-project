@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://c3kuvqbuf5842"]
+
+[ext_resource type="PackedScene" uid="uid://ywavyfmjf0oy" path="res://CGScenes/prefabs/buildings_3.tscn" id="1_8h2m7"]
+[ext_resource type="PackedScene" uid="uid://bb84dexv0oxby" path="res://CGScenes/prefabs/buildings_2.tscn" id="2_t8jhw"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="3_lie0t"]
+[ext_resource type="PackedScene" uid="uid://cvmp4yf7l3068" path="res://Particle Arts/particle_arts.tscn" id="3_t8jhw"]
+[ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="4_qycw0"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="5_5e2hl"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="7_lie0t"]
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="8_qycw0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8h2m7"]
+size = Vector2(1264.2501, 772.5)
+
+[sub_resource type="Animation" id="Animation_5e2hl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player2:motion_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player2:disable_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qycw0"]
+resource_name = "new_animation"
+length = 40.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [3000.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player2:motion_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 23.433332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Player2:disable_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6.9666667, 31.933332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5e2hl"]
+_data = {
+&"RESET": SubResource("Animation_5e2hl"),
+&"new_animation": SubResource("Animation_qycw0")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1044574144]
+
+[node name="Buildings3" parent="." unique_id=1469672688 instance=ExtResource("1_8h2m7")]
+scroll_scale = Vector2(1, 1)
+scroll_offset = Vector2(1485, 1070)
+
+[node name="Buildings2" parent="." unique_id=1343911482 instance=ExtResource("2_t8jhw")]
+scroll_scale = Vector2(1, 1)
+scroll_offset = Vector2(519, 547)
+
+[node name="ParticleArts" parent="." unique_id=1601027294 instance=ExtResource("3_t8jhw")]
+position = Vector2(-3, -2)
+scale = Vector2(1.6800001, 1.1600003)
+
+[node name="buildings" type="Node2D" parent="." unique_id=62575857]
+
+[node name="BlackSquare" type="Sprite2D" parent="buildings" unique_id=2063980931]
+position = Vector2(1432, 1008.125)
+scale = Vector2(0.7741007, 0.8279612)
+texture = ExtResource("3_lie0t")
+
+[node name="BlackSquare2" type="Sprite2D" parent="buildings" unique_id=282227018]
+position = Vector2(882, 931)
+scale = Vector2(0.32230216, 0.8279612)
+texture = ExtResource("3_lie0t")
+
+[node name="BlackSquare3" type="Sprite2D" parent="buildings" unique_id=1544899175]
+position = Vector2(528, 882)
+scale = Vector2(0.32230216, 1.1162857)
+texture = ExtResource("3_lie0t")
+
+[node name="BlackSquare4" type="Sprite2D" parent="buildings" unique_id=1346095750]
+position = Vector2(2023, 1038)
+scale = Vector2(0.32230216, 1.1162857)
+texture = ExtResource("3_lie0t")
+
+[node name="BlackSquare5" type="Sprite2D" parent="buildings" unique_id=319773942]
+position = Vector2(2835, 998)
+scale = Vector2(0.32230216, 1.1162857)
+texture = ExtResource("3_lie0t")
+
+[node name="BlackSquare6" type="Sprite2D" parent="buildings" unique_id=1745236640]
+position = Vector2(2415, 912)
+scale = Vector2(0.32230216, 1.1162857)
+texture = ExtResource("3_lie0t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=333644652]
+
+[node name="BlackSquare" type="Sprite2D" parent="StaticBody2D" unique_id=518158585]
+position = Vector2(2136.0002, 1821.9999)
+scale = Vector2(12.463029, 1.9737408)
+texture = ExtResource("3_lie0t")
+
+[node name="GraySquare" type="Sprite2D" parent="StaticBody2D" unique_id=663568114]
+position = Vector2(1769, 1210)
+scale = Vector2(9.68, 0.15999879)
+texture = ExtResource("4_qycw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=791283138]
+position = Vector2(1645.5203, 1597.75)
+scale = Vector2(5.1199994, 1)
+shape = SubResource("RectangleShape2D_8h2m7")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("5_5e2hl")]
+position = Vector2(1428, 1116)
+IsInCutScene = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=325933215]
+position = Vector2(1422, 883)
+offset = Vector2(0, -48.34)
+zoom = Vector2(0.715, 0.715)
+
+[node name="Player2" parent="." unique_id=1394953950 instance=ExtResource("7_lie0t")]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(-118, 1129)
+
+[node name="PurpleUm" type="Sprite2D" parent="." unique_id=638373644]
+position = Vector2(-165.00003, 1068)
+scale = Vector2(0.35323742, 0.38005996)
+texture = ExtResource("8_qycw0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1320462706]
+root_node = NodePath("../PurpleUm")
+libraries/ = SubResource("AnimationLibrary_5e2hl")
+autoplay = &"new_animation"
+
+[node name="ruler" type="Node2D" parent="." unique_id=1931901062]
+position = Vector2(3016, 1114)
+scale = Vector2(0.35323742, 0.38005996)

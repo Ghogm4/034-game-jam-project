@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c12r8oapm5pfi"]
 
 [ext_resource type="Script" uid="uid://sar5lqma63fj" path="res://Player/Player.cs" id="1_7muu6"]
-[ext_resource type="Texture2D" uid="uid://cf2qq68xd8ug3" path="res://Colors/begining/girl.png" id="2_7muu6"]
+[ext_resource type="Texture2D" uid="uid://775i5xd0hijv" path="res://Colors/City1/whiteGirl1.png" id="2_7muu6"]
 [ext_resource type="Script" uid="uid://d3645llygfx2u" path="res://StateTree/StateTree.cs" id="3_mcsqr"]
 [ext_resource type="Script" uid="uid://bhmif0v65ol5c" path="res://Player/PlayerStates/Player_UniversalState.cs" id="4_ikxrw"]
 [ext_resource type="Script" uid="uid://ppkm12hcvxrh" path="res://Player/PlayerStates/Player_CanMoveState.cs" id="5_iat7i"]
@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://b1k4t11eytpt7" path="res://Player/PlayerStates/Player_MidAirState.cs" id="11_hyvto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qydi"]
-size = Vector2(85, 164)
+size = Vector2(59, 164)
 
 [node name="Player" type="CharacterBody2D" unique_id=1425184265]
 script = ExtResource("1_7muu6")
@@ -40,12 +40,12 @@ LandingSquashScale = Vector2(1.51, 0.695)
 [node name="Visual" type="Node2D" parent="." unique_id=834943169]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=2004915049]
-position = Vector2(-2.5437508, 0)
-scale = Vector2(0.25767985, 0.265)
+position = Vector2(-2.000008, 1.1887556)
+scale = Vector2(0.24748202, 0.2614355)
 texture = ExtResource("2_7muu6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1469170882]
-position = Vector2(0.5, 1)
+position = Vector2(-12.5, 1)
 shape = SubResource("RectangleShape2D_3qydi")
 
 [node name="StateTree" type="Node" parent="." unique_id=82502769]
