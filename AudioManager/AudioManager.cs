@@ -15,27 +15,60 @@ public partial class AudioManager : Node
 			return;
 		}
 		Instance = this;
-		Check();
+		CheckInit();
 	}
 
 	[Export]
 	public Godot.Collections.Dictionary<string, AudioStream> BGMStreams { get; set; } = new ();
+	[Export]
+	public Godot.Collections.Dictionary<string, AudioStream> SFXStreams { get; set; } = new ();
+	[Export]
+	public Godot.Collections.Dictionary<string, AudioStream> UIStreams { get; set; } = new ();
 
 	[Export] public AudioStreamPlayer BGMPlayerA;
 	[Export] public AudioStreamPlayer BGMPlayerB;
+
+	public Godot.Collections.Array<AudioStreamPlayer> SFXPlayers = new ();
+	public Godot.Collections.Array<AudioStreamPlayer> UIPlayers = new ();
+
 	public bool CurrentPlayer = false; // false = A, true = B
 
 	[Export] public float DefaultFadeDuration = 1.0f;
 	[Export] public float DefaultMutedVolume = -80.0f;
 
+	[Export] public float DefaultBGMVolume = -5.0f;
+	[Export] public float DefaultSFXVolume = -5.0f;
+	[Export] public float DefaultUIVolume = -5.0f;
 	
 
 
-	public void Check()
+	public void CheckInit()
 	{
 		if (BGMPlayerA == null || BGMPlayerB == null)
 		{
 			GD.PrintErr("AudioManager: BGMPlayerA and BGMPlayerB must be assigned.");
+		}
+
+		if (SFXPlayers.Count == 0)
+		{
+			for (int i = 0; i < 20; i ++)
+			{
+				AudioStreamPlayer sfxplayer = new AudioStreamPlayer();
+				sfxplayer.Bus = "SFX";
+				SFXPlayers.Add(sfxplayer);
+				AddChild(sfxplayer);
+			}
+		}
+
+		if (UIPlayers.Count == 0)
+		{
+			for (int i = 0; i < 10; i ++)
+			{
+				AudioStreamPlayer uiplayer = new AudioStreamPlayer();
+				uiplayer.Bus = "UI";
+				UIPlayers.Add(uiplayer);
+				AddChild(uiplayer);
+			}
 		}
 	}
 
@@ -93,17 +126,59 @@ public partial class AudioManager : Node
 		player.VolumeDb = Mathf.LinearToDb(volume);
 	}
 
+	
+	public void PlaySFX(string name)
+	{
+		if (!SFXStreams.ContainsKey(name))
+		{
+			GD.PrintErr($"AudioManager: SFX '{name}' not found in SFXStreams.");
+			return;
+		}
+
+		foreach (AudioStreamPlayer sfxPlayer in SFXPlayers)
+		{
+			if (!sfxPlayer.Playing)
+			{
+				sfxPlayer.Stream = SFXStreams[name];
+				sfxPlayer.Play();
+				return;
+			}
+		}
+
+		GD.PrintErr($"AudioManager: No available SFX player to play '{name}'.");
+	}
+
+	public void PlayUI(string name)
+	{
+		if (!UIStreams.ContainsKey(name))
+		{
+			GD.PrintErr($"AudioManager: UI sound '{name}' not found in UIStreams.");
+			return;
+		}
+
+		foreach (AudioStreamPlayer uiPlayer in UIPlayers)
+		{
+			if (!uiPlayer.Playing)
+			{
+				uiPlayer.Stream = UIStreams[name];
+				uiPlayer.Play();
+				return;
+			}
+		}
+
+		GD.PrintErr($"AudioManager: No available UI player to play '{name}'.");
+	}
 
 
-    // Bus control
-    public void SetBusVolumeLinear(string busName, float volume)
-    {
-        int busIndex = AudioServer.GetBusIndex(busName);
-        if (busIndex < 0)
-        {
-            GD.PrintErr($"AudioManager: Bus '{busName}' not found.");
-            return;
-        }
-        AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(volume));
-    }
+	// Bus control
+	public void SetBusVolumeLinear(string busName, float volume)
+	{
+		int busIndex = AudioServer.GetBusIndex(busName);
+		if (busIndex < 0)
+		{
+			GD.PrintErr($"AudioManager: Bus '{busName}' not found.");
+			return;
+		}
+		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(volume));
+	}
 }
