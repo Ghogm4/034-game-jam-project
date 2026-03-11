@@ -13,6 +13,8 @@ radius = 48.0
 
 [node name="Fragment" type="RigidBody2D" unique_id=1649991499]
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_f6wxk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=251136955]
@@ -30,6 +32,7 @@ shape = SubResource("CircleShape2D_ochec")
 [node name="StateTree" type="Node" parent="." unique_id=338267114]
 script = ExtResource("3_6vg7n")
 InitialStateName = "Floating"
+AllowRepeatedEnterAndExit = true
 
 [node name="FragmentState" type="Node" parent="StateTree" unique_id=1124108500]
 script = ExtResource("4_x8q3h")

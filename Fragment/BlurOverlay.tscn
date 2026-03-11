@@ -4,12 +4,12 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8uh1g"]
 shader = ExtResource("1_i0fcv")
-shader_parameter/blur_amount = 2.0
+shader_parameter/blur_amount = 0.0
 shader_parameter/sampling_quality = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0fcv"]
 shader = ExtResource("1_i0fcv")
-shader_parameter/blur_amount = 2.0
+shader_parameter/blur_amount = 0.0
 shader_parameter/sampling_quality = 4
 
 [node name="BlurOverlay" type="CanvasLayer" unique_id=1498338304]

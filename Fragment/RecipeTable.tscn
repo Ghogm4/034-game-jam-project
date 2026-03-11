@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bagsmqgotujgn"]
+
+[ext_resource type="Script" uid="uid://d0w40y83ghaqq" path="res://Fragment/RecipeTable.cs" id="1_nbdhl"]
+[ext_resource type="Script" uid="uid://c2q1cu6l08gc8" path="res://Fragment/CraftingEffectController.cs" id="2_2udfa"]
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="2_unlfm"]
+[ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="3_2m1rb"]
+[ext_resource type="Script" uid="uid://dtskl7kekh48l" path="res://Fragment/Recipe.cs" id="3_34pqt"]
+
+[sub_resource type="Resource" id="Resource_8qyxg"]
+script = ExtResource("3_34pqt")
+Input1 = "A"
+Input2 = "B"
+Result = ExtResource("2_unlfm")
+metadata/_custom_type_script = "uid://dtskl7kekh48l"
+
+[node name="RecipeTable" type="Node" unique_id=1577653984]
+unique_name_in_owner = true
+script = ExtResource("1_nbdhl")
+Recipes = [SubResource("Resource_8qyxg")]
+
+[node name="CraftingEffectController" type="Node" parent="." unique_id=1994302594]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("2_2udfa")
+BlurOverlayScene = ExtResource("3_2m1rb")

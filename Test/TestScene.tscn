@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://b055iihk27f6f"]
 
 [ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_804c2"]
+[ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="1_ervrm"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_wyv1x"]
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="3_xbm2f"]
 [ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="4_8ovih"]
+[ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="6_rdujs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyv1x"]
 size = Vector2(128, 128)
@@ -237,6 +239,8 @@ _data = {
 
 [node name="TestScene" type="Node2D" unique_id=828653296]
 
+[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("1_ervrm")]
+
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_wyv1x")]
 position = Vector2(167, 43)
 JumpVelocity = 600.0
@@ -323,4 +327,12 @@ collision_layer = 1
 IsInCutScene = false
 
 [node name="Fragment" parent="." unique_id=1649991499 instance=ExtResource("4_8ovih")]
-position = Vector2(954, 167)
+position = Vector2(753, 122)
+FragmentName = "A"
+
+[node name="Fragment2" parent="." unique_id=1557776728 instance=ExtResource("4_8ovih")]
+position = Vector2(1032, 154)
+FragmentName = "B"
+
+[node name="BlurOverlay" parent="." unique_id=1498338304 groups=["BlurOverlay"] instance=ExtResource("6_rdujs")]
+unique_name_in_owner = true
