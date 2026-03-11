@@ -8,6 +8,7 @@ public partial class StateTree : State
 {
 	// 填写初始状态名称,将沿路径进入该状态
 	[Export] public string InitialStateName = "";
+	[Export] public bool AllowRepeatedEnterAndExit = false;
 	protected Dictionary<string, State> _stateTree = new();
 	public State CurrentState { get; set; } = null;
 
@@ -40,7 +41,10 @@ public partial class StateTree : State
 		CurrentState.PreviousState = previousState;
 		List<State> nextPath = GetPathToRoot(CurrentState);
 		nextPath.Reverse();
-		CutIntersect(ref currentPath, ref nextPath);
+		if (!AllowRepeatedEnterAndExit)
+		{
+			CutIntersect(ref currentPath, ref nextPath);
+		}
 		foreach (State state in currentPath)
 			state?.ExitState();
 		foreach (State state in nextPath)
@@ -64,7 +68,7 @@ public partial class StateTree : State
 	}
 	protected void SetupInitialChain()
 	{
-		
+
 		Stack<State> stack = new();
 		State initialState = _stateTree[InitialStateName];
 		CurrentState = initialState;
@@ -75,7 +79,7 @@ public partial class StateTree : State
 			stack.Push(initialState);
 			initialState = initialState.Parent;
 		}
-		
+
 		while (stack.Count > 0)
 		{
 			stack.Pop().EnterState();
