@@ -4,6 +4,64 @@ using System;
 public partial class Player_UniversalState : Player_PlayerState
 {
     private bool _canPickup = true;
+
+    private Fragment FindFragmentFromOverlappingAreas()
+    {
+        foreach (Area2D overlappingArea in Player.PickupArea.GetOverlappingAreas())
+        {
+            if (overlappingArea.Owner is not Fragment fragment) continue;
+            if (!fragment.CanBePickedUp) continue;
+
+            return fragment;
+        }
+
+        return null;
+    }
+
+    private Fragment FindFragmentFromPickupRange()
+    {
+        CollisionShape2D pickupAreaCollision = Player.PickupArea.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
+        if (pickupAreaCollision?.Shape is not CircleShape2D pickupCircle)
+        {
+            return null;
+        }
+
+        float pickupRadius = pickupCircle.Radius * Mathf.Max(
+            Mathf.Abs(Player.PickupArea.GlobalScale.X),
+            Mathf.Abs(Player.PickupArea.GlobalScale.Y)
+        );
+
+        Fragment nearestFragment = null;
+        float nearestDistanceSquared = float.MaxValue;
+
+        foreach (Node fragmentNode in GetTree().GetNodesInGroup(Fragment.PickupGroupName))
+        {
+            if (fragmentNode is not Fragment fragment) continue;
+            if (!fragment.CanBePickedUp) continue;
+
+            CollisionShape2D pickupSensorCollision = fragment.PickupSensor.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
+            if (pickupSensorCollision?.Shape is not CircleShape2D sensorCircle)
+            {
+                continue;
+            }
+
+            float sensorRadius = sensorCircle.Radius * Mathf.Max(
+                Mathf.Abs(fragment.PickupSensor.GlobalScale.X),
+                Mathf.Abs(fragment.PickupSensor.GlobalScale.Y)
+            );
+
+            float distanceSquared = Player.PickupArea.GlobalPosition.DistanceSquaredTo(fragment.PickupSensor.GlobalPosition);
+            float totalRadius = pickupRadius + sensorRadius;
+            if (distanceSquared > totalRadius * totalRadius) continue;
+            if (distanceSquared >= nearestDistanceSquared) continue;
+
+            nearestDistanceSquared = distanceSquared;
+            nearestFragment = fragment;
+        }
+
+        return nearestFragment;
+    }
+
     private void TickJumpTimers(double delta)
     {
         float frameDelta = (float)delta;
@@ -26,9 +84,10 @@ public partial class Player_UniversalState : Player_PlayerState
             Player.CoyoteTimer = Mathf.Max(Player.CoyoteTimer - frameDelta, 0.0f);
         }
     }
+
     private void TryCollectFragment()
     {
-        if (!Input.IsActionJustPressed("Interact") || Player.HeldFragment != null) return;
+        if (Player.HeldFragment != null) return;
 
         Area2D pickupArea = Player.PickupArea;
         if (pickupArea == null)
@@ -38,15 +97,41 @@ public partial class Player_UniversalState : Player_PlayerState
             return;
         }
 
-        foreach (Fragment fragment in Player.PickupArea.GetOverlappingAreas())
-        {
-            if (!fragment.Monitoring) continue;
+        Fragment fragmentToCollect = FindFragmentFromOverlappingAreas() ?? FindFragmentFromPickupRange();
+        if (fragmentToCollect == null) return;
 
-            Player.HeldFragment = fragment;
-            fragment.Collect();
-            break;
-        }
+        Player.HeldFragment = fragmentToCollect;
+        fragmentToCollect.Collect(Player);
     }
+
+    private void ThrowHeldFragment()
+    {
+        if (Player.HeldFragment == null) return;
+
+        Fragment heldFragment = Player.HeldFragment;
+        Player.HeldFragment = null;
+
+        Vector2 throwVelocity = new(
+            Player.FacingDirection * Player.FragmentThrowSpeed,
+            -Player.FragmentThrowUpwardSpeed
+        );
+
+        heldFragment.Throw(Player, throwVelocity);
+    }
+
+    private void HandleFragmentInteraction()
+    {
+        if (!Input.IsActionJustPressed("Interact")) return;
+
+        if (Player.HeldFragment != null)
+        {
+            ThrowHeldFragment();
+            return;
+        }
+
+        TryCollectFragment();
+    }
+
     private void UpdateFragmentPosition()
     {
         if (Player.HeldFragment == null) return;
@@ -79,9 +164,10 @@ public partial class Player_UniversalState : Player_PlayerState
         Player.LandingImpactSpeed = landedThisFrame ? Mathf.Max(preMoveVerticalSpeed, 0.0f) : 0.0f;
 
         if (!_canPickup) return;
-        TryCollectFragment();
+        HandleFragmentInteraction();
         UpdateFragmentPosition();
     }
+
     private void HandleTilt(double delta)
     {
         float moveRatio = Mathf.IsZeroApprox(Player.MoveSpeed) ? 0.0f : Player.Velocity.X / Player.MoveSpeed;
@@ -89,6 +175,7 @@ public partial class Player_UniversalState : Player_PlayerState
         float rotationWeight = 1.0f - Mathf.Exp(-Player.TiltSmoothing * (float)delta);
         Player.Visual.Rotation = Mathf.Lerp(Player.Visual.Rotation, targetRotation, rotationWeight);
     }
+
     private void HandleSquash(double delta)
     {
         float scaleWeight = 1.0f - Mathf.Exp(-Player.VisualScaleSmoothing * (float)delta);
@@ -101,6 +188,7 @@ public partial class Player_UniversalState : Player_PlayerState
         Player.Visual.Scale = Player.Visual.Scale.Lerp(targetVisualScale, scaleWeight);
         Player.ImpactVisualScale = Player.ImpactVisualScale.Lerp(Vector2.One, impactWeight);
     }
+
     protected override void FrameUpdate(double delta)
     {
         Player.VisualTime += (float)delta;
