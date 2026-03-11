@@ -3,6 +3,7 @@ using System;
 
 public partial class Player_UniversalState : Player_PlayerState
 {
+    private bool _canPickup = true;
     private void TickJumpTimers(double delta)
     {
         float frameDelta = (float)delta;
@@ -25,6 +26,41 @@ public partial class Player_UniversalState : Player_PlayerState
             Player.CoyoteTimer = Mathf.Max(Player.CoyoteTimer - frameDelta, 0.0f);
         }
     }
+    private void TryCollectFragment()
+    {
+        if (!Input.IsActionJustPressed("Interact") || Player.HeldFragment != null) return;
+
+        Area2D pickupArea = Player.PickupArea;
+        if (pickupArea == null)
+        {
+            GD.PushWarning("TryCollectFragment: Called by a non-player entity.");
+            _canPickup = false;
+            return;
+        }
+
+        foreach (Fragment fragment in Player.PickupArea.GetOverlappingAreas())
+        {
+            if (!fragment.Monitoring) continue;
+
+            Player.HeldFragment = fragment;
+            fragment.Collect();
+            break;
+        }
+    }
+    private void UpdateFragmentPosition()
+    {
+        if (Player.HeldFragment == null) return;
+
+        float rotationBasedXOffset = Player.Visual.Rotation * Player.FragmentXAmplitude;
+        float directionBasedXOffset = Player.FacingDirection * Player.FragmentDefaultHoldDistance;
+        Vector2 xHoldOffset = Vector2.Right * (rotationBasedXOffset + directionBasedXOffset);
+        Vector2 yHoldOffset = Vector2.Up * Mathf.Max(0, Player.Velocity.Y) * Player.FragmentYAmplitude;
+        Vector2 holdOffset = xHoldOffset + yHoldOffset;
+        Vector2 targetPos = Player.GlobalPosition + holdOffset;
+
+        Vector2 fragmentPos = Player.HeldFragment.GlobalPosition;
+        Player.HeldFragment.GlobalPosition = fragmentPos.Lerp(targetPos, Player.FragmentHoldLerpSpeed);
+    }
     protected override void PhysicsUpdate(double delta)
     {
         bool wasOnFloor = Player.IsOnFloor();
@@ -41,6 +77,10 @@ public partial class Player_UniversalState : Player_PlayerState
 
         bool landedThisFrame = !wasOnFloor && Player.IsOnFloor();
         Player.LandingImpactSpeed = landedThisFrame ? Mathf.Max(preMoveVerticalSpeed, 0.0f) : 0.0f;
+
+        if (!_canPickup) return;
+        TryCollectFragment();
+        UpdateFragmentPosition();
     }
     private void HandleTilt(double delta)
     {

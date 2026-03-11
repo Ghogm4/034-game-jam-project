@@ -1,22 +1,40 @@
 [gd_scene format=3 uid="uid://ds280dgmm0v0w"]
 
 [ext_resource type="Script" uid="uid://b1jwrnf5mg77e" path="res://AudioManager/AudioManager.cs" id="1_cic6f"]
-[ext_resource type="AudioStream" uid="uid://bnn21l5qyetlj" path="res://Assets/BGM/zero2.mp3" id="2_mvoev"]
-[ext_resource type="AudioStream" uid="uid://b8ncubtti6ht0" path="res://Assets/BGM/encounter2.mp3" id="3_4jfua"]
-[ext_resource type="AudioStream" uid="uid://cgbin8475ag2w" path="res://Assets/BGM/hospital_03.mp3" id="4_mvoev"]
+[ext_resource type="AudioStream" uid="uid://blx7q5gliwy5q" path="res://Assets/BGM/A cup of love.ogg" id="2_0g8yc"]
+[ext_resource type="AudioStream" uid="uid://d50dg2l8msvw" path="res://Assets/BGM/Birdsong.ogg" id="3_l24u0"]
+[ext_resource type="AudioStream" uid="uid://bnl071560pmrx" path="res://Assets/BGM/Blossom.ogg" id="4_y8eeq"]
 [ext_resource type="AudioStream" uid="uid://cmr5qy3eyqpv0" path="res://Assets/BGM/empty.wav" id="5_4jfua"]
-[ext_resource type="AudioStream" uid="uid://cgacmnqnadgjo" path="res://Assets/BGM/peak_opening.mp3" id="6_jcm40"]
-[ext_resource type="AudioStream" uid="uid://dvs6aap4jyld" path="res://Assets/BGM/hospital_01.mp3" id="7_8vdif"]
+[ext_resource type="AudioStream" uid="uid://7avmg6k1nj1v" path="res://Assets/BGM/Blossom_Prelude.ogg" id="5_bimrg"]
+[ext_resource type="AudioStream" uid="uid://dtti5h88ekfyx" path="res://Assets/BGM/0nce 3mbraced 4gain.ogg" id="6_2hj2f"]
+[ext_resource type="AudioStream" uid="uid://b8e3njc1g20f5" path="res://Assets/BGM/Blossom_Finale.ogg" id="7_gcgda"]
+[ext_resource type="AudioStream" uid="uid://j2xw5lotvjp3" path="res://Assets/BGM/Passing-by.ogg" id="8_tum4e"]
+[ext_resource type="AudioStream" uid="uid://cisxivf5hw4oi" path="res://Assets/BGM/Silent_0.ogg" id="10_4o7rc"]
+[ext_resource type="AudioStream" uid="uid://bgbe85u8rpsvo" path="res://Assets/BGM/Silent_1.ogg" id="11_mfw2e"]
+[ext_resource type="AudioStream" uid="uid://c7g2jq3b2v0ml" path="res://Assets/BGM/Silent_2.ogg" id="12_viqa5"]
+[ext_resource type="AudioStream" uid="uid://bflm2rj8u3ej2" path="res://Assets/BGM/Silent_3.ogg" id="13_je6na"]
+[ext_resource type="AudioStream" uid="uid://87iocfe8t8w" path="res://Assets/BGM/Slient_4.ogg" id="14_2trk5"]
+[ext_resource type="AudioStream" uid="uid://csj642ax834pe" path="res://Assets/SFX/Recollected.wav" id="15_hv5in"]
 
 [node name="AudioManager" type="Node" unique_id=1857709071 node_paths=PackedStringArray("BGMPlayerA", "BGMPlayerB")]
 script = ExtResource("1_cic6f")
 BGMStreams = Dictionary[String, AudioStream]({
-"begining": ExtResource("6_jcm40"),
-"empty": ExtResource("5_4jfua"),
-"encounter": ExtResource("3_4jfua"),
-"hospital1": ExtResource("7_8vdif"),
-"hospital3": ExtResource("4_mvoev"),
-"zero": ExtResource("2_mvoev")
+"0nce 3mbraced 4gain": ExtResource("6_2hj2f"),
+"A cup of love": ExtResource("2_0g8yc"),
+"Birdsong": ExtResource("3_l24u0"),
+"Blossom": ExtResource("4_y8eeq"),
+"Blossom_Finale": ExtResource("7_gcgda"),
+"Blossom_Prelude": ExtResource("5_bimrg"),
+"Passing-by": ExtResource("8_tum4e"),
+"Silent_0": ExtResource("10_4o7rc"),
+"Silent_1": ExtResource("11_mfw2e"),
+"Silent_2": ExtResource("12_viqa5"),
+"Silent_3": ExtResource("13_je6na"),
+"Silent_4": ExtResource("14_2trk5"),
+"empty": ExtResource("5_4jfua")
+})
+SFXStreams = Dictionary[String, AudioStream]({
+"Recollected": ExtResource("15_hv5in")
 })
 BGMPlayerA = NodePath("BGMPlayerA")
 BGMPlayerB = NodePath("BGMPlayerB")

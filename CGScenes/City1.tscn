@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bb84dexv0oxby" path="res://CGScenes/prefabs/buildings_2.tscn" id="3_eyvf1"]
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="7_qsasv"]
 [ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="8_qsasv"]
+[ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="9_eyvf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu84f"]
 size = Vector2(696.2065, 665.52545)
@@ -55,6 +56,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(5674, 1018.00006), Vector2(5674, 1018.00006), Vector2(3000, 1018)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("canvas:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.033333335, 5, 6.5333333, 14.8, 14.866667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_qsasv"]
 length = 0.001
@@ -69,6 +82,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(5674, 1018.00006)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("canvas:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7if27"]
@@ -182,3 +207,9 @@ autoplay = &"CityCG"
 
 [node name="TargetRuler" type="Node2D" parent="." unique_id=353702855]
 position = Vector2(3107, 999)
+
+[node name="canvas" type="Sprite2D" parent="." unique_id=868465704]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2487.25, 765.5)
+scale = Vector2(8.295683, 3.6746628)
+texture = ExtResource("9_eyvf1")

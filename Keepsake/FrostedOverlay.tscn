@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://Keepsake/frosted_background.gdshader" id="1_y2s7l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uh1g"]
+shader = ExtResource("1_y2s7l")
+
+[node name="FrostedOverlay" type="CanvasLayer"]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8uh1g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 1)

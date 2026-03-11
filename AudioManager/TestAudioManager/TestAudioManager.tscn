@@ -14,19 +14,19 @@ tracks/0/path = NodePath("BGMPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 34.36667, 81.2, 119.63333),
+"times": PackedFloat32Array(3.1666667, 22.033333, 56.5, 76.933334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
-"args": ["zero", 3.0],
+"args": ["Blossom", 0.0],
 "method": &"PlayBGM"
 }, {
-"args": ["encounter", 10.0],
+"args": ["Blossom_Prelude", 10.0],
 "method": &"PlayBGM"
 }, {
-"args": ["hospital3", 10.0],
+"args": ["empty", 10.0],
 "method": &"PlayBGM"
 }, {
-"args": ["empty", 5.0],
+"args": ["0nce 3mbraced 4gain", 5.0],
 "method": &"PlayBGM"
 }]
 }
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(5.266667),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["recollected"],
+"args": ["Recollected"],
 "method": &"PlaySFX"
 }]
 }
