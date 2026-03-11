@@ -25,8 +25,7 @@ public partial class Fragment : RigidBody2D
 	{
 		AddToGroup(PickupGroupName);
 	}
-
-	public void Collect(Player player)
+	public virtual void Collect(Player player)
 	{
 		PendingHolder = player;
 		StateTree.CurrentState?.AskTransit("Held");

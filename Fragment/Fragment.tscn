@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://b0b6awaje5d2a"]
 
-[ext_resource type="Script" uid="uid://dnpubuyccxc2b" path="res://Keepsake/Fragment/Fragment.cs" id="1_f6wxk"]
+[ext_resource type="Script" uid="uid://dnpubuyccxc2b" path="res://Fragment/Fragment.cs" id="1_f6wxk"]
 [ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_ochec"]
-[ext_resource type="Script" path="res://StateTree/StateTree.cs" id="3_6vg7n"]
-[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_FragmentState.cs" id="4_x8q3h"]
-[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_FloatingState.cs" id="5_jt5yw"]
-[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_HeldState.cs" id="6_dy7x8"]
-[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_ThrownState.cs" id="7_m2g3q"]
+[ext_resource type="Script" uid="uid://d3645llygfx2u" path="res://StateTree/StateTree.cs" id="3_6vg7n"]
+[ext_resource type="Script" uid="uid://ca0ut70dmxacv" path="res://Fragment/FragmentStates/Fragment_FragmentState.cs" id="4_x8q3h"]
+[ext_resource type="Script" uid="uid://do1nfds7cisg6" path="res://Fragment/FragmentStates/Fragment_FloatingState.cs" id="5_jt5yw"]
+[ext_resource type="Script" uid="uid://dubjfqeu83kd3" path="res://Fragment/FragmentStates/Fragment_HeldState.cs" id="6_dy7x8"]
+[ext_resource type="Script" uid="uid://bj3bph22a16k8" path="res://Fragment/FragmentStates/Fragment_ThrownState.cs" id="7_m2g3q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ochec"]
 radius = 48.0
 
 [node name="Fragment" type="RigidBody2D" unique_id=1649991499]
-script = ExtResource("1_f6wxk")
 gravity_scale = 0.0
+script = ExtResource("1_f6wxk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=251136955]
 texture = ExtResource("1_ochec")
