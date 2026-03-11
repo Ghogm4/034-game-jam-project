@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://b1c5w3ofgj757"]
 
-[ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_krlxr"]
 [ext_resource type="Shader" uid="uid://dfwj02on45lte" path="res://Particle Arts/leaves.gdshader" id="1_lfth6"]
-[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_lfth6"]
-[ext_resource type="Texture2D" uid="uid://bu02ddikvflr8" path="res://Colors/begining/sakura.png" id="3_iy31f"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_86u3m"]
 polygon = PackedVector2Array(9, 1044, 1915, 1044, 1917, 1325, -5, 1330)
@@ -13,8 +10,8 @@ colors = PackedColorArray(1, 0.5294118, 0.81960785, 1, 1, 0.5310367, 0.8205134, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_iy31f"]
 gradient = SubResource("Gradient_lfth6")
-width = 30
-height = 3
+width = 32
+height = 9
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_86u3m"]
 shader = ExtResource("1_lfth6")
@@ -29,37 +26,15 @@ shader_parameter/scale_max = 1.5
 shader_parameter/wind_speed_min = -10.0
 shader_parameter/wind_speed_max = -40.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uwgm"]
-size = Vector2(1910, 282)
-
 [node name="ParticleArts2" type="Node2D" unique_id=244059378]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1785712622]
 occluder = SubResource("OccluderPolygon2D_86u3m")
 
-[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_lfth6")]
-position = Vector2(611, 936)
-
-[node name="Sakura" type="Sprite2D" parent="." unique_id=1378109911]
-position = Vector2(1400, 639)
-scale = Vector2(1.2912107, 1.287249)
-texture = ExtResource("3_iy31f")
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=512641773]
 position = Vector2(1458, 256)
-amount = 20
+amount = 30
 texture = SubResource("GradientTexture2D_iy31f")
 lifetime = 30.0
 preprocess = 10.0
 process_material = SubResource("ShaderMaterial_86u3m")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1870824995]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1791171395]
-position = Vector2(961, 1184)
-shape = SubResource("RectangleShape2D_3uwgm")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1641116156]
-position = Vector2(928, 1188)
-scale = Vector2(15.5, 2.1718755)
-texture = ExtResource("1_krlxr")

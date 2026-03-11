@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://chi8c3c4o38c4" path="res://Colors/begining/lighterBrown.png" id="3_dhwe2"]
 [ext_resource type="Texture2D" uid="uid://dqxwku7wb4xdl" path="res://Colors/begining/lightBrown.png" id="4_hpe6d"]
 [ext_resource type="Texture2D" uid="uid://c32xilemkjg0q" path="res://Colors/begining/brownSquare.png" id="5_sbu73"]
+[ext_resource type="PackedScene" uid="uid://b1c5w3ofgj757" path="res://Particle Arts/Particle_arts_2.tscn" id="6_dhwe2"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="6_py6on"]
 [ext_resource type="Texture2D" uid="uid://cty46uigim14" path="res://Colors/begining/grayBird.png" id="7_1dttu"]
 [ext_resource type="Texture2D" uid="uid://bu02ddikvflr8" path="res://Colors/begining/sakura.png" id="8_wavbf"]
@@ -176,6 +177,18 @@ tracks/6/keys = {
 "method": &"PlayBGM"
 }]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sakura:skew")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.066667, 4.3, 6.4, 8.666667, 10.733335, 12.966668, 15.066667, 17.166666, 19.233334, 21.466667, 23.566666, 25.4, 27.466667, 29.7, 31.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.1326450231515692, 0.0, 0.10471975511965978, 0.0, -0.1326450231515692, 0.0, 0.10471975511965978, 0.0, -0.1326450231515692, 0.0, 0.10471975511965978, 0.0, -0.1326450231515692, 0.0, 0.10471975511965978]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dhwe2"]
 _data = {
@@ -328,7 +341,7 @@ position = Vector2(652.1301, 310.46265)
 texture = ExtResource("7_1dttu")
 
 [node name="Sakura" type="Sprite2D" parent="." unique_id=1756548582]
-position = Vector2(4898, 245)
+position = Vector2(4727, 245.00002)
 scale = Vector2(1.2912107, 1.287249)
 texture = ExtResource("8_wavbf")
 
@@ -382,6 +395,9 @@ zoom = Vector2(0.89, 0.89)
 modulate = Color(1, 0, 1, 1)
 position = Vector2(4462.0005, 505.99997)
 scale = Vector2(0.9199609, 0.8800049)
+
+[node name="ParticleArts2" parent="." unique_id=244059378 instance=ExtResource("6_dhwe2")]
+position = Vector2(3182, -264)
 
 [node name="front" type="Parallax2D" parent="." unique_id=94876010]
 scroll_scale = Vector2(1.2, 1.2)
