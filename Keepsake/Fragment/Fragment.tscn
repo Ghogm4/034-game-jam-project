@@ -2,14 +2,43 @@
 
 [ext_resource type="Script" uid="uid://dnpubuyccxc2b" path="res://Keepsake/Fragment/Fragment.cs" id="1_f6wxk"]
 [ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_ochec"]
+[ext_resource type="Script" path="res://StateTree/StateTree.cs" id="3_6vg7n"]
+[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_FragmentState.cs" id="4_x8q3h"]
+[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_FloatingState.cs" id="5_jt5yw"]
+[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_HeldState.cs" id="6_dy7x8"]
+[ext_resource type="Script" path="res://Keepsake/Fragment/FragmentStates/Fragment_ThrownState.cs" id="7_m2g3q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ochec"]
+radius = 48.0
 
-[node name="Fragment" type="Area2D" unique_id=1649991499]
+[node name="Fragment" type="RigidBody2D" unique_id=1649991499]
 script = ExtResource("1_f6wxk")
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=251136955]
 texture = ExtResource("1_ochec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1099237673]
 shape = SubResource("CircleShape2D_ochec")
+disabled = true
+
+[node name="PickupSensor" type="Area2D" parent="." unique_id=181391040]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupSensor" unique_id=788692184]
+shape = SubResource("CircleShape2D_ochec")
+
+[node name="StateTree" type="Node" parent="." unique_id=338267114]
+script = ExtResource("3_6vg7n")
+InitialStateName = "Floating"
+
+[node name="FragmentState" type="Node" parent="StateTree" unique_id=1124108500]
+script = ExtResource("4_x8q3h")
+
+[node name="Floating" type="Node" parent="StateTree/FragmentState" unique_id=1451481785]
+script = ExtResource("5_jt5yw")
+
+[node name="Held" type="Node" parent="StateTree/FragmentState" unique_id=581743729]
+script = ExtResource("6_dy7x8")
+
+[node name="Thrown" type="Node" parent="StateTree/FragmentState" unique_id=930008694]
+script = ExtResource("7_m2g3q")
