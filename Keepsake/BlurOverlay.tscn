@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cj4htn1c784rd"]
+
+[ext_resource type="Shader" uid="uid://b3dhwd5q7bfyt" path="res://Keepsake/BlurShader.gdshader" id="1_i0fcv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uh1g"]
+shader = ExtResource("1_i0fcv")
+shader_parameter/blur_amount = 2.0
+shader_parameter/sampling_quality = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0fcv"]
+shader = ExtResource("1_i0fcv")
+shader_parameter/blur_amount = 2.0
+shader_parameter/sampling_quality = 4
+
+[node name="BlurOverlay" type="CanvasLayer" unique_id=1498338304]
+
+[node name="HorizontalBlur" type="ColorRect" parent="." unique_id=1842431067]
+material = SubResource("ShaderMaterial_8uh1g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=177902346]
+copy_mode = 2
+
+[node name="VerticalBlur" type="ColorRect" parent="." unique_id=810978339]
+material = SubResource("ShaderMaterial_i0fcv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
