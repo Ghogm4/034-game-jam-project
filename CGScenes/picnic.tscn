@@ -8,9 +8,241 @@
 [ext_resource type="Texture2D" uid="uid://bu02ddikvflr8" path="res://Colors/begining/sakura.png" id="3_xxh7o"]
 [ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="5_xxh7o"]
 [ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="6_5vivt"]
+[ext_resource type="PackedScene" uid="uid://b1c5w3ofgj757" path="res://Particle Arts/Particle_arts_2.tscn" id="9_hdvqq"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="10_t1r3p"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="11_jbixk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tq56h"]
 size = Vector2(683.6935, 526.0165)
+
+[sub_resource type="Animation" id="Animation_trena"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Canvas:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.3434149]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Player:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.12509039]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Player2:MoveSpeed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [200.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Player2:TiltAngleDegrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.575]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Player2:CutSceneJumped")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Player/RedDaYun:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jatty"]
+resource_name = "new_animation"
+length = 37.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Canvas:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 32.3, 34.684208),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BGMPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Birdsong", 4.51],
+"method": &"PlayBGM"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Player2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.1, 10, 28.566668, 29.433332),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.3434149, 0.0, 0.0, 0.2251474735072681]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Player:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(12.066667, 14.3, 23.6, 24.266666, 26.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.12509039, 0.0, 0.0, 0.1361356816555579, -1.219985147144036]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Player2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(16.033333, 20.133333, 20.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [1290.0],
+"method": &"CutSceneMove"
+}, {
+"args": [1260.0],
+"method": &"CutSceneMove"
+}, {
+"args": [1440.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(18),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1190.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Player2:MoveSpeed")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(18.033333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [400.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Player2:TiltAngleDegrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(21.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-2.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Player2:CutSceneJumped")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(20.8, 21.333334, 30.11579, 30.233334, 30.515793, 30.615793, 30.915792, 31.015793, 31.300003, 31.417545, 31.7, 31.8, 32.066666, 32.166668, 32.415787, 32.533333, 32.81579, 32.91579, 33.21579, 33.31579, 33.6, 33.717545, 34, 34.1, 34.36666, 34.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Player/RedDaYun:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(21.666666, 22.633331),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsr6a"]
+_data = {
+&"RESET": SubResource("Animation_trena"),
+&"new_animation": SubResource("Animation_jatty")
+}
 
 [node name="Node2D" type="Node2D" unique_id=1580644992]
 
@@ -103,11 +335,45 @@ scale = Vector2(0.049990788, 0.1400517)
 texture = ExtResource("6_5vivt")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("2_ckvxg")]
-position = Vector2(1076, 701)
+modulate = Color(1, 0.97961956, 1, 1)
+position = Vector2(1073, 741)
+rotation = 0.12509039
+MoveSpeed = 150.0
+IsInCutScene = true
+JumpVelocity = 10.0
+
+[node name="RedDaYun" type="Sprite2D" parent="Player" unique_id=1029933023]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1.3113022e-06, 1.0000286)
+scale = Vector2(0.13812943, 0.25787106)
+texture = ExtResource("5_xxh7o")
 
 [node name="Player2" parent="." unique_id=2058369625 instance=ExtResource("3_tu52b")]
 modulate = Color(1, 0, 1, 1)
-position = Vector2(1204, 701)
+position = Vector2(1133, 738)
+rotation = -0.3434149
+MoveSpeed = 200.0
+JumpVelocity = 10.0
+
+[node name="ParticleArts2" parent="." unique_id=244059378 instance=ExtResource("9_hdvqq")]
+modulate = Color(0.25222972, 1.160031, 0.68129, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=637937960]
 position = Vector2(1139, 551)
+
+[node name="Canvas" type="Sprite2D" parent="." unique_id=900213773]
+position = Vector2(1093, 759.00006)
+scale = Vector2(4.792086, 2.8388305)
+texture = ExtResource("10_t1r3p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=122843526]
+root_node = NodePath("../ParticleArts2")
+libraries/ = SubResource("AnimationLibrary_rsr6a")
+autoplay = &"new_animation"
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=947244181]
+script = ExtResource("11_jbixk")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="ruler" type="Node2D" parent="." unique_id=533531736]
+position = Vector2(1445, 740)

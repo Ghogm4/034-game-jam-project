@@ -2,9 +2,6 @@
 
 [ext_resource type="Shader" uid="uid://dfwj02on45lte" path="res://Particle Arts/leaves.gdshader" id="1_lfth6"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_86u3m"]
-polygon = PackedVector2Array(9, 1044, 1915, 1044, 1917, 1325, -5, 1330)
-
 [sub_resource type="Gradient" id="Gradient_lfth6"]
 colors = PackedColorArray(1, 0.5294118, 0.81960785, 1, 1, 0.5310367, 0.8205134, 1)
 
@@ -26,10 +23,10 @@ shader_parameter/scale_max = 1.5
 shader_parameter/wind_speed_min = -10.0
 shader_parameter/wind_speed_max = -40.0
 
-[node name="ParticleArts2" type="Node2D" unique_id=244059378]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qc0mq"]
+polygon = PackedVector2Array(-190, -208, 1678, -216, 1686, 269, -173, 300)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1785712622]
-occluder = SubResource("OccluderPolygon2D_86u3m")
+[node name="ParticleArts2" type="Node2D" unique_id=244059378]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=512641773]
 position = Vector2(1458, 256)
@@ -37,4 +34,9 @@ amount = 30
 texture = SubResource("GradientTexture2D_iy31f")
 lifetime = 30.0
 preprocess = 10.0
+collision_base_size = 12.86
 process_material = SubResource("ShaderMaterial_86u3m")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." unique_id=1205076226]
+position = Vector2(203, 1249)
+occluder = SubResource("OccluderPolygon2D_qc0mq")

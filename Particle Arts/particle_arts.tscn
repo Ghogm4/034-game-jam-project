@@ -6,7 +6,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cytki"]
 gradient = SubResource("Gradient_05am0")
 width = 2
-height = 15
+height = 32
 
 [sub_resource type="Gradient" id="Gradient_cytki"]
 offsets = PackedFloat32Array(0, 0.2987013)
