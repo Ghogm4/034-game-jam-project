@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cj4htn1c784rd"]
 
-[ext_resource type="Shader" uid="uid://b3dhwd5q7bfyt" path="res://Keepsake/BlurShader.gdshader" id="1_i0fcv"]
+[ext_resource type="Shader" uid="uid://b3dhwd5q7bfyt" path="res://Fragment/BlurShader.gdshader" id="1_i0fcv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8uh1g"]
 shader = ExtResource("1_i0fcv")
