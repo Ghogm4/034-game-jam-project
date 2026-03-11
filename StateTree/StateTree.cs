@@ -9,7 +9,7 @@ public partial class StateTree : State
 	// 填写初始状态名称,将沿路径进入该状态
 	[Export] public string InitialStateName = "";
 	protected Dictionary<string, State> _stateTree = new();
-	public State _currentState = null;
+	public State CurrentState = null;
 
 	protected override void ReadyBehavior()
 	{
@@ -34,11 +34,11 @@ public partial class StateTree : State
 	}
 	protected void ChangeState(string targetStateName)
 	{
-		List<State> currentPath = GetPathToRoot(_currentState);
-		State previousState = _currentState;
-		_currentState = _stateTree[targetStateName];
-		_currentState.PreviousState = previousState;
-		List<State> nextPath = GetPathToRoot(_currentState);
+		List<State> currentPath = GetPathToRoot(CurrentState);
+		State previousState = CurrentState;
+		CurrentState = _stateTree[targetStateName];
+		CurrentState.PreviousState = previousState;
+		List<State> nextPath = GetPathToRoot(CurrentState);
 		nextPath.Reverse();
 		CutIntersect(ref currentPath, ref nextPath);
 		foreach (State state in currentPath)
@@ -67,7 +67,7 @@ public partial class StateTree : State
 		
 		Stack<State> stack = new();
 		State initialState = _stateTree[InitialStateName];
-		_currentState = initialState;
+		CurrentState = initialState;
 
 
 		while (initialState != null)
