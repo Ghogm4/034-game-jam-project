@@ -35,6 +35,8 @@ public partial class Player : CharacterBody2D
 	[Export] public float FragmentYAmplitude = 0.07f;
 	[Export] public float FragmentHoldLerpSpeed = 0.5f;
 	[Export] public float FragmentDefaultHoldDistance = 50f;
+	[Export] public float FragmentThrowSpeed = 900f;
+	[Export] public float FragmentThrowUpwardSpeed = 120f;
 	public Node2D Visual => field ??= GetNode<Node2D>("Visual");
 	public Area2D PickupArea => field ??= GetNode<Area2D>("%PickupArea");
 	public Vector2 BaseVisualScale { get; set; } = Vector2.One;
@@ -49,11 +51,26 @@ public partial class Player : CharacterBody2D
 	public float CutSceneTargetXPos { get; set; } = 0.0f;
 	public ulong CutSceneMoveRequestId { get; set; } = 0;
 
+	private bool IsArrived(float currentXPos, float targetXPos, float moveDir)
+	{
+		if (moveDir > 0.0f)
+		{
+			return currentXPos >= targetXPos;
+		}
+		else if (moveDir < 0.0f)
+		{
+			return currentXPos <= targetXPos;
+		}
+		else
+		{
+			return true;
+		}
+	}
 	private async void DetectCutSceneArrival(float xPos, ulong requestId)
 	{
 		while (requestId == CutSceneMoveRequestId)
 		{
-			bool arrived = Mathf.Abs(GlobalPosition.X - xPos) <= 1.0f;
+			bool arrived = IsArrived(GlobalPosition.X, xPos, CutSceneMoveDir);
 			if (arrived)
 			{
 				CutSceneMoveDir = 0f;
