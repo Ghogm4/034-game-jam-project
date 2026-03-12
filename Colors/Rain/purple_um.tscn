@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c7eogb1mx6ha5"]
+
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="1_pry2l"]
+
+[node name="PurpleUm" type="Sprite2D" unique_id=130360024]
+scale = Vector2(0.42266184, 0.4269115)
+texture = ExtResource("1_pry2l")

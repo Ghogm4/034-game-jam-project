@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://cvgmv48rh4hdq"]
+
+[ext_resource type="PackedScene" uid="uid://ywavyfmjf0oy" path="res://CGScenes/prefabs/buildings_3.tscn" id="1_am4q5"]
+[ext_resource type="PackedScene" uid="uid://bb84dexv0oxby" path="res://CGScenes/prefabs/buildings_2.tscn" id="2_wycyr"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="3_o0y2u"]
+[ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="4_1jiwn"]
+[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="4_fa1sb"]
+[ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="5_o0y2u"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="5_wycyr"]
+[ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="8_og3mt"]
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="9_trjvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wycyr"]
+size = Vector2(237.55627, 734.3127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_am4q5"]
+size = Vector2(1015.44226, 432.89056)
+
+[node name="Node2D" type="Node2D" unique_id=2015346646]
+
+[node name="Buildings3" parent="." unique_id=1469672688 instance=ExtResource("1_am4q5")]
+modulate = Color(1, 1, 1, 0.6117647)
+scroll_offset = Vector2(-919, 289)
+repeat_size = Vector2(2662.71, 0)
+
+[node name="Buildings2" parent="." unique_id=1343911482 instance=ExtResource("2_wycyr")]
+modulate = Color(1, 1, 1, 0.8627451)
+scroll_offset = Vector2(-3171, -232)
+repeat_size = Vector2(3400, 0)
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1478278626]
+scale = Vector2(0.4856115, 1.8737915)
+repeat_size = Vector2(6500, 0)
+
+[node name="buildings" type="Node2D" parent="Parallax2D2" unique_id=958334385]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="BlackSquare" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1609171091]
+position = Vector2(-554.32684, 1.9150953)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("3_o0y2u")
+
+[node name="BlackSquare2" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=995486246]
+position = Vector2(226.0037, 233.9151)
+scale = Vector2(0.56574076, 0.99999994)
+texture = ExtResource("3_o0y2u")
+
+[node name="BlackSquare3" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1303210681]
+position = Vector2(1109.426, 40.21698)
+scale = Vector2(0.88574064, 0.9052503)
+texture = ExtResource("3_o0y2u")
+
+[node name="BlackSquare4" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1918547300]
+position = Vector2(2104.0483, 244.85849)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("3_o0y2u")
+
+[node name="BlackSquare5" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1279957911]
+position = Vector2(2944.2263, 68.66981)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("3_o0y2u")
+
+[node name="BlackSquare6" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1318751205]
+position = Vector2(3752.55, 223.38208)
+scale = Vector2(1.0753707, 0.96267426)
+texture = ExtResource("3_o0y2u")
+
+[node name="BlackSquare7" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1122081754]
+position = Vector2(4943.766, 36.933945)
+scale = Vector2(1.0753707, 0.96267426)
+texture = ExtResource("3_o0y2u")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1646488047]
+position = Vector2(-742.875, -88.00001)
+scale = Vector2(1.1708633, 0.7863568)
+
+[node name="BlackSquare2" type="Sprite2D" parent="StaticBody2D2" unique_id=546551898]
+modulate = Color(0.32420272, 0.32420275, 0.32420272, 1)
+texture = ExtResource("4_fa1sb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1240630798]
+position = Vector2(-232.47638, -24.162056)
+shape = SubResource("RectangleShape2D_wycyr")
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=483017110]
+position = Vector2(1280, 908.00006)
+scale = Vector2(7.551389, 2.2985024)
+
+[node name="BlackSquare" type="Sprite2D" parent="ground" unique_id=1760445265]
+position = Vector2(53.963623, 0)
+scale = Vector2(1.7863214, 1)
+texture = ExtResource("3_o0y2u")
+
+[node name="GraySquare" type="Sprite2D" parent="ground" unique_id=572156451]
+position = Vector2(50.18947, -309.76694)
+scale = Vector2(1.8028985, 0.08642613)
+texture = ExtResource("4_1jiwn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=340172582]
+position = Vector2(166.1946, -98.54245)
+shape = SubResource("RectangleShape2D_am4q5")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("5_wycyr")]
+position = Vector2(-461, 97)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1338748594]
+offset = Vector2(0, -320.585)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1637335915]
+visible = false
+scale = Vector2(0.3480216, 1.8737913)
+scroll_scale = Vector2(1.2, 1)
+scroll_offset = Vector2(-1643.9999, -16)
+repeat_size = Vector2(9000, 0)
+
+[node name="buildings2" type="Node2D" parent="Parallax2D" unique_id=1998122960]
+position = Vector2(773.4791, -1.9150925)
+scale = Vector2(1.3953487, 1)
+
+[node name="BlackSquare" type="Sprite2D" parent="Parallax2D/buildings2" unique_id=1067563504]
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 0.3372549)
+position = Vector2(-554.32684, 1.9150953)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("5_o0y2u")
+
+[node name="BlackSquare2" type="Sprite2D" parent="Parallax2D/buildings2" unique_id=67694348]
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 0.3372549)
+position = Vector2(226.0037, 233.9151)
+scale = Vector2(0.56574076, 0.99999994)
+texture = ExtResource("5_o0y2u")
+
+[node name="BlackSquare3" type="Sprite2D" parent="Parallax2D/buildings2" unique_id=152214566]
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 0.3372549)
+position = Vector2(1109.426, 40.21698)
+scale = Vector2(0.88574064, 0.9052503)
+texture = ExtResource("5_o0y2u")
+
+[node name="BlackSquare4" type="Sprite2D" parent="Parallax2D/buildings2" unique_id=2081283297]
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 0.3372549)
+position = Vector2(2104.0483, 244.85849)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("5_o0y2u")
+
+[node name="BlackSquare5" type="Sprite2D" parent="Parallax2D/buildings2" unique_id=818431810]
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 0.3372549)
+position = Vector2(2944.2263, 68.66981)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("5_o0y2u")
+
+[node name="BlackSquare6" type="Sprite2D" parent="Parallax2D/buildings2" unique_id=1323187046]
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 0.3372549)
+position = Vector2(3752.55, 223.38208)
+scale = Vector2(1.0753707, 0.96267426)
+texture = ExtResource("5_o0y2u")
+
+[node name="BlackSquare7" type="Sprite2D" parent="Parallax2D/buildings2" unique_id=315408608]
+modulate = Color(0.20784314, 0.20784314, 0.20784314, 0.3372549)
+position = Vector2(4943.766, 36.933945)
+scale = Vector2(1.0753707, 0.96267426)
+texture = ExtResource("5_o0y2u")
+
+[node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("8_og3mt")]
+position = Vector2(298, 103)
+FragmentScene = ExtResource("9_trjvs")

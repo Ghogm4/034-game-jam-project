@@ -338,3 +338,4 @@ FragmentName = "B"
 [node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("6_rdujs")]
 
 [node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("7_rdujs")]
+FragmentScene = ExtResource("4_8ovih")

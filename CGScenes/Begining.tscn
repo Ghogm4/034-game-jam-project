@@ -588,7 +588,7 @@ position = Vector2(-0.72454834, 11.347168)
 shape = SubResource("RectangleShape2D_g65if")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("6_py6on")]
-position = Vector2(533, 606)
+position = Vector2(3358, 502)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=448211506]
 offset = Vector2(0, -178.64)
@@ -829,6 +829,7 @@ texture = ExtResource("11_oyrq5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2140981414]
 libraries/ = SubResource("AnimationLibrary_dhwe2")
+autoplay = &"begining"
 
 [node name="TargetRuler" type="Node2D" parent="." unique_id=2034004648]
 position = Vector2(532, 606)

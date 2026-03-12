@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0b6awaje5d2a"]
 
 [ext_resource type="Script" uid="uid://dnpubuyccxc2b" path="res://Fragment/Fragment.cs" id="1_f6wxk"]
-[ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_ochec"]
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="2_kvama"]
 [ext_resource type="Script" uid="uid://d3645llygfx2u" path="res://StateTree/StateTree.cs" id="3_6vg7n"]
 [ext_resource type="Script" uid="uid://ca0ut70dmxacv" path="res://Fragment/FragmentStates/Fragment_FragmentState.cs" id="4_x8q3h"]
 [ext_resource type="Script" uid="uid://do1nfds7cisg6" path="res://Fragment/FragmentStates/Fragment_FloatingState.cs" id="5_jt5yw"]
@@ -18,7 +18,8 @@ max_contacts_reported = 1
 script = ExtResource("1_f6wxk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=251136955]
-texture = ExtResource("1_ochec")
+scale = Vector2(0.31043997, 0.3297984)
+texture = ExtResource("2_kvama")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1099237673]
 shape = SubResource("CircleShape2D_ochec")
