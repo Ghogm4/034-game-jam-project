@@ -4,27 +4,13 @@ using System;
 public partial class Player_UniversalState : Player_PlayerState
 {
     private bool _canPickup = true;
+    private Fragment _highlightedFragment = null;
 
-    private Fragment FindFragmentFromOverlappingAreas()
-    {
-        foreach (Area2D overlappingArea in Player.PickupArea.GetOverlappingAreas())
-        {
-            if (overlappingArea.Owner is not Fragment fragment) continue;
-            if (!fragment.CanBePickedUp) continue;
-
-            return fragment;
-        }
-
-        return null;
-    }
-
-    private Fragment FindFragmentFromPickupRange()
+    private Fragment FindNearestPickupableFragment()
     {
         CollisionShape2D pickupAreaCollision = Player.PickupArea.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
         if (pickupAreaCollision?.Shape is not CircleShape2D pickupCircle)
-        {
             return null;
-        }
 
         float pickupRadius = pickupCircle.Radius * Mathf.Max(
             Mathf.Abs(Player.PickupArea.GlobalScale.X),
@@ -33,6 +19,20 @@ public partial class Player_UniversalState : Player_PlayerState
 
         Fragment nearestFragment = null;
         float nearestDistanceSquared = float.MaxValue;
+        Vector2 pickupCenter = Player.PickupArea.GlobalPosition;
+
+        foreach (Area2D overlappingArea in Player.PickupArea.GetOverlappingAreas())
+        {
+            if (overlappingArea.Owner is not Fragment fragment) continue;
+            if (!fragment.CanBePickedUp) continue;
+
+            float distSq = pickupCenter.DistanceSquaredTo(fragment.GlobalPosition);
+            if (distSq < nearestDistanceSquared)
+            {
+                nearestDistanceSquared = distSq;
+                nearestFragment = fragment;
+            }
+        }
 
         foreach (Node fragmentNode in GetTree().GetNodesInGroup(Fragment.PickupGroupName))
         {
@@ -41,16 +41,14 @@ public partial class Player_UniversalState : Player_PlayerState
 
             CollisionShape2D pickupSensorCollision = fragment.PickupSensor.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
             if (pickupSensorCollision?.Shape is not CircleShape2D sensorCircle)
-            {
                 continue;
-            }
 
             float sensorRadius = sensorCircle.Radius * Mathf.Max(
                 Mathf.Abs(fragment.PickupSensor.GlobalScale.X),
                 Mathf.Abs(fragment.PickupSensor.GlobalScale.Y)
             );
 
-            float distanceSquared = Player.PickupArea.GlobalPosition.DistanceSquaredTo(fragment.PickupSensor.GlobalPosition);
+            float distanceSquared = pickupCenter.DistanceSquaredTo(fragment.PickupSensor.GlobalPosition);
             float totalRadius = pickupRadius + sensorRadius;
             if (distanceSquared > totalRadius * totalRadius) continue;
             if (distanceSquared >= nearestDistanceSquared) continue;
@@ -97,7 +95,7 @@ public partial class Player_UniversalState : Player_PlayerState
             return;
         }
 
-        Fragment fragmentToCollect = FindFragmentFromOverlappingAreas() ?? FindFragmentFromPickupRange();
+        Fragment fragmentToCollect = FindNearestPickupableFragment();
         if (fragmentToCollect == null) return;
 
         Player.HeldFragment = fragmentToCollect;
@@ -146,6 +144,21 @@ public partial class Player_UniversalState : Player_PlayerState
         Vector2 fragmentPos = Player.HeldFragment.GlobalPosition;
         Player.HeldFragment.GlobalPosition = fragmentPos.Lerp(targetPos, Player.FragmentHoldLerpSpeed);
     }
+
+    private void UpdateFragmentHighlight()
+    {
+        Fragment nearest = Player.HeldFragment == null ? FindNearestPickupableFragment() : null;
+
+        if (_highlightedFragment != nearest)
+        {
+            if (IsInstanceValid(_highlightedFragment))
+                _highlightedFragment.DisableOutline();
+            _highlightedFragment = nearest;
+        }
+
+        if (IsInstanceValid(_highlightedFragment))
+            _highlightedFragment.EnableOutline();
+    }
     protected override void PhysicsUpdate(double delta)
     {
         bool wasOnFloor = Player.IsOnFloor();
@@ -164,6 +177,7 @@ public partial class Player_UniversalState : Player_PlayerState
         Player.LandingImpactSpeed = landedThisFrame ? Mathf.Max(preMoveVerticalSpeed, 0.0f) : 0.0f;
 
         if (!_canPickup) return;
+        UpdateFragmentHighlight();
         HandleFragmentInteraction();
         UpdateFragmentPosition();
     }

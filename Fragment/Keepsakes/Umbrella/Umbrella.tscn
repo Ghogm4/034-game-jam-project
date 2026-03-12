@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://djonho61gj87v"]
+
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="1_tmdog"]
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="2_0d84o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdog"]
+size = Vector2(205, 207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tr02"]
+size = Vector2(125, 163)
+
+[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_tmdog")]
+FragmentName = "UmbrellaHat"
+
+[node name="Sprite2D" parent="." index="0" unique_id=251136955]
+scale = Vector2(0.353, 0.38)
+texture = ExtResource("2_0d84o")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
+position = Vector2(0.5, 11.5)
+shape = SubResource("RectangleShape2D_tmdog")
+
+[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_7tr02")
