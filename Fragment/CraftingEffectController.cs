@@ -69,7 +69,7 @@ public partial class CraftingEffectController : Node
             spriteCloneB.Position = screenPosB.Lerp(centerPosB, eased);
             spriteCloneA.Scale = originalSpriteAScale.Lerp(originalSpriteAScale * EnlargedScaleMultiplier, eased);
             spriteCloneB.Scale = originalSpriteBScale.Lerp(originalSpriteBScale * EnlargedScaleMultiplier, eased);
-            GD.Print("A Scale: " + spriteCloneA.Scale + " B Scale: " + spriteCloneB.Scale);
+            // GD.Print("A Scale: " + spriteCloneA.Scale + " B Scale: " + spriteCloneB.Scale);
         });
 
         await Animate(ShakeDuration, progress =>
@@ -92,7 +92,7 @@ public partial class CraftingEffectController : Node
             SetBlur(Mathf.Lerp(PeakBlurAmount, 0.0f, eased), 1.0f - eased);
             resultClone.Position = screenCenter.Lerp(targetScreenPos, eased);
             resultClone.Scale = originalResultScale * Mathf.Lerp(ResultScaleMultiplier, 1.0f, eased);
-            GD.Print("Result Scale: " + resultClone.Scale);
+            // GD.Print("Result Scale: " + resultClone.Scale);
         });
 
         if (IsInstanceValid(resultInstance) && !resultInstance.IsInsideTree())
@@ -118,7 +118,7 @@ public partial class CraftingEffectController : Node
 
     private Sprite2D CreateCloneSprite(Sprite2D sourceSprite, Vector2 screenPosition)
     {
-        GD.Print(sourceSprite.Scale);
+        // GD.Print(sourceSprite.Scale);
         Sprite2D clone = new Sprite2D()
         {
             Texture = sourceSprite?.Texture,
