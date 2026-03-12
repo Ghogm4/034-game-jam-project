@@ -101,6 +101,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Sakura:skew")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_jatty"]
 resource_name = "new_animation"
@@ -138,10 +150,10 @@ tracks/2/path = NodePath("../Player2:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(7.1, 10, 28.566668, 29.433332),
+"times": PackedFloat32Array(7.1, 10, 27.866667, 29.433332),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-0.3434149, 0.0, 0.0, 0.2251474735072681]
+"values": [-0.3434149, 0.0, 0.0, 0.452040276266531]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -236,6 +248,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Sakura:skew")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.8666667, 3.7666667, 5.6666665, 7.4, 9.266666, 11.166666, 13.066668, 14.821279, 16.687944, 18.587946, 20.487946, 22.477303, 24.34397, 26.243969, 28.143969, 30.063272, 31.92994, 33.82994, 35.72994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rsr6a"]
@@ -352,6 +376,7 @@ texture = ExtResource("5_xxh7o")
 modulate = Color(1, 0, 1, 1)
 position = Vector2(1133, 738)
 rotation = -0.3434149
+scale = Vector2(0.96, 0.92)
 MoveSpeed = 200.0
 JumpVelocity = 10.0
 
