@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_804c2"]
 [ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="1_ervrm"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_wyv1x"]
-[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="4_8ovih"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="6_rdujs"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="7_rdujs"]
 [ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="8_tmxln"]
@@ -308,14 +307,6 @@ shape = SubResource("RectangleShape2D_wyv1x")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=629918330]
 libraries/ = SubResource("AnimationLibrary_8ovih")
 
-[node name="Fragment" parent="." unique_id=1649991499 instance=ExtResource("4_8ovih")]
-position = Vector2(753, 122)
-FragmentName = "A"
-
-[node name="Fragment2" parent="." unique_id=1557776728 instance=ExtResource("4_8ovih")]
-position = Vector2(1032, 154)
-FragmentName = "B"
-
 [node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("6_rdujs")]
 
 [node name="PressurePlate" parent="." unique_id=895291090 instance=ExtResource("8_tmxln")]
@@ -326,7 +317,6 @@ ReleaseDuration = 0.5
 
 [node name="Door" parent="." unique_id=1034037436 instance=ExtResource("9_0hjgu")]
 position = Vector2(141, 411)
-Direction = 1
 
 [node name="Generators" type="Node2D" parent="." unique_id=1060780259]
 
