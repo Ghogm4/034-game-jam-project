@@ -16,6 +16,21 @@
 [ext_resource type="AudioStream" uid="uid://87iocfe8t8w" path="res://Assets/BGM/Slient_4.ogg" id="14_2trk5"]
 [ext_resource type="AudioStream" uid="uid://csj642ax834pe" path="res://Assets/SFX/Recollected.wav" id="15_hv5in"]
 [ext_resource type="AudioStream" uid="uid://4a6xkx56dhfy" path="res://Assets/BGM/Mist.ogg" id="15_l24u0"]
+[ext_resource type="AudioStream" uid="uid://bk7k3smw37uqk" path="res://Assets/SFX/car crash.wav" id="17_uvgas"]
+[ext_resource type="AudioStream" uid="uid://q6yubr0xscqw" path="res://Assets/SFX/collect.wav" id="18_lw3lm"]
+[ext_resource type="AudioStream" uid="uid://m7fteirifjho" path="res://Assets/SFX/connect.wav" id="19_1t88w"]
+[ext_resource type="AudioStream" uid="uid://b1twt6x35m0uu" path="res://Assets/SFX/door_close.wav" id="20_anpmm"]
+[ext_resource type="AudioStream" uid="uid://6ju7vsxx1mm0" path="res://Assets/SFX/door_open.wav" id="21_v7335"]
+[ext_resource type="AudioStream" uid="uid://b5jr1hyv7yjny" path="res://Assets/SFX/door_close_reverb.wav" id="22_0orja"]
+[ext_resource type="AudioStream" uid="uid://i1txe0d6xull" path="res://Assets/SFX/door_open_reverb.wav" id="23_7h3ag"]
+[ext_resource type="AudioStream" uid="uid://cwqbobxt0lu4a" path="res://Assets/SFX/foot_ground2.wav" id="24_sj40i"]
+[ext_resource type="AudioStream" uid="uid://b4qgyh26e0n3n" path="res://Assets/SFX/foot_hospital.wav" id="25_mivhl"]
+[ext_resource type="AudioStream" uid="uid://bq2vmks5wa4pe" path="res://Assets/SFX/land_ground2.wav" id="26_ssqje"]
+[ext_resource type="AudioStream" uid="uid://dlfwispj5sj81" path="res://Assets/SFX/pressure-plate_on.wav" id="27_2c4lo"]
+[ext_resource type="AudioStream" uid="uid://do6vseswudog5" path="res://Assets/SFX/pressure-plate_off.wav" id="28_jxmia"]
+[ext_resource type="AudioStream" uid="uid://cx5n08bw817yu" path="res://Assets/SFX/throw.wav" id="29_a574o"]
+[ext_resource type="AudioStream" uid="uid://c36xit70tog6u" path="res://Assets/SFX/Tinnitus.wav" id="30_m4m8l"]
+[ext_resource type="AudioStream" uid="uid://daofggtgo0qba" path="res://Assets/SFX/ui.wav" id="31_ubbax"]
 
 [node name="AudioManager" type="Node" unique_id=1857709071 node_paths=PackedStringArray("BGMPlayerA", "BGMPlayerB")]
 script = ExtResource("1_cic6f")
@@ -36,7 +51,22 @@ BGMStreams = Dictionary[String, AudioStream]({
 "empty": ExtResource("5_4jfua")
 })
 SFXStreams = Dictionary[String, AudioStream]({
-"Recollected": ExtResource("15_hv5in")
+"Car Crash": ExtResource("17_uvgas"),
+"Collect": ExtResource("18_lw3lm"),
+"Connect": ExtResource("19_1t88w"),
+"Door Close": ExtResource("20_anpmm"),
+"Door Close Reverb": ExtResource("22_0orja"),
+"Door Open": ExtResource("21_v7335"),
+"Door Open Reverb": ExtResource("23_7h3ag"),
+"Foot Ground": ExtResource("24_sj40i"),
+"Foot Hospital": ExtResource("25_mivhl"),
+"Land Ground": ExtResource("26_ssqje"),
+"Pressure Plate Off": ExtResource("28_jxmia"),
+"Pressure Plate On": ExtResource("27_2c4lo"),
+"Recollected": ExtResource("15_hv5in"),
+"Throw": ExtResource("29_a574o"),
+"Tinnitus": ExtResource("30_m4m8l"),
+"UI": ExtResource("31_ubbax")
 })
 BGMPlayerA = NodePath("BGMPlayerA")
 BGMPlayerB = NodePath("BGMPlayerB")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk7k3smw37uqk"
+path="res://.godot/imported/car crash.wav-acbcd3b03b266f8c2a1ef07c8da4d3c5.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/car crash.wav"
+dest_files=["res://.godot/imported/car crash.wav-acbcd3b03b266f8c2a1ef07c8da4d3c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
