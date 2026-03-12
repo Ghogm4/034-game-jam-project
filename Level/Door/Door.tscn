@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://bhhktr81cnk4b"]
 
-[ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_1uku7"]
 [ext_resource type="Script" uid="uid://da3l31vodc8r6" path="res://Level/Door/Door.cs" id="1_v3b8r"]
+[ext_resource type="Texture2D" uid="uid://d35fa7eufhtdp" path="res://Colors/begining/orangeSquare.png" id="2_v3b8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3b8r"]
-size = Vector2(128, 128)
+size = Vector2(57, 331)
 
 [node name="Door" type="AnimatableBody2D" unique_id=1034037436]
 script = ExtResource("1_v3b8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1621321037]
-texture = ExtResource("1_1uku7")
+position = Vector2(2.499998, 2.000019)
+scale = Vector2(0.08201438, 0.49475265)
+texture = ExtResource("2_v3b8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1339398472]
+position = Vector2(1.5, 2.5)
 shape = SubResource("RectangleShape2D_v3b8r")

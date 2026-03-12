@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dq1gcc1idie0y"]
 
 [ext_resource type="Script" uid="uid://b8u2wccv1buxb" path="res://Level/PressurePlate/PressurePlate.cs" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="2_5nxcg"]
+[ext_resource type="Texture2D" uid="uid://d35fa7eufhtdp" path="res://Colors/begining/orangeSquare.png" id="2_5nxcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
-size = Vector2(128, 128)
+size = Vector2(128, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plate"]
 size = Vector2(128, 14)
@@ -12,11 +12,17 @@ size = Vector2(128, 14)
 [node name="PressurePlate" type="AnimatableBody2D" unique_id=895291090]
 collision_mask = 3
 script = ExtResource("1_script")
+PressDepth = 20.0
+PressDuration = 0.2
+ReleaseDuration = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1136689704]
+position = Vector2(3.0994415e-06, -47.500008)
+scale = Vector2(0.18417266, 0.07046479)
 texture = ExtResource("2_5nxcg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1138799601]
+position = Vector2(0, -44)
 shape = SubResource("RectangleShape2D_body")
 
 [node name="DetectArea" type="Area2D" parent="." unique_id=1903606770]

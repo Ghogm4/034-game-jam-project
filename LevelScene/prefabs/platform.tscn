@@ -5,14 +5,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5k8j"]
 size = Vector2(35.403152, 236.59595)
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=136153104]
-scale = Vector2(1, 1.0000001)
+[node name="StaticBody2D2" type="StaticBody2D" unique_id=1564111054]
+scale = Vector2(1.901581, 1.0000002)
 
-[node name="White" type="Sprite2D" parent="." unique_id=452343960]
-position = Vector2(499.8253, -1479.9847)
+[node name="White" type="Sprite2D" parent="." unique_id=2143091258]
+position = Vector2(0.08508301, -70.475464)
 scale = Vector2(0.05145672, 0.545283)
 texture = ExtResource("1_brwja")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=379938250]
-position = Vector2(499.7599, -1417.0605)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266422185]
+position = Vector2(0.019714355, -7.5510864)
 shape = SubResource("RectangleShape2D_h5k8j")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://7ayv4ysg3fn"]
+
+[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="1_8b2i2"]
+
+[node name="GraySquare5" type="Sprite2D" unique_id=396476325]
+scale = Vector2(0.017964067, 1.0210719)
+texture = ExtResource("1_8b2i2")

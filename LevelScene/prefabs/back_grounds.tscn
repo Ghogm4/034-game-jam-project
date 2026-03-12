@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://5b4qdqveswg3"]
+
+[ext_resource type="PackedScene" uid="uid://ywavyfmjf0oy" path="res://CGScenes/prefabs/buildings_3.tscn" id="1_m6ira"]
+[ext_resource type="PackedScene" uid="uid://bb84dexv0oxby" path="res://CGScenes/prefabs/buildings_2.tscn" id="2_oyg0m"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="3_vdvgn"]
+
+[node name="BackGrounds" type="Node2D" unique_id=458803557]
+
+[node name="Buildings3" parent="." unique_id=1469672688 instance=ExtResource("1_m6ira")]
+modulate = Color(1, 1, 1, 0.6117647)
+scroll_offset = Vector2(-919, 289)
+repeat_size = Vector2(2662.71, 0)
+
+[node name="Buildings2" parent="." unique_id=1343911482 instance=ExtResource("2_oyg0m")]
+modulate = Color(1, 1, 1, 0.8627451)
+scroll_offset = Vector2(-3171, -232)
+repeat_size = Vector2(3400, 0)
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1589517237]
+scale = Vector2(0.4856115, 1.8737915)
+repeat_size = Vector2(6500, 0)
+
+[node name="buildings" type="Node2D" parent="Parallax2D2" unique_id=1831138752]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="BlackSquare" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1623857578]
+position = Vector2(-554.32684, 1.9150953)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("3_vdvgn")
+
+[node name="BlackSquare2" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1128308483]
+position = Vector2(226.0037, 233.9151)
+scale = Vector2(0.56574076, 0.99999994)
+texture = ExtResource("3_vdvgn")
+
+[node name="BlackSquare3" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=680966314]
+position = Vector2(1109.426, 40.21698)
+scale = Vector2(0.88574064, 0.9052503)
+texture = ExtResource("3_vdvgn")
+
+[node name="BlackSquare4" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1409503425]
+position = Vector2(2104.0483, 244.85849)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("3_vdvgn")
+
+[node name="BlackSquare5" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=91599078]
+position = Vector2(2944.2263, 68.66981)
+scale = Vector2(0.7166667, 0.99999994)
+texture = ExtResource("3_vdvgn")
+
+[node name="BlackSquare6" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=1383801282]
+position = Vector2(3752.55, 223.38208)
+scale = Vector2(1.0753707, 0.96267426)
+texture = ExtResource("3_vdvgn")
+
+[node name="BlackSquare7" type="Sprite2D" parent="Parallax2D2/buildings" unique_id=730409293]
+position = Vector2(4943.766, 36.933945)
+scale = Vector2(1.0753707, 0.96267426)
+texture = ExtResource("3_vdvgn")

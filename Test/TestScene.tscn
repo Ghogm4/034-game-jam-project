@@ -343,13 +343,15 @@ FragmentName = "B"
 FragmentScene = ExtResource("4_8ovih")
 
 [node name="PressurePlate" parent="." unique_id=895291090 instance=ExtResource("8_tmxln")]
-position = Vector2(-427, 332)
-PressDepth = 20.0
-PressDuration = 0.2
-ReleaseDuration = 0.5
+position = Vector2(-427, 572)
+
+[node name="ruler" type="Node2D" parent="." unique_id=862683288]
+position = Vector2(141, 145)
 
 [node name="Door" parent="." unique_id=1034037436 instance=ExtResource("9_0hjgu")]
 position = Vector2(141, 411)
+OpenSpeed = 80.0
+OpenHeight = 300.0
 
 [connection signal="Pressed" from="PressurePlate" to="Door" method="Open"]
 [connection signal="Released" from="PressurePlate" to="Door" method="Close"]

@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://bcwg72len662a"]
+
+[ext_resource type="PackedScene" uid="uid://5b4qdqveswg3" path="res://LevelScene/prefabs/back_grounds.tscn" id="1_6q4t8"]
+[ext_resource type="PackedScene" uid="uid://ccwbwqda63xj3" path="res://LevelScene/prefabs/ground.tscn" id="2_8tcn8"]
+[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="3_21xmu"]
+[ext_resource type="PackedScene" uid="uid://jx1bjycaywqi" path="res://LevelScene/prefabs/X.tscn" id="3_jifot"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_r6vdu"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="4_r6vdu"]
+[ext_resource type="PackedScene" uid="uid://dwckp813wy10n" path="res://LevelScene/prefabs/platform.tscn" id="5_3opl0"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="5_21xmu"]
+[ext_resource type="PackedScene" uid="uid://bhhktr81cnk4b" path="res://Level/Door/Door.tscn" id="7_rmy57"]
+[ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="8_qulpo"]
+[ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="11_dc5vx"]
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="12_s8oj7"]
+[ext_resource type="Texture2D" uid="uid://dnmvyutuudby1" path="res://Colors/City1/arrow.png" id="13_s8oj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xmu"]
+size = Vector2(7.9337006, 347.3222)
+
+[sub_resource type="Animation" id="Animation_8i3m3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/BlackSquare:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rmy57"]
+resource_name = "new_animation"
+length = 5.0333333
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Mist", 5.0],
+"method": &"PlayBGM"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player/BlackSquare:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 4.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.23921569)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qulpo"]
+_data = {
+&"RESET": SubResource("Animation_8i3m3"),
+&"new_animation": SubResource("Animation_rmy57")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1459358714]
+
+[node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_6q4t8")]
+position = Vector2(-2, 5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1383213382]
+position = Vector2(327, 751)
+scale = Vector2(29.746511, 1.8505783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1080139400]
+position = Vector2(43.76984, -438.7817)
+scale = Vector2(1, 1.0000005)
+shape = SubResource("RectangleShape2D_21xmu")
+
+[node name="RedDaYun" type="Sprite2D" parent="." unique_id=2085411165]
+modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
+position = Vector2(1299, -70)
+scale = Vector2(1.2856115, 0.8928036)
+texture = ExtResource("3_21xmu")
+
+[node name="grounds" type="Node2D" parent="." unique_id=1696709432]
+
+[node name="ground2" parent="grounds" unique_id=1524614197 instance=ExtResource("2_8tcn8")]
+position = Vector2(649, 751)
+scale = Vector2(20.266514, 1.8505783)
+
+[node name="ground3" parent="grounds" unique_id=176232558 instance=ExtResource("2_8tcn8")]
+position = Vector2(-4666, 751)
+scale = Vector2(26.426502, 1.8505783)
+
+[node name="warnings" type="Node2D" parent="grounds" unique_id=1432030209]
+
+[node name="Node2D5" parent="grounds/warnings" unique_id=1534289534 instance=ExtResource("3_jifot")]
+position = Vector2(-1663, 501.00006)
+
+[node name="RedDaYun2" type="Sprite2D" parent="grounds/warnings" unique_id=1813218274]
+position = Vector2(-1443, 795)
+scale = Vector2(0.13741007, 1.8643177)
+texture = ExtResource("3_21xmu")
+
+[node name="RedDaYun3" type="Sprite2D" parent="grounds/warnings" unique_id=156486693]
+position = Vector2(-1838, 795)
+scale = Vector2(0.13741007, 1.8643177)
+texture = ExtResource("3_21xmu")
+
+[node name="platforms" type="Node2D" parent="grounds" unique_id=989275181]
+
+[node name="StaticBody2D2" parent="grounds/platforms" unique_id=1564111054 instance=ExtResource("5_3opl0")]
+position = Vector2(-2248, 159)
+scale = Vector2(8.101573, 0.5200007)
+
+[node name="StaticBody2D4" parent="grounds/platforms" unique_id=1176528892 instance=ExtResource("5_3opl0")]
+position = Vector2(-3650.0002, 159)
+scale = Vector2(5.4615784, 0.5200007)
+
+[node name="StaticBody2D9" parent="grounds/platforms" unique_id=1626793901 instance=ExtResource("5_3opl0")]
+position = Vector2(-4055, -33)
+scale = Vector2(5.4615784, 0.2799998)
+
+[node name="StaticBody2D10" parent="grounds/platforms" unique_id=1762176926 instance=ExtResource("5_3opl0")]
+position = Vector2(-4442, -119)
+scale = Vector2(5.4615784, 0.2799998)
+
+[node name="StaticBody2D11" parent="grounds/platforms" unique_id=81837379 instance=ExtResource("5_3opl0")]
+position = Vector2(-4827.0005, -184.99998)
+scale = Vector2(5.4615784, 0.2799998)
+
+[node name="StaticBody2D5" parent="grounds/platforms" unique_id=1120804673 instance=ExtResource("5_3opl0")]
+position = Vector2(-6081, 159)
+scale = Vector2(5.4615784, 0.5200007)
+
+[node name="StaticBody2D6" parent="grounds/platforms" unique_id=2128701513 instance=ExtResource("5_3opl0")]
+position = Vector2(-5406, -218.00003)
+rotation = -3.1415904
+scale = Vector2(10.3415785, 0.44000223)
+
+[node name="StaticBody2D8" parent="grounds/platforms" unique_id=1552163637 instance=ExtResource("5_3opl0")]
+position = Vector2(-5780, -320.00003)
+rotation = 3.1412494
+scale = Vector2(-3.2584314, 0.8800013)
+
+[node name="StaticBody2D7" parent="grounds/platforms" unique_id=715457806 instance=ExtResource("5_3opl0")]
+position = Vector2(-5530, -405)
+scale = Vector2(17.26156, 0.64000165)
+
+[node name="StaticBody2D3" parent="grounds/platforms" unique_id=1633139919 instance=ExtResource("5_3opl0")]
+position = Vector2(-3059, 129)
+scale = Vector2(15.8859005, 0.2800013)
+
+[node name="tips" type="Node2D" parent="grounds" unique_id=2055773709]
+position = Vector2(-2650, 190.99995)
+rotation = 0.80386007
+scale = Vector2(0.14031573, 0.14595985)
+
+[node name="Node2D" type="Node2D" parent="grounds/tips" unique_id=923332211]
+
+[node name="Arrow" type="Sprite2D" parent="grounds/tips/Node2D" unique_id=1930305988]
+position = Vector2(-475.51367, 434.83105)
+texture = ExtResource("13_s8oj7")
+
+[node name="Arrow2" type="Sprite2D" parent="grounds/tips/Node2D" unique_id=314566097]
+position = Vector2(-247.64746, 227.28223)
+texture = ExtResource("13_s8oj7")
+
+[node name="Arrow3" type="Sprite2D" parent="grounds/tips/Node2D" unique_id=188396710]
+texture = ExtResource("13_s8oj7")
+
+[node name="Node2D2" type="Node2D" parent="grounds/tips" unique_id=285754673]
+position = Vector2(-14550.718, 9735.791)
+
+[node name="Arrow" type="Sprite2D" parent="grounds/tips/Node2D2" unique_id=1492279669]
+position = Vector2(-475.51367, 434.83105)
+texture = ExtResource("13_s8oj7")
+
+[node name="Arrow2" type="Sprite2D" parent="grounds/tips/Node2D2" unique_id=984429153]
+position = Vector2(-247.64746, 227.28223)
+texture = ExtResource("13_s8oj7")
+
+[node name="Arrow3" type="Sprite2D" parent="grounds/tips/Node2D2" unique_id=1025325126]
+texture = ExtResource("13_s8oj7")
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_r6vdu")]
+position = Vector2(786, 123)
+
+[node name="BlackSquare" type="Sprite2D" parent="Player" unique_id=605933202]
+visible = false
+position = Vector2(-47.75, -358.25)
+scale = Vector2(4.186331, 2.6604197)
+texture = ExtResource("4_r6vdu")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1463236773]
+offset = Vector2(0, -320)
+zoom = Vector2(0.715, 0.715)
+
+[node name="Doors" type="Node2D" parent="." unique_id=655474955]
+position = Vector2(-3650.0002, 159)
+scale = Vector2(5.4615784, 0.5200007)
+
+[node name="Node2D" type="Node2D" parent="Doors" unique_id=1965661433]
+
+[node name="Door" parent="Doors/Node2D" unique_id=1034037436 instance=ExtResource("7_rmy57")]
+position = Vector2(510.47522, -198.07666)
+scale = Vector2(0.18309726, 1.9230744)
+OpenSpeed = 200.0
+OpenHeight = 600.0
+
+[node name="PressurePlate" parent="Doors/Node2D" unique_id=895291090 instance=ExtResource("8_qulpo")]
+position = Vector2(592.1366, 155.76901)
+scale = Vector2(0.18309726, 1.9230744)
+
+[node name="Node2D2" type="Node2D" parent="Doors" unique_id=422128935]
+
+[node name="PressurePlate2" parent="Doors/Node2D2" unique_id=1709523292 instance=ExtResource("8_qulpo")]
+position = Vector2(29.478699, 149.99979)
+scale = Vector2(0.18309726, 1.4615377)
+
+[node name="Door" parent="Doors/Node2D2" unique_id=640945266 instance=ExtResource("7_rmy57")]
+position = Vector2(106.37956, -449.9994)
+scale = Vector2(0.18309726, 1.9230744)
+OpenSpeed = 200.0
+OpenHeight = 600.0
+
+[node name="Node2D3" type="Node2D" parent="Doors" unique_id=2115926534]
+
+[node name="Door" parent="Doors/Node2D3" unique_id=1264712392 instance=ExtResource("7_rmy57")]
+position = Vector2(-293.68793, -196.1536)
+scale = Vector2(0.18309726, 1.9230744)
+OpenSpeed = 200.0
+OpenHeight = 600.0
+
+[node name="PressurePlate" parent="Doors/Node2D3" unique_id=1924725407 instance=ExtResource("8_qulpo")]
+position = Vector2(-367.11, 159.61517)
+scale = Vector2(0.18309726, 1.9230744)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=747517466]
+root_node = NodePath("../BGMPlayer")
+libraries/ = SubResource("AnimationLibrary_qulpo")
+autoplay = &"new_animation"
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=1840473032]
+script = ExtResource("5_21xmu")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("11_dc5vx")]
+position = Vector2(-2949, 14.000002)
+scale = Vector2(0.5, 0.5)
+FragmentScene = ExtResource("12_s8oj7")
+
+[connection signal="Pressed" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Open"]
+[connection signal="Released" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Close"]
+[connection signal="Pressed" from="Doors/Node2D2/PressurePlate2" to="Doors/Node2D2/Door" method="Open"]
+[connection signal="Released" from="Doors/Node2D2/PressurePlate2" to="Doors/Node2D2/Door" method="Close"]
+[connection signal="Pressed" from="Doors/Node2D3/PressurePlate" to="Doors/Node2D3/Door" method="Open"]
+[connection signal="Released" from="Doors/Node2D3/PressurePlate" to="Doors/Node2D3/Door" method="Close"]
