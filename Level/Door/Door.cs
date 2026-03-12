@@ -11,7 +11,7 @@ public partial class Door : AnimatableBody2D
 	[Export] public float OpenSpeed = 50f;
 	[Export] public float OpenHeight = 100.0f;
 	[Export] public bool StartOpen = false;
-	[Export] private OpenDirection Direction = OpenDirection.Up;
+	[Export] private OpenDirection Direction = OpenDirection.Down;
 	private float OpenDuration => OpenHeight / OpenSpeed;
 	private int DirectionMultiplier => Direction == OpenDirection.Up ? 1 : -1;
 	private Tween _currentTween;
