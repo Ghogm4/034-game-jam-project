@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b04awtc6wia5u"]
+
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="1_cxxhk"]
+[ext_resource type="Texture2D" uid="uid://bumhkauu1qb3" path="res://Colors/pieces/Cup/cupBody.png" id="2_eoei2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8haky"]
+size = Vector2(247, 365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk0co"]
+size = Vector2(245, 364)
+
+[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_cxxhk")]
+FragmentName = "CupBody"
+
+[node name="Sprite2D" parent="." index="0" unique_id=251136955]
+texture = ExtResource("2_eoei2")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
+position = Vector2(5.5, -0.5)
+shape = SubResource("RectangleShape2D_8haky")
+
+[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
+position = Vector2(5.5, 0)
+shape = SubResource("RectangleShape2D_mk0co")

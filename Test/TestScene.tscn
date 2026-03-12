@@ -5,11 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_wyv1x"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="6_rdujs"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="7_rdujs"]
+[ext_resource type="PackedScene" uid="uid://caw73nyckoymo" path="res://Fragment/Keepsakes/Carpet/CarpetRed.tscn" id="8_hc3s7"]
 [ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="8_tmxln"]
 [ext_resource type="PackedScene" uid="uid://bhhktr81cnk4b" path="res://Level/Door/Door.tscn" id="9_0hjgu"]
+[ext_resource type="PackedScene" uid="uid://ffx6v1u3804t" path="res://Fragment/Keepsakes/Carpet/CarpetWhite.tscn" id="9_brsnq"]
 [ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="10_c61xk"]
-[ext_resource type="PackedScene" uid="uid://cr85p0sxhe4q6" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHandle.tscn" id="10_ft7c2"]
-[ext_resource type="PackedScene" uid="uid://bivhooyx2gisn" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHat.tscn" id="10_lvhom"]
+[ext_resource type="PackedScene" uid="uid://djonho61gj87v" path="res://Fragment/Keepsakes/Umbrella/Umbrella.tscn" id="11_hc3s7"]
+[ext_resource type="PackedScene" uid="uid://dqagboqhuv31q" path="res://Fragment/Keepsakes/Carpet/CarpetComb3.tscn" id="12_03v7n"]
+[ext_resource type="PackedScene" uid="uid://biv2x73qw5piv" path="res://Fragment/Keepsakes/Cup/Cup.tscn" id="12_brsnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyv1x"]
 size = Vector2(128, 128)
@@ -324,16 +327,32 @@ OpenHeight = 300.0
 [node name="Generators" type="Node2D" parent="." unique_id=1060780259]
 
 [node name="FragmentGenerator" parent="Generators" unique_id=761977908 instance=ExtResource("7_rdujs")]
-position = Vector2(-973, 368)
-FragmentScene = ExtResource("10_ft7c2")
+position = Vector2(-827, 241)
+FragmentScene = ExtResource("9_brsnq")
+
+[node name="FragmentGenerator3" parent="Generators" unique_id=596120262 instance=ExtResource("7_rdujs")]
+position = Vector2(-1285, 320)
+FragmentScene = ExtResource("8_hc3s7")
+
+[node name="FragmentGenerator4" parent="Generators" unique_id=1708260950 instance=ExtResource("7_rdujs")]
+position = Vector2(-2024, 298)
+FragmentScene = ExtResource("8_hc3s7")
 
 [node name="FragmentGenerator2" parent="Generators" unique_id=426399151 instance=ExtResource("7_rdujs")]
-position = Vector2(-824, 330)
-FragmentScene = ExtResource("10_lvhom")
+position = Vector2(-1645, 153)
+FragmentScene = ExtResource("9_brsnq")
 
-[node name="FragmentGenerator3" parent="Generators" unique_id=2128651127 instance=ExtResource("7_rdujs")]
-position = Vector2(-325, 107)
-FragmentScene = ExtResource("10_lvhom")
+[node name="FragmentGenerator5" parent="Generators" unique_id=1452936489 instance=ExtResource("7_rdujs")]
+position = Vector2(-403, 211)
+FragmentScene = ExtResource("12_03v7n")
+
+[node name="FragmentGenerator6" parent="Generators" unique_id=1556185736 instance=ExtResource("7_rdujs")]
+position = Vector2(470, -75)
+FragmentScene = ExtResource("11_hc3s7")
+
+[node name="FragmentGenerator7" parent="Generators" unique_id=1820659692 instance=ExtResource("7_rdujs")]
+position = Vector2(573, -5)
+FragmentScene = ExtResource("12_brsnq")
 
 [node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("10_c61xk")]
 

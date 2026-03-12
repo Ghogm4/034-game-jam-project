@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dqagboqhuv31q"]
+
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="1_ths7a"]
+[ext_resource type="Texture2D" uid="uid://ccryflax8uofe" path="res://Colors/pieces/Picnic/picnicStateFinal.png" id="2_c001m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbfjn"]
+size = Vector2(207.25, 199.25)
+
+[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_ths7a")]
+FragmentName = "CarpetComb3"
+
+[node name="Sprite2D" parent="." index="0" unique_id=251136955]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_c001m")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
+position = Vector2(3.375, 2.375)
+shape = SubResource("RectangleShape2D_gbfjn")
+
+[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_gbfjn")

@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bj3bph22a16k8" path="res://Fragment/FragmentStates/Fragment_ThrownState.cs" id="7_m2g3q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ochec"]
-radius = 48.0
+radius = 136.0
 
 [node name="Fragment" type="RigidBody2D" unique_id=1649991499 groups=["Fragments"]]
 gravity_scale = 0.0

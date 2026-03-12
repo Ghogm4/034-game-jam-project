@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b6pn35skj1y6c"]
+
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="1_41vjp"]
+[ext_resource type="Texture2D" uid="uid://ccm03ylytx2ab" path="res://Colors/pieces/Cup/cupHandle.png" id="2_mrtqd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mrtqd"]
+radius = 136.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hbj0"]
+radius = 136.0
+
+[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_41vjp")]
+FragmentName = "CupHandle"
+
+[node name="Sprite2D" parent="." index="0" unique_id=251136955]
+texture = ExtResource("2_mrtqd")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_mrtqd")
+
+[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_2hbj0")

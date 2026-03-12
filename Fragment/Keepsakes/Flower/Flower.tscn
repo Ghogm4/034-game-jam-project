@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://r2mf234djwef"]
+
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="1_ufmkb"]
+[ext_resource type="Texture2D" uid="uid://cchvgt5hj2p4y" path="res://Colors/pieces/flower/flowerStateFinal.png" id="2_1e3bw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3evk"]
+size = Vector2(507, 1322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufmkb"]
+size = Vector2(507, 1322)
+
+[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_ufmkb")]
+FragmentName = "Flower"
+
+[node name="Sprite2D" parent="." index="0" unique_id=251136955]
+texture = ExtResource("2_1e3bw")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
+position = Vector2(25.5, 35)
+shape = SubResource("RectangleShape2D_f3evk")
+
+[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
+position = Vector2(27, 37)
+shape = SubResource("RectangleShape2D_ufmkb")
