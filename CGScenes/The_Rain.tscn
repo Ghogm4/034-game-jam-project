@@ -457,11 +457,13 @@ scroll_offset = Vector2(1589, 1070)
 repeat_size = Vector2(2600, 0)
 
 [node name="Buildings2" parent="." unique_id=1343911482 instance=ExtResource("2_t8jhw")]
+modulate = Color(1, 1, 1, 0.8980392)
 scroll_scale = Vector2(1, 1)
 scroll_offset = Vector2(514, 547)
 repeat_size = Vector2(3316.735, 0)
 
 [node name="buildings" type="Node2D" parent="." unique_id=62575857]
+modulate = Color(1, 1, 1, 0.8392157)
 
 [node name="BlackSquare2" type="Sprite2D" parent="buildings" unique_id=282227018]
 position = Vector2(882, 931)

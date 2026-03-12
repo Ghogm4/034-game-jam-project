@@ -6,15 +6,76 @@
 [ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="4_1jiwn"]
 [ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="4_fa1sb"]
 [ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="5_o0y2u"]
+[ext_resource type="PackedScene" uid="uid://mvwir1qswtxr" path="res://LevelScene/prefabs/warning.tscn" id="5_udw71"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="5_wycyr"]
+[ext_resource type="PackedScene" uid="uid://ccwbwqda63xj3" path="res://LevelScene/prefabs/ground.tscn" id="7_vufav"]
+[ext_resource type="PackedScene" uid="uid://dwckp813wy10n" path="res://LevelScene/prefabs/platform.tscn" id="8_aqaw3"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="8_og3mt"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="8_trjvs"]
 [ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="9_trjvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wycyr"]
 size = Vector2(237.55627, 734.3127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am4q5"]
-size = Vector2(1015.44226, 432.89056)
+size = Vector2(468.92035, 432.89056)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trjvs"]
+size = Vector2(211.08682, 430.28003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5k8j"]
+size = Vector2(35.403152, 236.59595)
+
+[sub_resource type="Animation" id="Animation_h5k8j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/BlackSquare:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5rjis"]
+resource_name = "new_animation"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BGMPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Mist", 3.0],
+"method": &"PlayBGM"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player/BlackSquare:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.18431373)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_udw71"]
+_data = {
+&"RESET": SubResource("Animation_h5k8j"),
+&"new_animation": SubResource("Animation_5rjis")
+}
 
 [node name="Node2D" type="Node2D" unique_id=2015346646]
 
@@ -82,30 +143,142 @@ texture = ExtResource("4_fa1sb")
 position = Vector2(-232.47638, -24.162056)
 shape = SubResource("RectangleShape2D_wycyr")
 
-[node name="ground" type="StaticBody2D" parent="." unique_id=483017110]
-position = Vector2(1280, 908.00006)
-scale = Vector2(7.551389, 2.2985024)
+[node name="grounds" type="Node2D" parent="." unique_id=652478515]
+position = Vector2(-412, 196)
+scale = Vector2(7.654676, 0.19865067)
 
-[node name="BlackSquare" type="Sprite2D" parent="ground" unique_id=1760445265]
-position = Vector2(53.963623, 0)
-scale = Vector2(1.7863214, 1)
+[node name="X" type="Node2D" parent="grounds" unique_id=1772740108]
+position = Vector2(362.65414, 1701.4796)
+rotation = -1.5916092
+scale = Vector2(1.3647959, 0.16300252)
+skew = -1.5176404
+
+[node name="Node2D" parent="grounds/X" unique_id=116400266 instance=ExtResource("5_udw71")]
+
+[node name="Node2D2" type="Node2D" parent="grounds/X" unique_id=1111081477]
+position = Vector2(-3680.5413, 30826.072)
+scale = Vector2(0.9999999, 1)
+
+[node name="RedDaYun" type="Sprite2D" parent="grounds/X/Node2D2" unique_id=893821502]
+position = Vector2(418.81006, 2989.211)
+rotation = 1.5392061
+scale = Vector2(6.5748186, 0.25362754)
+skew = -0.92769504
+texture = ExtResource("4_fa1sb")
+
+[node name="RedDaYun2" type="Sprite2D" parent="grounds/X/Node2D2" unique_id=438533270]
+position = Vector2(418.81006, 2989.211)
+texture = ExtResource("4_fa1sb")
+
+[node name="Node2D3" type="Node2D" parent="grounds/X" unique_id=707607554]
+position = Vector2(-2589.512, 36705.105)
+scale = Vector2(0.9999999, 1)
+
+[node name="RedDaYun" type="Sprite2D" parent="grounds/X/Node2D3" unique_id=1026238517]
+position = Vector2(418.81006, 2989.211)
+rotation = 1.5392061
+scale = Vector2(6.5748186, 0.25362754)
+skew = -0.92769504
+texture = ExtResource("4_fa1sb")
+
+[node name="RedDaYun2" type="Sprite2D" parent="grounds/X/Node2D3" unique_id=100000623]
+position = Vector2(418.81006, 2989.211)
+texture = ExtResource("4_fa1sb")
+
+[node name="ground" type="StaticBody2D" parent="grounds" unique_id=483017110]
+position = Vector2(221.04135, 3584.1816)
+scale = Vector2(0.98650676, 11.570576)
+
+[node name="BlackSquare" type="Sprite2D" parent="grounds/ground" unique_id=1760445265]
+position = Vector2(-219.82707, 0)
+scale = Vector2(0.9984344, 1)
 texture = ExtResource("3_o0y2u")
 
-[node name="GraySquare" type="Sprite2D" parent="ground" unique_id=572156451]
-position = Vector2(50.18947, -309.76694)
-scale = Vector2(1.8028985, 0.08642613)
+[node name="GraySquare" type="Sprite2D" parent="grounds/ground" unique_id=572156451]
+position = Vector2(-224.06473, -309.76694)
+scale = Vector2(1.0136778, 0.08642613)
 texture = ExtResource("4_1jiwn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=340172582]
-position = Vector2(166.1946, -98.54245)
+[node name="GraySquare2" type="Sprite2D" parent="grounds/ground" unique_id=1445735308]
+position = Vector2(123.57191, -1.9170303)
+scale = Vector2(0.017964061, 1.0128572)
+texture = ExtResource("4_fa1sb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grounds/ground" unique_id=340172582]
+position = Vector2(-107.06639, -98.54245)
 shape = SubResource("RectangleShape2D_am4q5")
+
+[node name="ground2" type="StaticBody2D" parent="grounds" unique_id=658552133]
+position = Vector2(941.1241, 3584.1812)
+scale = Vector2(0.98650676, 11.570576)
+
+[node name="BlackSquare" type="Sprite2D" parent="grounds/ground2" unique_id=390787280]
+position = Vector2(-460.51123, 0)
+scale = Vector2(0.30581814, 1)
+texture = ExtResource("3_o0y2u")
+
+[node name="GraySquare" type="Sprite2D" parent="grounds/ground2" unique_id=1740943600]
+position = Vector2(-460.64368, -309.76694)
+scale = Vector2(0.30467492, 0.08642613)
+texture = ExtResource("4_1jiwn")
+
+[node name="GraySquare3" type="Sprite2D" parent="grounds/ground2" unique_id=683698500]
+position = Vector2(-560.6916, 2.0461571)
+scale = Vector2(0.017964063, 1.0210717)
+texture = ExtResource("4_fa1sb")
+
+[node name="GraySquare4" type="Sprite2D" parent="grounds/ground2" unique_id=1796945868]
+position = Vector2(-360.4635, 2.1753173)
+scale = Vector2(0.017964063, 1.0210717)
+texture = ExtResource("4_fa1sb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grounds/ground2" unique_id=665856016]
+position = Vector2(-460.8422, -97.23721)
+scale = Vector2(0.9999996, 1)
+shape = SubResource("RectangleShape2D_trjvs")
+
+[node name="ground3" parent="grounds" unique_id=610396487 instance=ExtResource("7_vufav")]
+position = Vector2(1229.3138, 3584.1812)
+
+[node name="GraySquare3" type="Sprite2D" parent="grounds/ground3" unique_id=1531960153]
+position = Vector2(-560.6916, 2.0462036)
+scale = Vector2(0.017964065, 1.0210718)
+texture = ExtResource("4_fa1sb")
+
+[node name="GraySquare4" type="Sprite2D" parent="grounds/ground3" unique_id=998430877]
+position = Vector2(-360.46356, 2.175354)
+scale = Vector2(0.017964065, 1.0210718)
+texture = ExtResource("4_fa1sb")
+
+[node name="platforms" type="Node2D" parent="grounds" unique_id=2130766791]
+
+[node name="StaticBody2D" parent="grounds/platforms" unique_id=136153104 instance=ExtResource("8_aqaw3")]
+position = Vector2(1.306391, 548.7019)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="grounds/platforms" unique_id=639436094]
+position = Vector2(-80.34305, -216.46036)
+scale = Vector2(1, 1.0000001)
+
+[node name="White" type="Sprite2D" parent="grounds/platforms/StaticBody2D2" unique_id=1029983034]
+position = Vector2(499.8253, -1479.9847)
+scale = Vector2(0.05145672, 0.545283)
+texture = ExtResource("5_o0y2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grounds/platforms/StaticBody2D2" unique_id=1320359306]
+position = Vector2(499.7599, -1417.0605)
+shape = SubResource("RectangleShape2D_h5k8j")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("5_wycyr")]
 position = Vector2(-461, 97)
 
+[node name="BlackSquare" type="Sprite2D" parent="Player" unique_id=1289268371]
+position = Vector2(46.999893, -285.99997)
+scale = Vector2(4.316547, 3.0944529)
+texture = ExtResource("3_o0y2u")
+
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1338748594]
 offset = Vector2(0, -320.585)
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.715, 0.715)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1637335915]
 visible = false
@@ -160,6 +333,15 @@ position = Vector2(4943.766, 36.933945)
 scale = Vector2(1.0753707, 0.96267426)
 texture = ExtResource("5_o0y2u")
 
+[node name="BGMPlayer" type="Node" parent="." unique_id=1826322955]
+script = ExtResource("8_trjvs")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=977616557]
+root_node = NodePath("../FragmentGenerator")
+libraries/ = SubResource("AnimationLibrary_udw71")
+autoplay = &"new_animation"
+
 [node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("8_og3mt")]
-position = Vector2(298, 103)
+position = Vector2(2794, -280)
 FragmentScene = ExtResource("9_trjvs")

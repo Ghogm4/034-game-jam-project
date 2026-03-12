@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dwckp813wy10n"]
+
+[ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="1_brwja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5k8j"]
+size = Vector2(35.403152, 236.59595)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=136153104]
+scale = Vector2(1, 1.0000001)
+
+[node name="White" type="Sprite2D" parent="." unique_id=452343960]
+position = Vector2(499.8253, -1479.9847)
+scale = Vector2(0.05145672, 0.545283)
+texture = ExtResource("1_brwja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=379938250]
+position = Vector2(499.7599, -1417.0605)
+shape = SubResource("RectangleShape2D_h5k8j")
