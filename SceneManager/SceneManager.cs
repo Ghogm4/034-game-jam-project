@@ -7,7 +7,13 @@ public partial class SceneManager : Node2D
 {
 	public static SceneManager Instance { get; private set ;}
 
-	[Export] public Godot.Collections.Dictionary<GameManager.GamePhase, string> scenePaths = new Godot.Collections.Dictionary<GameManager.GamePhase, string>();
+	public enum TransitionColor
+	{
+		Black,
+		White
+	}
+
+	[Export] public Godot.Collections.Dictionary<GameManager.GamePhase, PackedScene> scenes = new Godot.Collections.Dictionary<GameManager.GamePhase, PackedScene>();
 	public override void _Ready()
 	{
 		if (Instance != null)
@@ -23,14 +29,14 @@ public partial class SceneManager : Node2D
 
 	[Export] public ColorRect rect;
 
-	public async void TransitionToScene(string scenePath, Color color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
+	public async void TransitionToScene(PackedScene scene, TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
 	{
-		rect.Color = color;
+		rect.Color = color == TransitionColor.Black ? Colors.Black : Colors.White;
 		rect.Modulate = new Color(rect.Modulate.R, rect.Modulate.G, rect.Modulate.B, 0f);
 		rect.Visible = true;
 
 		await FadeOut(fadeOut);
-		GetTree().ChangeSceneToFile(scenePath);
+		GetTree().ChangeSceneToPacked(scene);
 		await ToSignal(GetTree().CreateTimer(sustain), "timeout");
 		await FadeIn(fadeIn);
 
@@ -51,14 +57,14 @@ public partial class SceneManager : Node2D
 		await ToSignal(tween, "finished");
 	}
 
-	public async void ChangeScene(GameManager.GamePhase phase, Color color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
+	public async void ChangeScene(GameManager.GamePhase phase, TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
 	{
-		scenePaths.TryGetValue(phase, out string scenePath);
-		if (string.IsNullOrEmpty(scenePath))
+		scenes.TryGetValue(phase, out PackedScene scene);
+		if (scene == null)
 		{
-			GD.PrintErr($"Scene path for phase {phase} is not defined.");
+			GD.PrintErr($"Scene for phase {phase} is not defined.");
 			return;
 		}
-		TransitionToScene(scenePath, color, fadeIn, fadeOut, sustain);
+		TransitionToScene(scene, color, fadeIn, fadeOut, sustain);
 	}
 }

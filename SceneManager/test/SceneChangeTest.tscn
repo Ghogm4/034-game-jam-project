@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://byx7vrt284cmf"]
+
+[ext_resource type="Script" uid="uid://ddna84oideb42" path="res://SceneManager/test/SceneChangeTest.cs" id="1_dr0xs"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="2_mtgql"]
+
+[sub_resource type="Animation" id="Animation_mtgql"]
+resource_name = "test"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameProceeder")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0, 3.0, 3.0, 3.0],
+"method": &"Proceed"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0fia"]
+_data = {
+&"test": SubResource("Animation_mtgql")
+}
+
+[node name="SceneChangeTest" type="Node2D" unique_id=886613685 node_paths=PackedStringArray("animPlayer")]
+script = ExtResource("1_dr0xs")
+animPlayer = NodePath("AnimationPlayer")
+
+[node name="GameProceeder" type="Node" parent="." unique_id=2001529096]
+script = ExtResource("2_mtgql")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1897902096]
+libraries/ = SubResource("AnimationLibrary_m0fia")
