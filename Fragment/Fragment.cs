@@ -5,6 +5,7 @@ using System.Collections.Frozen;
 public partial class Fragment : RigidBody2D
 {
 	public const string PickupGroupName = "pickup_fragments";
+	[Signal] public delegate void CollectedEventHandler();
 	[Export] public float FloatAmplitude = 50.0f;
 	[Export] public float FloatFrequency = 3.0f;
 	[Export] public float ThrownGravityScale = 1.0f;
@@ -22,7 +23,7 @@ public partial class Fragment : RigidBody2D
 	public float FloatElapsedTime { get; internal set; } = 0.0f;
 	public Vector2 FloatingAnchorPosition { get; internal set; } = Vector2.Zero;
 	public Player ThrowOwner { get; internal set; } = null;
-	private RecipeTable RecipeTable => field ??= GetNode<RecipeTable>("%RecipeTable");
+	private RecipeTable RecipeTable => field ??= GetTree().CurrentScene.GetNode<RecipeTable>("%RecipeTable");
 	public override void _Ready()
 	{
 		AddToGroup(PickupGroupName);
@@ -33,6 +34,7 @@ public partial class Fragment : RigidBody2D
 	{
 		PendingHolder = player;
 		StateTree.CurrentState?.AskTransit("Held");
+		EmitSignal(SignalName.Collected);
 		CollectBehavior();
 	}
 

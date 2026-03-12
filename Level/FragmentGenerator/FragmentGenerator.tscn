@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://1kjg7qqj6a7s"]
+
+[ext_resource type="Script" uid="uid://bcbxft1hrc04p" path="res://Level/FragmentGenerator/FragmentGenerator.cs" id="1_56p3w"]
+
+[node name="FragmentGenerator" type="Marker2D" unique_id=761977908 groups=["FragmentGenerators"]]
+script = ExtResource("1_56p3w")

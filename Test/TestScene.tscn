@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="3_xbm2f"]
 [ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="4_8ovih"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="6_rdujs"]
+[ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="7_rdujs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyv1x"]
 size = Vector2(128, 128)
@@ -334,5 +335,6 @@ FragmentName = "A"
 position = Vector2(1032, 154)
 FragmentName = "B"
 
-[node name="BlurOverlay" parent="." unique_id=1498338304 groups=["BlurOverlay"] instance=ExtResource("6_rdujs")]
-unique_name_in_owner = true
+[node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("6_rdujs")]
+
+[node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("7_rdujs")]
