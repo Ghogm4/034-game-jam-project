@@ -46,7 +46,13 @@ public partial class GameManager : Node
     public GameState CurrentGameState { get; private set; } = GameState.Playing;
     public GamePhase CurrentGamePhase { get; private set; } = GamePhase.Opening;
 
-    public void ProceedPhase()
+    public void SetCurrentGamePhase(GamePhase phase)
+    {
+        CurrentGamePhase = phase;
+        GD.Print($"GameManager: Current game phase set to {CurrentGamePhase}");
+    }
+
+    public void ProceedPhase(SceneManager.TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
     {
         if (CurrentGamePhase == GamePhase.Cutscene_Finale)
         {
@@ -56,28 +62,28 @@ public partial class GameManager : Node
 
         CurrentGamePhase++;
         SavesManager.SaveGame(CurrentGamePhase);
-        ChangePhase(CurrentGamePhase, new Color(0, 0, 0));
+        ChangePhase(CurrentGamePhase, color, fadeIn, fadeOut, sustain);
         GD.Print($"GameManager: Proceeded to next phase: {CurrentGamePhase}");
     }
 
-    public void LoadPhase()
+    public void LoadPhase(SceneManager.TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
     {
         GameManager.GamePhase? phase = SavesManager.LoadGame();
         if (phase == null)
         {
             CurrentGamePhase = GamePhase.Opening;
-            ChangePhase(CurrentGamePhase, new Color(0, 0, 0));
+            ChangePhase(CurrentGamePhase, color, fadeIn, fadeOut, sustain);
             GD.Print("GameManager: No saved phase found. Starting at Opening.");
         }
         else
         {
             CurrentGamePhase = phase.Value;
-            ChangePhase(CurrentGamePhase, new Color(0, 0, 0));
+            ChangePhase(CurrentGamePhase, color, fadeIn, fadeOut, sustain);
             GD.Print($"GameManager: Loaded phase {CurrentGamePhase} from save.");
         }
     }
     
-    public void ChangePhase(GamePhase phase, Color color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
+    public void ChangePhase(GamePhase phase, SceneManager.TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
     {
         SceneManager.Instance.ChangeScene(phase, color, fadeIn, fadeOut, sustain);
     }
