@@ -11,7 +11,7 @@ public partial class Fragment : RigidBody2D
 	[Export] public float ThrownGravityScale = 1.0f;
 	[Export] public float CollisionEnableDistanceFromPlayer = 96.0f;
 	[Export] public string FragmentName = "Fragment";
-
+	[Export] public float ModifiedJumpVelocity = 900f;
 	public Sprite2D VisualSprite => field ??= GetNode<Sprite2D>("Sprite2D");
 	public Node2D PhysicsCollisionShape
 	{
@@ -34,7 +34,7 @@ public partial class Fragment : RigidBody2D
 	public Player ThrowOwner { get; internal set; } = null;
 	private RecipeTable RecipeTable => field ??= GetTree().CurrentScene.GetNode<RecipeTable>("%RecipeTable");
 	private static readonly Shader OutlineShader = GD.Load<Shader>("res://Fragment/OutlineShader.gdshader");
-
+	private float _playerOriginalJumpVelocity = 0.0f;
 	public void EnableOutline()
 	{
 		if (VisualSprite.Material is ShaderMaterial mat && mat.Shader == OutlineShader) return;
@@ -59,6 +59,8 @@ public partial class Fragment : RigidBody2D
 	{
 		PendingHolder = player;
 		StateTree.CurrentState?.AskTransit("Held");
+		_playerOriginalJumpVelocity = player.JumpVelocity;
+		player.JumpVelocity = ModifiedJumpVelocity;
 		EmitSignal(SignalName.Collected);
 		CollectBehavior();
 	}
@@ -68,6 +70,7 @@ public partial class Fragment : RigidBody2D
 		PendingThrowOwner = player;
 		PendingThrowVelocity = throwVelocity;
 		StateTree.CurrentState?.AskTransit("Thrown");
+		player.JumpVelocity = _playerOriginalJumpVelocity;
 	}
 
 	public void ResetToFloating()
