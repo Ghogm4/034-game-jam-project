@@ -59,14 +59,17 @@ public partial class CraftingEffectController : Node
 
         tree.Paused = true;
 
+        Vector2 originalSpriteAScale = spriteCloneA.Scale;
+        Vector2 originalSpriteBScale = spriteCloneB.Scale;
         await Animate(IntroDuration, progress =>
         {
             float eased = Ease(progress);
             SetBlur(Mathf.Lerp(0.0f, PeakBlurAmount, eased), eased);
             spriteCloneA.Position = screenPosA.Lerp(centerPosA, eased);
             spriteCloneB.Position = screenPosB.Lerp(centerPosB, eased);
-            spriteCloneA.Scale = Vector2.One.Lerp(Vector2.One * EnlargedScaleMultiplier, eased);
-            spriteCloneB.Scale = Vector2.One.Lerp(Vector2.One * EnlargedScaleMultiplier, eased);
+            spriteCloneA.Scale = originalSpriteAScale.Lerp(originalSpriteAScale * EnlargedScaleMultiplier, eased);
+            spriteCloneB.Scale = originalSpriteBScale.Lerp(originalSpriteBScale * EnlargedScaleMultiplier, eased);
+            GD.Print("A Scale: " + spriteCloneA.Scale + " B Scale: " + spriteCloneB.Scale);
         });
 
         await Animate(ShakeDuration, progress =>
@@ -80,14 +83,16 @@ public partial class CraftingEffectController : Node
         spriteCloneB.Visible = false;
         resultClone.Visible = true;
         resultClone.Position = screenCenter;
-        resultClone.Scale = Vector2.One * ResultScaleMultiplier;
+        Vector2 originalResultScale = resultClone.Scale;
+        resultClone.Scale = originalResultScale * ResultScaleMultiplier;
 
         await Animate(OutroDuration, progress =>
         {
             float eased = Ease(progress);
             SetBlur(Mathf.Lerp(PeakBlurAmount, 0.0f, eased), 1.0f - eased);
             resultClone.Position = screenCenter.Lerp(targetScreenPos, eased);
-            resultClone.Scale = Vector2.One * Mathf.Lerp(ResultScaleMultiplier, 1.0f, eased);
+            resultClone.Scale = originalResultScale * Mathf.Lerp(ResultScaleMultiplier, 1.0f, eased);
+            GD.Print("Result Scale: " + resultClone.Scale);
         });
 
         if (IsInstanceValid(resultInstance) && !resultInstance.IsInsideTree())
@@ -113,12 +118,13 @@ public partial class CraftingEffectController : Node
 
     private Sprite2D CreateCloneSprite(Sprite2D sourceSprite, Vector2 screenPosition)
     {
+        GD.Print(sourceSprite.Scale);
         Sprite2D clone = new Sprite2D()
         {
             Texture = sourceSprite?.Texture,
             Centered = true,
             Position = screenPosition,
-            Scale = Vector2.One,
+            Scale = sourceSprite.Scale,
             Modulate = Colors.White
         };
         return clone;
