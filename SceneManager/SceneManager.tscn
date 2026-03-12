@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://co5gfsuou38bw"]
+
+[ext_resource type="Script" uid="uid://c1r11rlyqtbvt" path="res://SceneManager/SceneManager.cs" id="1_mqdah"]
+
+[node name="SceneManager" type="Node2D" unique_id=2022550534 node_paths=PackedStringArray("rect")]
+script = ExtResource("1_mqdah")
+scenePaths = Dictionary[int, String]({
+11: "res://CGScenes/picnic.tscn"
+})
+rect = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=722817873]
+offset_right = 1952.0
+offset_bottom = 1122.0
