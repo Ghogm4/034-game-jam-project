@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://mvwir1qswtxr"]
+
+[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="1_6xrri"]
+
+[node name="Node2D" type="Node2D" unique_id=116400266]
+scale = Vector2(0.9999999, 1)
+
+[node name="RedDaYun" type="Sprite2D" parent="." unique_id=2074839552]
+position = Vector2(418.81006, 2989.211)
+rotation = 1.5392061
+scale = Vector2(6.5748186, 0.25362754)
+skew = -0.92769504
+texture = ExtResource("1_6xrri")
+
+[node name="RedDaYun2" type="Sprite2D" parent="." unique_id=862034092]
+position = Vector2(418.81006, 2989.211)
+texture = ExtResource("1_6xrri")
