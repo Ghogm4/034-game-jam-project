@@ -13,7 +13,16 @@ public partial class Fragment : RigidBody2D
 	[Export] public string FragmentName = "Fragment";
 
 	public Sprite2D VisualSprite => field ??= GetNode<Sprite2D>("Sprite2D");
-	public CollisionShape2D PhysicsCollisionShape => field ??= GetNode<CollisionShape2D>("CollisionShape2D");
+	public Node2D PhysicsCollisionShape
+	{
+		get
+		{
+			if (field != null) return field;
+			var collisionPolygon = GetNodeOrNull<CollisionPolygon2D>("CollisionPolygon2D");
+			if (collisionPolygon != null) return field = collisionPolygon;
+			return field = GetNode<CollisionShape2D>("CollisionShape2D");
+		}
+	}
 	public Area2D PickupSensor => field ??= GetNode<Area2D>("PickupSensor");
 	public StateTree StateTree => field ??= GetNode<StateTree>("StateTree");
 	public bool CanBePickedUp { get; internal set; } = true;
@@ -24,6 +33,22 @@ public partial class Fragment : RigidBody2D
 	public Vector2 FloatingAnchorPosition { get; internal set; } = Vector2.Zero;
 	public Player ThrowOwner { get; internal set; } = null;
 	private RecipeTable RecipeTable => field ??= GetTree().CurrentScene.GetNode<RecipeTable>("%RecipeTable");
+	private static readonly Shader OutlineShader = GD.Load<Shader>("res://Fragment/OutlineShader.gdshader");
+
+	public void EnableOutline()
+	{
+		if (VisualSprite.Material is ShaderMaterial mat && mat.Shader == OutlineShader) return;
+		var material = new ShaderMaterial { Shader = OutlineShader };
+		material.SetShaderParameter("width", 13.0f);
+		material.SetShaderParameter("outline_color", Colors.White);
+		VisualSprite.Material = material;
+	}
+
+	public void DisableOutline()
+	{
+		if (VisualSprite.Material is not ShaderMaterial mat || mat.Shader != OutlineShader) return;
+		VisualSprite.Material = null;
+	}
 	public override void _Ready()
 	{
 		AddToGroup(PickupGroupName);

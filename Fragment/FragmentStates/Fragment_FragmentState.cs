@@ -13,8 +13,6 @@ public partial class Fragment_FragmentState : State
 	protected void SetPickupEnabled(bool enabled)
 	{
 		Fragment.CanBePickedUp = enabled;
-		Fragment.PickupSensor.SetDeferred(Area2D.PropertyName.Monitoring, enabled);
-		Fragment.PickupSensor.SetDeferred(Area2D.PropertyName.Monitorable, enabled);
 	}
 
 	protected void IgnorePlayerCollision(Player player)
