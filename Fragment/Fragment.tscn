@@ -10,7 +10,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ochec"]
 radius = 48.0
 
-[node name="Fragment" type="RigidBody2D" unique_id=1649991499]
+[node name="Fragment" type="RigidBody2D" unique_id=1649991499 groups=["Fragments"]]
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1

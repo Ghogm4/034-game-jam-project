@@ -5,7 +5,8 @@ using System.Collections.Frozen;
 public partial class Fragment : RigidBody2D
 {
 	public const string PickupGroupName = "pickup_fragments";
-	[Signal] public delegate void CollectedEventHandler();
+	[Signal] public delegate void CollectedEventHandler(Fragment frag);
+	[Signal] public delegate void ThrownEventHandler();
 	[Export] public float FloatAmplitude = 50.0f;
 	[Export] public float FloatFrequency = 3.0f;
 	[Export] public float ThrownGravityScale = 1.0f;
@@ -61,7 +62,7 @@ public partial class Fragment : RigidBody2D
 		StateTree.CurrentState?.AskTransit("Held");
 		_playerOriginalJumpVelocity = player.JumpVelocity;
 		player.JumpVelocity = ModifiedJumpVelocity;
-		EmitSignal(SignalName.Collected);
+		EmitSignal(SignalName.Collected, this);
 		CollectBehavior();
 	}
 
@@ -71,6 +72,7 @@ public partial class Fragment : RigidBody2D
 		PendingThrowVelocity = throwVelocity;
 		StateTree.CurrentState?.AskTransit("Thrown");
 		player.JumpVelocity = _playerOriginalJumpVelocity;
+		EmitSignal(SignalName.Thrown);
 	}
 
 	public void ResetToFloating()

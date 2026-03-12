@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cvb3ibbleyayx"]
+
+[ext_resource type="Script" uid="uid://bul52wgkpay2m" path="res://Fragment/FragmentConnector.cs" id="1_nsfwu"]
+
+[node name="FragmentConnector" type="Node" unique_id=271458228]
+script = ExtResource("1_nsfwu")
+LineWidth = 10.0

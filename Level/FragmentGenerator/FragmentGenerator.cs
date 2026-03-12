@@ -30,8 +30,13 @@ public partial class FragmentGenerator : Marker2D
 		AddChild(fragment);
 		fragment.GlobalPosition = GlobalPosition;
 		_fragment = fragment;
-		fragment.Connect(Fragment.SignalName.Collected, Callable.From(OnCollected), (uint)ConnectFlags.OneShot);
+		fragment.Connect(Fragment.SignalName.Collected, Callable.From<Fragment>(OnCollected), (uint)ConnectFlags.OneShot);
 		fragment.Connect(Fragment.SignalName.TreeExiting, Callable.From(OnCollected), (uint)ConnectFlags.OneShot);
+	}
+	private void OnCollected(Fragment _)
+	{
+		_hasGenerated = false;
+		_fragment = null;
 	}
 	private void OnCollected()
 	{

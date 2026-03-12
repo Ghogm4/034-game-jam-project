@@ -54,9 +54,6 @@ public partial class CraftingEffectController : Node
         visualLayer.AddChild(spriteCloneB);
         visualLayer.AddChild(resultClone);
 
-        fragmentA.QueueFree();
-        fragmentB.QueueFree();
-
         tree.Paused = true;
 
         Vector2 originalSpriteAScale = spriteCloneA.Scale;
@@ -104,6 +101,8 @@ public partial class CraftingEffectController : Node
 
         tree.Paused = false;
         visualLayer?.QueueFree();
+        fragmentA.QueueFree();
+        fragmentB.QueueFree();
     }
     private CanvasLayer CreateVisualLayer(Node parentNode)
     {
