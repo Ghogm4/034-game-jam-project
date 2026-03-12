@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bhhktr81cnk4b" path="res://Level/Door/Door.tscn" id="7_rmy57"]
 [ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="8_qulpo"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="11_dc5vx"]
-[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="12_s8oj7"]
 [ext_resource type="Texture2D" uid="uid://dnmvyutuudby1" path="res://Colors/City1/arrow.png" id="13_s8oj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21xmu"]
@@ -193,7 +192,6 @@ texture = ExtResource("13_s8oj7")
 position = Vector2(786, 123)
 
 [node name="BlackSquare" type="Sprite2D" parent="Player" unique_id=605933202]
-visible = false
 position = Vector2(-47.75, -358.25)
 scale = Vector2(4.186331, 2.6604197)
 texture = ExtResource("4_r6vdu")
@@ -252,9 +250,7 @@ script = ExtResource("5_21xmu")
 metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
 
 [node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("11_dc5vx")]
-position = Vector2(-2949, 14.000002)
-scale = Vector2(0.5, 0.5)
-FragmentScene = ExtResource("12_s8oj7")
+position = Vector2(-2940, 11)
 
 [connection signal="Pressed" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Open"]
 [connection signal="Released" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Close"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bivhooyx2gisn"]
+
+[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="1_k2757"]
+[ext_resource type="Texture2D" uid="uid://78xybhl3nuc1" path="res://Colors/pieces/Umbrella/umbrelaPiece2.png" id="2_dblax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dblax"]
+size = Vector2(445, 75)
+
+[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_k2757")]
+FragmentName = "UmbrellaHat"
+
+[node name="Sprite2D" parent="." index="0" unique_id=251136955]
+texture = ExtResource("2_dblax")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
+position = Vector2(0, -29)
+disabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=1085760678]
+polygon = PackedVector2Array(-313, 23, 3, -92, 318, 23)
+
+[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
+position = Vector2(2.5, -14.5)
+shape = SubResource("RectangleShape2D_dblax")

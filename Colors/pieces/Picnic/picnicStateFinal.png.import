@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://78xybhl3nuc1"
-path="res://.godot/imported/umbrelaPiece2.png-1d431462fba5e47115ff8336bae5d8b9.ctex"
+uid="uid://ccryflax8uofe"
+path="res://.godot/imported/picnicStateFinal.png-18ec331699aa00ea38ec2c5b220fdf61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/pieces/umbrelaPiece2.png"
-dest_files=["res://.godot/imported/umbrelaPiece2.png-1d431462fba5e47115ff8336bae5d8b9.ctex"]
+source_file="res://Colors/pieces/Picnic/picnicStateFinal.png"
+dest_files=["res://.godot/imported/picnicStateFinal.png-18ec331699aa00ea38ec2c5b220fdf61.ctex"]
 
 [params]
 

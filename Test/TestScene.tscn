@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://wo6rr60kngvg" path="res://icon.svg" id="1_804c2"]
 [ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="1_ervrm"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_wyv1x"]
-[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="3_xbm2f"]
-[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="4_8ovih"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="6_rdujs"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="7_rdujs"]
 [ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="8_tmxln"]
 [ext_resource type="PackedScene" uid="uid://bhhktr81cnk4b" path="res://Level/Door/Door.tscn" id="9_0hjgu"]
+[ext_resource type="PackedScene" uid="uid://cr85p0sxhe4q6" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHandle.tscn" id="10_ft7c2"]
+[ext_resource type="PackedScene" uid="uid://bivhooyx2gisn" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHat.tscn" id="10_lvhom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyv1x"]
 size = Vector2(128, 128)
@@ -153,18 +153,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("girl:IsInCutScene")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_8ovih"]
 resource_name = "Test"
@@ -194,39 +182,13 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("girl")
+tracks/2/path = NodePath("Player:CutSceneJumped")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.03333333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [100.0],
-"method": &"CutSceneMove"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("girl:IsInCutScene")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.13333334),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Player:CutSceneJumped")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.16666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -250,7 +212,7 @@ JumpVelocity = 600.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=94176362]
 position = Vector2(146, 89)
-zoom = Vector2(0.875, 0.875)
+zoom = Vector2(0.38, 0.38)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1957117346]
 
@@ -277,7 +239,7 @@ texture = ExtResource("1_804c2")
 shape = SubResource("RectangleShape2D_wyv1x")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Node2D" unique_id=1332934937]
-position = Vector2(-578, 612)
+position = Vector2(-578, 615)
 scale = Vector2(5.56, 1)
 metadata/_edit_group_ = true
 
@@ -320,27 +282,32 @@ texture = ExtResource("1_804c2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D6" unique_id=1364265673]
 shape = SubResource("RectangleShape2D_wyv1x")
 
+[node name="StaticBody2D7" type="StaticBody2D" parent="Node2D" unique_id=2056661212]
+position = Vector2(-1292, 615)
+scale = Vector2(5.56, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D7" unique_id=1009257684]
+texture = ExtResource("1_804c2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D7" unique_id=1064072666]
+shape = SubResource("RectangleShape2D_wyv1x")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Node2D" unique_id=463766176]
+position = Vector2(-2005, 615)
+scale = Vector2(5.56, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D8" unique_id=138497240]
+texture = ExtResource("1_804c2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D8" unique_id=1589626369]
+shape = SubResource("RectangleShape2D_wyv1x")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=629918330]
 libraries/ = SubResource("AnimationLibrary_8ovih")
 
-[node name="girl" parent="." unique_id=249783288 instance=ExtResource("3_xbm2f")]
-position = Vector2(281.99997, 58)
-scale = Vector2(0.835, 0.885)
-collision_layer = 1
-IsInCutScene = false
-
-[node name="Fragment" parent="." unique_id=1649991499 instance=ExtResource("4_8ovih")]
-position = Vector2(753, 122)
-FragmentName = "A"
-
-[node name="Fragment2" parent="." unique_id=1557776728 instance=ExtResource("4_8ovih")]
-position = Vector2(1032, 154)
-FragmentName = "B"
-
 [node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("6_rdujs")]
-
-[node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("7_rdujs")]
-FragmentScene = ExtResource("4_8ovih")
 
 [node name="PressurePlate" parent="." unique_id=895291090 instance=ExtResource("8_tmxln")]
 position = Vector2(-427, 572)
@@ -352,6 +319,16 @@ position = Vector2(141, 145)
 position = Vector2(141, 411)
 OpenSpeed = 80.0
 OpenHeight = 300.0
+
+[node name="Generators" type="Node2D" parent="." unique_id=1060780259]
+
+[node name="FragmentGenerator" parent="Generators" unique_id=761977908 instance=ExtResource("7_rdujs")]
+position = Vector2(-973, 368)
+FragmentScene = ExtResource("10_ft7c2")
+
+[node name="FragmentGenerator2" parent="Generators" unique_id=426399151 instance=ExtResource("7_rdujs")]
+position = Vector2(-824, 330)
+FragmentScene = ExtResource("10_lvhom")
 
 [connection signal="Pressed" from="PressurePlate" to="Door" method="Open"]
 [connection signal="Released" from="PressurePlate" to="Door" method="Close"]

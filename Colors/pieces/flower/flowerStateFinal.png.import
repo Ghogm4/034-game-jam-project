@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsp6o63rbxtag"
-path="res://.godot/imported/umbrelaPiece1.png-370f6e7a8737e5d74cda1c973f2f3ece.ctex"
+uid="uid://cchvgt5hj2p4y"
+path="res://.godot/imported/flowerStateFinal.png-6eea45bed6ea875119d9c84297229cf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Colors/pieces/umbrelaPiece1.png"
-dest_files=["res://.godot/imported/umbrelaPiece1.png-370f6e7a8737e5d74cda1c973f2f3ece.ctex"]
+source_file="res://Colors/pieces/flower/flowerStateFinal.png"
+dest_files=["res://.godot/imported/flowerStateFinal.png-6eea45bed6ea875119d9c84297229cf3.ctex"]
 
 [params]
 

@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://d0w40y83ghaqq" path="res://Fragment/RecipeTable.cs" id="1_nbdhl"]
 [ext_resource type="Script" uid="uid://c2q1cu6l08gc8" path="res://Fragment/CraftingEffectController.cs" id="2_2udfa"]
-[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="2_unlfm"]
+[ext_resource type="PackedScene" uid="uid://djonho61gj87v" path="res://Fragment/Keepsakes/Umbrella/Umbrella.tscn" id="2_unlfm"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="3_2m1rb"]
 [ext_resource type="Script" uid="uid://dtskl7kekh48l" path="res://Fragment/Recipe.cs" id="3_34pqt"]
 
 [sub_resource type="Resource" id="Resource_8qyxg"]
 script = ExtResource("3_34pqt")
-Input1 = "A"
-Input2 = "B"
+Input1 = "UmbrellaHandle"
+Input2 = "UmbrellaHat"
 Result = ExtResource("2_unlfm")
 metadata/_custom_type_script = "uid://dtskl7kekh48l"
 

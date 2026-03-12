@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dwckp813wy10n" path="res://LevelScene/prefabs/platform.tscn" id="8_aqaw3"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="8_og3mt"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="8_trjvs"]
-[ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="9_trjvs"]
+[ext_resource type="PackedScene" uid="uid://cr85p0sxhe4q6" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHandle.tscn" id="11_h5k8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wycyr"]
 size = Vector2(237.55627, 734.3127)
@@ -89,7 +89,7 @@ shape = SubResource("RectangleShape2D_wycyr")
 position = Vector2(5983, 2235)
 
 [node name="grounds" type="Node2D" parent="." unique_id=652478515]
-position = Vector2(-412, 196)
+position = Vector2(-1429, 195.99998)
 scale = Vector2(7.654676, 0.19865067)
 
 [node name="X" type="Node2D" parent="grounds" unique_id=1772740108]
@@ -97,21 +97,6 @@ position = Vector2(362.65414, 1701.4796)
 rotation = -1.5916092
 scale = Vector2(1.3647959, 0.16300252)
 skew = -1.5176404
-
-[node name="Node2D2" type="Node2D" parent="grounds/X" unique_id=1111081477]
-position = Vector2(-3680.5413, 30826.072)
-scale = Vector2(0.9999999, 1)
-
-[node name="RedDaYun" type="Sprite2D" parent="grounds/X/Node2D2" unique_id=893821502]
-position = Vector2(418.81006, 2989.211)
-rotation = 1.5392061
-scale = Vector2(6.5748186, 0.25362754)
-skew = -0.92769504
-texture = ExtResource("4_fa1sb")
-
-[node name="RedDaYun2" type="Sprite2D" parent="grounds/X/Node2D2" unique_id=438533270]
-position = Vector2(418.81006, 2989.211)
-texture = ExtResource("4_fa1sb")
 
 [node name="Node2D4" type="Node2D" parent="grounds/X" unique_id=964332690]
 position = Vector2(145.00757, 855.73047)
@@ -125,21 +110,6 @@ skew = -0.92769504
 texture = ExtResource("4_fa1sb")
 
 [node name="RedDaYun2" type="Sprite2D" parent="grounds/X/Node2D4" unique_id=737676235]
-position = Vector2(418.81006, 2989.211)
-texture = ExtResource("4_fa1sb")
-
-[node name="Node2D3" type="Node2D" parent="grounds/X" unique_id=707607554]
-position = Vector2(-2589.512, 36705.105)
-scale = Vector2(0.9999999, 1)
-
-[node name="RedDaYun" type="Sprite2D" parent="grounds/X/Node2D3" unique_id=1026238517]
-position = Vector2(418.81006, 2989.211)
-rotation = 1.5392061
-scale = Vector2(6.5748186, 0.25362754)
-skew = -0.92769504
-texture = ExtResource("4_fa1sb")
-
-[node name="RedDaYun2" type="Sprite2D" parent="grounds/X/Node2D3" unique_id=100000623]
 position = Vector2(418.81006, 2989.211)
 texture = ExtResource("4_fa1sb")
 
@@ -177,36 +147,59 @@ texture = ExtResource("4_fa1sb")
 position = Vector2(-107.06639, -98.54245)
 shape = SubResource("RectangleShape2D_am4q5")
 
-[node name="ground2" parent="grounds" unique_id=1524614197 instance=ExtResource("7_vufav")]
-position = Vector2(485.58557, 3287.1772)
-scale = Vector2(0.96951365, 11.711706)
+[node name="ground6" parent="grounds" unique_id=1524614197 instance=ExtResource("7_vufav")]
+position = Vector2(553.5178, 4847.706)
+scale = Vector2(0.87252593, 11.71171)
 
-[node name="GraySquare7" type="Sprite2D" parent="grounds/ground2" unique_id=2097884185]
-position = Vector2(101.46454, 27.938507)
-scale = Vector2(0.017479965, 1.0210718)
+[node name="ground5" parent="grounds" unique_id=1187627175 instance=ExtResource("7_vufav")]
+position = Vector2(508.83932, 4137.917)
+scale = Vector2(0.75233793, 11.711706)
+
+[node name="ground2" parent="grounds/ground5" unique_id=715149674 instance=ExtResource("7_vufav")]
+position = Vector2(-54.697968, -72.64011)
+scale = Vector2(1, 1)
+
+[node name="GraySquare9" type="Sprite2D" parent="grounds/ground5/ground2" unique_id=463945786]
+position = Vector2(-103.49194, 27.938538)
+scale = Vector2(0.022525871, 1.0210719)
 texture = ExtResource("4_fa1sb")
 
-[node name="GraySquare8" type="Sprite2D" parent="grounds/ground2" unique_id=463945786]
-position = Vector2(-98.76962, 27.938507)
-scale = Vector2(0.017479965, 1.0210718)
+[node name="ground4" parent="grounds" unique_id=298019254 instance=ExtResource("7_vufav")]
+position = Vector2(723.218, 2954.9365)
+scale = Vector2(0.8022966, 11.711705)
+
+[node name="ground3" parent="grounds/ground4" unique_id=137005799 instance=ExtResource("7_vufav")]
+position = Vector2(64.48129, -75.21912)
+scale = Vector2(1.032567, 1)
+
+[node name="ground7" parent="grounds" unique_id=1092256905 instance=ExtResource("7_vufav")]
+position = Vector2(741.11566, 2179.7058)
+rotation = -1.5371935
+scale = Vector2(4.2627873, 10.502878)
+skew = 1.5171589
+
+[node name="GraySquare6" type="Sprite2D" parent="grounds" unique_id=998430877]
+position = Vector2(858.4295, 2386.0984)
+scale = Vector2(0.016947066, 11.958492)
 texture = ExtResource("4_fa1sb")
 
-[node name="ground3" parent="grounds" unique_id=137005799 instance=ExtResource("7_vufav")]
-position = Vector2(774.0367, 3307.3132)
-scale = Vector2(0.9433868, 11.711703)
-
-[node name="GraySquare6" type="Sprite2D" parent="grounds/ground3" unique_id=998430877]
-position = Vector2(101.04071, 26.104004)
-scale = Vector2(0.017964067, 1.0210719)
+[node name="GraySquare7" type="Sprite2D" parent="grounds" unique_id=1128301322]
+position = Vector2(542.8055, 386.19943)
+scale = Vector2(0.016947066, 2.2834907)
 texture = ExtResource("4_fa1sb")
 
-[node name="GraySquare7" type="Sprite2D" parent="grounds/ground3" unique_id=1032427876]
-position = Vector2(-99.15086, 26.219225)
-scale = Vector2(0.017964067, 1.0210719)
+[node name="GraySquare8" type="Sprite2D" parent="grounds" unique_id=1216536824]
+position = Vector2(583.5649, 1169.6885)
+scale = Vector2(0.016947066, 2.107783)
+texture = ExtResource("4_fa1sb")
+
+[node name="GraySquare9" type="Sprite2D" parent="grounds" unique_id=1440098520]
+position = Vector2(644.704, 572.2592)
+scale = Vector2(0.016947066, 3.8840795)
 texture = ExtResource("4_fa1sb")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("5_wycyr")]
-position = Vector2(-488, 87)
+position = Vector2(-416, -13)
 
 [node name="BlackSquare" type="Sprite2D" parent="Player" unique_id=1289268371]
 position = Vector2(46.999893, -285.99997)
@@ -227,5 +220,5 @@ libraries/ = SubResource("AnimationLibrary_udw71")
 autoplay = &"new_animation"
 
 [node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("8_og3mt")]
-position = Vector2(2794, -280)
-FragmentScene = ExtResource("9_trjvs")
+position = Vector2(1841, -423)
+FragmentScene = ExtResource("11_h5k8j")
