@@ -353,4 +353,3 @@ position = Vector2(141, 411)
 
 [connection signal="Pressed" from="PressurePlate" to="Door" method="Open"]
 [connection signal="Released" from="PressurePlate" to="Door" method="Close"]
-FragmentScene = ExtResource("4_8ovih")
