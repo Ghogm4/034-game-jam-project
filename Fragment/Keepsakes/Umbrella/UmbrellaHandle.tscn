@@ -18,9 +18,9 @@ scale = Vector2(0.4, 1)
 texture = ExtResource("2_o6gvs")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
-position = Vector2(13.5, 0)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_8mq23")
 
 [node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
-position = Vector2(13.5, 0)
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_h6pw7")
