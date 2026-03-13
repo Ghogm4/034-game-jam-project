@@ -19,7 +19,7 @@ public partial class Player_MidAirState : Player_PlayerState
 		{
 			AskTransit(IsMovingHorizontally() ? "Move" : "Idle");
 
-			AudioManager.Instance.PlaySFX("Land Ground");
+			if (!Player.IsInCutScene) AudioManager.Instance.PlaySFX("Land Ground");
 		}
 	}
 	private bool IsMovingHorizontally()
