@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://cq6yyy7e5twmm"
 
 AudioManager="*uid://ds280dgmm0v0w"
 GameManager="*uid://cc8p47tn2brbe"
+InGameUI="*res://UI/InGameUI/InGameUI.tscn"
 SceneManager="*uid://co5gfsuou38bw"
 
 [display]
