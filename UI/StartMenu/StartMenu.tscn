@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://bwhugdrs5rlb3"]
+
+[ext_resource type="Script" uid="uid://cyeoye6fduwhk" path="res://UI/StartMenu/StartMenu.cs" id="1_7vcb3"]
+[ext_resource type="Script" uid="uid://d16q3x6ce1ewt" path="res://UI/StartMenu/DarkCover.cs" id="1_8uev0"]
+[ext_resource type="Script" uid="uid://s25j4ycm2t5n" path="res://UI/ResponsiveButton.cs" id="1_h7m6q"]
+[ext_resource type="StyleBox" uid="uid://c5f2optpgsrbg" path="res://UI/StartMenu/StartButtonStyleBox.tres" id="1_lgosv"]
+[ext_resource type="PackedScene" uid="uid://5b4qdqveswg3" path="res://LevelScene/prefabs/back_grounds.tscn" id="2_qejx2"]
+[ext_resource type="StyleBox" uid="uid://rrh64d3w3rk7" path="res://UI/StartMenu/CGListButtonStyleBox.tres" id="3_1crbp"]
+[ext_resource type="Texture2D" uid="uid://b3oavpau4mwbh" path="res://Colors/UI/StartButtonHFlipped.png" id="4_startbh"]
+[ext_resource type="Texture2D" uid="uid://by7dhuu4wkis8" path="res://Colors/UI/StartButton.png" id="5_startb"]
+
+[node name="StartMenu" type="Control" unique_id=1052411656]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vcb3")
+KeepsakeDisplayScale = Vector2(2, 2)
+
+[node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("2_qejx2")]
+position = Vector2(0, 689)
+
+[node name="FirstButtons" type="HBoxContainer" parent="." unique_id=765556095]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -100.0
+offset_right = 202.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 361
+
+[node name="StartButton" type="Button" parent="FirstButtons" unique_id=850114768]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("1_lgosv")
+theme_override_styles/pressed = ExtResource("1_lgosv")
+theme_override_styles/hover = ExtResource("1_lgosv")
+theme_override_styles/disabled = ExtResource("1_lgosv")
+theme_override_styles/focus = ExtResource("1_lgosv")
+script = ExtResource("1_h7m6q")
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"
+
+[node name="CGListButton" type="Button" parent="FirstButtons" unique_id=234418954]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("3_1crbp")
+theme_override_styles/pressed = ExtResource("3_1crbp")
+theme_override_styles/hover = ExtResource("3_1crbp")
+theme_override_styles/disabled = ExtResource("3_1crbp")
+theme_override_styles/focus = ExtResource("3_1crbp")
+script = ExtResource("1_h7m6q")
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"
+
+[node name="CGGallery" type="Control" parent="." unique_id=29384756]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeepsakeDisplay" type="Button" parent="CGGallery" unique_id=84736251]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_h7m6q")
+HoverScale = 2.2
+PressedScale = 1.8
+OriginalScale = 2.0
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"
+
+[node name="LeftButton" type="Button" parent="CGGallery" unique_id=93847562]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -50.0
+offset_right = 226.0
+offset_bottom = 50.0
+grow_vertical = 2
+icon = ExtResource("4_startbh")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_h7m6q")
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"
+
+[node name="RightButton" type="Button" parent="CGGallery" unique_id=10293847]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -50.0
+offset_right = -126.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("5_startb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_h7m6q")
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"
+
+[node name="DarkCover" type="ColorRect" parent="." unique_id=715172978]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_8uev0")
