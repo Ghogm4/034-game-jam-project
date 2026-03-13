@@ -50,6 +50,10 @@ public partial class SceneManager : Node2D
 		{
 			AudioManager.Instance.PlaySFX("Door Open Reverb");
 		}
+		else if (GameManager.Instance.IsEnterCG)
+		{
+			AudioManager.Instance.PlaySFX("Recollected");
+		}
 		Tween tween = CreateTween();
 		tween.TweenProperty(rect, "modulate:a", 1f, duration);
 		await ToSignal(tween, "finished");
