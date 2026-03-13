@@ -102,9 +102,7 @@ public partial class GameManager : Node
         GameManager.GamePhase? phase = SavesManager.LoadGame();
         if (phase == null)
         {
-            CurrentGamePhase = GamePhase.Opening;
-            ChangePhase(CurrentGamePhase, color, fadeIn, fadeOut, sustain);
-            GD.Print("GameManager: No saved phase found. Starting at Opening.");
+            StartNewGame();
         }
         else
         {

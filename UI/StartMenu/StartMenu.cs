@@ -73,7 +73,7 @@ public partial class StartMenu : Control
 	private void OnStartButtonPressed()
 	{
 		GD.Print("Start Game");
-		GameManager.Instance.StartNewGame();
+		GameManager.Instance.LoadPhase(SceneManager.TransitionColor.Black, 0.5f, 0.5f, 0f);
 	}
 
 	private void OnCGListButtonPressed()
