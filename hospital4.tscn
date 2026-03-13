@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://c1pnid2kbmrxa"]
+
+[ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_nx27o"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="2_wjuus"]
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="3_mv41e"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="4_p3ipu"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="5_8fcdo"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="6_xtel7"]
+[ext_resource type="Texture2D" uid="uid://dowswf50863h0" path="res://Colors/pieces/cup.png" id="7_yxoot"]
+[ext_resource type="Texture2D" uid="uid://ccryflax8uofe" path="res://Colors/pieces/Picnic/picnicStateFinal.png" id="8_mv41e"]
+
+[sub_resource type="Animation" id="Animation_nxsoi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../canvas:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:IsInCutScene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_84yt5"]
+resource_name = "new_animation"
+length = 5.0333333
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BGMPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Silent_2", 5.0],
+"method": &"PlayBGM"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../canvas:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:IsInCutScene")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.9333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mv41e"]
+resource_name = "new_animation_2"
+length = 5.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../canvas:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333334, 2.0333333, 5.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BGMPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Silent_4", 5.0],
+"method": &"PlayBGM"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:IsInCutScene")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.9666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dtbvc"]
+_data = {
+&"RESET": SubResource("Animation_nxsoi"),
+&"new_animation": SubResource("Animation_84yt5"),
+&"new_animation_2": SubResource("Animation_mv41e")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1489550183]
+
+[node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_nx27o")]
+position = Vector2(-271, -290)
+
+[node name="Girl" parent="." unique_id=1425184265 instance=ExtResource("2_wjuus")]
+modulate = Color(1, 0.44705883, 1, 1)
+position = Vector2(679.9999, 663)
+rotation = 2.2391734
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="PurpleUm" type="Sprite2D" parent="." unique_id=860196093]
+position = Vector2(550.5844, 671.37134)
+rotation = -0.23649731
+scale = Vector2(0.32685158, 0.4372367)
+texture = ExtResource("3_mv41e")
+
+[node name="Player" parent="." unique_id=187356350 instance=ExtResource("4_p3ipu")]
+position = Vector2(1061.5845, 708.3713)
+MoveSpeed = 120.0
+IsInCutScene = true
+JumpVelocity = 50.0
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=166263785]
+script = ExtResource("5_8fcdo")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=357091989]
+root_node = NodePath("../Player")
+libraries/ = SubResource("AnimationLibrary_dtbvc")
+autoplay = &"new_animation_2"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1445805439]
+position = Vector2(915.5845, 551.3713)
+zoom = Vector2(1.415, 1.415)
+
+[node name="Cup" type="Sprite2D" parent="." unique_id=973122557]
+position = Vector2(720.00006, 649.0001)
+rotation = -0.41180065
+scale = Vector2(0.14441623, 0.16346568)
+texture = ExtResource("7_yxoot")
+
+[node name="PicnicStateFinal" type="Sprite2D" parent="." unique_id=657696058]
+position = Vector2(698, 781.0001)
+scale = Vector2(0.2752809, 0.17894192)
+texture = ExtResource("8_mv41e")
+
+[node name="canvas" type="Sprite2D" parent="." unique_id=19724219]
+position = Vector2(943, 535)
+scale = Vector2(2.491024, 1.5404615)
+texture = ExtResource("6_xtel7")

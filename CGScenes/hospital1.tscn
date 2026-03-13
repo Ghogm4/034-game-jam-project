@@ -1,34 +1,14 @@
 [gd_scene format=3 uid="uid://c3oq3dkftfnfr"]
 
-[ext_resource type="Texture2D" uid="uid://ccub8eji0ix35" path="res://Colors/City1/lightBlack.png" id="1_eaop8"]
+[ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_7f7de"]
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="1_g2835"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="2_eaop8"]
-[ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="3_7f7de"]
-[ext_resource type="Texture2D" uid="uid://de6xyc6lwo5ok" path="res://Colors/City1/lighterBlack.png" id="4_5d35i"]
 [ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="5_fagjw"]
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="6_fagjw"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="7_5d35i"]
 [ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="9_54q32"]
 [ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="10_7dabq"]
 [ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="11_33u65"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gx2l"]
-size = Vector2(358.65643, 378.66785)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooabg"]
-size = Vector2(357.6986, 404.71594)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f7de"]
-size = Vector2(459.63763, 341.10297)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7sgi"]
-size = Vector2(534.6151, 681.2566)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fagjw"]
-size = Vector2(689.14575, 607.563)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d35i"]
-size = Vector2(400.67337, 664.73096)
 
 [sub_resource type="Animation" id="Animation_d7sgi"]
 resource_name = "hospital1"
@@ -337,89 +317,7 @@ metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
 
 [node name="Node2D" type="Node2D" unique_id=1189377743]
 
-[node name="hospital" type="Node2D" parent="." unique_id=923308440]
-
-[node name="LightBlack" type="Sprite2D" parent="hospital" unique_id=654180987]
-position = Vector2(1110.0001, 839.0001)
-scale = Vector2(2.5275676, -1.1987002)
-texture = ExtResource("1_eaop8")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="hospital" unique_id=599031656]
-position = Vector2(347, 851)
-rotation = -3.1415925
-scale = Vector2(1.0440077, -1.835855)
-
-[node name="BlackSquare" type="Sprite2D" parent="hospital/StaticBody2D4" unique_id=699283093]
-texture = ExtResource("1_g2835")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/StaticBody2D4" unique_id=1576040561]
-position = Vector2(-167.62326, 13.296417)
-shape = SubResource("RectangleShape2D_1gx2l")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="hospital" unique_id=1993898338]
-position = Vector2(2082, 851.00006)
-rotation = -3.1415925
-scale = Vector2(1.0440077, -1.835855)
-
-[node name="BlackSquare2" type="Sprite2D" parent="hospital/StaticBody2D3" unique_id=1574874809]
-texture = ExtResource("1_g2835")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/StaticBody2D3" unique_id=1108377305]
-position = Vector2(168.84937, 36.22284)
-shape = SubResource("RectangleShape2D_ooabg")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="hospital" unique_id=849330163]
-position = Vector2(1209, 438)
-rotation = -3.1415925
-scale = Vector2(2.815261, 0.39866754)
-
-[node name="BlackSquare3" type="Sprite2D" parent="hospital/StaticBody2D2" unique_id=921066872]
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("1_g2835")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/StaticBody2D2" unique_id=1219683142]
-position = Vector2(-4.2624817, -160.55139)
-scale = Vector2(0.9999999, 1)
-shape = SubResource("RectangleShape2D_7f7de")
-
-[node name="Door" type="Area2D" parent="hospital" unique_id=500046958]
-position = Vector2(1579, 973.00006)
-scale = Vector2(0.16460428, 0.34788668)
-
-[node name="Door" type="Sprite2D" parent="hospital/Door" unique_id=2146390523]
-scale = Vector2(1, 0.99999994)
-texture = ExtResource("3_7f7de")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/Door" unique_id=1048389490]
-position = Vector2(78.97754, 7.1862793)
-scale = Vector2(1, 0.9999999)
-shape = SubResource("RectangleShape2D_d7sgi")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="hospital" unique_id=558918427]
-position = Vector2(965.99994, 1052)
-scale = Vector2(0.29892078, 0.113568336)
-
-[node name="LighterBlack" type="Sprite2D" parent="hospital/StaticBody2D5" unique_id=1494281859]
-texture = ExtResource("4_5d35i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/StaticBody2D5" unique_id=97063498]
-position = Vector2(3.3452148, -30.81836)
-shape = SubResource("RectangleShape2D_fagjw")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="hospital" unique_id=774383276]
-position = Vector2(1209, 1215)
-rotation = -3.1415925
-scale = Vector2(2.815261, 0.39866754)
-
-[node name="BlackSquare4" type="Sprite2D" parent="hospital/StaticBody2D" unique_id=1020346683]
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("1_g2835")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hospital/StaticBody2D" unique_id=1588518071]
-visible = false
-position = Vector2(-8.880188, -1.2458496)
-scale = Vector2(0.9999999, 1)
-shape = SubResource("RectangleShape2D_5d35i")
+[node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_7f7de")]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=62716237]
 position = Vector2(1207, 743.00006)

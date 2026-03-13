@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://dwkbc3811t0qr"]
+
+[ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_52x0g"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="2_l4gnx"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_70oqj"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="4_1j0f1"]
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="5_70oqj"]
+[ext_resource type="Texture2D" uid="uid://dowswf50863h0" path="res://Colors/pieces/cup.png" id="6_1j0f1"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="7_1j0f1"]
+
+[sub_resource type="Animation" id="Animation_2pi0t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackSquare:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:IsInCutScene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dolhj"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGMPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Silent_3", 5.0],
+"method": &"PlayBGM"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackSquare:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:IsInCutScene")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.9666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8m73"]
+_data = {
+&"RESET": SubResource("Animation_2pi0t"),
+&"new_animation": SubResource("Animation_dolhj")
+}
+
+[node name="Node2D" type="Node2D" unique_id=2006126708]
+
+[node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_52x0g")]
+position = Vector2(-231, -279)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1933275372]
+position = Vector2(974, 564)
+zoom = Vector2(1.415, 1.415)
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=1390922502]
+script = ExtResource("2_l4gnx")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=244370686]
+libraries/ = SubResource("AnimationLibrary_g8m73")
+autoplay = &"new_animation"
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_70oqj")]
+position = Vector2(1108, 720)
+MoveSpeed = 120.0
+IsInCutScene = true
+JumpVelocity = 50.0
+
+[node name="Girl" parent="." unique_id=947719450 instance=ExtResource("4_1j0f1")]
+modulate = Color(1, 0.68235296, 1, 1)
+position = Vector2(739.00006, 690.00006)
+rotation = 1.9174467
+
+[node name="PurpleUm" type="Sprite2D" parent="." unique_id=363581624]
+position = Vector2(593.00006, 681)
+rotation = -0.23649733
+scale = Vector2(0.32685155, 0.4372367)
+texture = ExtResource("5_70oqj")
+
+[node name="Cup" type="Sprite2D" parent="." unique_id=1091701449]
+position = Vector2(763, 654.00006)
+rotation = -1.2261865
+scale = Vector2(0.14441623, 0.16346568)
+texture = ExtResource("6_1j0f1")
+
+[node name="BlackSquare" type="Sprite2D" parent="." unique_id=1458036045]
+position = Vector2(973.99994, 549)
+scale = Vector2(2.7815824, 1.6519608)
+texture = ExtResource("7_1j0f1")

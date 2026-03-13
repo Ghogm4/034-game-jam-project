@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://c30mnh1x3osv4"]
+
+[ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_8jb23"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="2_rywtu"]
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="3_or4dj"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="4_k3hus"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="5_yb3vh"]
+[ext_resource type="Texture2D" uid="uid://dowswf50863h0" path="res://Colors/pieces/cup.png" id="6_v51sv"]
+[ext_resource type="Texture2D" uid="uid://ccryflax8uofe" path="res://Colors/pieces/Picnic/picnicStateFinal.png" id="7_eyfow"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="8_7kqw1"]
+[ext_resource type="Script" uid="uid://djuytgdca3vil" path="res://AudioManager/SFXPlayer.cs" id="9_rywtu"]
+[ext_resource type="Texture2D" uid="uid://cchvgt5hj2p4y" path="res://Colors/pieces/flower/flowerStateFinal.png" id="10_or4dj"]
+
+[sub_resource type="Animation" id="Animation_76hm3"]
+resource_name = "ED"
+length = 60.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SFXPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4333333, 2.4, 3.8666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": ["Door Open Reverb"],
+"method": &"PlaySFX"
+}, {
+"args": ["Door Open Reverb"],
+"method": &"StopSFX"
+}, {
+"args": ["Door Close Reverb"],
+"method": &"PlaySFX"
+}, {
+"args": ["Door Close Reverb"],
+"method": &"StopSFX"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("canvas:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.1333334, 8.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BGMPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.1666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["0nce 3mbraced 4gain", 5.0],
+"method": &"PlayBGM"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [768.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Girl:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(12.533334, 15.1, 20.933332, 22.1, 23.033333, 23.466667, 24.133333, 24.633333, 25.533333, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.89282036, 0.12217304763960307, 0.12217305, 0.12217305, 0.4398229715025708, 0.5305800926062758, 0.34382986264288273, 0.43982297, 0.43982297, -0.15009831567151274]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FlowerStateFinal:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(16, 18.033333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FlowerStateFinal:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(19, 20.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(718, 699), Vector2(640.53, 649.14)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2D:zoom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(30, 37.266666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.415, 1.415), Vector2(1.255, 1.255)]
+}
+
+[sub_resource type="Animation" id="Animation_or4dj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("canvas:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Girl:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.89282036]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlowerStateFinal:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlowerStateFinal:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(718, 699)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:zoom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.415, 1.415)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hs4hx"]
+_data = {
+&"ED": SubResource("Animation_76hm3"),
+&"RESET": SubResource("Animation_or4dj")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1592196041]
+
+[node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_8jb23")]
+position = Vector2(-359, -299)
+
+[node name="Girl" parent="." unique_id=1425184265 instance=ExtResource("2_rywtu")]
+modulate = Color(1, 0.44705883, 1, 1)
+position = Vector2(595.00006, 652.99994)
+rotation = 0.89282036
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="PurpleUm" type="Sprite2D" parent="." unique_id=278499724]
+position = Vector2(462.5844, 662.37134)
+rotation = -0.23649731
+scale = Vector2(0.32685158, 0.4372367)
+texture = ExtResource("3_or4dj")
+
+[node name="Player" parent="." unique_id=1610058994 instance=ExtResource("4_k3hus")]
+position = Vector2(1079, 704)
+MoveSpeed = 120.0
+IsInCutScene = true
+JumpVelocity = 50.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1809726358]
+position = Vector2(852, 542)
+zoom = Vector2(1.415, 1.415)
+
+[node name="Cup" type="Sprite2D" parent="." unique_id=525495419]
+position = Vector2(640.99994, 668.00006)
+rotation = -0.12060371
+scale = Vector2(0.14441623, 0.16346568)
+texture = ExtResource("6_v51sv")
+
+[node name="PicnicStateFinal" type="Sprite2D" parent="." unique_id=53054901]
+position = Vector2(610, 772.0001)
+scale = Vector2(0.2752809, 0.17894192)
+texture = ExtResource("7_eyfow")
+
+[node name="canvas" type="Sprite2D" parent="." unique_id=1124345240]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(855, 526)
+scale = Vector2(2.491024, 1.5404615)
+texture = ExtResource("8_7kqw1")
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=28153176]
+script = ExtResource("5_yb3vh")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="SFXPlayer" type="Node" parent="." unique_id=2068414368]
+script = ExtResource("9_rywtu")
+metadata/_custom_type_script = "uid://djuytgdca3vil"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=704253130]
+libraries/ = SubResource("AnimationLibrary_hs4hx")
+autoplay = &"ED"
+
+[node name="ruler" type="Node2D" parent="." unique_id=1355930904]
+position = Vector2(768, 705)
+
+[node name="FlowerStateFinal" type="Sprite2D" parent="." unique_id=1602684276]
+position = Vector2(718, 699)
+scale = Vector2(0.05823047, 0.05719506)
+texture = ExtResource("10_or4dj")
