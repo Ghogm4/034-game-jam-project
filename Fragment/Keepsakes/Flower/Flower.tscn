@@ -9,8 +9,10 @@ size = Vector2(507, 1322)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufmkb"]
 size = Vector2(507, 1322)
 
-[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_ufmkb")]
+[node name="Fragment4" unique_id=1649991499 instance=ExtResource("1_ufmkb")]
 FragmentName = "Flower"
+ProceedWhenCollected = true
+CanBeThrown = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
 scale = Vector2(0.124213174, 0.11993738)

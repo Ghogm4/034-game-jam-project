@@ -9,7 +9,7 @@ size = Vector2(1315.1775, 870)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77kao"]
 size = Vector2(437.44708, 796.947)
 
-[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_77kao")]
+[node name="Fragment4" unique_id=1649991499 instance=ExtResource("1_77kao")]
 FragmentName = "FlowerComb"
 ModifiedJumpVelocity = 1400.0
 

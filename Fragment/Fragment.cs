@@ -14,6 +14,7 @@ public partial class Fragment : RigidBody2D
 	[Export] public string FragmentName = "Fragment";
 	[Export] public float ModifiedJumpVelocity = 900f;
 	[Export] public bool ProceedWhenCollected = false;
+	[Export] public bool CanBeThrown = true;
 	public Sprite2D VisualSprite => field ??= GetNode<Sprite2D>("Sprite2D");
 	public Node2D PhysicsCollisionShape
 	{
