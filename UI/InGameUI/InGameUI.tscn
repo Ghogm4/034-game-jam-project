@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://lswjajmmsq3f"]
+
+[ext_resource type="Script" uid="uid://botqglg66o882" path="res://UI/InGameUI/InGameUI.cs" id="1_ui_script"]
+[ext_resource type="Script" uid="uid://s25j4ycm2t5n" path="res://UI/ResponsiveButton.cs" id="2_responsive"]
+[ext_resource type="Texture2D" uid="uid://by7dhuu4wkis8" path="res://Colors/UI/StartButton.png" id="3_start"]
+[ext_resource type="Texture2D" uid="uid://btuv2seas818h" path="res://Colors/UI/ReloadButton.png" id="4_reload"]
+[ext_resource type="Texture2D" uid="uid://brb1s2rdifmj3" path="res://Colors/UI/ExitButton.png" id="5_exit"]
+
+[node name="InGameUI" type="CanvasLayer" unique_id=88320339]
+process_mode = 3
+layer = 100
+script = ExtResource("1_ui_script")
+
+[node name="PauseMenu" type="Control" parent="." unique_id=229240902]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DarkOverlay" type="ColorRect" parent="PauseMenu" unique_id=123627687]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Buttons" type="VBoxContainer" parent="PauseMenu" unique_id=1958408576]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -170.0
+offset_right = 140.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 161
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/Buttons" unique_id=1151902313]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("3_start")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_responsive")
+HoverScale = 2.2
+PressedScale = 1.8
+OriginalScale = 2.0
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"
+
+[node name="RestartButton" type="Button" parent="PauseMenu/Buttons" unique_id=1588460648]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("4_reload")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_responsive")
+HoverScale = 2.2
+PressedScale = 1.8
+OriginalScale = 2.0
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"
+
+[node name="ExitButton" type="Button" parent="PauseMenu/Buttons" unique_id=74312950]
+unique_name_in_owner = true
+modulate = Color(1, 0.35, 0.35, 1)
+custom_minimum_size = Vector2(280, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("5_exit")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_responsive")
+HoverScale = 2.2
+PressedScale = 1.8
+OriginalScale = 2.0
+metadata/_custom_type_script = "uid://s25j4ycm2t5n"

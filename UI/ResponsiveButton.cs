@@ -15,7 +15,10 @@ public partial class ResponsiveButton : Button
 
     private bool _fromPressed = false;
     private bool _isHovered = false;
-
+    public void RefreshScale()
+    {
+        SetDeferred(PropertyName.Scale, Vector2.One * OriginalScale);
+    }
     public sealed override void _Ready()
     {
         MouseEntered += OnMouseEntered;
@@ -66,6 +69,7 @@ public partial class ResponsiveButton : Button
 
     private void OnButtonDown()
     {
+        AudioManager.Instance.PlaySFX("UI");
         StartAnimation(Vector2.One * PressedScale);
     }
 

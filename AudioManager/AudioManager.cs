@@ -160,6 +160,17 @@ public partial class AudioManager : Node
 		}
 	}
 
+	public void StopAllSFX()
+	{
+		foreach (AudioStreamPlayer sfxPlayer in SFXPlayers)
+		{
+			if (sfxPlayer.Playing)
+			{
+				sfxPlayer.Stop();
+			}
+		}
+	}
+
 	public void PlayUI(string name)
 	{
 		if (!UIStreams.ContainsKey(name))

@@ -17,7 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7vcb3")
-KeepsakeDisplayScale = Vector2(2, 2)
 
 [node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("2_qejx2")]
 position = Vector2(0, 689)
