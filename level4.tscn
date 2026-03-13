@@ -1,17 +1,221 @@
 [gd_scene format=3 uid="uid://ctfrlnvaav4dr"]
 
 [ext_resource type="PackedScene" uid="uid://5b4qdqveswg3" path="res://LevelScene/prefabs/back_grounds.tscn" id="1_gmhuy"]
+[ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="2_7odde"]
 [ext_resource type="PackedScene" uid="uid://ccwbwqda63xj3" path="res://LevelScene/prefabs/ground.tscn" id="2_g1tnb"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_pklw6"]
+[ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="4_yxclo"]
+[ext_resource type="PackedScene" uid="uid://dpt60622kgt56" path="res://Fragment/Keepsakes/Flower/Stem.tscn" id="5_fx4lf"]
+[ext_resource type="PackedScene" uid="uid://bhhktr81cnk4b" path="res://Level/Door/Door.tscn" id="5_sx4db"]
+[ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="6_sx4db"]
+[ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="7_7lf1v"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="7_dguho"]
+[ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="8_dguho"]
+[ext_resource type="PackedScene" uid="uid://dwckp813wy10n" path="res://LevelScene/prefabs/platform.tscn" id="9_p2trt"]
+[ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="11_7lf1v"]
+[ext_resource type="PackedScene" uid="uid://byryv801ksl6r" path="res://Fragment/Keepsakes/Flower/Leaf.tscn" id="11_n01hv"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="13_p2trt"]
+[ext_resource type="PackedScene" uid="uid://7ayv4ysg3fn" path="res://LevelScene/prefabs/warningLine.tscn" id="14_p2trt"]
+[ext_resource type="PackedScene" uid="uid://dcvravkibjndy" path="res://Fragment/Keepsakes/Flower/Bloom.tscn" id="17_0bk12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13mid"]
+size = Vector2(7458.464, 607.2119)
+
+[sub_resource type="Animation" id="Animation_n01hv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/BlackSquare:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7odde"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/BlackSquare:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335, 4.8333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.24705882)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Mist", 5.0],
+"method": &"PlayBGM"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0bk12"]
+_data = {
+&"RESET": SubResource("Animation_n01hv"),
+&"new_animation": SubResource("Animation_7odde")
+}
 
 [node name="Node2D" type="Node2D" unique_id=1677080886]
 
 [node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_gmhuy")]
 position = Vector2(7, 1)
 
-[node name="ground2" parent="." unique_id=1524614197 instance=ExtResource("2_g1tnb")]
-position = Vector2(74.999985, 1035)
-scale = Vector2(39.186512, 2.6505735)
+[node name="GraySquare" type="Sprite2D" parent="." unique_id=2090739233]
+position = Vector2(-4451, 20.999886)
+rotation = 0.7018068
+scale = Vector2(1.3939257, 1.5106933)
+texture = ExtResource("2_7odde")
+
+[node name="ground" type="Node2D" parent="." unique_id=1208091186]
+
+[node name="ground7" parent="ground" unique_id=1524614197 instance=ExtResource("2_g1tnb")]
+position = Vector2(-6822, 752)
+scale = Vector2(9.386511, 2.6505735)
+
+[node name="ground2" parent="ground" unique_id=38637589 instance=ExtResource("2_g1tnb")]
+position = Vector2(-1343, 1035)
+scale = Vector2(33.266514, 2.6505735)
+
+[node name="ground4" parent="ground" unique_id=1796457830 instance=ExtResource("2_g1tnb")]
+position = Vector2(-3791.9998, 616)
+scale = Vector2(14.226511, 2.6505735)
+
+[node name="ground6" parent="ground" unique_id=1326754147 instance=ExtResource("2_g1tnb")]
+position = Vector2(-8295, 154)
+scale = Vector2(9.386511, 2.6505735)
+
+[node name="ground9" parent="ground" unique_id=865021046 instance=ExtResource("2_g1tnb")]
+position = Vector2(-10151, -350)
+scale = Vector2(9.386511, 2.6505735)
+
+[node name="ground14" parent="ground" unique_id=1770958981 instance=ExtResource("2_g1tnb")]
+position = Vector2(-5863.0005, 658)
+scale = Vector2(4.906511, 2.6505735)
+
+[node name="ground13" parent="ground" unique_id=883880836 instance=ExtResource("2_g1tnb")]
+position = Vector2(-5691, 538)
+scale = Vector2(4.906511, 2.6505735)
+
+[node name="ground12" parent="ground" unique_id=53970993 instance=ExtResource("2_g1tnb")]
+position = Vector2(-5461.9995, 408)
+scale = Vector2(4.9065104, 2.6505733)
+
+[node name="ground10" parent="ground" unique_id=723555062 instance=ExtResource("2_g1tnb")]
+position = Vector2(-10999, -868)
+scale = Vector2(9.386511, 2.6505735)
+
+[node name="ground11" parent="ground" unique_id=60538840 instance=ExtResource("2_g1tnb")]
+position = Vector2(-11876, -1349.368)
+scale = Vector2(9.386511, 2.6505735)
+
+[node name="ground8" parent="ground" unique_id=1654752305 instance=ExtResource("2_g1tnb")]
+position = Vector2(-5242.0005, 276)
+scale = Vector2(4.906511, 2.6505735)
+
+[node name="ground5" parent="ground" unique_id=1489983455 instance=ExtResource("2_g1tnb")]
+position = Vector2(-5021, 154)
+scale = Vector2(4.906511, 2.6505735)
+
+[node name="ground3" parent="ground" unique_id=1885664045 instance=ExtResource("2_g1tnb")]
+position = Vector2(-2515, 647.0002)
+rotation = 0.67760086
+scale = Vector2(3.2665157, 2.6505735)
+
+[node name="GraySquare6" parent="ground" unique_id=861083947 instance=ExtResource("14_p2trt")]
+position = Vector2(-9192, -843.63184)
+scale = Vector2(0.13796408, 0.9884015)
+
+[node name="GraySquare11" parent="ground" unique_id=396476325 instance=ExtResource("14_p2trt")]
+position = Vector2(-7333.0005, -299.81595)
+scale = Vector2(0.13796408, 1.1208874)
+
+[node name="GraySquare9" parent="ground" unique_id=1209527799 instance=ExtResource("14_p2trt")]
+position = Vector2(-10041, -1363)
+scale = Vector2(0.13796408, 0.9884015)
+
+[node name="GraySquare10" parent="ground" unique_id=2112991605 instance=ExtResource("14_p2trt")]
+position = Vector2(-10917, -1854.3682)
+scale = Vector2(0.13796408, 0.9884015)
+
+[node name="GraySquare8" parent="ground" unique_id=524266217 instance=ExtResource("14_p2trt")]
+position = Vector2(-12877, -2679.5002)
+scale = Vector2(0.13796408, 5.251873)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/GraySquare8" unique_id=2023951795]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/GraySquare8/StaticBody2D" unique_id=1372982730]
+position = Vector2(-3403.0313, -29.703674)
+shape = SubResource("RectangleShape2D_13mid")
+
+[node name="GraySquare7" parent="ground" unique_id=573120772 instance=ExtResource("14_p2trt")]
+position = Vector2(-6336.0005, -50.84204)
+scale = Vector2(0.13796408, 0.37828472)
+
+[node name="GraySquare12" parent="ground" unique_id=668884011 instance=ExtResource("14_p2trt")]
+position = Vector2(-6161.0005, -158)
+scale = Vector2(0.13796408, 0.40653372)
+
+[node name="GraySquare13" parent="ground" unique_id=1414551378 instance=ExtResource("14_p2trt")]
+position = Vector2(-5936, -283)
+scale = Vector2(0.13796408, 0.4401485)
+
+[node name="GraySquare14" parent="ground" unique_id=1083270735 instance=ExtResource("14_p2trt")]
+position = Vector2(-5711, -406)
+scale = Vector2(0.13796408, 0.4401485)
+
+[node name="GraySquare15" parent="ground" unique_id=890403779 instance=ExtResource("14_p2trt")]
+position = Vector2(-5487, -537)
+scale = Vector2(0.13796408, 0.4401485)
+
+[node name="platforms" type="Node2D" parent="." unique_id=2127749432]
+position = Vector2(-1812, -267.99997)
+scale = Vector2(10.981581, 0.23999995)
+
+[node name="StaticBody2D2" parent="platforms" unique_id=1564111054 instance=ExtResource("9_p2trt")]
+scale = Vector2(1, 1)
+
+[node name="StaticBody2D5" parent="platforms" unique_id=1921454328 instance=ExtResource("9_p2trt")]
+position = Vector2(-916.1705, -9304.169)
+scale = Vector2(1, 1)
+
+[node name="StaticBody2D3" parent="platforms" unique_id=1406394556 instance=ExtResource("9_p2trt")]
+position = Vector2(41.52408, -591.6669)
+scale = Vector2(1, 1)
+
+[node name="StaticBody2D4" parent="platforms" unique_id=717984302 instance=ExtResource("9_p2trt")]
+position = Vector2(97.344826, -1204.167)
+scale = Vector2(1.4407378, 1)
+
+[node name="door" type="Node2D" parent="." unique_id=1271227403]
+position = Vector2(-4253.0005, 78)
+scale = Vector2(9.206238, 1.3980519)
+
+[node name="Door" parent="door" unique_id=1034037436 instance=ExtResource("5_sx4db")]
+scale = Vector2(0.99999994, 0.99999994)
+OpenSpeed = 200.0
+OpenHeight = 400.0
+Direction = 0
+
+[node name="PressurePlate" parent="door" unique_id=895291090 instance=ExtResource("11_7lf1v")]
+position = Vector2(-60.17653, -479.95358)
+scale = Vector2(0.108622, 0.715281)
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_pklw6")]
 position = Vector2(73, 186)
@@ -19,3 +223,38 @@ position = Vector2(73, 186)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=255370001]
 offset = Vector2(0, -320)
 zoom = Vector2(0.715, 0.715)
+
+[node name="BlackSquare" type="Sprite2D" parent="Player" unique_id=1402455568]
+visible = false
+position = Vector2(-75, -334)
+scale = Vector2(5.099283, 3.3491313)
+texture = ExtResource("7_dguho")
+
+[node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("4_yxclo")]
+position = Vector2(-7064, -359)
+FragmentScene = ExtResource("5_fx4lf")
+
+[node name="FragmentGenerator2" parent="." unique_id=1021609735 instance=ExtResource("4_yxclo")]
+position = Vector2(-661, -755)
+FragmentScene = ExtResource("11_n01hv")
+
+[node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("6_sx4db")]
+
+[node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("7_7lf1v")]
+
+[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("8_dguho")]
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=2083778539]
+script = ExtResource("13_p2trt")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=135486952]
+root_node = NodePath("../BGMPlayer")
+libraries/ = SubResource("AnimationLibrary_0bk12")
+autoplay = &"new_animation"
+
+[node name="FragmentGenerator3" parent="." unique_id=2097457323 instance=ExtResource("4_yxclo")]
+position = Vector2(-11872, -2676)
+FragmentScene = ExtResource("17_0bk12")
+
+[connection signal="Pressed" from="door/PressurePlate" to="door/Door" method="Open"]

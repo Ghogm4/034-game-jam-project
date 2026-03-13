@@ -4,21 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://bbfiu3qt4cyia" path="res://Colors/pieces/flower/flowerState1.png" id="2_se712"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63glw"]
-size = Vector2(537, 870)
+size = Vector2(1315.1775, 870)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77kao"]
-size = Vector2(537, 870)
+size = Vector2(437.44708, 796.947)
 
 [node name="Fragment" unique_id=1649991499 instance=ExtResource("1_77kao")]
 FragmentName = "FlowerComb"
+ModifiedJumpVelocity = 1400.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
+scale = Vector2(0.06893266, 0.075849265)
 texture = ExtResource("2_se712")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
-position = Vector2(-17.5, -3)
+position = Vector2(-2.508716, -2)
+scale = Vector2(0.029640539, 0.07964609)
 shape = SubResource("RectangleShape2D_63glw")
 
-[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
-position = Vector2(-20, -2)
+[node name="PickupSensor" parent="." index="2" unique_id=181391040]
+position = Vector2(-0.99999994, 4)
+scale = Vector2(1.5398561, 1.5834665)
+
+[node name="CollisionShape2D" parent="PickupSensor" index="0" unique_id=788692184]
+position = Vector2(-1.8811102, -3.992508)
+scale = Vector2(0.06265792, 0.054959867)
 shape = SubResource("RectangleShape2D_77kao")

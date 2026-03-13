@@ -176,7 +176,7 @@ shape = SubResource("RectangleShape2D_am4q5")
 
 [node name="ground6" parent="grounds" unique_id=1524614197 instance=ExtResource("7_vufav")]
 position = Vector2(553.5178, 4847.706)
-scale = Vector2(0.87252593, 11.71171)
+scale = Vector2(0.9509088, 11.71171)
 
 [node name="ground5" parent="grounds" unique_id=1187627175 instance=ExtResource("7_vufav")]
 position = Vector2(508.83932, 4137.917)
@@ -191,18 +191,20 @@ position = Vector2(-103.49194, 27.938538)
 scale = Vector2(0.022525871, 1.0210719)
 texture = ExtResource("4_fa1sb")
 
-[node name="ground4" parent="grounds" unique_id=298019254 instance=ExtResource("7_vufav")]
-position = Vector2(723.218, 2954.9365)
-scale = Vector2(0.8022966, 11.711705)
+[node name="ground8" parent="grounds" unique_id=1710186647 instance=ExtResource("7_vufav")]
+position = Vector2(674.359, 3689.895)
+rotation = -0.27138007
+scale = Vector2(0.20778617, 13.266193)
+skew = 0.27119112
 
-[node name="ground3" parent="grounds/ground4" unique_id=137005799 instance=ExtResource("7_vufav")]
-position = Vector2(160.22618, -75.21912)
-scale = Vector2(1.9444239, 1)
+[node name="ground3" parent="grounds" unique_id=137005799 instance=ExtResource("7_vufav")]
+position = Vector2(851.76697, 2073.9927)
+scale = Vector2(1.5600048, 11.711707)
 
 [node name="ground7" parent="grounds" unique_id=1092256905 instance=ExtResource("7_vufav")]
-position = Vector2(741.11566, 2179.7058)
+position = Vector2(733.6691, 2300.5217)
 rotation = -1.5371935
-scale = Vector2(4.2627873, 10.502878)
+scale = Vector2(5.9655027, 10.502878)
 skew = 1.5171589
 
 [node name="GraySquare6" type="Sprite2D" parent="grounds" unique_id=998430877]
@@ -227,8 +229,8 @@ scale = Vector2(0.016947066, 2.107783)
 texture = ExtResource("4_fa1sb")
 
 [node name="GraySquare9" type="Sprite2D" parent="grounds" unique_id=1440098520]
-position = Vector2(644.704, 572.2592)
-scale = Vector2(0.016947066, 3.8840795)
+position = Vector2(658.0292, 976.58875)
+scale = Vector2(0.016947066, 2.7242298)
 texture = ExtResource("4_fa1sb")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("5_wycyr")]
