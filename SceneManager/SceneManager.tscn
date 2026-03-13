@@ -1,15 +1,35 @@
 [gd_scene format=3 uid="uid://co5gfsuou38bw"]
 
 [ext_resource type="Script" uid="uid://c1r11rlyqtbvt" path="res://SceneManager/SceneManager.cs" id="1_mqdah"]
-[ext_resource type="PackedScene" uid="uid://th0exfuu28e2" path="res://CGScenes/picnic.tscn" id="2_x7qrj"]
+[ext_resource type="PackedScene" uid="uid://h6iw52vcthtr" path="res://Placehold_Level.tscn" id="2_1bbdn"]
 
 [node name="SceneManager" type="Node2D" unique_id=2022550534 node_paths=PackedStringArray("rect")]
 script = ExtResource("1_mqdah")
 scenes = Dictionary[int, PackedScene]({
-11: ExtResource("2_x7qrj")
+0: ExtResource("2_1bbdn"),
+1: ExtResource("2_1bbdn"),
+2: ExtResource("2_1bbdn"),
+3: ExtResource("2_1bbdn"),
+4: ExtResource("2_1bbdn"),
+5: ExtResource("2_1bbdn"),
+6: ExtResource("2_1bbdn"),
+7: ExtResource("2_1bbdn"),
+8: ExtResource("2_1bbdn"),
+9: ExtResource("2_1bbdn"),
+10: ExtResource("2_1bbdn"),
+11: ExtResource("2_1bbdn"),
+12: ExtResource("2_1bbdn"),
+13: ExtResource("2_1bbdn"),
+14: ExtResource("2_1bbdn"),
+15: ExtResource("2_1bbdn"),
+16: ExtResource("2_1bbdn")
 })
 rect = NodePath("ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=722817873]
-offset_right = 1952.0
-offset_bottom = 1122.0
+z_index = 10
+offset_left = -212864.0
+offset_top = -142080.02
+offset_right = -210912.0
+offset_bottom = -140958.02
+scale = Vector2(25078.313, 466.94623)

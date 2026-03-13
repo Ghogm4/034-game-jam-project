@@ -36,9 +36,9 @@ public partial class SceneManager : Node2D
 		rect.Modulate = new Color(rect.Modulate.R, rect.Modulate.G, rect.Modulate.B, 0f);
 		rect.Visible = true;
 
-		await FadeOut(fadeOut);
-		GetTree().ChangeSceneToPacked(scene);
+		await FadeOut(fadeOut);		
 		await ToSignal(GetTree().CreateTimer(sustain), "timeout");
+		GetTree().ChangeSceneToPacked(scene);
 		await FadeIn(fadeIn);
 
 		rect.Visible = false;
@@ -62,6 +62,10 @@ public partial class SceneManager : Node2D
 	public async Task FadeIn(float duration)
 	{
 		if (GameManager.Instance.IsLeftHospital)
+		{
+			AudioManager.Instance.PlaySFX("Door Close");
+		}
+		else if (GameManager.Instance.IsInHospital)
 		{
 			AudioManager.Instance.PlaySFX("Door Close Reverb");
 		}

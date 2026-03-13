@@ -38,7 +38,7 @@ public partial class Player : CharacterBody2D
 	[Export] public float FragmentThrowSpeed = 900f;
 	[Export] public float FragmentThrowUpwardSpeed = 120f;
 	public Node2D Visual => field ??= GetNode<Node2D>("Visual");
-	public Area2D PickupArea => field ??= GetNode<Area2D>("%PickupArea");
+	public Area2D PickupArea => field ??= GetNodeOrNull<Area2D>("%PickupArea");
 	public Vector2 BaseVisualScale { get; set; } = Vector2.One;
 	public Vector2 ImpactVisualScale { get; set; } = Vector2.One;
 	public Fragment HeldFragment { get; set; } = null;

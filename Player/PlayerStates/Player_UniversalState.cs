@@ -8,7 +8,7 @@ public partial class Player_UniversalState : Player_PlayerState
 
     private Fragment FindNearestPickupableFragment()
     {
-        CollisionShape2D pickupAreaCollision = Player.PickupArea.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
+        CollisionShape2D pickupAreaCollision = Player.PickupArea?.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
         if (pickupAreaCollision?.Shape is not CircleShape2D pickupCircle)
             return null;
 
