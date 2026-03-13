@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b0b6awaje5d2a" path="res://Fragment/Fragment.tscn" id="1_41vjp"]
 [ext_resource type="Texture2D" uid="uid://ccm03ylytx2ab" path="res://Colors/pieces/Cup/cupHandle.png" id="2_mrtqd"]
+[ext_resource type="Script" uid="uid://np2bc2oce7d6" path="res://Fragment/Keepsakes/Cup/CupHandle.cs" id="3_1w07g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mrtqd"]
 radius = 136.0
@@ -9,7 +10,16 @@ radius = 136.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hbj0"]
 radius = 136.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_a0n35"]
+radius = 141.0
+
 [node name="Fragment" unique_id=1649991499 instance=ExtResource("1_41vjp")]
+max_contacts_reported = 4
+script = ExtResource("3_1w07g")
+KickSpeed = 760.0
+KickUpwardSpeed = 80.0
+MinKickMoveInput = 0.2
+MaxKickNormalAbsY = 0.65
 FragmentName = "CupHandle"
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
@@ -22,3 +32,10 @@ shape = SubResource("CircleShape2D_mrtqd")
 [node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_2hbj0")
+
+[node name="KickSensor" type="Area2D" parent="." index="3" unique_id=461983946]
+position = Vector2(0, 5)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KickSensor" index="0" unique_id=1209595518]
+shape = SubResource("CircleShape2D_a0n35")

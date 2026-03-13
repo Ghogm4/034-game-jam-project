@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="8_tmxln"]
 [ext_resource type="PackedScene" uid="uid://bhhktr81cnk4b" path="res://Level/Door/Door.tscn" id="9_0hjgu"]
 [ext_resource type="PackedScene" uid="uid://ffx6v1u3804t" path="res://Fragment/Keepsakes/Carpet/CarpetWhite.tscn" id="9_brsnq"]
+[ext_resource type="PackedScene" uid="uid://b6pn35skj1y6c" path="res://Fragment/Keepsakes/Cup/CupHandle.tscn" id="9_c61xk"]
 [ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="10_c61xk"]
 [ext_resource type="PackedScene" uid="uid://djonho61gj87v" path="res://Fragment/Keepsakes/Umbrella/Umbrella.tscn" id="11_hc3s7"]
 [ext_resource type="PackedScene" uid="uid://dqagboqhuv31q" path="res://Fragment/Keepsakes/Carpet/CarpetComb3.tscn" id="12_03v7n"]
@@ -353,6 +354,10 @@ FragmentScene = ExtResource("11_hc3s7")
 [node name="FragmentGenerator7" parent="Generators" unique_id=1820659692 instance=ExtResource("7_rdujs")]
 position = Vector2(573, -5)
 FragmentScene = ExtResource("12_brsnq")
+
+[node name="FragmentGenerator8" parent="Generators" unique_id=1431350612 instance=ExtResource("7_rdujs")]
+position = Vector2(616, 143)
+FragmentScene = ExtResource("9_c61xk")
 
 [node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("10_c61xk")]
 
