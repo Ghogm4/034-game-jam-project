@@ -13,9 +13,16 @@
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="11_dc5vx"]
 [ext_resource type="PackedScene" uid="uid://b6pn35skj1y6c" path="res://Fragment/Keepsakes/Cup/CupHandle.tscn" id="13_mw4xc"]
 [ext_resource type="Texture2D" uid="uid://dnmvyutuudby1" path="res://Colors/City1/arrow.png" id="13_s8oj7"]
+[ext_resource type="PackedScene" uid="uid://b04awtc6wia5u" path="res://Fragment/Keepsakes/Cup/CupBody.tscn" id="14_mw4xc"]
+[ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="15_4ou0f"]
+[ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="16_4k5bj"]
+[ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="17_hp87d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21xmu"]
 size = Vector2(7.9337006, 347.3222)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8rrl"]
+size = Vector2(3187.541, 446.08008)
 
 [sub_resource type="Animation" id="Animation_8i3m3"]
 length = 0.001
@@ -95,8 +102,8 @@ position = Vector2(649, 751)
 scale = Vector2(20.266514, 1.8505783)
 
 [node name="ground3" parent="grounds" unique_id=176232558 instance=ExtResource("2_8tcn8")]
-position = Vector2(-4666, 751)
-scale = Vector2(26.426502, 1.8505783)
+position = Vector2(-4940, 751)
+scale = Vector2(29.1865, 1.8505783)
 
 [node name="warnings" type="Node2D" parent="grounds" unique_id=1432030209]
 
@@ -112,6 +119,17 @@ texture = ExtResource("3_21xmu")
 position = Vector2(-1838, 795)
 scale = Vector2(0.13741007, 1.8643177)
 texture = ExtResource("3_21xmu")
+
+[node name="RedDaYun4" type="Sprite2D" parent="grounds/warnings" unique_id=1106415659]
+position = Vector2(-7970, 60.374878)
+scale = Vector2(0.13741007, 4.127062)
+texture = ExtResource("3_21xmu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grounds/warnings/RedDaYun4" unique_id=1458939635]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grounds/warnings/RedDaYun4/StaticBody2D" unique_id=1091445863]
+position = Vector2(-1280.8281, -110.70221)
+shape = SubResource("RectangleShape2D_r8rrl")
 
 [node name="platforms" type="Node2D" parent="grounds" unique_id=989275181]
 
@@ -138,6 +156,30 @@ scale = Vector2(5.4615784, 0.2799998)
 [node name="StaticBody2D5" parent="grounds/platforms" unique_id=1120804673 instance=ExtResource("5_3opl0")]
 position = Vector2(-6081, 159)
 scale = Vector2(5.4615784, 0.5200007)
+
+[node name="StaticBody2D15" parent="grounds/platforms" unique_id=1631339707 instance=ExtResource("5_3opl0")]
+position = Vector2(-6415.0005, 1.9073486e-06)
+scale = Vector2(5.4615784, 0.3200007)
+
+[node name="StaticBody2D16" parent="grounds/platforms" unique_id=1061189074 instance=ExtResource("5_3opl0")]
+position = Vector2(-6674, 159)
+scale = Vector2(5.4615784, 0.3200007)
+
+[node name="StaticBody2D17" parent="grounds/platforms" unique_id=374326331 instance=ExtResource("5_3opl0")]
+position = Vector2(-6864, -167)
+scale = Vector2(5.4615784, 0.3200007)
+
+[node name="StaticBody2D18" parent="grounds/platforms" unique_id=1271303687 instance=ExtResource("5_3opl0")]
+position = Vector2(-7824, -110)
+scale = Vector2(5.4615784, 0.3200007)
+
+[node name="StaticBody2D13" parent="grounds/platforms" unique_id=1358793894 instance=ExtResource("5_3opl0")]
+position = Vector2(-6805.9995, -572)
+scale = Vector2(5.4615784, 1.2000008)
+
+[node name="StaticBody2D14" parent="grounds/platforms" unique_id=1128899227 instance=ExtResource("5_3opl0")]
+position = Vector2(-7133, -776.99994)
+scale = Vector2(23.74158, 0.5200007)
 
 [node name="StaticBody2D6" parent="grounds/platforms" unique_id=2128701513 instance=ExtResource("5_3opl0")]
 position = Vector2(-5379, -218)
@@ -241,6 +283,27 @@ OpenHeight = 600.0
 position = Vector2(-367.11, 159.61517)
 scale = Vector2(0.18309726, 1.9230744)
 
+[node name="Node2D4" type="Node2D" parent="Doors" unique_id=1355946456]
+
+[node name="PressurePlate" parent="Doors/Node2D4" unique_id=274751044 instance=ExtResource("8_qulpo")]
+position = Vector2(-764.61414, -549.99927)
+scale = Vector2(0.18309726, 1.9230744)
+
+[node name="Door" parent="Doors/Node2D4" unique_id=818273568 instance=ExtResource("7_rmy57")]
+position = Vector2(-635.8967, -1199.9984)
+rotation = 1.5705936
+scale = Vector2(1.9230701, 0.3809313)
+skew = -0.02215743
+OpenSpeed = 400.0
+OpenHeight = 600.0
+
+[node name="Door2" parent="Doors/Node2D4" unique_id=1053488151 instance=ExtResource("7_rmy57")]
+position = Vector2(-716.8257, 424.99942)
+scale = Vector2(0.9228102, 1.9230744)
+OpenSpeed = 100.0
+OpenHeight = 300.0
+Direction = 0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=747517466]
 root_node = NodePath("../BGMPlayer")
 libraries/ = SubResource("AnimationLibrary_qulpo")
@@ -254,9 +317,22 @@ metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
 position = Vector2(-2931, -24)
 FragmentScene = ExtResource("13_mw4xc")
 
+[node name="FragmentGenerator2" parent="." unique_id=546156065 instance=ExtResource("11_dc5vx")]
+position = Vector2(-7130, -582)
+FragmentScene = ExtResource("14_mw4xc")
+
+[node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("15_4ou0f")]
+
+[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("16_4k5bj")]
+
+[node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("17_hp87d")]
+
 [connection signal="Pressed" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Open"]
 [connection signal="Released" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Close"]
 [connection signal="Pressed" from="Doors/Node2D2/PressurePlate2" to="Doors/Node2D2/Door" method="Open"]
 [connection signal="Released" from="Doors/Node2D2/PressurePlate2" to="Doors/Node2D2/Door" method="Close"]
 [connection signal="Pressed" from="Doors/Node2D3/PressurePlate" to="Doors/Node2D3/Door" method="Open"]
 [connection signal="Released" from="Doors/Node2D3/PressurePlate" to="Doors/Node2D3/Door" method="Close"]
+[connection signal="Pressed" from="Doors/Node2D4/PressurePlate" to="Doors/Node2D4/Door" method="Open"]
+[connection signal="Pressed" from="Doors/Node2D4/PressurePlate" to="Doors/Node2D4/Door2" method="Open"]
+[connection signal="Released" from="Doors/Node2D4/PressurePlate" to="Doors/Node2D4/Door" method="Close"]

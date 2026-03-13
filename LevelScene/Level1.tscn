@@ -11,12 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="8_og3mt"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="8_trjvs"]
 [ext_resource type="PackedScene" uid="uid://cr85p0sxhe4q6" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHandle.tscn" id="11_h5k8j"]
+[ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="12_udw71"]
+[ext_resource type="PackedScene" uid="uid://bivhooyx2gisn" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHat.tscn" id="12_vufav"]
+[ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="13_vufav"]
+[ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="14_aqaw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wycyr"]
 size = Vector2(237.55627, 734.3127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am4q5"]
 size = Vector2(468.92035, 432.89056)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqaw3"]
+size = Vector2(7531.3535, 412.91382)
 
 [sub_resource type="Animation" id="Animation_h5k8j"]
 length = 0.001
@@ -124,6 +131,26 @@ scale = Vector2(1.98519, 1.0000002)
 position = Vector2(504.1363, -855.77356)
 scale = Vector2(1.0289118, 1.0000002)
 
+[node name="StaticBody2D4" parent="grounds/platforms" unique_id=103091709 instance=ExtResource("8_aqaw3")]
+position = Vector2(779.26227, -1701.479)
+scale = Vector2(1.0289118, 1.0000002)
+
+[node name="StaticBody2D5" parent="grounds/platforms" unique_id=1321375314 instance=ExtResource("8_aqaw3")]
+position = Vector2(824.2021, -2139.4336)
+scale = Vector2(1.0289118, 1.0000002)
+
+[node name="StaticBody2D8" parent="grounds/platforms" unique_id=270879351 instance=ExtResource("8_aqaw3")]
+position = Vector2(878.9399, -2516.9805)
+scale = Vector2(1.0289118, 1.0000002)
+
+[node name="StaticBody2D6" parent="grounds/platforms" unique_id=1366449596 instance=ExtResource("8_aqaw3")]
+position = Vector2(966.5987, -3478.4675)
+scale = Vector2(1.0759444, 2.4095094)
+
+[node name="StaticBody2D7" parent="grounds/platforms" unique_id=176442571 instance=ExtResource("8_aqaw3")]
+position = Vector2(954.57996, -3025.4106)
+scale = Vector2(0.3861674, 4.221736)
+
 [node name="ground" type="StaticBody2D" parent="grounds" unique_id=483017110]
 position = Vector2(221.04135, 3584.1816)
 scale = Vector2(0.98650676, 11.570576)
@@ -169,8 +196,8 @@ position = Vector2(723.218, 2954.9365)
 scale = Vector2(0.8022966, 11.711705)
 
 [node name="ground3" parent="grounds/ground4" unique_id=137005799 instance=ExtResource("7_vufav")]
-position = Vector2(64.48129, -75.21912)
-scale = Vector2(1.032567, 1)
+position = Vector2(160.22618, -75.21912)
+scale = Vector2(1.9444239, 1)
 
 [node name="ground7" parent="grounds" unique_id=1092256905 instance=ExtResource("7_vufav")]
 position = Vector2(741.11566, 2179.7058)
@@ -179,9 +206,15 @@ scale = Vector2(4.2627873, 10.502878)
 skew = 1.5171589
 
 [node name="GraySquare6" type="Sprite2D" parent="grounds" unique_id=998430877]
-position = Vector2(858.4295, 2386.0984)
-scale = Vector2(0.016947066, 11.958492)
+position = Vector2(1012.845, -213.31323)
+scale = Vector2(0.016947066, 19.737738)
 texture = ExtResource("4_fa1sb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grounds/GraySquare6" unique_id=1003524609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grounds/GraySquare6/StaticBody2D" unique_id=270828581]
+position = Vector2(3434.211, -127.55318)
+shape = SubResource("RectangleShape2D_aqaw3")
 
 [node name="GraySquare7" type="Sprite2D" parent="grounds" unique_id=1128301322]
 position = Vector2(542.8055, 386.19943)
@@ -222,3 +255,13 @@ autoplay = &"new_animation"
 [node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("8_og3mt")]
 position = Vector2(1841, -423)
 FragmentScene = ExtResource("11_h5k8j")
+
+[node name="FragmentGenerator2" parent="." unique_id=373313096 instance=ExtResource("8_og3mt")]
+position = Vector2(5954, -920)
+FragmentScene = ExtResource("12_vufav")
+
+[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("12_udw71")]
+
+[node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("14_aqaw3")]
+
+[node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("13_vufav")]

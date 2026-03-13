@@ -594,7 +594,7 @@ position = Vector2(-0.72454834, 11.347168)
 shape = SubResource("RectangleShape2D_g65if")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("6_py6on")]
-position = Vector2(532, 606)
+position = Vector2(537, 718)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=448211506]
 offset = Vector2(0, -178.64)
