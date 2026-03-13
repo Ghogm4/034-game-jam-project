@@ -10,12 +10,17 @@ size = Vector2(505, 1314)
 FragmentName = "FlowerBeginning"
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
+scale = Vector2(0.084811255, 0.084418714)
 texture = ExtResource("2_erq27")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
-position = Vector2(26.5, 36)
+position = Vector2(2, 5)
+scale = Vector2(0.096349426, 0.08927787)
 shape = SubResource("RectangleShape2D_qp0p0")
 
-[node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
+[node name="PickupSensor" parent="." index="2" unique_id=181391040]
+scale = Vector2(0.11603476, 0.09108748)
+
+[node name="CollisionShape2D" parent="PickupSensor" index="0" unique_id=788692184]
 position = Vector2(25, 34)
 shape = SubResource("RectangleShape2D_qp0p0")

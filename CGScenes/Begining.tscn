@@ -12,11 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="9_1dttu"]
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="9_baes5"]
 [ext_resource type="Texture2D" uid="uid://dkxoqnovbhn36" path="res://Colors/begining/darkBrown.png" id="10_5re7f"]
+[ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="10_oyrq5"]
 [ext_resource type="Texture2D" uid="uid://b1xiqd47p3iwv" path="res://Colors/begining/whiteHalo.png" id="11_oyrq5"]
+[ext_resource type="PackedScene" uid="uid://dpt60622kgt56" path="res://Fragment/Keepsakes/Flower/Stem.tscn" id="11_rx6gl"]
+[ext_resource type="PackedScene" uid="uid://dcvravkibjndy" path="res://Fragment/Keepsakes/Flower/Bloom.tscn" id="12_5ij5f"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="12_kl61t"]
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="14_hpe6d"]
 [ext_resource type="Texture2D" uid="uid://dlfi0emm8d7hv" path="res://Colors/begining/opening.png" id="14_py6on"]
 [ext_resource type="Texture2D" uid="uid://dk1a3ip580vib" path="res://Colors/begining/0nce3mraced4gain.png" id="15_1dttu"]
+[ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="21_oyrq5"]
+[ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="22_5ij5f"]
+[ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="22_rx6gl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6rr8"]
 size = Vector2(694.11816, 666.73676)
@@ -588,7 +594,7 @@ position = Vector2(-0.72454834, 11.347168)
 shape = SubResource("RectangleShape2D_g65if")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("6_py6on")]
-position = Vector2(3358, 502)
+position = Vector2(532, 606)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=448211506]
 offset = Vector2(0, -178.64)
@@ -599,6 +605,14 @@ modulate = Color(1, 0, 1, 1)
 position = Vector2(4462.0005, 505.99997)
 scale = Vector2(0.9199609, 0.8800049)
 
+[node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("10_oyrq5")]
+position = Vector2(960, 724)
+FragmentScene = ExtResource("11_rx6gl")
+
+[node name="FragmentGenerator2" parent="." unique_id=256326724 instance=ExtResource("10_oyrq5")]
+position = Vector2(1246, 725)
+FragmentScene = ExtResource("12_5ij5f")
+
 [node name="ParticleArts2" parent="." unique_id=244059378 instance=ExtResource("6_dhwe2")]
 position = Vector2(3182, -264)
 
@@ -607,8 +621,8 @@ scroll_scale = Vector2(1.2, 1.2)
 scroll_offset = Vector2(12, 83)
 
 [node name="DarkBrown" type="Sprite2D" parent="front" unique_id=801865241]
-position = Vector2(1600, 1416.0001)
-scale = Vector2(0.36097085, 2.4518366)
+position = Vector2(1600, 1488.8438)
+scale = Vector2(0.36097085, 2.2334146)
 texture = ExtResource("10_5re7f")
 
 [node name="DarkBrown3" type="Sprite2D" parent="front" unique_id=2080259553]
@@ -829,7 +843,6 @@ texture = ExtResource("11_oyrq5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2140981414]
 libraries/ = SubResource("AnimationLibrary_dhwe2")
-autoplay = &"begining"
 
 [node name="TargetRuler" type="Node2D" parent="." unique_id=2034004648]
 position = Vector2(532, 606)
@@ -866,3 +879,9 @@ shape = SubResource("RectangleShape2D_baes5")
 [node name="BGMPlayer" type="Node" parent="." unique_id=1901720369]
 script = ExtResource("12_kl61t")
 metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("21_oyrq5")]
+
+[node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("22_5ij5f")]
+
+[node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("22_rx6gl")]
