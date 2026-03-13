@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="034 Game Jam Project"
+run/main_scene="uid://bwhugdrs5rlb3"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

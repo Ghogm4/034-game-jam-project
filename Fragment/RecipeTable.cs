@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 public partial class RecipeTable : Node
 {
     [Export] public Recipe[] Recipes = Array.Empty<Recipe>();
+    [Export] public Node CraftedFragmentContainer = null;
     private CraftingEffectController CraftingEffectController => field ??= GetNode<CraftingEffectController>("%CraftingEffectController");
     private bool _craftingInProgress = false;
 
