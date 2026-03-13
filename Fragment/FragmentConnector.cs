@@ -112,14 +112,5 @@ public partial class FragmentConnector : Node
             line.QueueFree();
         }
     }
-    private void Disconnect(Fragment _)
-    {
-        _isDirty = true;
-        foreach (var child in GetChildren())
-        {
-            if (child is not Line2D line) continue;
-
-            line.QueueFree();
-        }
-    }
+    private void Disconnect(Fragment _) => Disconnect();
 }
