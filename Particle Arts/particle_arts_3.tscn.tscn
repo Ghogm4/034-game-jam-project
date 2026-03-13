@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cg8wytiof1b37"]
+
+[sub_resource type="Gradient" id="Gradient_j0glt"]
+offsets = PackedFloat32Array(0.0027173914, 1)
+colors = PackedColorArray(1, 1, 1, 0.58431375, 1, 1, 1, 0.58431375)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x474a"]
+gradient = SubResource("Gradient_j0glt")
+width = 10
+height = 10
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_d6g0b"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13817663, 1), 0.0, 0.0, 0, 0, Vector2(0.26210827, 0), 0.0, 0.0, 0, 0, Vector2(0.33760685, 0.61159104), 0.0, 0.0, 0, 0, Vector2(0.6680912, 0), 1.3332558, 1.3332558, 0, 0, Vector2(0.9273504, 0), 0.0, 0.0, 0, 0, Vector2(0.94586897, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="CurveTexture" id="CurveTexture_kc0tw"]
+curve = SubResource("Curve_d6g0b")
+
+[sub_resource type="Gradient" id="Gradient_qtgjb"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.020061728, 1)
+colors = PackedColorArray(18.892157, 18.892157, 18.892157, 1, 18.702026, 18.702026, 18.691399, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mjvph"]
+gradient = SubResource("Gradient_qtgjb")
+use_hdr = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ojq3n"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1920, 1080, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 45.00001
+angle_max = 45.00001
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_mjvph")
+alpha_curve = SubResource("CurveTexture_kc0tw")
+hue_variation_min = -0.3
+hue_variation_max = 0.29999998
+
+[node name="ParticleArts3_tscn" type="Node2D" unique_id=2028717175]
+modulate = Color(1, 1, 1, 0.9529412)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=856868278]
+amount = 130
+texture = SubResource("GradientTexture2D_x474a")
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_ojq3n")
