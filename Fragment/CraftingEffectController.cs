@@ -50,6 +50,9 @@ public partial class CraftingEffectController : Node
         resultClone = CreateCloneSprite(resultInstance.VisualSprite, screenCenter);
         resultClone.Visible = false;
 
+        fragmentA.Visible = false;
+        fragmentB.Visible = false;
+        
         visualLayer.AddChild(spriteCloneA);
         visualLayer.AddChild(spriteCloneB);
         visualLayer.AddChild(resultClone);
