@@ -14,6 +14,7 @@ radius = 136.0
 radius = 141.0
 
 [node name="Fragment" unique_id=1649991499 instance=ExtResource("1_41vjp")]
+contact_monitor = false
 max_contacts_reported = 4
 script = ExtResource("3_1w07g")
 KickSpeed = 760.0
