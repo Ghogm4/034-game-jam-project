@@ -140,9 +140,9 @@ position = Vector2(-6081, 159)
 scale = Vector2(5.4615784, 0.5200007)
 
 [node name="StaticBody2D6" parent="grounds/platforms" unique_id=2128701513 instance=ExtResource("5_3opl0")]
-position = Vector2(-5406, -218.00003)
+position = Vector2(-5379, -218)
 rotation = -3.1415904
-scale = Vector2(10.3415785, 0.44000223)
+scale = Vector2(11.261599, 0.44000223)
 
 [node name="StaticBody2D8" parent="grounds/platforms" unique_id=1552163637 instance=ExtResource("5_3opl0")]
 position = Vector2(-5780, -320.00003)

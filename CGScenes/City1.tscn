@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="7_qsasv"]
 [ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="8_qsasv"]
 [ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="9_eyvf1"]
+[ext_resource type="Script" uid="uid://djuytgdca3vil" path="res://AudioManager/SFXPlayer.cs" id="10_7if27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu84f"]
 size = Vector2(696.2065, 665.52545)
@@ -67,6 +68,26 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFXPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10, 14.766666, 14.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["car crash"],
+"method": &"PlaySFX"
+}, {
+"args": [""],
+"method": &"StopSFX"
+}, {
+"args": ["Tinnitus"],
+"method": &"PlaySFX"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_qsasv"]
@@ -213,3 +234,11 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(2487.25, 765.5)
 scale = Vector2(8.295683, 3.6746628)
 texture = ExtResource("9_eyvf1")
+
+[node name="SFXPlayer" type="Node" parent="." unique_id=556176691]
+script = ExtResource("10_7if27")
+metadata/_custom_type_script = "uid://djuytgdca3vil"
+
+[node name="SFXPlayer2" type="Node" parent="." unique_id=1803099955]
+script = ExtResource("10_7if27")
+metadata/_custom_type_script = "uid://djuytgdca3vil"

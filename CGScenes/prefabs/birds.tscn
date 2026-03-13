@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bhr5352b7wuey"]
+
+[ext_resource type="Texture2D" uid="uid://cty46uigim14" path="res://Colors/begining/grayBird.png" id="1_fqqlj"]
+
+[node name="birds2" type="Parallax2D" unique_id=32618774]
+scale = Vector2(0.17743948, 0.13566847)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-934, 3325.9998)
+repeat_size = Vector2(13000, 0)
+autoscroll = Vector2(-200, 0)
+
+[node name="GrayBird" type="Sprite2D" parent="." unique_id=571159443]
+texture = ExtResource("1_fqqlj")
+
+[node name="GrayBird2" type="Sprite2D" parent="." unique_id=857565149]
+position = Vector2(550.687, -176.01735)
+texture = ExtResource("1_fqqlj")
+
+[node name="GrayBird4" type="Sprite2D" parent="." unique_id=1307671125]
+position = Vector2(1153.7095, -375.0319)
+texture = ExtResource("1_fqqlj")
+
+[node name="GrayBird3" type="Sprite2D" parent="." unique_id=8264743]
+position = Vector2(652.1301, 310.46265)
+texture = ExtResource("1_fqqlj")

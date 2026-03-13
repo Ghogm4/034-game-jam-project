@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="1_58x4k"]
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="2_bbb1b"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_vdi6h"]
+[ext_resource type="Script" uid="uid://djuytgdca3vil" path="res://AudioManager/SFXPlayer.cs" id="4_bbb1b"]
 
 [sub_resource type="Animation" id="Animation_58x4k"]
 length = 0.001
@@ -130,6 +131,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SFXPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [""],
+"method": &"PlaySFX"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vdi6h"]
 _data = {
@@ -176,3 +191,7 @@ position = Vector2(951, 547)
 
 [node name="Ruler" type="Node2D" parent="." unique_id=851499980]
 position = Vector2(1103, 553)
+
+[node name="SFXPlayer" type="Node" parent="." unique_id=1940164189]
+script = ExtResource("4_bbb1b")
+metadata/_custom_type_script = "uid://djuytgdca3vil"
