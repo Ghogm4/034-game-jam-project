@@ -6,6 +6,8 @@
 size = Vector2(128, 128)
 
 [node name="FunctionCallerArea" type="Area2D" unique_id=1982575411 node_paths=PackedStringArray("Callees")]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_l121v")
 Callees = []
 FunctionCalls = []
