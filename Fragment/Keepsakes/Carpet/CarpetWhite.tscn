@@ -11,14 +11,18 @@ size = Vector2(342, 327)
 
 [node name="Fragment" unique_id=1649991499 instance=ExtResource("1_0mw1x")]
 FragmentName = "CarpetWhite"
+ModifiedJumpVelocity = 500.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
+scale = Vector2(0.3001112, 0.31104544)
 texture = ExtResource("2_a17b0")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
-position = Vector2(7, -11)
+position = Vector2(4, -3.0000005)
+scale = Vector2(0.30530623, 0.33078822)
 shape = SubResource("RectangleShape2D_a17b0")
 
 [node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
-position = Vector2(7, -11.5)
+position = Vector2(4.0000005, -3)
+scale = Vector2(0.3039178, 0.33636948)
 shape = SubResource("RectangleShape2D_wqege")
