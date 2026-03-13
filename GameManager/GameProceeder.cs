@@ -9,7 +9,6 @@ public partial class GameProceeder : Node
         GD.Print("GameProceeder: Proceeding to next phase...");
         GameManager.Instance.ProceedPhase(color, fadeIn, fadeOut, sustain);
     }
-
     public void Restart()
     {
         GameManager.Instance.LoadPhase(SceneManager.TransitionColor.Black, 0.5f, 0.5f, 0f);

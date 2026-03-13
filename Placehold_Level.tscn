@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://h6iw52vcthtr"]
+
+[ext_resource type="PackedScene" uid="uid://5b4qdqveswg3" path="res://LevelScene/prefabs/back_grounds.tscn" id="1_mx37y"]
+[ext_resource type="PackedScene" uid="uid://ccwbwqda63xj3" path="res://LevelScene/prefabs/ground.tscn" id="2_0ydai"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_q776f"]
+[ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="4_vevt3"]
+[ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="5_nsrku"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="6_xrua3"]
+
+[sub_resource type="Resource" id="Resource_ym6ud"]
+script = ExtResource("5_nsrku")
+FunctionName = &"Proceed"
+FunctionArgs = [0, 1.0, 1.0, 1.0]
+OneShot = false
+metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
+
+[node name="Node2D" type="Node2D" unique_id=1677080886]
+
+[node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_mx37y")]
+position = Vector2(7, 1)
+
+[node name="ground2" parent="." unique_id=1524614197 instance=ExtResource("2_0ydai")]
+position = Vector2(74.999985, 1035)
+scale = Vector2(39.186512, 2.6505735)
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_q776f")]
+position = Vector2(73, 186)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=255370001]
+offset = Vector2(0, -320)
+zoom = Vector2(0.715, 0.715)
+
+[node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("4_vevt3")]
+position = Vector2(1838, 182)
+collision_mask = 2
+Callees = [NodePath("../GameProceeder")]
+FunctionCalls = [SubResource("Resource_ym6ud")]
+
+[node name="GameProceeder" type="Node" parent="." unique_id=873556497]
+script = ExtResource("6_xrua3")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"

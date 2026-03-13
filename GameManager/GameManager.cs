@@ -66,8 +66,7 @@ public partial class GameManager : Node
 
     public bool IsEnterCG { get
         {
-            return CurrentGamePhase == GamePhase.Cutscene_City
-                || CurrentGamePhase == GamePhase.Cutscene_Cup
+            return CurrentGamePhase == GamePhase.Cutscene_Cup
                 || CurrentGamePhase == GamePhase.Cutscene_Picnic
                 || CurrentGamePhase == GamePhase.Cutscene_Rain;
         }
