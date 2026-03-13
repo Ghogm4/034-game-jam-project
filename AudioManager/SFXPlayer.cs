@@ -8,4 +8,9 @@ public partial class SFXPlayer : Node
 	{
 		AudioManager.Instance.PlaySFX(name);
 	}  
+
+	public void StopSFX(string name)
+	{
+		AudioManager.Instance.StopSFX(name);
+	}
 }

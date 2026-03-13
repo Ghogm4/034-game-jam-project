@@ -43,16 +43,28 @@ public partial class GameManager : Node
         Cutscene_Finale,
     }
 
+    public bool IsInHospital { get
+        {
+            return CurrentGamePhase == GamePhase.Hospital_1
+                || CurrentGamePhase == GamePhase.Hospital_2
+                || CurrentGamePhase == GamePhase.Hospital_3
+                || CurrentGamePhase == GamePhase.Hospital_4
+                || CurrentGamePhase == GamePhase.Hospital_5;
+        }
+        private set { }
+    }
+
     public GameState CurrentGameState { get; private set; } = GameState.Playing;
     public GamePhase CurrentGamePhase { get; private set; } = GamePhase.Opening;
 
     public void SetCurrentGamePhase(GamePhase phase)
     {
         CurrentGamePhase = phase;
+        SavesManager.SaveGame(CurrentGamePhase);
         GD.Print($"GameManager: Current game phase set to {CurrentGamePhase}");
     }
 
-    public void ProceedPhase(SceneManager.TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
+    public void ProceedPhase(SceneManager.TransitionColor color = 0, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
     {
         if (CurrentGamePhase == GamePhase.Cutscene_Finale)
         {

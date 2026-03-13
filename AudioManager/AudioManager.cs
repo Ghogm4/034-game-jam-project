@@ -148,6 +148,17 @@ public partial class AudioManager : Node
 		GD.PrintErr($"AudioManager: No available SFX player to play '{name}'.");
 	}
 
+	public void StopSFX(string name)
+	{
+		foreach (AudioStreamPlayer sfxPlayer in SFXPlayers)
+		{
+			if (sfxPlayer.Playing && sfxPlayer.Stream == SFXStreams[name])
+			{
+				sfxPlayer.Stop();
+			}
+		}
+	}
+
 	public void PlayUI(string name)
 	{
 		if (!UIStreams.ContainsKey(name))

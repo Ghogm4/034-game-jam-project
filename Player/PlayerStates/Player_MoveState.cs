@@ -3,6 +3,13 @@ using System;
 
 public partial class Player_MoveState : Player_PlayerState
 {
+    protected override void Enter()
+    {
+		if (GameManager.Instance.IsInHospital) AudioManager.Instance.PlaySFX("Foot Hospital");
+		else
+        	AudioManager.Instance.PlaySFX("Foot Ground");
+    }
+    
 	protected override void FrameUpdate(double delta)
 	{
 		Player.BaseVisualScale = GetMoveVisualScale();
@@ -28,5 +35,11 @@ public partial class Player_MoveState : Player_PlayerState
 		float stride = Mathf.Sin(Player.VisualTime * Player.MoveSquashSpeed);
 		float strideWeight = normalizedSpeed * (0.5f + stride * 0.5f);
 		return new Vector2(1.0f + Player.MoveSquashStrength * strideWeight, 1.0f - Player.MoveSquashStrength * strideWeight);
+	}
+	
+	protected override void Exit()
+	{
+		AudioManager.Instance.StopSFX("Foot Hospital");
+		AudioManager.Instance.StopSFX("Foot Ground");
 	}
 }

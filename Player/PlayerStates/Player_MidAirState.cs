@@ -18,6 +18,8 @@ public partial class Player_MidAirState : Player_PlayerState
 		if (Player.IsOnFloor())
 		{
 			AskTransit(IsMovingHorizontally() ? "Move" : "Idle");
+
+			AudioManager.Instance.PlaySFX("Land Ground");
 		}
 	}
 	private bool IsMovingHorizontally()
