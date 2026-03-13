@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://chi8c3c4o38c4" path="res://Colors/begining/lighterBrown.png" id="3_dhwe2"]
 [ext_resource type="Texture2D" uid="uid://dqxwku7wb4xdl" path="res://Colors/begining/lightBrown.png" id="4_hpe6d"]
 [ext_resource type="Texture2D" uid="uid://c32xilemkjg0q" path="res://Colors/begining/brownSquare.png" id="5_sbu73"]
-[ext_resource type="PackedScene" uid="uid://b1c5w3ofgj757" path="res://Particle Arts/Particle_arts_2.tscn" id="6_dhwe2"]
+[ext_resource type="PackedScene" path="res://Particle Arts/Particle_arts_2.tscn" id="6_dhwe2"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="6_py6on"]
 [ext_resource type="Texture2D" uid="uid://cty46uigim14" path="res://Colors/begining/grayBird.png" id="7_1dttu"]
 [ext_resource type="Texture2D" uid="uid://bu02ddikvflr8" path="res://Colors/begining/sakura.png" id="8_wavbf"]
@@ -20,9 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="14_hpe6d"]
 [ext_resource type="Texture2D" uid="uid://dlfi0emm8d7hv" path="res://Colors/begining/opening.png" id="14_py6on"]
 [ext_resource type="Texture2D" uid="uid://dk1a3ip580vib" path="res://Colors/begining/0nce3mraced4gain.png" id="15_1dttu"]
+[ext_resource type="Script" uid="uid://dtj8loc3ugge7" path="res://Level/EnhancedAnimPlayer/EnhancedAnimPlayer.cs" id="17_fvflu"]
+[ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="21_mpoqy"]
 [ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="21_oyrq5"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="22_5ij5f"]
 [ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="22_rx6gl"]
+[ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="22_txhvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6rr8"]
 size = Vector2(694.11816, 666.73676)
@@ -405,7 +408,13 @@ _data = {
 &"begining": SubResource("Animation_kl61t")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_baes5"]
+[sub_resource type="Resource" id="Resource_fvflu"]
+script = ExtResource("22_txhvi")
+FunctionName = &"PlayAnimation"
+FunctionArgs = [&"begining", -1.0, 1.0, false]
+metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpoqy"]
 
 [node name="Node2D" type="Node2D" unique_id=205387125]
 
@@ -612,6 +621,9 @@ FragmentScene = ExtResource("11_rx6gl")
 [node name="FragmentGenerator2" parent="." unique_id=256326724 instance=ExtResource("10_oyrq5")]
 position = Vector2(1246, 725)
 FragmentScene = ExtResource("12_5ij5f")
+
+[node name="FragContainer" type="Node2D" parent="." unique_id=1699159186]
+position = Vector2(1246, 725)
 
 [node name="ParticleArts2" parent="." unique_id=244059378 instance=ExtResource("6_dhwe2")]
 position = Vector2(3182, -264)
@@ -843,6 +855,7 @@ texture = ExtResource("11_oyrq5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2140981414]
 libraries/ = SubResource("AnimationLibrary_dhwe2")
+script = ExtResource("17_fvflu")
 
 [node name="TargetRuler" type="Node2D" parent="." unique_id=2034004648]
 position = Vector2(532, 606)
@@ -869,19 +882,24 @@ texture = ExtResource("14_py6on")
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("15_1dttu")
 
-[node name="WhereAnimStart" type="Area2D" parent="." unique_id=1564918976]
+[node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("21_mpoqy")]
+Callees = [NodePath("../AnimationPlayer")]
+FunctionCalls = [SubResource("Resource_fvflu")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WhereAnimStart" unique_id=1446036656]
+[node name="CollisionShape2D" parent="FunctionCallerArea" index="0" unique_id=1595319958]
 position = Vector2(3359.0002, 96.99999)
 scale = Vector2(3.2782366, 57.58992)
-shape = SubResource("RectangleShape2D_baes5")
+shape = SubResource("RectangleShape2D_mpoqy")
 
 [node name="BGMPlayer" type="Node" parent="." unique_id=1901720369]
 script = ExtResource("12_kl61t")
 metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
 
-[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("21_oyrq5")]
+[node name="RecipeTable" parent="." unique_id=1577653984 node_paths=PackedStringArray("CraftedFragmentContainer") instance=ExtResource("21_oyrq5")]
+CraftedFragmentContainer = NodePath("../FragContainer")
 
 [node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("22_5ij5f")]
 
 [node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("22_rx6gl")]
+
+[editable path="FunctionCallerArea"]
