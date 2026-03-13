@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dw7l0nrr824pd"]
+
+[ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_57txw"]
+[ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="2_sthus"]
+[ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="3_wruai"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="4_77c2x"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="5_wruai"]
+[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="6_77c2x"]
+
+[sub_resource type="Animation" id="Animation_nxsoi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../canvas:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:IsInCutScene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_84yt5"]
+resource_name = "new_animation"
+length = 5.0333333
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BGMPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Silent_2", 5.0],
+"method": &"PlayBGM"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../canvas:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:IsInCutScene")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.9333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sf4o"]
+_data = {
+&"RESET": SubResource("Animation_nxsoi"),
+&"new_animation": SubResource("Animation_84yt5")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1502015219]
+
+[node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_57txw")]
+position = Vector2(-199, -280)
+
+[node name="Girl" parent="." unique_id=1425184265 instance=ExtResource("2_sthus")]
+modulate = Color(1, 0.7921569, 1, 1)
+position = Vector2(765.00006, 709.00006)
+rotation = 1.6751379
+
+[node name="PurpleUm" type="Sprite2D" parent="." unique_id=1889304861]
+position = Vector2(634, 682.0001)
+rotation = -0.23649733
+scale = Vector2(0.32685155, 0.4372367)
+texture = ExtResource("3_wruai")
+
+[node name="Player" parent="." unique_id=967768830 instance=ExtResource("4_77c2x")]
+position = Vector2(1145, 719)
+MoveSpeed = 120.0
+IsInCutScene = true
+JumpVelocity = 50.0
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=1831150754]
+script = ExtResource("5_wruai")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=472959064]
+root_node = NodePath("../Player")
+libraries/ = SubResource("AnimationLibrary_7sf4o")
+autoplay = &"new_animation"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1515875713]
+position = Vector2(999, 562)
+zoom = Vector2(1.415, 1.415)
+
+[node name="canvas" type="Sprite2D" parent="." unique_id=138898414]
+position = Vector2(1009, 589)
+scale = Vector2(2.491024, 1.5404615)
+texture = ExtResource("6_77c2x")
