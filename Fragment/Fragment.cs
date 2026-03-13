@@ -13,6 +13,7 @@ public partial class Fragment : RigidBody2D
 	[Export] public float CollisionEnableDistanceFromPlayer = 96.0f;
 	[Export] public string FragmentName = "Fragment";
 	[Export] public float ModifiedJumpVelocity = 900f;
+	[Export] public bool ProceedWhenCollected = false;
 	public Sprite2D VisualSprite => field ??= GetNode<Sprite2D>("Sprite2D");
 	public Node2D PhysicsCollisionShape
 	{
@@ -55,7 +56,7 @@ public partial class Fragment : RigidBody2D
 		AddToGroup(PickupGroupName);
 		BodyEntered += OnBodyEntered;
 	}
-	protected virtual void CollectBehavior() {}
+	//protected virtual void CollectBehavior() {}
 	public void Collect(Player player)
 	{
 		PendingHolder = player;
@@ -63,7 +64,11 @@ public partial class Fragment : RigidBody2D
 		_playerOriginalJumpVelocity = player.JumpVelocity;
 		player.JumpVelocity = ModifiedJumpVelocity;
 		EmitSignal(SignalName.Collected, this);
-		CollectBehavior();
+		if (ProceedWhenCollected)
+		{
+			GameManager.Instance.ProceedPhase();
+		}
+		//CollectBehavior();
 	}
 
 	public void Throw(Player player, Vector2 throwVelocity)
