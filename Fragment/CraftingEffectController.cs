@@ -83,6 +83,8 @@ public partial class CraftingEffectController : Node
         Vector2 originalResultScale = resultClone.Scale;
         resultClone.Scale = originalResultScale * ResultScaleMultiplier;
 
+        AudioManager.Instance.PlaySFX("Connect");
+
         await Animate(OutroDuration, progress =>
         {
             float eased = Ease(progress);

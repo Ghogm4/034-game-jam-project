@@ -26,6 +26,7 @@ public partial class Door : AnimatableBody2D
 	}
 	public void Open()
 	{
+		AudioManager.Instance.PlaySFX("Door Open");
 		_currentTween?.Kill();
 		_currentTween = CreateTween();
 		_currentTween.TweenProperty(this, "position:y", _initialY - OpenHeight * DirectionMultiplier, OpenDuration)
@@ -34,6 +35,7 @@ public partial class Door : AnimatableBody2D
 	}
 	public void Close()
 	{
+		AudioManager.Instance.PlaySFX("Door Close");
 		_currentTween?.Kill();
 		_currentTween = CreateTween();
 		_currentTween.TweenProperty(this, "position:y", _initialY, OpenDuration)

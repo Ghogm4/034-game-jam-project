@@ -50,6 +50,7 @@ public partial class PressurePlate : AnimatableBody2D
 
     private void PlayPressAnimation()
     {
+        AudioManager.Instance.PlaySFX("Pressure Plate On");
         _currentTween?.Kill();
         _currentTween = CreateTween();
         _currentTween.TweenProperty(this, "position:y", _initialY + PressDepth, PressDuration)
@@ -60,6 +61,7 @@ public partial class PressurePlate : AnimatableBody2D
 
     private void PlayReleaseAnimation()
     {
+        AudioManager.Instance.PlaySFX("Pressure Plate Off");
         _currentTween?.Kill();
         _currentTween = CreateTween();
         _currentTween.TweenProperty(this, "position:y", _initialY, ReleaseDuration)

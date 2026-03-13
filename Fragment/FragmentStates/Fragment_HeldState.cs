@@ -15,5 +15,7 @@ public partial class Fragment_HeldState : Fragment_FragmentState
 		SetPhysicsCollisionEnabled(false);
 		SetPickupEnabled(false);
 		Fragment.PendingHolder = null;
+
+		AudioManager.Instance.PlaySFX("Collect");
 	}
 }

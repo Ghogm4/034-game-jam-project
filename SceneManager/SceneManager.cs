@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Threading.Tasks;
 
 public partial class SceneManager : Node2D
@@ -45,6 +46,10 @@ public partial class SceneManager : Node2D
 
 	public async Task FadeOut(float duration)
 	{
+		if (GameManager.Instance.IsLeftHospital)
+		{
+			AudioManager.Instance.PlaySFX("Door Open Reverb");
+		}
 		Tween tween = CreateTween();
 		tween.TweenProperty(rect, "modulate:a", 1f, duration);
 		await ToSignal(tween, "finished");
@@ -52,6 +57,10 @@ public partial class SceneManager : Node2D
 
 	public async Task FadeIn(float duration)
 	{
+		if (GameManager.Instance.IsLeftHospital)
+		{
+			AudioManager.Instance.PlaySFX("Door Close Reverb");
+		}
 		Tween tween = CreateTween();
 		tween.TweenProperty(rect, "modulate:a", 0f, duration);
 		await ToSignal(tween, "finished");

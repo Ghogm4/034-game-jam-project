@@ -19,6 +19,8 @@ public partial class Fragment_ThrownState : Fragment_FragmentState
 		SetPickupEnabled(false);
 		Fragment.PendingThrowOwner = null;
 		Fragment.PendingThrowVelocity = Vector2.Zero;
+
+		AudioManager.Instance.PlaySFX("Throw");
 	}
 
 	private bool IsOverlappingPlayer()

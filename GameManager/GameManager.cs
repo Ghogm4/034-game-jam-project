@@ -54,6 +54,26 @@ public partial class GameManager : Node
         private set { }
     }
 
+    public bool IsLeftHospital { get
+        {
+            return CurrentGamePhase == GamePhase.Level_1
+                || CurrentGamePhase == GamePhase.Level_2
+                || CurrentGamePhase == GamePhase.Level_3
+                || CurrentGamePhase == GamePhase.Level_4;
+        }
+        private set { }
+    }
+
+    public bool IsEnterCG { get
+        {
+            return CurrentGamePhase == GamePhase.Cutscene_City
+                || CurrentGamePhase == GamePhase.Cutscene_Cup
+                || CurrentGamePhase == GamePhase.Cutscene_Picnic
+                || CurrentGamePhase == GamePhase.Cutscene_Rain;
+        }
+        private set { }
+    }
+
     public GameState CurrentGameState { get; private set; } = GameState.Playing;
     public GamePhase CurrentGamePhase { get; private set; } = GamePhase.Opening;
 
