@@ -6,9 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbfjn"]
 size = Vector2(207.25, 199.25)
 
-[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_ths7a")]
+[node name="Fragment4" unique_id=1649991499 instance=ExtResource("1_ths7a")]
 FragmentName = "CarpetComb3"
 ModifiedJumpVelocity = 500.0
+ProceedWhenCollected = true
+CanBeThrown = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
 scale = Vector2(0.3, 0.3)

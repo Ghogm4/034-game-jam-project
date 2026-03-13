@@ -104,7 +104,7 @@ public partial class Player_UniversalState : Player_PlayerState
 
     private void ThrowHeldFragment()
     {
-        if (Player.HeldFragment == null) return;
+        if (Player.HeldFragment == null || !Player.HeldFragment.CanBeThrown) return;
 
         Fragment heldFragment = Player.HeldFragment;
         Player.HeldFragment = null;

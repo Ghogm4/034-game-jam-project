@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp0p0"]
 size = Vector2(505, 1314)
 
-[node name="Fragment" unique_id=1649991499 instance=ExtResource("1_xff8l")]
+[node name="Fragment4" unique_id=1649991499 instance=ExtResource("1_xff8l")]
 FragmentName = "FlowerBeginning"
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
