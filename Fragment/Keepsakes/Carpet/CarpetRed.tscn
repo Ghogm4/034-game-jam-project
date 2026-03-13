@@ -4,21 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://dl4gwgh8kketn" path="res://Colors/pieces/Picnic/picnicSquareRed.png" id="2_ierot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ocbe"]
-size = Vector2(342, 328)
+size = Vector2(340.73734, 290.91397)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u6ht"]
 size = Vector2(342, 328)
 
 [node name="Fragment" unique_id=1649991499 instance=ExtResource("1_tyarx")]
 FragmentName = "CarpetRed"
+ModifiedJumpVelocity = 500.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=251136955]
+position = Vector2(5.9999847, -5.9999924)
+scale = Vector2(0.31451187, 0.2945804)
 texture = ExtResource("2_ierot")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
-position = Vector2(8, -11)
+position = Vector2(7.8065877, -10.000001)
+scale = Vector2(0.3063557, 0.32999447)
 shape = SubResource("RectangleShape2D_3ocbe")
 
 [node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
 position = Vector2(9, -11)
+scale = Vector2(0.35199937, 0.33580312)
 shape = SubResource("RectangleShape2D_1u6ht")
