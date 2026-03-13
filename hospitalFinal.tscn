@@ -10,10 +10,26 @@
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="8_7kqw1"]
 [ext_resource type="Script" uid="uid://djuytgdca3vil" path="res://AudioManager/SFXPlayer.cs" id="9_rywtu"]
 [ext_resource type="Texture2D" uid="uid://cchvgt5hj2p4y" path="res://Colors/pieces/flower/flowerStateFinal.png" id="10_or4dj"]
+[ext_resource type="Texture2D" uid="uid://b4fbj85fm56ul" path="res://Colors/Pictures/屏幕截图 2026-03-14 003137.png" id="11_eyfow"]
+[ext_resource type="Texture2D" uid="uid://cu7ruff0c04xr" path="res://Colors/Pictures/屏幕截图 2026-03-14 003205.png" id="12_7kqw1"]
+[ext_resource type="Texture2D" uid="uid://dpmyq4kya0s2k" path="res://Colors/Pictures/屏幕截图 2026-03-14 003236.png" id="13_76hm3"]
+[ext_resource type="Texture2D" uid="uid://bd26vyqw36n76" path="res://Colors/Pictures/屏幕截图 2026-03-14 003251.png" id="14_hs4hx"]
+[ext_resource type="Texture2D" uid="uid://b8j51boffty4e" path="res://Colors/Pictures/屏幕截图 2026-03-14 005849.png" id="15_0h57t"]
+[ext_resource type="Texture2D" uid="uid://dgrg4cjil4ecc" path="res://Colors/Pictures/屏幕截图 2026-03-14 005936.png" id="16_wiht2"]
+[ext_resource type="Texture2D" uid="uid://7ep1er0w6bfv" path="res://Colors/Pictures/屏幕截图 2026-03-14 010022.png" id="17_rh3qd"]
+[ext_resource type="Texture2D" uid="uid://cw67xqx60chbx" path="res://Colors/Pictures/屏幕截图 2026-03-14 010047.png" id="18_4b3rh"]
+[ext_resource type="Texture2D" uid="uid://ddvldw2u02wwl" path="res://Colors/Pictures/屏幕截图 2026-03-14 010159.png" id="19_4whuy"]
+[ext_resource type="Texture2D" uid="uid://brn1ep3ntposg" path="res://Colors/Pictures/屏幕截图 2026-03-14 010222.png" id="20_wxiix"]
+[ext_resource type="Texture2D" uid="uid://btnvfww3tmc4u" path="res://Colors/Pictures/屏幕截图 2026-03-14 010240.png" id="21_k1uv2"]
+[ext_resource type="Texture2D" uid="uid://cuhc03mks0ath" path="res://Colors/Pictures/屏幕截图 2026-03-14 010248.png" id="22_lb8ta"]
+[ext_resource type="Texture2D" uid="uid://eep1hx250uba" path="res://Colors/Pictures/屏幕截图 2026-03-14 011653.png" id="23_kitmo"]
+[ext_resource type="Texture2D" uid="uid://b8ddmb7u56gkm" path="res://Colors/Pictures/屏幕截图 2026-03-14 011706.png" id="24_3vgkc"]
+[ext_resource type="Texture2D" uid="uid://b0x6jnqyealwx" path="res://Colors/Pictures/屏幕截图 2026-03-14 010325.png" id="25_bgkee"]
+[ext_resource type="Texture2D" uid="uid://drum6yjhe1hgb" path="res://Colors/Pictures/屏幕截图 2026-03-14 011758.png" id="26_4uhnf"]
 
 [sub_resource type="Animation" id="Animation_76hm3"]
 resource_name = "ED"
-length = 60.0
+length = 141.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,10 +60,10 @@ tracks/1/path = NodePath("canvas:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.1333334, 8.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(3.1333334, 8.1, 121.066666, 126.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -70,10 +86,13 @@ tracks/3/path = NodePath("Player")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(9),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(9, 101.03333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [768.0],
+"method": &"CutSceneMove"
+}, {
+"args": [873.0],
 "method": &"CutSceneMove"
 }]
 }
@@ -84,10 +103,10 @@ tracks/4/path = NodePath("Girl:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(12.533334, 15.1, 20.933332, 22.1, 23.033333, 23.466667, 24.133333, 24.633333, 25.533333, 26),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(12.533334, 15.1, 20.933332, 22.1, 23.033333, 23.466667, 24.133333, 24.633333, 25.533333, 26, 98.066666, 100, 103.066666, 104.066666, 109.5, 111.5, 115.5, 120),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.89282036, 0.12217304763960307, 0.12217305, 0.12217305, 0.4398229715025708, 0.5305800926062758, 0.34382986264288273, 0.43982297, 0.43982297, -0.15009831567151274]
+"values": [0.89282036, 0.12217304763960307, 0.12217305, 0.12217305, 0.4398229715025708, 0.5305800926062758, 0.34382986264288273, 0.43982297, 0.43982297, -0.15009831567151274, -0.15009831, 0.0, 0.0, 0.6352998477259355, 0.63529986, 0.0, 0.0, 0.6806784082777885]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -96,10 +115,10 @@ tracks/5/path = NodePath("FlowerStateFinal:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(16, 18.033333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(16, 18.033333, 127.03333, 132.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -124,6 +143,272 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1.415, 1.415), Vector2(1.255, 1.255)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("somanyPicturessssss/2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(29.866667, 32.033333, 34.033333, 62.866665, 65.033325, 67.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("somanyPicturessssss/3:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(32.033333, 34.2, 36.2, 65.033325, 67.16666, 69.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("somanyPicturessssss/4:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(34.233334, 36.399998, 38.399998, 67.16666, 69.2, 71.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("somanyPicturessssss/5:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(36.5, 38.666668, 40.666668, 69.16666, 71.26666, 73.16666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("somanyPicturessssss/6:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(38.633335, 40.800003, 42.800003, 71.29999, 73.29999, 75.16666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("somanyPicturessssss/7:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(40.800003, 42.966667, 44.966667, 73.26666, 75.29999, 77.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("somanyPicturessssss/8:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(43, 45.166664, 47.166664, 75.29999, 77.26666, 79.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("somanyPicturessssss/9:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(45.26667, 47.433334, 49.433334, 77.26666, 79.2, 81.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("somanyPicturessssss/10:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(47.5, 49.466667, 51.366665, 79.16666, 81.16666, 83.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("somanyPicturessssss/11:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(49.466667, 51.433334, 53.266666, 81.13333, 83.13333, 85.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("somanyPicturessssss/12:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(51.466667, 53.466663, 55.3, 83.09999, 85.23332, 87.26666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("somanyPicturessssss/13:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(53.56667, 55.56667, 57.56667, 85.16666, 87.16666, 89.033325),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("somanyPicturessssss/14:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(55.633335, 57.600002, 59.5, 87.23332, 89.23332, 91.133316),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("somanyPicturessssss/15:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(57.600002, 59.56667, 61.4, 89.23332, 91.2, 93.033325),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("somanyPicturessssss/16:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(59.600002, 61.6, 63.433334, 91.23332, 93.23332, 95.06665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("somanyPicturessssss/17:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(61.700005, 62.833332, 65.700005, 93.13333, 95.2, 97.23332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("somanyPicturessssss:modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(63.566666, 97.23333, 127),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.20784314), Color(1, 1, 1, 0.6666667), Color(1, 1, 1, 0.6666667)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Girl:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(28.8, 97.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.44705883, 1, 1), Color(1, 0, 1, 1)]
+}
+tracks/26/type = "method"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Girl")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(101.03333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [780.0],
+"method": &"CutSceneMove"
+}]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Girl:CutSceneJumped")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(105.03333, 105.1, 105.5, 105.566666, 105.96667, 106.03333, 106.46667, 106.53333, 106.933334, 107, 107.46667, 107.53333, 107.96667, 108.03333, 108.53333, 108.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Player:rotation")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(106, 108.5, 112.5, 114.5, 115.5, 120),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.1815142422074099, -0.18151425, 0.0, 0.0, -0.6108652381980153]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("FlowerStateFinal:modulate")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_or4dj"]
@@ -188,6 +473,78 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(1.415, 1.415)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("somanyPicturessssss/2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("somanyPicturessssss/3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("somanyPicturessssss:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.20784314)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Girl:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.44705883, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Girl:CutSceneJumped")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Player:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hs4hx"]
 _data = {
@@ -200,12 +557,6 @@ _data = {
 [node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_8jb23")]
 position = Vector2(-359, -299)
 
-[node name="Girl" parent="." unique_id=1425184265 instance=ExtResource("2_rywtu")]
-modulate = Color(1, 0.44705883, 1, 1)
-position = Vector2(595.00006, 652.99994)
-rotation = 0.89282036
-scale = Vector2(0.99999994, 0.99999994)
-
 [node name="PurpleUm" type="Sprite2D" parent="." unique_id=278499724]
 position = Vector2(462.5844, 662.37134)
 rotation = -0.23649731
@@ -216,6 +567,13 @@ texture = ExtResource("3_or4dj")
 position = Vector2(1079, 704)
 MoveSpeed = 120.0
 IsInCutScene = true
+JumpVelocity = 50.0
+
+[node name="Girl" parent="." unique_id=1425184265 instance=ExtResource("2_rywtu")]
+modulate = Color(1, 0.44705883, 1, 1)
+position = Vector2(595.00006, 652.99994)
+rotation = 0.89282036
+scale = Vector2(0.99999994, 0.99999994)
 JumpVelocity = 50.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1809726358]
@@ -252,9 +610,98 @@ libraries/ = SubResource("AnimationLibrary_hs4hx")
 autoplay = &"ED"
 
 [node name="ruler" type="Node2D" parent="." unique_id=1355930904]
-position = Vector2(768, 705)
+position = Vector2(873, 692)
 
 [node name="FlowerStateFinal" type="Sprite2D" parent="." unique_id=1602684276]
 position = Vector2(718, 699)
 scale = Vector2(0.05823047, 0.05719506)
 texture = ExtResource("10_or4dj")
+
+[node name="somanyPicturessssss" type="Node2D" parent="." unique_id=1225393763]
+modulate = Color(1, 1, 1, 0.20784314)
+
+[node name="2" type="Sprite2D" parent="somanyPicturessssss" unique_id=696836482]
+position = Vector2(857.00006, 450.99997)
+scale = Vector2(0.7481429, 0.8144333)
+texture = ExtResource("11_eyfow")
+
+[node name="3" type="Sprite2D" parent="somanyPicturessssss" unique_id=596685242]
+position = Vector2(856, 449)
+scale = Vector2(0.7441641, 0.789665)
+texture = ExtResource("12_7kqw1")
+
+[node name="4" type="Sprite2D" parent="somanyPicturessssss" unique_id=1118177989]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(851, 449.00006)
+scale = Vector2(0.7387616, 0.8045798)
+texture = ExtResource("13_76hm3")
+
+[node name="5" type="Sprite2D" parent="somanyPicturessssss" unique_id=756445779]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(850.99994, 522.00006)
+scale = Vector2(0.70871896, 0.82196873)
+texture = ExtResource("14_hs4hx")
+
+[node name="6" type="Sprite2D" parent="somanyPicturessssss" unique_id=1827796523]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(856.00006, 531)
+scale = Vector2(0.7987171, 0.8766758)
+texture = ExtResource("15_0h57t")
+
+[node name="7" type="Sprite2D" parent="somanyPicturessssss" unique_id=1929523106]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(842.00006, 532)
+scale = Vector2(0.7599449, 0.8833987)
+texture = ExtResource("16_wiht2")
+
+[node name="8" type="Sprite2D" parent="somanyPicturessssss" unique_id=902609717]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(869, 530)
+scale = Vector2(0.8256915, 0.87846494)
+texture = ExtResource("17_rh3qd")
+
+[node name="9" type="Sprite2D" parent="somanyPicturessssss" unique_id=415539685]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(863.99994, 532.00006)
+scale = Vector2(0.8240082, 0.87139815)
+texture = ExtResource("18_4b3rh")
+
+[node name="10" type="Sprite2D" parent="somanyPicturessssss" unique_id=215315074]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(849, 540)
+texture = ExtResource("19_4whuy")
+
+[node name="11" type="Sprite2D" parent="somanyPicturessssss" unique_id=2121343140]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(847, 539)
+texture = ExtResource("20_wxiix")
+
+[node name="12" type="Sprite2D" parent="somanyPicturessssss" unique_id=1929298111]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(845, 534)
+texture = ExtResource("21_k1uv2")
+
+[node name="13" type="Sprite2D" parent="somanyPicturessssss" unique_id=1242301294]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(845, 529)
+texture = ExtResource("22_lb8ta")
+
+[node name="14" type="Sprite2D" parent="somanyPicturessssss" unique_id=1406224006]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(850, 530)
+texture = ExtResource("23_kitmo")
+
+[node name="15" type="Sprite2D" parent="somanyPicturessssss" unique_id=536050450]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(850, 522)
+texture = ExtResource("24_3vgkc")
+
+[node name="16" type="Sprite2D" parent="somanyPicturessssss" unique_id=394245913]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(848, 509)
+texture = ExtResource("25_bgkee")
+
+[node name="17" type="Sprite2D" parent="somanyPicturessssss" unique_id=2108503450]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(847, 508)
+texture = ExtResource("26_4uhnf")
