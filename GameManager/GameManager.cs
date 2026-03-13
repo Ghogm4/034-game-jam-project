@@ -19,7 +19,8 @@ public partial class GameManager : Node
     public enum GameState
     {
         Playing,
-        Paused
+        Paused,
+        Cutscene,
     }
 
     public enum GamePhase
@@ -41,6 +42,7 @@ public partial class GameManager : Node
         Hospital_5,
         Cutscene_Hospital,
         Cutscene_Finale,
+        StartMenu,
     }
 
     public bool IsInHospital { get
@@ -75,12 +77,34 @@ public partial class GameManager : Node
 
     public GameState CurrentGameState { get; private set; } = GameState.Playing;
     public GamePhase CurrentGamePhase { get; private set; } = GamePhase.Opening;
+    public GamePhase SavedGamePhase { get
+        {
+            GamePhase? savedPhase = SavesManager.LoadGame();
+            if (savedPhase == null)
+            {
+                GD.Print("GameManager: No saved game found. Defaulting to Opening phase.");
+                return GamePhase.Opening;
+            }
+            else
+            {
+                GD.Print($"GameManager: Loaded saved game phase: {savedPhase.Value}");
+                return savedPhase.Value;
+            }
+        }
+        private set { }
+    }
 
     public void SetCurrentGamePhase(GamePhase phase)
     {
         CurrentGamePhase = phase;
         SavesManager.SaveGame(CurrentGamePhase);
         GD.Print($"GameManager: Current game phase set to {CurrentGamePhase}");
+    }
+
+    public void SetCurrentGameState(GameState state)
+    {
+        CurrentGameState = state;
+        GD.Print($"GameManager: Current game state set to {CurrentGameState}");
     }
 
     public void ProceedPhase(SceneManager.TransitionColor color = 0, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
@@ -123,5 +147,10 @@ public partial class GameManager : Node
         SavesManager.SaveGame(CurrentGamePhase);
         ChangePhase(CurrentGamePhase, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 0f);
         GD.Print("GameManager: Starting new game at Opening phase.");
+    }
+
+    public void ReturnMenu()
+    {
+        SceneManager.Instance.ChangeScene(GamePhase.StartMenu, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
     }
 }
