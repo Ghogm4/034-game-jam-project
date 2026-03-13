@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwckp813wy10n" path="res://LevelScene/prefabs/platform.tscn" id="4_7oc4e"]
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="4_an40m"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="4_bmsap"]
+[ext_resource type="PackedScene" uid="uid://7ayv4ysg3fn" path="res://LevelScene/prefabs/warningLine.tscn" id="7_qoi87"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="7_sotx7"]
 [ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="8_ymh28"]
 [ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="9_7oc4e"]
@@ -87,16 +88,21 @@ texture = ExtResource("2_mu84n")
 position = Vector2(-299.41302, -35.569756)
 shape = SubResource("RectangleShape2D_bmsap")
 
+[node name="StaticBody2D9" parent="." unique_id=1564111054 instance=ExtResource("4_7oc4e")]
+position = Vector2(4432, 73.00004)
+rotation = 0.64386576
+scale = Vector2(14.557793, -0.9159982)
+
 [node name="ground2" parent="." unique_id=1524614197 instance=ExtResource("2_an40m")]
-position = Vector2(2891.5, 979)
-scale = Vector2(40.546516, 2.6505735)
+position = Vector2(4821.0005, 979.00006)
+scale = Vector2(65.18652, 2.6505735)
 
 [node name="platform" type="Node2D" parent="." unique_id=1455831997]
 position = Vector2(4051.9998, 135)
 rotation = 3.1415644
 scale = Vector2(14.821581, 2.7200012)
 
-[node name="StaticBody2D2" parent="platform" unique_id=1564111054 instance=ExtResource("4_7oc4e")]
+[node name="StaticBody2D2" parent="platform" unique_id=1685221865 instance=ExtResource("4_7oc4e")]
 position = Vector2(-3.1715117, 84.5583)
 rotation = -3.1414385
 scale = Vector2(0.8083882, 0.16176483)
@@ -106,15 +112,47 @@ skew = -0.00014901161
 position = Vector2(0.06728478, 32.352936)
 scale = Vector2(1, 0.39704984)
 
+[node name="StaticBody2D6" parent="platform" unique_id=1809618959 instance=ExtResource("4_7oc4e")]
+position = Vector2(-30.56343, -24.269405)
+scale = Vector2(-0.7251478, 0.17774047)
+
 [node name="StaticBody2D4" parent="platform" unique_id=1759112529 instance=ExtResource("4_7oc4e")]
-position = Vector2(-134.93921, 159.17029)
+position = Vector2(-154.97737, 125.34369)
 rotation = -3.1414385
-scale = Vector2(0.8083882, 0.16176483)
+scale = Vector2(1.8339198, 0.16176483)
 skew = -0.00014901161
 
 [node name="StaticBody2D5" parent="platform" unique_id=627155104 instance=ExtResource("4_7oc4e")]
-position = Vector2(-131.70021, 67.99437)
-scale = Vector2(1, 0.6764531)
+position = Vector2(-151.19865, 34.16786)
+scale = Vector2(2.0741205, 0.6764531)
+
+[node name="StaticBody2D7" parent="platform" unique_id=2036835410 instance=ExtResource("4_7oc4e")]
+position = Vector2(-330.8021, 125.3166)
+rotation = -3.1414385
+scale = Vector2(1.8339198, 0.16176483)
+skew = -0.00014901161
+
+[node name="StaticBody2D9" parent="platform" unique_id=1355470826 instance=ExtResource("4_7oc4e")]
+position = Vector2(-385.0475, 162.0729)
+rotation = -3.1414385
+scale = Vector2(1.234794, 0.16176483)
+skew = -0.00014901161
+
+[node name="StaticBody2D10" parent="platform" unique_id=1058440244 instance=ExtResource("4_7oc4e")]
+position = Vector2(-429.10522, 202.87494)
+rotation = -3.1414385
+scale = Vector2(1.234794, 0.16176483)
+skew = -0.00014901161
+
+[node name="StaticBody2D11" parent="platform" unique_id=807096804 instance=ExtResource("4_7oc4e")]
+position = Vector2(-482.06857, 239.26384)
+rotation = -3.1414385
+scale = Vector2(1.7151747, 0.16176483)
+skew = -0.00014901161
+
+[node name="StaticBody2D8" parent="platform" unique_id=2036861362 instance=ExtResource("4_7oc4e")]
+position = Vector2(-327.02335, 34.14077)
+scale = Vector2(2.0741205, 0.6764531)
 
 [node name="doors" type="Node2D" parent="." unique_id=714943052]
 position = Vector2(6004, -85.999985)
@@ -129,14 +167,14 @@ rotation = -3.1413095
 scale = Vector2(0.47768188, 0.6756874)
 skew = -0.00028049946
 OpenSpeed = 200.0
-OpenHeight = 400.0
-Direction = 0
+OpenHeight = 300.0
 
 [node name="PressurePlate2" parent="doors/Node2D" unique_id=895291090 instance=ExtResource("14_siwpi")]
 position = Vector2(127.719086, 25.036625)
 rotation = -3.1413095
 scale = Vector2(0.06746919, 0.6756874)
 skew = -0.00028049946
+PressDepth = -20.0
 
 [node name="Node2D2" type="Node2D" parent="doors" unique_id=872522530]
 
@@ -145,13 +183,19 @@ position = Vector2(35.692078, -315.5359)
 rotation = -3.1413095
 scale = Vector2(0.5426282, -0.679224)
 skew = -0.00028049946
-OpenHeight = 600.0
+OpenSpeed = 200.0
+OpenHeight = 425.0
 
 [node name="PressurePlate" parent="doors/Node2D2" unique_id=518719853 instance=ExtResource("14_siwpi")]
-position = Vector2(-3.8462524, 164.19096)
+position = Vector2(-3.8460438, 102.02771)
 rotation = -3.1413095
 scale = Vector2(0.06746919, 0.6756874)
 skew = -0.00028049946
+PressDepth = -20.0
+
+[node name="GraySquare5" parent="." unique_id=396476325 instance=ExtResource("7_qoi87")]
+position = Vector2(11781, -325)
+scale = Vector2(0.2179641, 6.7410736)
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_mu84n")]
 position = Vector2(1471.5, 109)
@@ -175,19 +219,27 @@ root_node = NodePath("../Player")
 libraries/ = SubResource("AnimationLibrary_8x87a")
 autoplay = &"new_animation"
 
-[node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("7_sotx7")]
-
-[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("9_7oc4e")]
-
-[node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("8_ymh28")]
-
 [node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("10_siwpi")]
 position = Vector2(2250, 61)
+FragmentScene = ExtResource("11_0m7xm")
+
+[node name="FragmentGenerator4" parent="." unique_id=1007504 instance=ExtResource("10_siwpi")]
+position = Vector2(11220, -961)
 FragmentScene = ExtResource("11_0m7xm")
 
 [node name="FragmentGenerator2" parent="." unique_id=1883366682 instance=ExtResource("10_siwpi")]
 position = Vector2(4880, 84)
 FragmentScene = ExtResource("13_0m7xm")
+
+[node name="FragmentGenerator3" parent="." unique_id=2144253055 instance=ExtResource("10_siwpi")]
+position = Vector2(7248, 133)
+FragmentScene = ExtResource("13_0m7xm")
+
+[node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("7_sotx7")]
+
+[node name="RecipeTable" parent="." unique_id=1577653984 instance=ExtResource("9_7oc4e")]
+
+[node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("8_ymh28")]
 
 [connection signal="Pressed" from="doors/Node2D/PressurePlate2" to="doors/Node2D/Door2" method="Open"]
 [connection signal="Pressed" from="doors/Node2D2/PressurePlate" to="doors/Node2D2/Door" method="Open"]
