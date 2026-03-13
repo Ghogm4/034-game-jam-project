@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b4xcek176akas"]
+
+[ext_resource type="PackedScene" uid="uid://5b4qdqveswg3" path="res://LevelScene/prefabs/back_grounds.tscn" id="1_5lcx6"]
+[ext_resource type="PackedScene" uid="uid://ccwbwqda63xj3" path="res://LevelScene/prefabs/ground.tscn" id="2_an40m"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_mu84n"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="4_bmsap"]
+
+[sub_resource type="Animation" id="Animation_rqrji"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BGMPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Mist", 5.0],
+"method": &"PlayBGM"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8x87a"]
+_data = {
+&"new_animation": SubResource("Animation_rqrji")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1952720721]
+
+[node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_5lcx6")]
+position = Vector2(-1, 0)
+
+[node name="ground2" parent="." unique_id=1524614197 instance=ExtResource("2_an40m")]
+position = Vector2(1283, 1109)
+scale = Vector2(40.546516, 2.6505735)
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_mu84n")]
+position = Vector2(532, 257)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=721870104]
+offset = Vector2(0, -320)
+zoom = Vector2(0.715, 0.715)
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=1454271749]
+script = ExtResource("4_bmsap")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=935926145]
+root_node = NodePath("../Player")
+libraries/ = SubResource("AnimationLibrary_8x87a")

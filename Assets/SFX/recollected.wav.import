@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://csj642ax834pe"
-path="res://.godot/imported/Recollected.wav-b8aa46e259214e2415f26777eb54e950.sample"
+path="res://.godot/imported/recollected.wav-3e6119386fee4fb0dc0250ca84db4c2d.sample"
 
 [deps]
 
-source_file="res://Assets/SFX/Recollected.wav"
-dest_files=["res://.godot/imported/Recollected.wav-b8aa46e259214e2415f26777eb54e950.sample"]
+source_file="res://Assets/SFX/recollected.wav"
+dest_files=["res://.godot/imported/recollected.wav-3e6119386fee4fb0dc0250ca84db4c2d.sample"]
 
 [params]
 

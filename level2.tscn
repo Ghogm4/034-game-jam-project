@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhhktr81cnk4b" path="res://Level/Door/Door.tscn" id="7_rmy57"]
 [ext_resource type="PackedScene" uid="uid://dq1gcc1idie0y" path="res://Level/PressurePlate/PressurePlate.tscn" id="8_qulpo"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="11_dc5vx"]
+[ext_resource type="PackedScene" uid="uid://b6pn35skj1y6c" path="res://Fragment/Keepsakes/Cup/CupHandle.tscn" id="13_mw4xc"]
 [ext_resource type="Texture2D" uid="uid://dnmvyutuudby1" path="res://Colors/City1/arrow.png" id="13_s8oj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21xmu"]
@@ -149,11 +150,11 @@ rotation = 3.1412494
 scale = Vector2(-3.2584314, 0.8800013)
 
 [node name="StaticBody2D7" parent="grounds/platforms" unique_id=715457806 instance=ExtResource("5_3opl0")]
-position = Vector2(-5530, -405)
+position = Vector2(-5531, -463)
 scale = Vector2(17.26156, 0.64000165)
 
 [node name="StaticBody2D3" parent="grounds/platforms" unique_id=1633139919 instance=ExtResource("5_3opl0")]
-position = Vector2(-3059, 129)
+position = Vector2(-3050, 94)
 scale = Vector2(15.8859005, 0.2800013)
 
 [node name="tips" type="Node2D" parent="grounds" unique_id=2055773709]
@@ -175,7 +176,7 @@ texture = ExtResource("13_s8oj7")
 texture = ExtResource("13_s8oj7")
 
 [node name="Node2D2" type="Node2D" parent="grounds/tips" unique_id=285754673]
-position = Vector2(-14550.718, 9735.791)
+position = Vector2(-14658.481, 9635.951)
 
 [node name="Arrow" type="Sprite2D" parent="grounds/tips/Node2D2" unique_id=1492279669]
 position = Vector2(-475.51367, 434.83105)
@@ -219,11 +220,11 @@ scale = Vector2(0.18309726, 1.9230744)
 [node name="Node2D2" type="Node2D" parent="Doors" unique_id=422128935]
 
 [node name="PressurePlate2" parent="Doors/Node2D2" unique_id=1709523292 instance=ExtResource("8_qulpo")]
-position = Vector2(29.478699, 149.99979)
-scale = Vector2(0.18309726, 1.4615377)
+position = Vector2(37.901173, 176.92282)
+scale = Vector2(0.22704059, 1.4615377)
 
 [node name="Door" parent="Doors/Node2D2" unique_id=640945266 instance=ExtResource("7_rmy57")]
-position = Vector2(106.37956, -449.9994)
+position = Vector2(108.027435, -517.307)
 scale = Vector2(0.18309726, 1.9230744)
 OpenSpeed = 200.0
 OpenHeight = 600.0
@@ -250,7 +251,8 @@ script = ExtResource("5_21xmu")
 metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
 
 [node name="FragmentGenerator" parent="." unique_id=761977908 instance=ExtResource("11_dc5vx")]
-position = Vector2(-2940, 11)
+position = Vector2(-2931, -24)
+FragmentScene = ExtResource("13_mw4xc")
 
 [connection signal="Pressed" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Open"]
 [connection signal="Released" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Close"]

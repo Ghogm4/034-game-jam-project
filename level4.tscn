@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://h6iw52vcthtr"]
+
+[ext_resource type="PackedScene" uid="uid://5b4qdqveswg3" path="res://LevelScene/prefabs/back_grounds.tscn" id="1_gmhuy"]
+[ext_resource type="PackedScene" uid="uid://ccwbwqda63xj3" path="res://LevelScene/prefabs/ground.tscn" id="2_g1tnb"]
+[ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_pklw6"]
+
+[node name="Node2D" type="Node2D" unique_id=1677080886]
+
+[node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_gmhuy")]
+position = Vector2(7, 1)
+
+[node name="ground2" parent="." unique_id=1524614197 instance=ExtResource("2_g1tnb")]
+position = Vector2(74.999985, 1035)
+scale = Vector2(39.186512, 2.6505735)
+
+[node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_pklw6")]
+position = Vector2(73, 186)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=255370001]
+offset = Vector2(0, -320)
+zoom = Vector2(0.715, 0.715)
