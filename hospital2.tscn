@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dw7l0nrr824pd"]
+[gd_scene format=3 uid="uid://chnd6ybetlk56"]
 
 [ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_57txw"]
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="2_sthus"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="4_77c2x"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="5_wruai"]
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="6_77c2x"]
+[ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="7_84yt5"]
+[ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="8_7sf4o"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="9_8nptv"]
 
 [sub_resource type="Animation" id="Animation_nxsoi"]
 length = 0.001
@@ -82,6 +85,13 @@ _data = {
 &"new_animation": SubResource("Animation_84yt5")
 }
 
+[sub_resource type="Resource" id="Resource_5xxpe"]
+script = ExtResource("8_7sf4o")
+FunctionName = &"Proceed"
+FunctionArgs = [0, 0.5, 1.0, 0.5]
+OneShot = false
+metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
+
 [node name="Node2D" type="Node2D" unique_id=1502015219]
 
 [node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_57txw")]
@@ -121,3 +131,12 @@ zoom = Vector2(1.415, 1.415)
 position = Vector2(1009, 589)
 scale = Vector2(2.491024, 1.5404615)
 texture = ExtResource("6_77c2x")
+
+[node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("7_84yt5")]
+position = Vector2(1484, 739)
+Callees = [NodePath("../GameProceeder")]
+FunctionCalls = [SubResource("Resource_5xxpe")]
+
+[node name="GameProceeder" type="Node" parent="." unique_id=985814179]
+script = ExtResource("9_8nptv")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"

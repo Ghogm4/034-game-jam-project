@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b8ddmb7u56gkm" path="res://Colors/Pictures/屏幕截图 2026-03-14 011706.png" id="24_3vgkc"]
 [ext_resource type="Texture2D" uid="uid://b0x6jnqyealwx" path="res://Colors/Pictures/屏幕截图 2026-03-14 010325.png" id="25_bgkee"]
 [ext_resource type="Texture2D" uid="uid://drum6yjhe1hgb" path="res://Colors/Pictures/屏幕截图 2026-03-14 011758.png" id="26_4uhnf"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="27_3vgkc"]
 
 [sub_resource type="Animation" id="Animation_76hm3"]
 resource_name = "ED"
@@ -410,6 +411,20 @@ tracks/29/keys = {
 "update": 0,
 "values": []
 }
+tracks/30/type = "method"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("GameProceeder")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(140.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0, 0.5, 3.0, 0.5],
+"method": &"Proceed"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_or4dj"]
 length = 0.001
@@ -705,3 +720,7 @@ texture = ExtResource("25_bgkee")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(847, 508)
 texture = ExtResource("26_4uhnf")
+
+[node name="GameProceeder" type="Node" parent="." unique_id=1725365877]
+script = ExtResource("27_3vgkc")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"

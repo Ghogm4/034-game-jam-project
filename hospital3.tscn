@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dwkbc3811t0qr"]
+[gd_scene format=3 uid="uid://dcy4713cjplyo"]
 
 [ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_52x0g"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="2_l4gnx"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="5_70oqj"]
 [ext_resource type="Texture2D" uid="uid://dowswf50863h0" path="res://Colors/pieces/cup.png" id="6_1j0f1"]
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="7_1j0f1"]
+[ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="8_g8m73"]
+[ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="9_agqk6"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="10_ewjix"]
 
 [sub_resource type="Animation" id="Animation_2pi0t"]
 length = 0.001
@@ -83,6 +86,13 @@ _data = {
 &"new_animation": SubResource("Animation_dolhj")
 }
 
+[sub_resource type="Resource" id="Resource_5xxpe"]
+script = ExtResource("9_agqk6")
+FunctionName = &"Proceed"
+FunctionArgs = [0, 0.5, 1.0, 0.5]
+OneShot = false
+metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
+
 [node name="Node2D" type="Node2D" unique_id=2006126708]
 
 [node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_52x0g")]
@@ -127,3 +137,12 @@ texture = ExtResource("6_1j0f1")
 position = Vector2(973.99994, 549)
 scale = Vector2(2.7815824, 1.6519608)
 texture = ExtResource("7_1j0f1")
+
+[node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("8_g8m73")]
+position = Vector2(1450, 753)
+Callees = [NodePath("../GameProceeder")]
+FunctionCalls = [SubResource("Resource_5xxpe")]
+
+[node name="GameProceeder" type="Node" parent="." unique_id=1155270856]
+script = ExtResource("10_ewjix")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"

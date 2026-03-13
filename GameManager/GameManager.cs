@@ -39,7 +39,6 @@ public partial class GameManager : Node
         Cutscene_Picnic,
         Hospital_4,
         Level_4,
-        Hospital_5,
         Cutscene_Hospital,
         Cutscene_Finale,
         StartMenu,
@@ -50,8 +49,7 @@ public partial class GameManager : Node
             return CurrentGamePhase == GamePhase.Hospital_1
                 || CurrentGamePhase == GamePhase.Hospital_2
                 || CurrentGamePhase == GamePhase.Hospital_3
-                || CurrentGamePhase == GamePhase.Hospital_4
-                || CurrentGamePhase == GamePhase.Hospital_5;
+                || CurrentGamePhase == GamePhase.Hospital_4;
         }
         private set { }
     }
@@ -107,11 +105,12 @@ public partial class GameManager : Node
         GD.Print($"GameManager: Current game state set to {CurrentGameState}");
     }
 
-    public void ProceedPhase(SceneManager.TransitionColor color = 0, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
+    public void ProceedPhase(SceneManager.TransitionColor color = 0, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 1f)
     {
         if (CurrentGamePhase == GamePhase.Cutscene_Finale)
         {
             GD.Print("GameManager: Already at final phase. Cannot proceed further.");
+            SceneManager.Instance.ChangeScene(GamePhase.StartMenu, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
             return;
         }
 
@@ -152,5 +151,15 @@ public partial class GameManager : Node
     public void ReturnMenu()
     {
         SceneManager.Instance.ChangeScene(GamePhase.StartMenu, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
+    }
+
+    //test
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("debug_proceed"))
+        {
+            GD.Print("Debug: Proceeding to next phase...");
+            ProceedPhase();
+        }
     }
 }

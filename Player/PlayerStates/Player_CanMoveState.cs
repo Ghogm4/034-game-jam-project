@@ -12,10 +12,10 @@ public partial class Player_CanMoveState : Player_PlayerState
 		velocity.X = Mathf.MoveToward(velocity.X, targetSpeed, acceleration * (float)delta);
 		Player.Velocity = velocity;
 	}
-    private float GetAcceleration()
-    {
-        return Mathf.IsZeroApprox(Player.MoveInput)
+	private float GetAcceleration()
+	{
+		return Mathf.IsZeroApprox(Player.MoveInput)
 			? (Player.IsOnFloor() ? Player.GroundDeceleration : Player.AirDeceleration)
 			: (Player.IsOnFloor() ? Player.GroundAcceleration : Player.AirAcceleration);
-    }
+	}
 }

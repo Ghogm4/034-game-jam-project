@@ -74,7 +74,7 @@ public partial class SceneManager : Node2D
 		await ToSignal(tween, "finished");
 	}
 
-	public async void ChangeScene(GameManager.GamePhase phase, TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 0f)
+	public async void ChangeScene(GameManager.GamePhase phase, TransitionColor color, float fadeIn = 0.5f, float fadeOut = 0.5f, float sustain = 1f)
 	{
 		scenes.TryGetValue(phase, out PackedScene scene);
 		if (scene == null)
