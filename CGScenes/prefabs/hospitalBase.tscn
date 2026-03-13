@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://c401jq65j3l6m"]
 
-[ext_resource type="Texture2D" uid="uid://ccub8eji0ix35" path="res://Colors/City1/lightBlack.png" id="1_iq57o"]
-[ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="2_02hbh"]
+[ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="1_wvwmm"]
 [ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="3_54i4g"]
 [ext_resource type="Texture2D" uid="uid://de6xyc6lwo5ok" path="res://Colors/City1/lighterBlack.png" id="4_halkc"]
+
+[sub_resource type="Gradient" id="Gradient_wvwmm"]
+colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.79607844, 0.79607844, 0.79607844, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iq57o"]
+gradient = SubResource("Gradient_wvwmm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gx2l"]
 size = Vector2(358.65643, 378.66785)
@@ -26,9 +31,9 @@ size = Vector2(400.67337, 664.73096)
 [node name="hospital" type="Node2D" unique_id=637033352]
 
 [node name="LightBlack" type="Sprite2D" parent="." unique_id=175157661]
-position = Vector2(1110.0001, 839.0001)
-scale = Vector2(2.5275676, -1.1987002)
-texture = ExtResource("1_iq57o")
+position = Vector2(1249.5, 845.5)
+scale = Vector2(20.921873, -12.171874)
+texture = SubResource("GradientTexture2D_iq57o")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=531408328]
 position = Vector2(347, 851)
@@ -36,7 +41,7 @@ rotation = -3.1415925
 scale = Vector2(1.0440077, -1.835855)
 
 [node name="BlackSquare" type="Sprite2D" parent="StaticBody2D4" unique_id=731447519]
-texture = ExtResource("2_02hbh")
+texture = ExtResource("1_wvwmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=783468978]
 position = Vector2(-167.62326, 13.296417)
@@ -48,7 +53,7 @@ rotation = -3.1415925
 scale = Vector2(1.0440077, -1.835855)
 
 [node name="BlackSquare2" type="Sprite2D" parent="StaticBody2D3" unique_id=671386601]
-texture = ExtResource("2_02hbh")
+texture = ExtResource("1_wvwmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=278709217]
 position = Vector2(168.84937, 36.22284)
@@ -61,7 +66,7 @@ scale = Vector2(2.815261, 0.39866754)
 
 [node name="BlackSquare3" type="Sprite2D" parent="StaticBody2D2" unique_id=228900978]
 scale = Vector2(0.99999994, 1)
-texture = ExtResource("2_02hbh")
+texture = ExtResource("1_wvwmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1200614063]
 position = Vector2(-4.2624817, -160.55139)
@@ -98,8 +103,10 @@ rotation = -3.1415925
 scale = Vector2(2.815261, 0.39866754)
 
 [node name="BlackSquare4" type="Sprite2D" parent="StaticBody2D" unique_id=1949503508]
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("2_02hbh")
+modulate = Color(0.9137255, 0.9254902, 1, 1)
+position = Vector2(-2.805481, 0)
+scale = Vector2(0.5178027, 1)
+texture = ExtResource("1_wvwmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=239926998]
 position = Vector2(-8.880188, -1.2458496)
