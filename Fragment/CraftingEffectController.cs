@@ -29,7 +29,7 @@ public partial class CraftingEffectController : Node
     public async Task PlayCraftingEffect(Fragment fragmentA, Fragment fragmentB, Fragment resultInstance)
     {
         SceneTree tree = GetTree();
-        Node parentNode = tree.CurrentScene ?? tree.Root;
+        Node parentNode = GetParent<RecipeTable>().CraftedFragmentContainer ?? tree.CurrentScene ?? tree.Root;
         Vector2 worldMidpoint = (fragmentA.GlobalPosition + fragmentB.GlobalPosition) * 0.5f;
         Vector2 screenPosA = GetScreenPosition(fragmentA);
         Vector2 screenPosB = GetScreenPosition(fragmentB);
