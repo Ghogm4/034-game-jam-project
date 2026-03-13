@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bnf623lmvnj1y" path="res://CGScenes/HitByDaYun.tscn" id="4_u2x0j"]
 [ext_resource type="PackedScene" uid="uid://c3oq3dkftfnfr" path="res://CGScenes/hospital1.tscn" id="5_ogwx1"]
 [ext_resource type="PackedScene" uid="uid://cvgmv48rh4hdq" path="res://LevelScene/Level1.tscn" id="6_8iqtu"]
+[ext_resource type="PackedScene" uid="uid://bwhugdrs5rlb3" path="res://UI/StartMenu/StartMenu.tscn" id="8_5orft"]
 
 [node name="SceneManager" type="Node2D" unique_id=2022550534 node_paths=PackedStringArray("rect")]
 script = ExtResource("1_mqdah")
@@ -27,7 +28,8 @@ scenes = Dictionary[int, PackedScene]({
 13: ExtResource("2_1bbdn"),
 14: ExtResource("2_1bbdn"),
 15: ExtResource("2_1bbdn"),
-16: ExtResource("2_1bbdn")
+16: ExtResource("2_1bbdn"),
+17: ExtResource("8_5orft")
 })
 rect = NodePath("ColorRect")
 

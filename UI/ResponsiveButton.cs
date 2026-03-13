@@ -66,6 +66,7 @@ public partial class ResponsiveButton : Button
 
     private void OnButtonDown()
     {
+        AudioManager.Instance.PlaySFX("UI");
         StartAnimation(Vector2.One * PressedScale);
     }
 

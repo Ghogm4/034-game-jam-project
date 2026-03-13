@@ -20,7 +20,7 @@ public partial class StartMenu : Control
 		"res://Colors/Rain/purpleUm.png",
 		"res://Colors/pieces/cup.png", 
 		"res://Colors/pieces/Picnic/picnicStateFinal.png",
-        "res://Colors/pieces/flower/flowerStateFinal.png"
+		"res://Colors/pieces/flower/flowerStateFinal.png"
 	};
 
 	private Vector2 _firstButtonsOriginalPos;
@@ -49,6 +49,8 @@ public partial class StartMenu : Control
 		CGGallery.Visible = false;
 		SetupTitleParallaxLoop();
 		CallDeferred(MethodName.StoreOriginalPositions);
+
+		AudioManager.Instance.PlayBGM("empty", 1f);
 	}
 
 	private void SetupTitleParallaxLoop()
@@ -73,11 +75,14 @@ public partial class StartMenu : Control
 	private void OnStartButtonPressed()
 	{
 		GD.Print("Start Game");
+		GameManager.Instance.SetCurrentGameState(GameManager.GameState.Playing);
 		GameManager.Instance.LoadPhase(SceneManager.TransitionColor.Black, 0.5f, 0.5f, 0f);
 	}
 
 	private void OnCGListButtonPressed()
 	{
+		GameManager.Instance.SetCurrentGameState(GameManager.GameState.Cutscene);
+		
 		StopActiveTweens();
 		_isTransitioning = true;
 
@@ -240,12 +245,37 @@ public partial class StartMenu : Control
 	private void OnKeepsakePressed()
 	{
 		GD.Print($"Keepsake {_currentIndex} Pressed");
+		if (_currentIndex == 0 && (int)GameManager.Instance.SavedGamePhase >= 5)
+		{
+			SceneManager.Instance.ChangeScene(GameManager.GamePhase.Cutscene_Rain, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
+		}
+		else if (_currentIndex == 1 && (int)GameManager.Instance.SavedGamePhase >= 8)
+		{
+			SceneManager.Instance.ChangeScene(GameManager.GamePhase.Cutscene_Cup, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
+		}
+		else if (_currentIndex == 2 && (int)GameManager.Instance.SavedGamePhase >= 11)
+		{
+			SceneManager.Instance.ChangeScene(GameManager.GamePhase.Cutscene_Picnic, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
+		}
+
+		//test
+		// else SceneManager.Instance.ChangeScene(GameManager.GamePhase.Hospital_1, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
+		
 	}
 
 	private void UpdateGallery()
 	{
 		var texture = GD.Load<Texture2D>(_keepsakeTexturePaths[_currentIndex]);
 		KeepsakeDisplay.Icon = texture;
+		if (_currentIndex == 0 && (int)GameManager.Instance.SavedGamePhase < 5
+			|| _currentIndex == 1 && (int)GameManager.Instance.SavedGamePhase < 8
+			|| _currentIndex == 2 && (int)GameManager.Instance.SavedGamePhase < 11
+			|| _currentIndex == 3 && (int)GameManager.Instance.SavedGamePhase < 14)
+		{
+			KeepsakeDisplay.Icon = GD.Load<Texture2D>("res://Colors/City1/blackSquare.png");
+			KeepsakeDisplay.Disabled = true;
+		}
+		else KeepsakeDisplay.Disabled = false;
 		
 		LeftButton.Visible = true; 
 
