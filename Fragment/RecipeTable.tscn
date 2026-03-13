@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dqagboqhuv31q" path="res://Fragment/Keepsakes/Carpet/CarpetComb3.tscn" id="7_5ul3c"]
 [ext_resource type="PackedScene" uid="uid://dso1vlidpoihe" path="res://Fragment/Keepsakes/Flower/FlowerComb.tscn" id="8_5ul3c"]
 [ext_resource type="PackedScene" uid="uid://r2mf234djwef" path="res://Fragment/Keepsakes/Flower/Flower.tscn" id="9_bj2qr"]
+[ext_resource type="PackedScene" uid="uid://bi2btn72h8e23" path="res://Fragment/Keepsakes/Flower/FlowerBeginning.tscn" id="10_bj2qr"]
 
 [sub_resource type="Resource" id="Resource_8qyxg"]
 script = ExtResource("3_34pqt")
@@ -68,10 +69,17 @@ Input2 = "CarpetComb1"
 Result = ExtResource("7_5ul3c")
 metadata/_custom_type_script = "uid://dtskl7kekh48l"
 
+[sub_resource type="Resource" id="Resource_w28ws"]
+script = ExtResource("3_34pqt")
+Input1 = "Bloom"
+Input2 = "Stem"
+Result = ExtResource("10_bj2qr")
+metadata/_custom_type_script = "uid://dtskl7kekh48l"
+
 [node name="RecipeTable" type="Node" unique_id=1577653984]
 unique_name_in_owner = true
 script = ExtResource("1_nbdhl")
-Recipes = [SubResource("Resource_8qyxg"), SubResource("Resource_liqq7"), SubResource("Resource_bj2qr"), SubResource("Resource_vdlyb"), SubResource("Resource_ss70p"), SubResource("Resource_m2ugs"), SubResource("Resource_c7pyt"), SubResource("Resource_5ul3c")]
+Recipes = [SubResource("Resource_8qyxg"), SubResource("Resource_liqq7"), SubResource("Resource_bj2qr"), SubResource("Resource_vdlyb"), SubResource("Resource_ss70p"), SubResource("Resource_m2ugs"), SubResource("Resource_c7pyt"), SubResource("Resource_5ul3c"), SubResource("Resource_w28ws")]
 
 [node name="CraftingEffectController" type="Node" parent="." unique_id=1994302594]
 unique_name_in_owner = true
