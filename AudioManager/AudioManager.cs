@@ -121,6 +121,7 @@ public partial class AudioManager : Node
 			}));
 	}
 
+
 	public void SetPlayerVolumeLinear(AudioStreamPlayer player, float volume)
 	{
 		player.VolumeDb = Mathf.LinearToDb(volume);

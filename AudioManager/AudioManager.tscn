@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://7avmg6k1nj1v" path="res://Assets/BGM/Blossom_Prelude.ogg" id="5_bimrg"]
 [ext_resource type="AudioStream" uid="uid://dtti5h88ekfyx" path="res://Assets/BGM/0nce 3mbraced 4gain.ogg" id="6_2hj2f"]
 [ext_resource type="AudioStream" uid="uid://b8e3njc1g20f5" path="res://Assets/BGM/Blossom_Finale.ogg" id="7_gcgda"]
+[ext_resource type="AudioStream" uid="uid://cpyhdo7wlypm" path="res://Assets/BGM/Mist2.ogg" id="8_1t88w"]
 [ext_resource type="AudioStream" uid="uid://j2xw5lotvjp3" path="res://Assets/BGM/Passing-by.ogg" id="8_tum4e"]
 [ext_resource type="AudioStream" uid="uid://cisxivf5hw4oi" path="res://Assets/BGM/Silent_0.ogg" id="10_4o7rc"]
 [ext_resource type="AudioStream" uid="uid://bgbe85u8rpsvo" path="res://Assets/BGM/Silent_1.ogg" id="11_mfw2e"]
@@ -15,7 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://bflm2rj8u3ej2" path="res://Assets/BGM/Silent_3.ogg" id="13_je6na"]
 [ext_resource type="AudioStream" uid="uid://87iocfe8t8w" path="res://Assets/BGM/Slient_4.ogg" id="14_2trk5"]
 [ext_resource type="AudioStream" uid="uid://csj642ax834pe" path="res://Assets/SFX/Recollected.wav" id="15_hv5in"]
-[ext_resource type="AudioStream" uid="uid://4a6xkx56dhfy" path="res://Assets/BGM/Mist.ogg" id="15_l24u0"]
+[ext_resource type="AudioStream" uid="uid://d66knshvu6yg" path="res://Assets/SFX/City Ambient 1.mp3" id="16_lw3lm"]
+[ext_resource type="AudioStream" uid="uid://m5si316gce3k" path="res://Assets/BGM/instant2.ogg" id="17_1t88w"]
 [ext_resource type="AudioStream" uid="uid://bk7k3smw37uqk" path="res://Assets/SFX/car crash.wav" id="17_uvgas"]
 [ext_resource type="AudioStream" uid="uid://q6yubr0xscqw" path="res://Assets/SFX/collect.wav" id="18_lw3lm"]
 [ext_resource type="AudioStream" uid="uid://m7fteirifjho" path="res://Assets/SFX/connect.wav" id="19_1t88w"]
@@ -41,7 +43,9 @@ BGMStreams = Dictionary[String, AudioStream]({
 "Blossom": ExtResource("4_y8eeq"),
 "Blossom_Finale": ExtResource("7_gcgda"),
 "Blossom_Prelude": ExtResource("5_bimrg"),
-"Mist": ExtResource("15_l24u0"),
+"City": ExtResource("16_lw3lm"),
+"Instant": ExtResource("17_1t88w"),
+"Mist": ExtResource("8_1t88w"),
 "Passing-by": ExtResource("8_tum4e"),
 "Silent_0": ExtResource("10_4o7rc"),
 "Silent_1": ExtResource("11_mfw2e"),

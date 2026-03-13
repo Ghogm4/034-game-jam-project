@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="8_qsasv"]
 [ext_resource type="Texture2D" uid="uid://bvfcnqdhwbve7" path="res://Colors/City1/White.png" id="9_eyvf1"]
 [ext_resource type="Script" uid="uid://djuytgdca3vil" path="res://AudioManager/SFXPlayer.cs" id="10_7if27"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="11_r82ll"]
+[ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="12_yv4oc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu84f"]
 size = Vector2(696.2065, 665.52545)
@@ -82,11 +84,42 @@ tracks/4/keys = {
 "args": ["Car Crash"],
 "method": &"PlaySFX"
 }, {
-"args": [""],
+"args": ["Car Crash"],
 "method": &"StopSFX"
 }, {
 "args": ["Tinnitus"],
 "method": &"PlaySFX"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameProceeder")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(15.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1, 0.5, 3.0, 0.5],
+"method": &"Proceed"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BGMPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.5, 8.833333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["City", 5.0],
+"method": &"PlayBGM"
+}, {
+"args": ["empty", 5.0],
+"method": &"PlayBGM"
 }]
 }
 
@@ -242,3 +275,11 @@ metadata/_custom_type_script = "uid://djuytgdca3vil"
 [node name="SFXPlayer2" type="Node" parent="." unique_id=1803099955]
 script = ExtResource("10_7if27")
 metadata/_custom_type_script = "uid://djuytgdca3vil"
+
+[node name="GameProceeder" type="Node" parent="." unique_id=2116856122]
+script = ExtResource("11_r82ll")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"
+
+[node name="BGMPlayer" type="Node" parent="." unique_id=862289809]
+script = ExtResource("12_yv4oc")
+metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
