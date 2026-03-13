@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://kkf0s18dwx2y" path="res://Colors/credit/levelDesign.png" id="25_7i01a"]
 [ext_resource type="Texture2D" uid="uid://dk1a3ip580vib" path="res://Colors/begining/0nce3mraced4gain.png" id="28_ifjce"]
 [ext_resource type="Texture2D" uid="uid://cd21qc4u2pyik" path="res://Colors/credit/TFP.png" id="29_t4d0r"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="31_t4d0r"]
 
 [sub_resource type="Animation" id="Animation_remxe"]
 length = 0.001
@@ -60,7 +61,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.0333333, 4, 6, 7.9666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.04537856055185247, 0.0, -0.045378560551852715, 0.0]
+"values": [0.0, 0.04537856055185247, 0.0, -0.04537856055185271, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cndr2"]
@@ -753,6 +754,20 @@ tracks/31/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.6717911), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/32/type = "method"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("../GameProceeder")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(113.03333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0, 0.5, 3.0, 0.5],
+"method": &"Proceed"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7oxwf"]
 _data = {
@@ -1169,6 +1184,10 @@ texture = ExtResource("29_t4d0r")
 [node name="BGMPlayer" type="Node" parent="." unique_id=633267987]
 script = ExtResource("5_3gpxh")
 metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
+
+[node name="GameProceeder" type="Node" parent="." unique_id=1644592171]
+script = ExtResource("31_t4d0r")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1142779898]
 root_node = NodePath("../Player")

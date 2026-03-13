@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://co5gfsuou38bw"]
 
 [ext_resource type="Script" uid="uid://c1r11rlyqtbvt" path="res://SceneManager/SceneManager.cs" id="1_mqdah"]
-[ext_resource type="PackedScene" uid="uid://h6iw52vcthtr" path="res://Placehold_Level.tscn" id="2_1bbdn"]
 [ext_resource type="PackedScene" uid="uid://pm60e74xqdr4" path="res://CGScenes/Begining.tscn" id="2_sytta"]
 [ext_resource type="PackedScene" uid="uid://bwxi7c6ke3bry" path="res://CGScenes/City1.tscn" id="3_sytta"]
 [ext_resource type="PackedScene" uid="uid://bnf623lmvnj1y" path="res://CGScenes/HitByDaYun.tscn" id="4_u2x0j"]
 [ext_resource type="PackedScene" uid="uid://c3oq3dkftfnfr" path="res://CGScenes/hospital1.tscn" id="5_ogwx1"]
 [ext_resource type="PackedScene" uid="uid://cvgmv48rh4hdq" path="res://LevelScene/Level1.tscn" id="6_8iqtu"]
+[ext_resource type="PackedScene" uid="uid://c3kuvqbuf5842" path="res://CGScenes/The_Rain.tscn" id="7_bnspk"]
 [ext_resource type="PackedScene" uid="uid://bwhugdrs5rlb3" path="res://UI/StartMenu/StartMenu.tscn" id="8_5orft"]
+[ext_resource type="PackedScene" uid="uid://chnd6ybetlk56" path="res://hospital2.tscn" id="8_rrhmh"]
+[ext_resource type="PackedScene" uid="uid://bcwg72len662a" path="res://LevelScene/level2.tscn" id="9_d008f"]
+[ext_resource type="PackedScene" uid="uid://ygxrxd37xhcu" path="res://CGScenes/aCupofLuv.tscn" id="10_d008f"]
+[ext_resource type="PackedScene" uid="uid://dcy4713cjplyo" path="res://hospital3.tscn" id="11_sqnnq"]
+[ext_resource type="PackedScene" uid="uid://b4xcek176akas" path="res://level3.tscn" id="12_a8f7x"]
+[ext_resource type="PackedScene" uid="uid://th0exfuu28e2" path="res://CGScenes/picnic.tscn" id="13_ra7tg"]
+[ext_resource type="PackedScene" uid="uid://dud6a35uaeqjp" path="res://hospital4.tscn" id="14_vl17g"]
+[ext_resource type="PackedScene" uid="uid://ctfrlnvaav4dr" path="res://level4.tscn" id="15_v2t8j"]
+[ext_resource type="PackedScene" uid="uid://bfgg3ogrcf5ke" path="res://hospitalFinal.tscn" id="16_2b6yv"]
+[ext_resource type="PackedScene" uid="uid://cmswgwi52fqk6" path="res://Finale.tscn" id="17_yl2j2"]
 
 [node name="SceneManager" type="Node2D" unique_id=2022550534 node_paths=PackedStringArray("rect")]
 script = ExtResource("1_mqdah")
@@ -17,19 +27,18 @@ scenes = Dictionary[int, PackedScene]({
 2: ExtResource("4_u2x0j"),
 3: ExtResource("5_ogwx1"),
 4: ExtResource("6_8iqtu"),
-5: ExtResource("2_1bbdn"),
-6: ExtResource("2_1bbdn"),
-7: ExtResource("2_1bbdn"),
-8: ExtResource("2_1bbdn"),
-9: ExtResource("2_1bbdn"),
-10: ExtResource("2_1bbdn"),
-11: ExtResource("2_1bbdn"),
-12: ExtResource("2_1bbdn"),
-13: ExtResource("2_1bbdn"),
-14: ExtResource("2_1bbdn"),
-15: ExtResource("2_1bbdn"),
-16: ExtResource("2_1bbdn"),
-17: ExtResource("8_5orft")
+5: ExtResource("7_bnspk"),
+6: ExtResource("8_rrhmh"),
+7: ExtResource("9_d008f"),
+8: ExtResource("10_d008f"),
+9: ExtResource("11_sqnnq"),
+10: ExtResource("12_a8f7x"),
+11: ExtResource("13_ra7tg"),
+12: ExtResource("14_vl17g"),
+13: ExtResource("15_v2t8j"),
+14: ExtResource("16_2b6yv"),
+15: ExtResource("17_yl2j2"),
+16: ExtResource("8_5orft")
 })
 rect = NodePath("ColorRect")
 

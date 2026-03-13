@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b1c5w3ofgj757" path="res://Particle Arts/Particle_arts_2.tscn" id="9_hdvqq"]
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="10_t1r3p"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="11_jbixk"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="12_t1r3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tq56h"]
 size = Vector2(683.6935, 526.0165)
@@ -259,7 +260,21 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0, 1.8666667, 3.7666667, 5.6666665, 7.4, 9.266666, 11.166666, 13.066668, 14.821279, 16.687944, 18.587946, 20.487946, 22.477303, 24.34397, 26.243969, 28.143969, 30.063272, 31.92994, 33.82994, 35.72994),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0, -0.055850536063818595, 0.0, 0.07853981633974483, 0.0]
+"values": [-0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../GameProceeder")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(36.566666),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0, 0.5, 3.0, 0.5],
+"method": &"Proceed"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rsr6a"]
@@ -402,3 +417,7 @@ metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
 
 [node name="ruler" type="Node2D" parent="." unique_id=533531736]
 position = Vector2(1445, 740)
+
+[node name="GameProceeder" type="Node" parent="." unique_id=1317182092]
+script = ExtResource("12_t1r3p")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"

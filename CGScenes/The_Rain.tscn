@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="7_lie0t"]
 [ext_resource type="Texture2D" uid="uid://cmmficw3mwj1j" path="res://Colors/Rain/purpleUm.png" id="8_qycw0"]
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="9_oywkv"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="10_vnq8n"]
+[ext_resource type="Script" uid="uid://djuytgdca3vil" path="res://AudioManager/SFXPlayer.cs" id="11_ulmal"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h2m7"]
 size = Vector2(1264.2501, 772.5)
@@ -259,10 +261,13 @@ tracks/3/path = NodePath("../BGMPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.03333336),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.03333336, 48.533333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["Passing-by", 5.0],
+"method": &"PlayBGM"
+}, {
+"args": ["empty", 10.0],
 "method": &"PlayBGM"
 }]
 }
@@ -442,6 +447,37 @@ tracks/17/keys = {
 "update": 1,
 "values": [Vector2(500, -2), Vector2(-1000, -2)]
 }
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../GameProceeder")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(59.766666),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0, 0.5, 3.0, 0.5],
+"method": &"Proceed"
+}]
+}
+tracks/19/type = "method"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../SFXPlayer")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(57.833332, 58.8644),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["Foot Ground"],
+"method": &"StopSFX"
+}, {
+"args": ["Foot Ground"],
+"method": &"StopSFX"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5e2hl"]
 _data = {
@@ -586,3 +622,11 @@ metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
 position = Vector2(548.5626, 241.6875)
 scale = Vector2(8.839028, 5.1025114)
 texture = ExtResource("3_lie0t")
+
+[node name="GameProceeder" type="Node" parent="." unique_id=276541116]
+script = ExtResource("10_vnq8n")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"
+
+[node name="SFXPlayer" type="Node" parent="." unique_id=1932060794]
+script = ExtResource("11_ulmal")
+metadata/_custom_type_script = "uid://djuytgdca3vil"

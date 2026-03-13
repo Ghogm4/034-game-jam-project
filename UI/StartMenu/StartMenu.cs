@@ -51,7 +51,7 @@ public partial class StartMenu : Control
 		CallDeferred(MethodName.StoreOriginalPositions);
 
 		AudioManager.Instance.PlayBGM("empty", 1f);
-        AudioManager.Instance.StopAllSFX();
+        AudioManager.Instance
 	}
 
 	private void SetupTitleParallaxLoop()

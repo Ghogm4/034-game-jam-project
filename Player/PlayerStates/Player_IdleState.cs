@@ -15,10 +15,10 @@ public partial class Player_IdleState : Player_PlayerState
 			AskTransit("Move");
 		}
 	}
-    private bool ShouldTransitToMove()
-    {
-        return !Mathf.IsZeroApprox(Player.MoveInput) || Mathf.Abs(Player.Velocity.X) > Player.IdleSpeedThreshold;
-    }
+	private bool ShouldTransitToMove()
+	{
+		return !Mathf.IsZeroApprox(Player.MoveInput) || Mathf.Abs(Player.Velocity.X) > Player.IdleSpeedThreshold;
+	}
 
 	private Vector2 GetIdleVisualScale()
 	{

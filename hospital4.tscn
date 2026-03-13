@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c1pnid2kbmrxa"]
+[gd_scene format=3 uid="uid://dud6a35uaeqjp"]
 
 [ext_resource type="PackedScene" uid="uid://c401jq65j3l6m" path="res://CGScenes/prefabs/hospitalBase.tscn" id="1_nx27o"]
 [ext_resource type="PackedScene" uid="uid://c12r8oapm5pfi" path="res://Player/girl.tscn" id="2_wjuus"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c5sba6d5fts08" path="res://Colors/City1/blackSquare.png" id="6_xtel7"]
 [ext_resource type="Texture2D" uid="uid://dowswf50863h0" path="res://Colors/pieces/cup.png" id="7_yxoot"]
 [ext_resource type="Texture2D" uid="uid://ccryflax8uofe" path="res://Colors/pieces/Picnic/picnicStateFinal.png" id="8_mv41e"]
+[ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="9_xtel7"]
+[ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="10_yxoot"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="11_dtbvc"]
 
 [sub_resource type="Animation" id="Animation_nxsoi"]
 length = 0.001
@@ -127,6 +130,13 @@ _data = {
 &"new_animation_2": SubResource("Animation_mv41e")
 }
 
+[sub_resource type="Resource" id="Resource_5xxpe"]
+script = ExtResource("10_yxoot")
+FunctionName = &"Proceed"
+FunctionArgs = [0, 0.5, 1.0, 0.5]
+OneShot = false
+metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
+
 [node name="Node2D" type="Node2D" unique_id=1489550183]
 
 [node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_nx27o")]
@@ -178,3 +188,12 @@ texture = ExtResource("8_mv41e")
 position = Vector2(943, 535)
 scale = Vector2(2.491024, 1.5404615)
 texture = ExtResource("6_xtel7")
+
+[node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("9_xtel7")]
+position = Vector2(1400, 729)
+Callees = [NodePath("../GameProceeder")]
+FunctionCalls = [SubResource("Resource_5xxpe")]
+
+[node name="GameProceeder" type="Node" parent="." unique_id=1415591769]
+script = ExtResource("11_dtbvc")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"
