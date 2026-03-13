@@ -118,4 +118,12 @@ public partial class GameManager : Node
     {
         SceneManager.Instance.ChangeScene(phase, color, fadeIn, fadeOut, sustain);
     }
+
+    public void StartNewGame()
+    {
+        CurrentGamePhase = GamePhase.Opening;
+        SavesManager.SaveGame(CurrentGamePhase);
+        ChangePhase(CurrentGamePhase, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 0f);
+        GD.Print("GameManager: Starting new game at Opening phase.");
+    }
 }
