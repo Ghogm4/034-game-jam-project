@@ -2,15 +2,20 @@
 
 [ext_resource type="Script" uid="uid://c1r11rlyqtbvt" path="res://SceneManager/SceneManager.cs" id="1_mqdah"]
 [ext_resource type="PackedScene" uid="uid://h6iw52vcthtr" path="res://Placehold_Level.tscn" id="2_1bbdn"]
+[ext_resource type="PackedScene" uid="uid://pm60e74xqdr4" path="res://CGScenes/Begining.tscn" id="2_sytta"]
+[ext_resource type="PackedScene" uid="uid://bwxi7c6ke3bry" path="res://CGScenes/City1.tscn" id="3_sytta"]
+[ext_resource type="PackedScene" uid="uid://bnf623lmvnj1y" path="res://CGScenes/HitByDaYun.tscn" id="4_u2x0j"]
+[ext_resource type="PackedScene" uid="uid://c3oq3dkftfnfr" path="res://CGScenes/hospital1.tscn" id="5_ogwx1"]
+[ext_resource type="PackedScene" uid="uid://cvgmv48rh4hdq" path="res://LevelScene/Level1.tscn" id="6_8iqtu"]
 
 [node name="SceneManager" type="Node2D" unique_id=2022550534 node_paths=PackedStringArray("rect")]
 script = ExtResource("1_mqdah")
 scenes = Dictionary[int, PackedScene]({
-0: ExtResource("2_1bbdn"),
-1: ExtResource("2_1bbdn"),
-2: ExtResource("2_1bbdn"),
-3: ExtResource("2_1bbdn"),
-4: ExtResource("2_1bbdn"),
+0: ExtResource("2_sytta"),
+1: ExtResource("3_sytta"),
+2: ExtResource("4_u2x0j"),
+3: ExtResource("5_ogwx1"),
+4: ExtResource("6_8iqtu"),
 5: ExtResource("2_1bbdn"),
 6: ExtResource("2_1bbdn"),
 7: ExtResource("2_1bbdn"),
