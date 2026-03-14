@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dlyqyl2wevo7c" path="res://Colors/credit/Astra.png" id="23_pmnpf"]
 [ext_resource type="Texture2D" uid="uid://be2dqgxkji6t3" path="res://Colors/credit/anim.png" id="24_jlaou"]
 [ext_resource type="Texture2D" uid="uid://kkf0s18dwx2y" path="res://Colors/credit/levelDesign.png" id="25_7i01a"]
-[ext_resource type="Texture2D" uid="uid://dk1a3ip580vib" path="res://Colors/begining/0nce3mraced4gain.png" id="28_ifjce"]
+[ext_resource type="Texture2D" uid="uid://b0ockwfddkxwm" path="res://Colors/Pictures/94F40F70BE84CC27DFA8740929BAF850.jpg" id="28_t4d0r"]
 [ext_resource type="Texture2D" uid="uid://cd21qc4u2pyik" path="res://Colors/credit/TFP.png" id="29_t4d0r"]
 [ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="31_t4d0r"]
 
@@ -749,7 +749,7 @@ tracks/31/path = NodePath("../Camera2D/0Nce3Mraced4Gain:modulate")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
-"times": PackedFloat32Array(101.03333, 106, 110.333336, 112.46667),
+"times": PackedFloat32Array(101.03333, 105.166664, 110.333336, 112.46667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.6717911), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -1173,9 +1173,9 @@ scale = Vector2(5.2372856, 2.9983985)
 texture = ExtResource("8_y3452")
 
 [node name="0Nce3Mraced4Gain" type="Sprite2D" parent="Camera2D" unique_id=1928008991]
-position = Vector2(6, -152.50003)
-scale = Vector2(1, 0.99999994)
-texture = ExtResource("28_ifjce")
+position = Vector2(-0.9999976, -173.5)
+scale = Vector2(0.97916657, 0.9787036)
+texture = ExtResource("28_t4d0r")
 
 [node name="Tfp" type="Sprite2D" parent="Camera2D" unique_id=359335199]
 position = Vector2(-24, -143.50003)
