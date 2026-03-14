@@ -84,6 +84,9 @@ FunctionName = &"Restart"
 OneShot = false
 metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfdig"]
+size = Vector2(356, 1493)
+
 [node name="Node2D2" type="Node2D" unique_id=1459358714]
 
 [node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_6q4t8")]
@@ -342,7 +345,8 @@ Callees = [NodePath("GameProceeder")]
 FunctionCalls = [SubResource("Resource_sikch")]
 
 [node name="CollisionShape2D" parent="FunctionCallerArea" index="0" unique_id=1595319958]
-position = Vector2(-3013, 195)
+position = Vector2(-3001, -399.5)
+shape = SubResource("RectangleShape2D_dfdig")
 
 [node name="GameProceeder" type="Node" parent="FunctionCallerArea" unique_id=1443265547]
 script = ExtResource("20_qltq0")

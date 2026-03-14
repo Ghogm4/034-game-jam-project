@@ -93,7 +93,7 @@ FunctionArgs = [0, 0.5, 1.0, 0.5]
 OneShot = false
 metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
 
-[node name="Node2D" type="Node2D" unique_id=2006126708]
+[node name="Node2D2" type="Node2D" unique_id=2006126708]
 
 [node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_52x0g")]
 position = Vector2(-231, -279)
@@ -143,6 +143,11 @@ position = Vector2(1382, 740)
 Callees = [NodePath("../GameProceeder")]
 FunctionCalls = [SubResource("Resource_5xxpe")]
 
+[node name="CollisionShape2D" parent="FunctionCallerArea" index="0" unique_id=1595319958]
+position = Vector2(72.5, -48)
+
 [node name="GameProceeder" type="Node" parent="." unique_id=1155270856]
 script = ExtResource("10_ewjix")
 metadata/_custom_type_script = "uid://cg1u0eekooexq"
+
+[editable path="FunctionCallerArea"]

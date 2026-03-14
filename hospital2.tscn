@@ -92,7 +92,7 @@ FunctionArgs = [0, 0.5, 1.0, 0.5]
 OneShot = false
 metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
 
-[node name="Node2D" type="Node2D" unique_id=1502015219]
+[node name="Node2D2" type="Node2D" unique_id=1502015219]
 
 [node name="hospital" parent="." unique_id=637033352 instance=ExtResource("1_57txw")]
 position = Vector2(-199, -280)
@@ -133,7 +133,7 @@ scale = Vector2(2.491024, 1.5404615)
 texture = ExtResource("6_77c2x")
 
 [node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("7_84yt5")]
-position = Vector2(1400, 736)
+position = Vector2(1478, 682)
 Callees = [NodePath("../GameProceeder")]
 FunctionCalls = [SubResource("Resource_5xxpe")]
 
