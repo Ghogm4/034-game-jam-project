@@ -20,6 +20,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmsap"]
 size = Vector2(105.21591, 948.8838)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoi87"]
+size = Vector2(4656.7305, 436.1323)
+
 [sub_resource type="Animation" id="Animation_mu84n"]
 length = 0.001
 tracks/0/type = "value"
@@ -196,6 +199,12 @@ PressDepth = -20.0
 [node name="GraySquare5" parent="." unique_id=396476325 instance=ExtResource("7_qoi87")]
 position = Vector2(11781, -325)
 scale = Vector2(0.2179641, 6.7410736)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GraySquare5" unique_id=1626871618]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GraySquare5/StaticBody2D" unique_id=311533399]
+position = Vector2(1764.0508, -104.73109)
+shape = SubResource("RectangleShape2D_qoi87")
 
 [node name="Player" parent="." unique_id=1425184265 instance=ExtResource("3_mu84n")]
 position = Vector2(1471.5, 109)
