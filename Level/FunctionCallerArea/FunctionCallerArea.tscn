@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2and6p5qyw52" path="res://Level/FunctionCallerArea/FunctionCallerArea.cs" id="1_l121v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40ia1"]
-size = Vector2(128, 128)
+size = Vector2(596, 2274)
 
 [node name="FunctionCallerArea" type="Area2D" unique_id=1982575411 node_paths=PackedStringArray("Callees")]
 collision_layer = 0

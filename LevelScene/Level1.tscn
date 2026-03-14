@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://bivhooyx2gisn" path="res://Fragment/Keepsakes/Umbrella/UmbrellaHat.tscn" id="12_vufav"]
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="13_vufav"]
 [ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="14_aqaw3"]
+[ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="16_ofawf"]
+[ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="17_0imyx"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="18_2qj7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wycyr"]
 size = Vector2(237.55627, 734.3127)
@@ -76,7 +79,13 @@ _data = {
 &"new_animation": SubResource("Animation_5rjis")
 }
 
-[node name="Node2D" type="Node2D" unique_id=2015346646]
+[sub_resource type="Resource" id="Resource_sikch"]
+script = ExtResource("17_0imyx")
+FunctionName = &"Restart"
+OneShot = false
+metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
+
+[node name="Node2D2" type="Node2D" unique_id=2015346646]
 
 [node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_udw71")]
 
@@ -267,3 +276,17 @@ FragmentScene = ExtResource("12_vufav")
 [node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("14_aqaw3")]
 
 [node name="BlurOverlay" parent="." unique_id=1498338304 instance=ExtResource("13_vufav")]
+
+[node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("16_ofawf")]
+position = Vector2(1355, 1572)
+Callees = [NodePath("GameProceeder")]
+FunctionCalls = [SubResource("Resource_sikch")]
+
+[node name="CollisionShape2D" parent="FunctionCallerArea" index="0" unique_id=1595319958]
+position = Vector2(45, 249)
+
+[node name="GameProceeder" type="Node" parent="FunctionCallerArea" unique_id=1712190449]
+script = ExtResource("18_2qj7j")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"
+
+[editable path="FunctionCallerArea"]

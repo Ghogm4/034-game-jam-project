@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cj4htn1c784rd" path="res://Fragment/BlurOverlay.tscn" id="15_4ou0f"]
 [ext_resource type="PackedScene" uid="uid://bagsmqgotujgn" path="res://Fragment/RecipeTable.tscn" id="16_4k5bj"]
 [ext_resource type="PackedScene" uid="uid://cvb3ibbleyayx" path="res://Fragment/FragmentConnector.tscn" id="17_hp87d"]
+[ext_resource type="PackedScene" uid="uid://bfuulj6dh6xpi" path="res://Level/FunctionCallerArea/FunctionCallerArea.tscn" id="18_dfdig"]
+[ext_resource type="Script" uid="uid://c06dcgv4rxk1y" path="res://Level/FunctionCallerArea/FunctionCallResource.cs" id="19_bowcc"]
+[ext_resource type="Script" uid="uid://cg1u0eekooexq" path="res://GameManager/GameProceeder.cs" id="20_qltq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21xmu"]
 size = Vector2(7.9337006, 347.3222)
@@ -75,7 +78,13 @@ _data = {
 &"new_animation": SubResource("Animation_rmy57")
 }
 
-[node name="Node2D" type="Node2D" unique_id=1459358714]
+[sub_resource type="Resource" id="Resource_sikch"]
+script = ExtResource("19_bowcc")
+FunctionName = &"Restart"
+OneShot = false
+metadata/_custom_type_script = "uid://c06dcgv4rxk1y"
+
+[node name="Node2D2" type="Node2D" unique_id=1459358714]
 
 [node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_6q4t8")]
 position = Vector2(-2, 5)
@@ -327,6 +336,18 @@ FragmentScene = ExtResource("14_mw4xc")
 
 [node name="FragmentConnector" parent="." unique_id=271458228 instance=ExtResource("17_hp87d")]
 
+[node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("18_dfdig")]
+position = Vector2(1355, 1572)
+Callees = [NodePath("GameProceeder")]
+FunctionCalls = [SubResource("Resource_sikch")]
+
+[node name="CollisionShape2D" parent="FunctionCallerArea" index="0" unique_id=1595319958]
+position = Vector2(-3013, 195)
+
+[node name="GameProceeder" type="Node" parent="FunctionCallerArea" unique_id=1443265547]
+script = ExtResource("20_qltq0")
+metadata/_custom_type_script = "uid://cg1u0eekooexq"
+
 [connection signal="Pressed" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Open"]
 [connection signal="Released" from="Doors/Node2D/PressurePlate" to="Doors/Node2D/Door" method="Close"]
 [connection signal="Pressed" from="Doors/Node2D2/PressurePlate2" to="Doors/Node2D2/Door" method="Open"]
@@ -336,3 +357,5 @@ FragmentScene = ExtResource("14_mw4xc")
 [connection signal="Pressed" from="Doors/Node2D4/PressurePlate" to="Doors/Node2D4/Door" method="Open"]
 [connection signal="Pressed" from="Doors/Node2D4/PressurePlate" to="Doors/Node2D4/Door2" method="Open"]
 [connection signal="Released" from="Doors/Node2D4/PressurePlate" to="Doors/Node2D4/Door" method="Close"]
+
+[editable path="FunctionCallerArea"]
