@@ -201,7 +201,6 @@ scale = Vector2(0.2179641, 6.7410736)
 position = Vector2(1471.5, 109)
 
 [node name="BlackSquare" type="Sprite2D" parent="Player" unique_id=1821558701]
-visible = false
 position = Vector2(-26.25, -225.75)
 scale = Vector2(4.369065, 3.1386807)
 texture = ExtResource("4_an40m")

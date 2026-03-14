@@ -76,7 +76,7 @@ _data = {
 &"new_animation": SubResource("Animation_7odde")
 }
 
-[node name="Node2D" type="Node2D" unique_id=1677080886]
+[node name="Node2D2" type="Node2D" unique_id=1677080886]
 
 [node name="BackGrounds" parent="." unique_id=458803557 instance=ExtResource("1_gmhuy")]
 position = Vector2(7, 1)
@@ -241,7 +241,6 @@ offset = Vector2(0, -320)
 zoom = Vector2(0.715, 0.715)
 
 [node name="BlackSquare" type="Sprite2D" parent="Player" unique_id=1402455568]
-visible = false
 position = Vector2(-75, -334)
 scale = Vector2(5.099283, 3.3491313)
 texture = ExtResource("7_dguho")
