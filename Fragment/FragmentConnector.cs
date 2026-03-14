@@ -16,7 +16,13 @@ public partial class FragmentConnector : Node
             {
                 GD.Print("Refreshing fragment list in FragmentConnector...");
                 field = new Godot.Collections.Array<Fragment>();
-                foreach (var node in GetTree().GetNodesInGroup("Fragments"))
+                Godot.Collections.Array<Node> nodesInGroup = IsInsideTree() ? GetTree().GetNodesInGroup("Fragments") : null;
+                if (nodesInGroup == null || nodesInGroup.Count == 0)
+                {
+                    GD.PushWarning("No fragments found in the scene.");
+                    return null;
+                }
+                foreach (var node in nodesInGroup)
                 {
                     if (node is Fragment fragment)
                     {
@@ -64,7 +70,7 @@ public partial class FragmentConnector : Node
     }
     private async void UpdateLine(Line2D line, Fragment fragA, Fragment fragB)
     {
-        while (IsInstanceValid(line) && IsInstanceValid(fragA) && IsInstanceValid(fragB))
+        while (IsInstanceValid(line) && IsInstanceValid(fragA) && IsInstanceValid(fragB) && IsInsideTree())
         {
             line.SetPointPosition(0, fragA.GlobalPosition);
             line.SetPointPosition(1, fragB.GlobalPosition);
