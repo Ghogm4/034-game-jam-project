@@ -30,7 +30,7 @@
 
 [sub_resource type="Animation" id="Animation_76hm3"]
 resource_name = "ED"
-length = 141.0
+length = 146.03334
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,7 +38,7 @@ tracks/0/path = NodePath("SFXPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4333333, 2.4, 3.8666666),
+"times": PackedFloat32Array(4.6666718, 6.100005, 7.066672, 8.533339),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": ["Door Open Reverb"],
@@ -61,7 +61,7 @@ tracks/1/path = NodePath("canvas:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.1333334, 8.1, 121.066666, 126.03333),
+"times": PackedFloat32Array(7.800005, 12.766672, 125.73334, 130.70001),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -73,7 +73,7 @@ tracks/2/path = NodePath("BGMPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.1666667),
+"times": PackedFloat32Array(7.8333387),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": ["0nce 3mbraced 4gain", 5.0],
@@ -87,7 +87,7 @@ tracks/3/path = NodePath("Player")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(9, 101.03333),
+"times": PackedFloat32Array(13.666672, 105.700005),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [768.0],
@@ -104,10 +104,10 @@ tracks/4/path = NodePath("Girl:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(12.533334, 15.1, 20.933332, 22.1, 23.033333, 23.466667, 24.133333, 24.633333, 25.533333, 26, 98.066666, 100, 103.066666, 104.066666, 109.5, 111.5, 115.5, 120),
+"times": PackedFloat32Array(17.200005, 19.766672, 25.600004, 26.766672, 27.700005, 28.133339, 28.800005, 29.300005, 30.200005, 30.666672, 102.73334, 104.66667, 107.73334, 108.73334, 114.16667, 116.16667, 120.16667, 124.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.89282036, 0.12217304763960309, 0.12217305, 0.12217305, 0.4398229715025708, 0.5305800926062758, 0.34382986264288273, 0.43982297, 0.43982297, -0.15009831567151274, -0.15009831, 0.0, 0.0, 0.6352998477259355, 0.63529986, 0.0, 0.0, 0.6806784082777885]
+"values": [0.89282036, 0.12217304763960309, 0.12217305, 0.12217305, 0.4398229715025708, 0.5305800926062758, 0.34382986264288273, 0.43982297, 0.43982297, -0.15009831567151274, -0.15009831, 0.0, 0.0, 0.6352998477259355, 0.63529986, 0.0, 0.0, 0.3630284844148207]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -116,7 +116,7 @@ tracks/5/path = NodePath("FlowerStateFinal:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(16, 18.033333, 127.03333, 132.06667),
+"times": PackedFloat32Array(20.666672, 22.700005, 131.70001, 136.73334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -128,7 +128,7 @@ tracks/6/path = NodePath("FlowerStateFinal:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(19, 20.966667),
+"times": PackedFloat32Array(23.666672, 25.633339),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(718, 699), Vector2(640.53, 649.14)]
@@ -140,7 +140,7 @@ tracks/7/path = NodePath("Camera2D:zoom")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(30, 37.266666),
+"times": PackedFloat32Array(34.66667, 41.93334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1.415, 1.415), Vector2(1.255, 1.255)]
@@ -152,7 +152,7 @@ tracks/8/path = NodePath("somanyPicturessssss/2:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(29.866667, 32.033333, 34.033333, 62.866665, 65.033325, 67.13333),
+"times": PackedFloat32Array(34.53334, 36.700005, 38.700005, 67.53334, 69.7, 71.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -164,7 +164,7 @@ tracks/9/path = NodePath("somanyPicturessssss/3:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(32.033333, 34.2, 36.2, 65.033325, 67.16666, 69.2),
+"times": PackedFloat32Array(36.700005, 38.866673, 40.866673, 69.7, 71.83333, 73.86667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -176,7 +176,7 @@ tracks/10/path = NodePath("somanyPicturessssss/4:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(34.233334, 36.399998, 38.399998, 67.16666, 69.2, 71.2),
+"times": PackedFloat32Array(38.900005, 41.06667, 43.06667, 71.83333, 73.86667, 75.86667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -188,7 +188,7 @@ tracks/11/path = NodePath("somanyPicturessssss/5:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(36.5, 38.666668, 40.666668, 69.16666, 71.26666, 73.16666),
+"times": PackedFloat32Array(41.16667, 43.33334, 45.33334, 73.83333, 75.933334, 77.83333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -200,7 +200,7 @@ tracks/12/path = NodePath("somanyPicturessssss/6:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(38.633335, 40.800003, 42.800003, 71.29999, 73.29999, 75.16666),
+"times": PackedFloat32Array(43.300007, 45.466675, 47.466675, 75.96666, 77.96666, 79.83333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -212,7 +212,7 @@ tracks/13/path = NodePath("somanyPicturessssss/7:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(40.800003, 42.966667, 44.966667, 73.26666, 75.29999, 77.2),
+"times": PackedFloat32Array(45.466675, 47.63334, 49.63334, 77.933334, 79.96666, 81.86667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -224,7 +224,7 @@ tracks/14/path = NodePath("somanyPicturessssss/8:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(43, 45.166664, 47.166664, 75.29999, 77.26666, 79.13333),
+"times": PackedFloat32Array(47.66667, 49.833336, 51.833336, 79.96666, 81.933334, 83.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -236,7 +236,7 @@ tracks/15/path = NodePath("somanyPicturessssss/9:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(45.26667, 47.433334, 49.433334, 77.26666, 79.2, 81.13333),
+"times": PackedFloat32Array(49.933342, 52.100006, 54.100006, 81.933334, 83.86667, 85.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -248,7 +248,7 @@ tracks/16/path = NodePath("somanyPicturessssss/10:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(47.5, 49.466667, 51.366665, 79.16666, 81.16666, 83.13333),
+"times": PackedFloat32Array(52.16667, 54.13334, 56.033337, 83.83333, 85.83333, 87.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -260,7 +260,7 @@ tracks/17/path = NodePath("somanyPicturessssss/11:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(49.466667, 51.433334, 53.266666, 81.13333, 83.13333, 85.2),
+"times": PackedFloat32Array(54.13334, 56.100006, 57.93334, 85.8, 87.8, 89.86667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -272,7 +272,7 @@ tracks/18/path = NodePath("somanyPicturessssss/12:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(51.466667, 53.466663, 55.3, 83.09999, 85.23332, 87.26666),
+"times": PackedFloat32Array(56.13334, 58.133335, 59.96667, 87.76666, 89.899994, 91.933334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -284,7 +284,7 @@ tracks/19/path = NodePath("somanyPicturessssss/13:modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(53.56667, 55.56667, 57.56667, 85.16666, 87.16666, 89.033325),
+"times": PackedFloat32Array(58.23334, 60.23334, 62.23334, 89.83333, 91.83333, 93.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -296,7 +296,7 @@ tracks/20/path = NodePath("somanyPicturessssss/14:modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(55.633335, 57.600002, 59.5, 87.23332, 89.23332, 91.133316),
+"times": PackedFloat32Array(60.300007, 62.266674, 64.16667, 91.899994, 93.899994, 95.79999),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -308,7 +308,7 @@ tracks/21/path = NodePath("somanyPicturessssss/15:modulate")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(57.600002, 59.56667, 61.4, 89.23332, 91.2, 93.033325),
+"times": PackedFloat32Array(62.266674, 64.23334, 66.06667, 93.899994, 95.86667, 97.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -320,7 +320,7 @@ tracks/22/path = NodePath("somanyPicturessssss/16:modulate")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(59.600002, 61.6, 63.433334, 91.23332, 93.23332, 95.06665),
+"times": PackedFloat32Array(64.26668, 66.26667, 68.100006, 95.899994, 97.899994, 99.73332),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -332,7 +332,7 @@ tracks/23/path = NodePath("somanyPicturessssss/17:modulate")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"times": PackedFloat32Array(61.700005, 62.833332, 65.700005, 93.13333, 95.2, 97.23332),
+"times": PackedFloat32Array(66.36668, 67.5, 70.36668, 97.8, 99.86667, 101.899994),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -344,7 +344,7 @@ tracks/24/path = NodePath("somanyPicturessssss:modulate")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(63.566666, 97.23333, 127),
+"times": PackedFloat32Array(68.23334, 101.9, 131.66667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0.20784314), Color(1, 1, 1, 0.6666667), Color(1, 1, 1, 0.6666667)]
@@ -356,7 +356,7 @@ tracks/25/path = NodePath("Girl:modulate")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(28.8, 97.2),
+"times": PackedFloat32Array(33.46667, 101.86667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 0.44705883, 1, 1), Color(1, 0, 1, 1)]
@@ -368,7 +368,7 @@ tracks/26/path = NodePath("Girl")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
-"times": PackedFloat32Array(101.03333),
+"times": PackedFloat32Array(105.700005),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [780.0],
@@ -382,7 +382,7 @@ tracks/27/path = NodePath("Girl:CutSceneJumped")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
-"times": PackedFloat32Array(105.03333, 105.1, 105.5, 105.566666, 105.96667, 106.03333, 106.46667, 106.53333, 106.933334, 107, 107.46667, 107.53333, 107.96667, 108.03333, 108.53333, 108.6),
+"times": PackedFloat32Array(109.700005, 109.76667, 110.16667, 110.23334, 110.63334, 110.700005, 111.13334, 111.200005, 111.600006, 111.66667, 112.13334, 112.200005, 112.63334, 112.700005, 113.200005, 113.26667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
@@ -394,10 +394,10 @@ tracks/28/path = NodePath("Player:rotation")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(106, 108.5, 112.5, 114.5, 115.5, 120),
+"times": PackedFloat32Array(110.66667, 113.16667, 117.16667, 119.16667, 120.16667, 124.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.1815142422074099, -0.18151425, 0.0, 0.0, -0.6108652381980153]
+"values": [0.0, -0.1815142422074099, -0.18151425, 0.0, 0.0, -0.29321531433504755]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
@@ -418,7 +418,7 @@ tracks/30/path = NodePath("GameProceeder")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
-"times": PackedFloat32Array(140.5),
+"times": PackedFloat32Array(145.16667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0, 0.5, 3.0, 0.5],

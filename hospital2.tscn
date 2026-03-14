@@ -133,7 +133,7 @@ scale = Vector2(2.491024, 1.5404615)
 texture = ExtResource("6_77c2x")
 
 [node name="FunctionCallerArea" parent="." unique_id=1982575411 node_paths=PackedStringArray("Callees") instance=ExtResource("7_84yt5")]
-position = Vector2(1484, 739)
+position = Vector2(1400, 736)
 Callees = [NodePath("../GameProceeder")]
 FunctionCalls = [SubResource("Resource_5xxpe")]
 

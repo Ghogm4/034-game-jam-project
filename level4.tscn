@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://5b4qdqveswg3" path="res://LevelScene/prefabs/back_grounds.tscn" id="1_gmhuy"]
 [ext_resource type="Texture2D" uid="uid://bhsycvb3st23b" path="res://Colors/City1/graySquare.png" id="2_7odde"]
 [ext_resource type="PackedScene" uid="uid://ccwbwqda63xj3" path="res://LevelScene/prefabs/ground.tscn" id="2_g1tnb"]
+[ext_resource type="Texture2D" uid="uid://b0a1rta8u8yrn" path="res://Colors/City1/redDaYun.png" id="3_13mid"]
 [ext_resource type="PackedScene" uid="uid://cvol3al3kilk5" path="res://Player/Player.tscn" id="3_pklw6"]
 [ext_resource type="PackedScene" uid="uid://1kjg7qqj6a7s" path="res://Level/FragmentGenerator/FragmentGenerator.tscn" id="4_yxclo"]
 [ext_resource type="PackedScene" uid="uid://dpt60622kgt56" path="res://Fragment/Keepsakes/Flower/Stem.tscn" id="5_fx4lf"]
@@ -17,6 +18,9 @@
 [ext_resource type="Script" uid="uid://dbec6k6ms3vsx" path="res://AudioManager/BGMPlayer.cs" id="13_p2trt"]
 [ext_resource type="PackedScene" uid="uid://7ayv4ysg3fn" path="res://LevelScene/prefabs/warningLine.tscn" id="14_p2trt"]
 [ext_resource type="PackedScene" uid="uid://dcvravkibjndy" path="res://Fragment/Keepsakes/Flower/Bloom.tscn" id="17_0bk12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0buyf"]
+size = Vector2(105.21591, 948.8838)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13mid"]
 size = Vector2(7458.464, 607.2119)
@@ -82,6 +86,18 @@ position = Vector2(-4451, 20.999886)
 rotation = 0.7018068
 scale = Vector2(1.3939257, 1.5106933)
 texture = ExtResource("2_7odde")
+
+[node name="RedDaYun" type="Sprite2D" parent="." unique_id=828389242]
+modulate = Color(0.40196836, 0.40196842, 0.40196836, 1)
+position = Vector2(518, -33)
+scale = Vector2(1.2165468, 0.9347826)
+texture = ExtResource("3_13mid")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RedDaYun" unique_id=2079365819]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedDaYun/StaticBody2D" unique_id=1073747136]
+position = Vector2(302.49554, -8.558144)
+shape = SubResource("RectangleShape2D_0buyf")
 
 [node name="ground" type="Node2D" parent="." unique_id=1208091186]
 

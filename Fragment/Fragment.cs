@@ -67,7 +67,7 @@ public partial class Fragment : RigidBody2D
 		EmitSignal(SignalName.Collected, this);
 		if (ProceedWhenCollected)
 		{
-			GameManager.Instance.ProceedPhase();
+			GameManager.Instance.ProceedPhase(SceneManager.TransitionColor.Black,6f,6f,1f);
 		}
 		//CollectBehavior();
 	}

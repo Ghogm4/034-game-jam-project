@@ -143,7 +143,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_7f7de"]
 resource_name = "hospital1"
-length = 35.166668
+length = 39.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -151,7 +151,7 @@ tracks/0/path = NodePath("Player")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(8.35, 17.433334, 20.366665, 27.366665),
+"times": PackedFloat32Array(10.35, 19.433334, 22.366665, 29.366665),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [1122.0],
@@ -174,7 +174,7 @@ tracks/1/path = NodePath("Player:IsInCutScene")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(5.366667, 31.399998),
+"times": PackedFloat32Array(7.366667, 33.399998),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -186,7 +186,7 @@ tracks/2/path = NodePath("Player:MoveSpeed")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(5.366667, 17.333332, 20.3),
+"times": PackedFloat32Array(7.366667, 19.333332, 22.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [100.0, 70.0, 130.0]
@@ -198,7 +198,7 @@ tracks/3/path = NodePath("Player:MoveSquashSpeed")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5.366667),
+"times": PackedFloat32Array(7.366667),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [7.0]
@@ -210,7 +210,7 @@ tracks/4/path = NodePath("Player2:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.366667, 11.3, 13.599999, 15.266665, 15.7, 16.099998, 16.533333, 22.366508, 22.799843, 23.199844, 23.633175, 24.366665, 26.333332),
+"times": PackedFloat32Array(7.366667, 13.3, 15.599999, 17.266666, 17.7, 18.099998, 18.533333, 24.366508, 24.799843, 25.199844, 25.633175, 26.366665, 28.333332),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [1.5601324, 1.5601324, 1.9216075064457572, 1.9216075, 2.0943951023931953, 1.7453292519943295, 1.9216075, 1.9216075, 2.0943951023931953, 1.7453292519943295, 1.9216075, 1.9216075, 1.5707963267948966]
@@ -222,7 +222,7 @@ tracks/5/path = NodePath("Player2:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5.366667, 11.3, 13.599999),
+"times": PackedFloat32Array(7.366667, 13.3, 15.599999),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(968.99994, 998.00006), Vector2(968.99994, 998.00006), Vector2(968.99994, 998.00006)]
@@ -234,7 +234,7 @@ tracks/6/path = NodePath("Player:JumpVelocity")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(5.366667),
+"times": PackedFloat32Array(7.366667),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [50.0]
@@ -246,7 +246,7 @@ tracks/7/path = NodePath("Player:CutSceneJumped")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(13.999999, 14.133332, 14.333333),
+"times": PackedFloat32Array(15.999999, 16.133331, 16.333332),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -258,7 +258,7 @@ tracks/8/path = NodePath("Player:TiltAngleDegrees")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(14.333333, 19.599998, 26.333332, 31.3),
+"times": PackedFloat32Array(16.333332, 21.599998, 28.333332, 33.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [-1.0, 5.0, -2.0, 3.0]
@@ -270,10 +270,10 @@ tracks/9/path = NodePath("BGMPlayer")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.53333336),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["Silent_1", 3.0],
+"args": ["Silent_1", 6.0],
 "method": &"PlayBGM"
 }]
 }
@@ -284,7 +284,7 @@ tracks/10/path = NodePath("canvas:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(-0.06666672, 3.5333333, 7.6),
+"times": PackedFloat32Array(1.9333333, 5.5333333, 9.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -296,7 +296,7 @@ tracks/11/path = NodePath("introduce:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(31.433332, 34.8),
+"times": PackedFloat32Array(33.433334, 36.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -380,7 +380,6 @@ script = ExtResource("7_5d35i")
 metadata/_custom_type_script = "uid://dbec6k6ms3vsx"
 
 [node name="canvas" type="Sprite2D" parent="." unique_id=1957337433]
-visible = false
 position = Vector2(1207, 743.00006)
 rotation = -3.1415925
 scale = Vector2(2.2810426, -2.0696938)
