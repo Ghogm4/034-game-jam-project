@@ -16,6 +16,10 @@ public partial class GameProceeder : Node
     }
     public void Restart()
     {
+        if (GameManager.Instance.CurrentGameState == GameManager.GameState.Cutscene)
+        {
+            return;
+        }
         GameManager.Instance.LoadPhase(SceneManager.TransitionColor.Black, 0.5f, 0.5f, 0f);
     }
 }

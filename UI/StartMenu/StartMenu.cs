@@ -258,6 +258,10 @@ public partial class StartMenu : Control
 		{
 			SceneManager.Instance.ChangeScene(GameManager.GamePhase.Cutscene_Picnic, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
 		}
+		else if (_currentIndex == 3 && (int)GameManager.Instance.SavedGamePhase >= 14)
+		{
+			SceneManager.Instance.ChangeScene(GameManager.GamePhase.Cutscene_Hospital, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
+		}
 
 		//test
 		// else SceneManager.Instance.ChangeScene(GameManager.GamePhase.Hospital_1, SceneManager.TransitionColor.Black, 0.5f, 0.5f, 1f);
