@@ -14,12 +14,12 @@ ModifiedJumpVelocity = 500.0
 scale = Vector2(0.3338333, 0.3192655)
 texture = ExtResource("2_kc3fj")
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=1099237673]
-disabled = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2" unique_id=2087958715]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1" unique_id=2087958715]
 scale = Vector2(0.33492294, 0.32186058)
 polygon = PackedVector2Array(-334, 367, 349, 367, 349, -287, 7, -287, 7, 40, -334, 40)
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1099237673]
+disabled = true
 
 [node name="CollisionShape2D" parent="PickupSensor" parent_id_path=PackedInt32Array(181391040) index="0" unique_id=788692184]
 position = Vector2(4.033865, 10)
