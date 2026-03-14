@@ -207,7 +207,7 @@ tracks/0/path = NodePath("../Canvas:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(3.3666666, 8.400001, 35.833336, 39.800003),
+"times": PackedFloat32Array(1.0333333, 6.0666676, 33.500004, 37.46667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -219,7 +219,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.3333333, 37.56667),
+"times": PackedFloat32Array(1, 35.233337),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["A cup of love", 5.0],
@@ -236,7 +236,7 @@ tracks/2/path = NodePath("../Girl")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.3333333, 15.3),
+"times": PackedFloat32Array(1, 12.966667),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [834.0],
@@ -253,7 +253,7 @@ tracks/3/path = NodePath("../Cup:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3.3333333, 9.666667, 9.866667, 10.133334, 10.333333, 32.766666, 33.06667, 33.36667, 34.333336, 35.100002),
+"times": PackedFloat32Array(1, 7.333334, 7.533334, 7.800001, 8, 30.433332, 30.733335, 31.033335, 32.000004, 32.76667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(491.25, 735.5), Vector2(872, 735.5), Vector2(907.675, 755.675), Vector2(924.14, 768.765), Vector2(948.235, 779.19), Vector2(948.235, 779.19), Vector2(1111.62, 603.66), Vector2(1111.62, 603.66), Vector2(1079.6, 712.08), Vector2(1079.6, 712.08)]
@@ -265,7 +265,7 @@ tracks/4/path = NodePath("../Girl:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.5666664, 9.7, 10.333333, 13.7, 14.633334, 17.566666, 18.4, 19.199999, 19.999998, 20.9, 27.366665, 27.966665),
+"times": PackedFloat32Array(1.2333331, 7.366667, 8, 11.366667, 12.300001, 15.233333, 16.066666, 16.866665, 17.666664, 18.566666, 25.03333, 25.633331),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.9529497715889044, 0.95294976, 0.0, 0.0, 0.8168140899333465, 0.0, 0.0, 0.22689280275926285, 0.2268928, 0.0]
@@ -277,7 +277,7 @@ tracks/5/path = NodePath("../Cup:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(9.666667, 10.333333, 32.833336, 33.06667),
+"times": PackedFloat32Array(7.333334, 8, 30.500002, 30.733335),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.542871058762987, 1.5428711, 0.0]
@@ -289,7 +289,7 @@ tracks/6/path = NodePath("../Player")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(11.500001, 21.766665),
+"times": PackedFloat32Array(9.166668, 19.43333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [950.0],
@@ -306,7 +306,7 @@ tracks/7/path = NodePath("../Player:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(13.133334, 13.7, 14.633334),
+"times": PackedFloat32Array(10.800001, 11.366667, 12.300001),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, -0.6806784082777885, 0.0]
@@ -318,7 +318,7 @@ tracks/8/path = NodePath("../Cup:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(10.400001, 33.100002),
+"times": PackedFloat32Array(8.066668, 30.766668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -330,7 +330,7 @@ tracks/9/path = NodePath("../Cuppiece:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(3.3333333, 10.400001, 33.100037),
+"times": PackedFloat32Array(1, 8.066668, 30.766703),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -342,7 +342,7 @@ tracks/10/path = NodePath("../Cuppiece2:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(3.3333333, 10.400001, 33.100037),
+"times": PackedFloat32Array(1, 8.066668, 30.766703),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -354,7 +354,7 @@ tracks/11/path = NodePath("../Cuppiece2:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(10.400001, 10.8, 11.166667, 11.533334, 18.433332, 19.166666, 24.999998, 26.399998, 28.166666, 30.433332, 32.133335, 33.233334),
+"times": PackedFloat32Array(8.066668, 8.466667, 8.833334, 9.200001, 16.099998, 16.833332, 22.666664, 24.066664, 25.833332, 28.099998, 29.800001, 30.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(953, 756.00006), Vector2(983.555, 733.85), Vector2(1032.66, 779.055), Vector2(1068.585, 779.055), Vector2(1068.585, 779.055), Vector2(1031.255, 717.59), Vector2(1031.255, 717.59), Vector2(1165.225, 717.59), Vector2(1165.225, 717.59), Vector2(1165.225, 589.11), Vector2(1165.225, 589.11), Vector2(1126.18, 591.21)]
@@ -366,7 +366,7 @@ tracks/12/path = NodePath("../Cuppiece:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(18.433332, 19.199999, 24.999998, 26.399998, 28.3, 30.099998, 32.133335, 33.266666),
+"times": PackedFloat32Array(16.099998, 16.866665, 22.666664, 24.066664, 25.966665, 27.766665, 29.800001, 30.933332),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(957.0001, 782), Vector2(957, 718.285), Vector2(957, 718.285), Vector2(1090.705, 718.285), Vector2(1090.705, 718.285), Vector2(1090.705, 593.725), Vector2(1090.705, 593.725), Vector2(1109.57, 593.725)]
@@ -378,7 +378,7 @@ tracks/13/path = NodePath("../Cuppiece:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(18.433332, 19.199999),
+"times": PackedFloat32Array(16.099998, 16.866665),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.5655757, 0.0]
@@ -390,7 +390,7 @@ tracks/14/path = NodePath("../Player:MoveSpeed")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(15.533334),
+"times": PackedFloat32Array(13.200001),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [80.0]
@@ -402,7 +402,7 @@ tracks/15/path = NodePath("../Player:MoveSquashSpeed")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(15.466666),
+"times": PackedFloat32Array(13.133333),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [8.0]
@@ -414,7 +414,7 @@ tracks/16/path = NodePath("../Cup:flip_h")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(3.4333332, 32.433334),
+"times": PackedFloat32Array(1.0999999, 30.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -426,7 +426,7 @@ tracks/17/path = NodePath("../Girl:CutSceneJumped")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(34.900135, 35.266666, 35.36667, 35.800003, 35.86667, 36.26667, 36.33387, 36.7004, 36.800404, 37.233738, 37.300404, 37.800003, 37.900005, 38.33334, 38.400005, 38.800007, 38.867207, 39.233738, 39.333736, 39.76707, 39.833736),
+"times": PackedFloat32Array(32.566803, 32.933334, 33.033337, 33.46667, 33.533337, 33.93334, 34.000538, 34.36707, 34.46707, 34.900406, 34.96707, 35.46667, 35.566673, 36.000008, 36.066673, 36.466675, 36.533875, 36.900406, 37.000404, 37.43374, 37.500404),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true]
@@ -438,7 +438,7 @@ tracks/18/path = NodePath("../GameProceeder")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(42.933334),
+"times": PackedFloat32Array(40.600002),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0, 0.5, 3.0, 0.5],

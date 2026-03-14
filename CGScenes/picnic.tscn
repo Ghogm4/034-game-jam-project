@@ -125,7 +125,7 @@ tracks/0/path = NodePath("../Canvas:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(3, 7, 35.3, 37.684208),
+"times": PackedFloat32Array(1.0666667, 5.0666666, 33.366665, 35.750874),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -137,7 +137,7 @@ tracks/1/path = NodePath("../BGMPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(1.0666667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": ["Birdsong", 4.51],
@@ -151,7 +151,7 @@ tracks/2/path = NodePath("../Player2:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(10.1, 13, 30.866667, 32.433334),
+"times": PackedFloat32Array(8.166667, 11.066667, 28.933334, 30.500002),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-0.3434149, 0.0, 0.0, 0.452040276266531]
@@ -163,7 +163,7 @@ tracks/3/path = NodePath("../Player:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(15.066667, 17.3, 26.6, 27.266666, 29.633333),
+"times": PackedFloat32Array(13.133333, 15.366666, 24.666668, 25.333334, 27.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.12509039, 0.0, 0.0, 0.1361356816555579, -1.219985147144036]
@@ -175,7 +175,7 @@ tracks/4/path = NodePath("../Player2")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(19.033333, 23.133333, 23.966667),
+"times": PackedFloat32Array(17.1, 21.2, 22.033335),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [1290.0],
@@ -195,7 +195,7 @@ tracks/5/path = NodePath("../Player")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(21),
+"times": PackedFloat32Array(19.066668),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [1190.0],
@@ -209,7 +209,7 @@ tracks/6/path = NodePath("../Player2:MoveSpeed")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(21.033333),
+"times": PackedFloat32Array(19.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [400.0]
@@ -221,7 +221,7 @@ tracks/7/path = NodePath("../Player2:TiltAngleDegrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(24.1),
+"times": PackedFloat32Array(22.166668),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [-2.0]
@@ -233,7 +233,7 @@ tracks/8/path = NodePath("../Player2:CutSceneJumped")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(23.8, 24.333334, 33.11579, 33.233334, 33.515793, 33.61579, 33.915794, 34.015793, 34.300003, 34.417545, 34.7, 34.8, 35.066666, 35.166668, 35.415787, 35.533333, 35.81579, 35.91579, 36.21579, 36.31579, 36.6, 36.717545, 37, 37.1, 37.36666, 37.466667),
+"times": PackedFloat32Array(21.866667, 22.400002, 31.182459, 31.300001, 31.58246, 31.682459, 31.982462, 32.08246, 32.36667, 32.48421, 32.766666, 32.866665, 33.13333, 33.233334, 33.482452, 33.6, 33.882454, 33.982456, 34.282455, 34.382454, 34.666664, 34.78421, 35.066666, 35.166664, 35.433327, 35.533333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
@@ -245,7 +245,7 @@ tracks/9/path = NodePath("../Player/RedDaYun:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(24.666666, 25.633331),
+"times": PackedFloat32Array(22.733334, 23.699999),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -257,7 +257,7 @@ tracks/10/path = NodePath("../Sakura:skew")
 tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(3, 4.866667, 6.7666664, 8.666666, 10.4, 12.266666, 14.166666, 16.066668, 17.821278, 19.687944, 21.587946, 23.487946, 25.477303, 27.34397, 29.243969, 31.143969, 33.06327, 34.92994, 36.82994, 38.72994),
+"times": PackedFloat32Array(1.0666667, 2.9333334, 4.833333, 6.7333326, 8.466666, 10.333333, 12.233333, 14.133334, 15.887944, 17.754612, 19.654613, 21.554613, 23.54397, 25.410637, 27.310637, 29.210636, 31.129938, 32.996605, 34.896606, 36.796604),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [-0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0, -0.05585053606381859, 0.0, 0.07853981633974483, 0.0]
@@ -269,7 +269,7 @@ tracks/11/path = NodePath("../GameProceeder")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(39.566666),
+"times": PackedFloat32Array(37.63333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0, 0.5, 3.0, 0.5],
