@@ -7,7 +7,19 @@ public partial class Fragment_FragmentState : State
 
 	protected void SetPhysicsCollisionEnabled(bool enabled)
 	{
-		Fragment.PhysicsCollisionShape.SetDeferred(CollisionShape2D.PropertyName.Disabled, !enabled);
+		if (Fragment.PhysicsCollisionShape is CollisionShape2D collisionShape)
+		{
+			collisionShape.SetDeferred(CollisionShape2D.PropertyName.Disabled, !enabled);
+			return;
+		}
+
+		if (Fragment.PhysicsCollisionShape is CollisionPolygon2D collisionPolygon)
+		{
+			collisionPolygon.SetDeferred(CollisionPolygon2D.PropertyName.Disabled, !enabled);
+			return;
+		}
+
+		GD.PushWarning($"SetPhysicsCollisionEnabled: Unsupported collision node type on fragment '{Fragment.Name}'.");
 	}
 
 	protected void SetPickupEnabled(bool enabled)

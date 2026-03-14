@@ -3,11 +3,8 @@ using System;
 
 public partial class Fragment_ThrownState : Fragment_FragmentState
 {
-	private bool _hasLeftPlayer = false;
-
 	protected override void Enter()
 	{
-		_hasLeftPlayer = false;
 		IgnorePlayerCollision(Fragment.PendingThrowOwner);
 		Fragment.Freeze = false;
 		Fragment.GravityScale = Fragment.ThrownGravityScale;
@@ -15,8 +12,10 @@ public partial class Fragment_ThrownState : Fragment_FragmentState
 		Fragment.AngularVelocity = 0.0f;
 		Fragment.FloatElapsedTime = 0.0f;
 		Fragment.ThrowOwner = Fragment.PendingThrowOwner;
-		SetPhysicsCollisionEnabled(false);
-		SetPickupEnabled(false);
+		// Keep world collision active while thrown; only ignore the player via collision exception.
+		SetPhysicsCollisionEnabled(true);
+		// Allow re-pickup immediately after throw, even while still overlapping player.
+		SetPickupEnabled(true);
 		Fragment.PendingThrowOwner = null;
 		Fragment.PendingThrowVelocity = Vector2.Zero;
 
@@ -31,18 +30,19 @@ public partial class Fragment_ThrownState : Fragment_FragmentState
 		var query = new PhysicsShapeQueryParameters2D();
 		query.CollideWithBodies = true;
 		query.CollisionMask = Fragment.ThrowOwner.CollisionLayer;
-		query.Transform = Fragment.GlobalTransform;
+		query.Margin = 0.0f;
 
 		if (Fragment.PhysicsCollisionShape is CollisionShape2D collisionShape)
 		{
 			query.Shape = collisionShape.Shape;
-			query.Transform = new Transform2D(Fragment.GlobalTransform.Rotation, Fragment.GlobalTransform.Origin + collisionShape.Position.Rotated(Fragment.GlobalTransform.Rotation));
+			query.Transform = Fragment.GlobalTransform * collisionShape.Transform;
 		}
 		else if (Fragment.PhysicsCollisionShape is CollisionPolygon2D collisionPolygon)
 		{
 			var convex = new ConvexPolygonShape2D();
 			convex.Points = collisionPolygon.Polygon;
 			query.Shape = convex;
+			query.Transform = Fragment.GlobalTransform * collisionPolygon.Transform;
 		}
 		else
 		{
@@ -61,15 +61,6 @@ public partial class Fragment_ThrownState : Fragment_FragmentState
 	protected override void PhysicsUpdate(double delta)
 	{
 		if (Fragment.ThrowOwner == null) return;
-
-		if (!_hasLeftPlayer)
-		{
-			if (IsOverlappingPlayer()) return;
-			_hasLeftPlayer = true;
-			SetPhysicsCollisionEnabled(true);
-			SetPickupEnabled(true);
-			return;
-		}
 
 		if (IsOverlappingPlayer()) return;
 		RestorePlayerCollision(Fragment.ThrowOwner);
